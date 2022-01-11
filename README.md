@@ -8,7 +8,7 @@ My name is Ian and I'm studying Computer Science at NUS. I hope to work in UX in
 - Leading the publicity team and publicising [NUS Jazz Band](https://www.instagram.com/nusjazzband/)'s upcoming Annual Concert, **A Night To Remember**
 
 ### I Want To 🎯
-- Redesign Plover's UX for a more intuitive and modern looking experience, while keeping the app lightweight
+- Redesign Plover, an app which allows anyone to type with stenography, for a more intuitive and modern looking experience, while keeping the app lightweight
 - Learn modelling in Blender and rendering in Unity or Unreal Engine to create amazing lighting for scenes 🏞
 
 <!--

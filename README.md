@@ -3,8 +3,7 @@ My name is Ian and I'm studying Computer Science at NUS. I hope to work in UX in
 
 ### I'm Currently 🤹
 - Developing a VR or AR application with my team as part of [CS4240: Interaction Design for VR and AR](https://nusmods.com/modules/CS4240/interaction-design-for-virtual-and-augmented-reality)
-- Getting fundamental knowledge of AI and machine learning with [CS2109S: Intro to AI and ML](https://nusmods.com/modules/CS2109S/introduction-to-ai-and-machine-learning)
-- Creating my first CLI-based app with my team as part of [CS2103T: Software Engineering](https://nusmods.com/modules/CS2103T/software-engineering)
+- Creating my second CLI-based HR payroll management app with my team as part of [CS2103T: Software Engineering](https://nusmods.com/modules/CS2103T/software-engineering)
 - Leading the publicity team and publicising [NUS Jazz Band](https://www.instagram.com/nusjazzband/)'s upcoming Annual Concert, **A Night To Remember**
 
 ### I Want To 🎯

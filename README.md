@@ -4,10 +4,10 @@ My name is Ian and I'm studying Computer Science at NUS. I hope to work in UX in
 ### I'm Currently 🤹
 - Developing a VR or AR application with my team as part of [CS4240: Interaction Design for VR and AR](https://nusmods.com/modules/CS4240/interaction-design-for-virtual-and-augmented-reality)
 - Creating my second CLI-based HR payroll management app with my team as part of [CS2103T: Software Engineering](https://nusmods.com/modules/CS2103T/software-engineering)
-- Leading the publicity team and publicising [NUS Jazz Band](https://www.instagram.com/nusjazzband/)'s upcoming Annual Concert, **A Night To Remember**
 
 ### I Want To 🎯
 - Redesign Plover, an app which allows anyone to type with stenography, for a more intuitive and modern looking experience, while keeping the app lightweight
+- Learn HTML, CSS, JS and React because web dev is essential isn't it
 - Learn modelling in Blender and rendering in Unity or Unreal Engine to create amazing lighting for scenes 🏞
 
 <!--

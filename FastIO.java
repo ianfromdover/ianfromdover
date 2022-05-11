@@ -11,6 +11,7 @@ import java.util.*;
  * fio.println("hello"); // stores "hello" string to the buffer
  * fio.flush();          // prints everything in the buffer. in this case, "hello"
  * fio.close();          // close after finishing fio for the whole program
+ * Note: these are instance methods.
  *
  * @source https://www.geeksforgeeks.org/fast-io-in-java-in-competitive-programming/
  */
@@ -19,7 +20,7 @@ class FastIO extends PrintWriter {
     StringTokenizer st;
 
     /**
-     * Creates a FastIO object. Instantiate in main()
+     * Creates a FastIO object. Usually instantiated in main().
      *
      * Eg:
      * FastIO fio = new FastIO();

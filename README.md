@@ -3,9 +3,9 @@ My name is Ian and I'm studying Computer Science at NUS. I hope to work in UX in
 
 ### I'm Currently 🤹
 - Learning frontend development (HTML, CSS, JS, React, Redux) in TikTok's Youth Coding Camp
-- Creating a VRChat World in Unity
 
 ### I Want To 🎯
+- Creating a VRChat World in Unity
 - Redesign Plover, an app which allows anyone to type with stenography, to give it a more intuitive user experience
 - Create an open-source library of XR interactions to compile interaction patterns across the growing discipline. Do let me know in an issue if you're willing to contribute! 
 - Learn modelling in Blender and rendering in Unity or Unreal Engine to create amazing lighting for scenes 🏞
@@ -66,6 +66,4 @@ Here are some ideas to get you started:
 - 🤔 I’m looking for help with ...
 - 💬 Ask me about ...
 - 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
 -->

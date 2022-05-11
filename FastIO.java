@@ -2,10 +2,10 @@ import java.io.*;
 import java.util.*;
 
 /**
- * Fast I/O because Scanner is too slow.
- * Mimics the API exposed by scanner.
- * Can be used to read user input from the shell, or from a file.
- * Can also be used to print more quickly than System.out.println.
+ * Fast I/O combines the API of java.util.Scanner with System.out.println
+ * to read and write input and output in a more performant manner 
+ * using BufferedReader and PrintWriter. It is used to read user 
+ * input or to print very long strings to the shell when optimisation is key.
  *
  * PrintWriter API:
  * fio.println("hello"); // stores "hello" string to the buffer

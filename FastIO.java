@@ -4,8 +4,8 @@ import java.util.*;
 /**
  * Fast I/O combines the API of java.util.Scanner with System.out.println
  * to read and write input and output in a more performant manner 
- * using BufferedReader and PrintWriter. It is used to read user 
- * input or to print very long strings to the shell when optimisation is key.
+ * using BufferedReader and PrintWriter. It can be used to read long files,
+ * long user input or to print very long strings when optimisation is key.
  *
  * PrintWriter API:
  * fio.println("hello"); // stores "hello" string to the buffer
@@ -40,7 +40,7 @@ class FastIO extends PrintWriter {
         while (st == null || !st.hasMoreElements()) { 
             try { 
                 st = new StringTokenizer(br.readLine()); 
-            } catch (IOException  e) { 
+            } catch (IOException e) { 
                 e.printStackTrace(); 
             } 
         } 

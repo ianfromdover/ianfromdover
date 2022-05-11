@@ -1,28 +1,18 @@
-if &compatible
-  set nocompatible  " Use VIM settings rather than Vi settings | shortform: nocp
-endif
+set nocp          " Use VIM settings rather than Vi settings, esp when the `vim -u` flag is passed
 
 " Owner: Hong Yi En, Ian <ian09hong@gmail.com>
-" Last Change: 24 Jan 2022
-" Why: colorcolumn to 72 for git commit msgs
-" Girlfriend: yes
-" Girl Friend: yes
-" Girl friend: no (only Title Case works)
-" note: rc means run commands
+" Last Change: 11 May 2022
+" Why: remove unused plugin code
 
-" let $BASH_ENV="~/.bash_profile" doesnt work, supposed to make aliases
-" available in vim terminal
-
-" essentials
-execute pathogen#infect()
-set number relativenumber " line numbers | shortform: nu rnu
-set ruler         " show row, col of cursor
+" Essentials: Line numbers and looking around
 syntax on         " on colours
-set cc=72         " colorcolumn at 72 chars length
 set t_Co=256      " enable colours over SSH
+set nu rnu        " on numbers, relative line numbers
+set ruler         " show cursor's (row, col)
+set cc=72         " colorcolumn at 72 chars length
 set showmatch     " show matching parentheses
-set backspace=eol,start,indent " allow backspacing over everything in insert mode indent,eol,start
-set scrolloff=5          " always show 5 lines around the cursor for context | shortf: so
+set so=5          " always show 5 lines around the cursor for context (scrolloff)
+set backspace=eol,start,indent " allow backspacing over everything in insert mode indent,eol,start, but tbh i never understood what this meant
 
 " Escape using kj
 imap kj <Esc>
@@ -34,11 +24,10 @@ cnoremap KJ <C-C>
 autocmd InsertLeave * :normal! `^
 set virtualedit=onemore
 
-" stop flashing
+" stop flashing when cursor reaches end of page or cannot find search results
 set noerrorbells  " don't beep
 set t_vb=         " if visualbell is set, vim will neither flash nor beep. does nothing if visualbell not set.
 set visualbell    " instead of beeping, blink vim window
-
 
 " indentation help
 set smarttab      " start the line according to shiftwidth, not tabstop i believe it lets del remove the 2x spaces
@@ -54,83 +43,17 @@ set showcmd       " shows partial command on last line of screen
 filetype plugin indent on " enables plugin per filetype & enables auto-indent per filetype
 set nobackup      " both of these to not create a backup
 
-" searching 
-set hlsearch      " highlight matches | short form: hls
-set incsearch     " show partial matches as you type | shortform: is
-" set ignorecase  " ignore upper/lowercase when searching | sf: ic
+" Searching 
+set hls           " highlight search matches
+set is            " Inclusive Search: show partial matches as you type
 set wildmenu      " show autocomplete options in command mode
+" Disabled: set ignorecase  " ignore upper/lowercase when searching | shortform: ic
 
-" clears search highlighting. <CR> means enter
+" Ctrl-L clears search highlighting. <CR> means enter
 nnoremap <silent> <C-L> :let @/ = ""<CR>
 
+" enable clicking mouse to place cursor and enter visual mode
 set mouse+=a
 
-" currently not in use
-" ======================================  
-" set comments=sr:/*,mb:*,el:*/,://,b:#,:%,:XCOMM,n:>,fb:-,n:\: " what starts a line of comments
-
-" reason: deLimitMate
-" autoindent for { }, and autoclosing of braces 
-" repeat the btm but with double quotes
-""inoremap ' ''<left>
-""inoremap ( ()<left>
-""inoremap [ []<left>
-
-"create custom keybindings by following the format:
-"nnoremap <silent> <key> :command<CR>
-
-" TEST paste new preferences to try out below
-" ======================================  
-  "binds F5 to toggling nerdtree.
-nnoremap <silent> <F5> :exe 'NERDTreeToggle'<CR>
-let g:NERDTreeAutoDeleteBuffer=1 " when moving files, move this open buffer too
-
-" Toggle nerd tree at the current file using leader key
-" nnoremap <silent> <expr> <Leader>n g:NERDTree.IsOpen() ? "\:NERDTreeClose<CR>" : bufexists(expand('%')) ? "\:NERDTreeFind<CR>" : "\:NERDTree<CR>"
-
-  "lightline colour and statusbar options
-set laststatus=2 " enables lightline
-let g:lightline = {
-      \ 'colorscheme': 'powerline',
-      \ 'active': {
-      \   'right': [['filetype', 'percent', 'lineinfo']]
-      \ },
-      \ 'inactive': {
-      \   'right': []
-      \ },
-      \ }
-colorscheme default 
-
-" enable FZF in vim
-set rtp+=/usr/local/opt/fzf
-
-" Use the leader key for binding
-"let mapleader=" "
-"let maplocalleader=" "
-
-" plugin links
-  " Pathogen curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
-" cd to ~/.vim/bundle/ and git clone all these
-  " https://github.com/preservim/nerdtree
-  " https://github.com/itchyny/lightline.vim
-  " https://github.com/Raimondi/delimitMate
-  " https://github.com/flazz/vim-colorschemes
-  "
-  "
-" au CursorMoved * call system("say 'balls' &")
-"let g:keysound_enable=1
-"let g:keysound_theme='default'
-"
-"sound#play_wav({t.wav})
-
-" stock vimrcs to refer to:
-" ============================
-" the default vimrm file: type the following
-" :vs $VIMRUNTIME/defaults.vim
-" the beginner vimrc file:
-" :vs $VIMRUNTIME/vimrc_example.vim
-"
-" these files are good because they use if finish endif silent! =~?
-
-" wpm counter, idk how it will show tho
-" from https://vi.stackexchange.com/questions/14635/how-to-measure-words-per-minute
+" Tutorial: Vim script language
+" `nnoremap`: first n = 'normal mode', `nore` = 'non-recursive', map

@@ -1,0 +1,37 @@
+# Explicitly expand aliases
+shopt -s expand_aliases
+
+# NAVIGATION
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+alias lsa="ls -l -a"
+
+# COMMON DIRECTORIES
+alias home="cd ~"
+alias dt="cd ~/Desktop"
+alias dl="cd ~/Downloads"
+alias dc="cd ~/Documents"
+alias hm="cd ~/Desktop/tiktok/hangman" # temp
+
+# GIT
+alias g="git"
+alias gs="git status"
+alias ga="git add *"
+alias gc="git checkout"
+alias gcm="git commit -m"
+alias gam="git commit -a -m"
+alias gd="git diff"
+alias gb="git branch"
+alias gm="git checkout main" # or master when you're working on that
+alias gl="git log --oneline --graph --decorate --all"
+alias gg="cd ~/Documents/gh"
+alias ghb="open https://github.com"
+
+# APPS
+alias t="open -a \"textedit\""
+alias p="python3"
+alias e="exit"
+alias v="vim"
+alias c="clear"

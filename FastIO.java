@@ -13,7 +13,8 @@ import java.util.*;
  * fio.close();          // close after finishing fio for the whole program
  * Note: these are instance methods.
  *
- * @source https://www.geeksforgeeks.org/fast-io-in-java-in-competitive-programming/
+ * @source Adapted from FastReader by Rishabh Mahrsee
+ * from https://www.geeksforgeeks.org/fast-io-in-java-in-competitive-programming/
  */
 class FastIO extends PrintWriter { 
     BufferedReader br; 

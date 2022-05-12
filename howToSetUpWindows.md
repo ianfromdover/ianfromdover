@@ -27,6 +27,7 @@ scoop install vim
 5. Add powershell shortcuts and vimrc to home folder
 
     i. make an appropriate folder to place my personal files
+
     ii. get my personal shortcut files
 
     ```powershell
@@ -39,22 +40,30 @@ scoop install vim
     cp vimrc.txt ~/_vimrc
     ```
 
-    iv. remove the colour settings line
+    iv. remove the colour settings line because powershell is ugly
+
+    ```vim
+    set t_Co=256
+    ```
+
     v. ?? find out how to set the powershell colour properties
+
     vi. place the powershell profile in its directory
 
-    If you only want this user to have this powershell profile, save under
+    If you only want this user to have this powershell profile, save it under the path returned by this command
 
     ```powershell
-    - echo $profile
+    echo $profile
     ```
-    If you want all users to use it, save under
+    If you want all users to use it, save it under this path instead
 
     ```powershell
-    - echo $PsHome
+    echo $PsHome
     ```
 
     vii. Remember to edit the cd functions
 
 6. If authorised, use PowerToys to remap the win, alt and ctrl keys to resemble MacOS.
+
+7. Set up complete!
 

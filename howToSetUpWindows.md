@@ -46,20 +46,20 @@ scoop install vim
     set t_Co=256
     ```
 
-    v. ?? find out how to set the powershell colour properties
+    v. // TODO: find out how to set the powershell colour properties. Is there a file somewhere that i can copy paste?
 
     vi. place the powershell profile in its directory
 
     If you only want this user to have this powershell profile, save it under the path returned by this command
 
-    ```powershell
-    echo $profile
-    ```
-    If you want all users to use it, save it under this path instead
+        ```powershell
+        echo $profile
+        ```
+        If you want all users to use it, save it under this path instead
 
-    ```powershell
-    echo $PsHome
-    ```
+        ```powershell
+        echo $PsHome
+        ```
 
     vii. Remember to edit the cd functions
 

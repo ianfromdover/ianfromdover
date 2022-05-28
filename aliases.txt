@@ -16,7 +16,7 @@ alias dc="cd ~/Documents"
 alias hm="cd ~/Desktop/tiktok/hangman" # temp
 
 # GIT
-alias g="git"
+alias g="cd ~/Documents/gh"
 alias gs="git status"
 alias ga="git add *"
 alias gc="git checkout"
@@ -26,8 +26,8 @@ alias gd="git diff"
 alias gb="git branch"
 alias gm="git checkout main" # or master when you're working on that
 alias gl="git log --oneline --graph --decorate --all"
-alias gg="cd ~/Documents/gh"
-alias ghb="open https://github.com"
+alias gg="cd ~/Documents/gh" # should be for current active repo
+alias ghb="open https://github.com" # set this to use the push address of git remote -v, not sure how.
 
 # APPS
 alias t="open -a \"textedit\""

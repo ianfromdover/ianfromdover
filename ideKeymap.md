@@ -30,3 +30,9 @@
 - extension: fold/expand all regions
 - extension: dedicated external terminal shortcut: Opt-Space across whole system
 - switch tabs: Cmd 123. Switch panels: Ctrl 123. hide vs code activity bar.
+
+### Installation
+Rider: File > Manage IDE Settings > Import Settings... > choose the zip file
+IntelliJ: not tried
+VS Code: not tried
+

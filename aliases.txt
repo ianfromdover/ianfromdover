@@ -1,3 +1,5 @@
+# Last Update: 3 June 2022
+# Reason: Add open, update gg location
 # Explicitly expand aliases
 shopt -s expand_aliases
 
@@ -7,6 +9,9 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias lsa="ls -l -a"
+alias c="clear"
+alias e="exit"
+alias o="open"
 
 # COMMON DIRECTORIES
 alias home="cd ~"
@@ -17,6 +22,7 @@ alias hm="cd ~/Desktop/tiktok/hangman" # temp
 
 # GIT
 alias g="cd ~/Documents/gh"
+alias gg="cd ~/Documents/gh/ian-from-dover"
 alias gs="git status"
 alias ga="git add *"
 alias gc="git checkout"
@@ -26,12 +32,10 @@ alias gd="git diff"
 alias gb="git branch"
 alias gm="git checkout main" # or master when you're working on that
 alias gl="git log --oneline --graph --decorate --all"
-alias gg="cd ~/Documents/gh" # should be for current active repo
-alias ghb="open https://github.com" # set this to use the push address of git remote -v, not sure how.
+alias ghb="open https://github.com" # change this to use the push address of git remote -v of curr repo, not sure how.
 
 # APPS
 alias t="open -a \"textedit\""
 alias p="python3"
-alias e="exit"
 alias v="vim"
-alias c="clear"
+

@@ -19,7 +19,13 @@
 | View Git            | Alt-9                 | Ctrl-Shift-G | Alt-4     | <VS Show Source Control />
 | View Problems       | Alt-6                 | F8           | Alt-5     | <VS Toggle Problems />
 
-# vim shortcuts to deconflict:
+# shortcuts to deconflict:
+- with vim
+- with mac and windows
+    - Alt-2 becomes € on mac
+    - Alt-3 becomes # on mac, used for navigation
+- with editor
+
 ### VS
 - switch tabs: Cmd 123. Switch panels: Ctrl 123. hide vs code activity bar.
 - extension: resize window with [ and ]?
@@ -29,5 +35,6 @@
 ### Installation
 Rider: File > Manage IDE Settings > Import Settings... > choose the zip file
 IntelliJ: File > Manage IDE Settings > Import Settings... > choose the zip file
-VS Code: Key Bindings > keybindings.json > replace the file
+VS Code: Command Palette > Open Keyboard Shortcuts (JSON), Explorer: view open editors, show keybindings in finder
+replace keybindings.json in /Users/YOUR_USER_NAME/Library/Application Support/Code/User
 

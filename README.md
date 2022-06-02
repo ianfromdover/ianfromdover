@@ -1,22 +1,21 @@
 # Heyo 👋
-My name is Ian and I'm studying Computer Science at NUS. I hope to work in UX in the future, and I care most about making products useful, learnable and enjoyable. When I'm not being a nerd, I enjoy playing the piano, learning Japanese and conversing with my friends. I don't watch anime though.
+My name is Ian and I'm studying Computer Science at NUS. I hope to be a UX Designer for VR experiences in the future. Though the role does not exist now, I believe it soon will.
 
 ### I'm Currently 🤹
-- Learning frontend development (HTML, CSS, JS, React, Redux) in TikTok's Youth Coding Camp
+- Developing metaverse experiences for the [Hololens 2](https://www.youtube.com/watch?v=eqFqtAJMtYE)
+- Working with the [glTF](https://github.com/KhronosGroup/glTF) file format to create environments and models for WebXR, using Unity and Blender.
 
 ### I Want To 🎯
-- Creating a VRChat World in Unity
-- Redesign Plover, an app which allows anyone to type with stenography, to give it a more intuitive user experience
-- Create an open-source library of XR interactions to compile interaction patterns across the growing discipline. Do let me know in an issue if you're willing to contribute! 
-- Learn modelling in Blender and rendering in Unity or Unreal Engine to create amazing lighting for scenes 🏞
-- Learn Three.js to create WebXR experiences
+<!-- 👯 Implicitly: I’m looking to collaborate to ... -->
+- Compile an open-source library of XR interactions patterns. Do contribute by opening an issue in `xr-interaction-design-library` (coming soon)!
+- Learn Three.js to develop WebXR experiences
+- Learn React and Redux
+- Create a cozy VRChat World
 
 ### Past Projects 🎒
 - `HyperPong`, `vr-skeet-shooting`: Developed 2 VR games with my team as part of [CS4240: Interaction Design for VR and AR](https://nusmods.com/modules/CS4240/interaction-design-for-virtual-and-augmented-reality). Used Unity, their XR Interaction Toolkit, the Oculus Integration package and C#.
-- `furniture-ar`: Created a basic Android app that lets you place AR furniture in your surroundings. Used Unity, ARCore and C#.
 - `mountain-embers`: Put together a nice mountainside environment with a river flowing through and a campfire. My first environment design project in Unity using assets from the asset store.
-- `tP`: Made a CLI-based HR payroll management app with my team as part of [CS2103T: Software Engineering](https://nusmods.com/modules/CS2103T/software-engineering). Used Java, JavaFX, JUnit, Gradle, Git, and Github Actions for CI.
-- `iP`: Made a task-managing chat bot based off Duolingo's Lily character.
+- `PeopleSoft`: Made a CLI-based HR payroll management app with my team as part of [CS2103T: Software Engineering](https://nusmods.com/modules/CS2103T/software-engineering). Used Java, JavaFX, JUnit, Gradle, Git, and Github Actions for CI.
 
 ### Languages
 <p align="left"> 
@@ -29,13 +28,19 @@ My name is Ian and I'm studying Computer Science at NUS. I hope to work in UX in
   <a href="https://www.python.org" target="_blank" rel="noreferrer"> 
     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/> 
   </a> 
+  <a href="https://www.javascript.com" target="_blank" rel="noreferrer">
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg" alt="javascript es6" width="40" height="40"/>
+  </a>
 </p>
 
 ### Tools
 <p>
   <a href="https://unity.com/" target="_blank" rel="noreferrer"> 
     <img src="https://www.vectorlogo.zone/logos/unity3d/unity3d-icon.svg" alt="unity" width="40" height="40"/> 
-  </a> 
+  </a>
+  <a href="https://www.vim.org/" target="_blank" rel="noreferrer"> 
+     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Vimlogo.svg/240px-Vimlogo.svg.png" alt="vim" width="40" height="40"/>
+  </a>
   <a href="https://www.photoshop.com/en" target="_blank" rel="noreferrer"> 
     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/photoshop/photoshop-line.svg" alt="photoshop" width="40" height="40"/> 
   </a> 
@@ -56,9 +61,7 @@ My name is Ian and I'm studying Computer Science at NUS. I hope to work in UX in
 </p>
 
 <!--
-**ianhiccups/ianhiccups** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-
-Here are some ideas to get you started:
+Prompts to get me started:
 
 - 🔭 I’m currently working on ...
 - 🌱 I’m currently learning ...
@@ -66,4 +69,6 @@ Here are some ideas to get you started:
 - 🤔 I’m looking for help with ...
 - 💬 Ask me about ...
 - 📫 How to reach me: ...
+I dabbled in React, C and MIPS ASM but didn't get to polish it.
+
 -->

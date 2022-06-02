@@ -1,10 +1,12 @@
 <#
-Author: Ian Hong
-Last Updated: 26th March 2022
 If you only want this user to execute this, save under
 - echo $profile
 If you want it to be global, save under
 - echo $PsHome
+
+    Last Edit: 6th June 2022
+    Reason: Update ghb and g commands.
+    Context: Install Miryoku
 #>
 
 # NAVIGATION
@@ -37,9 +39,10 @@ function Exitz {
 }
 
 # COMMON DIRECTORIES
-New-Alias home Homez
+del alias:h -Force # was Get-History
+New-Alias h Homez
 New-Alias dt Desktopz
-New-Alias dl Downloadz
+# New-Alias dl Downloadz # was messing with scoop installation
 New-Alias dc Documentz
 New-Alias g GRepos
 New-Alias gg GLastRepo
@@ -52,9 +55,11 @@ function Desktopz {
     cd 'C:\Users\Ian Hong\Desktop'
 }
 
+<#
 function Downloadz {
     cd 'C:\Users\Ian Hong\Downloads'
 }
+#>
 
 function Documentz {
     cd 'C:\Users\Ian Hong\Documents'
@@ -65,7 +70,7 @@ function GRepos {
 }
 
 function GLastRepo {
-    cd 'C:\Users\Ian Hong\Desktop\gh\1tabletennis'
+    cd 'C:\Users\Ian Hong\Desktop\gh\ian-from-dover'
 }
 
 
@@ -74,6 +79,7 @@ Set-Alias gs GStatus
 Set-Alias ga GAdd
 Set-Alias gd GDiff
 Set-Alias gb GBranch
+Set-Alias ghb GHub
 del alias:gm -Force # default is Get-Member
 Set-Alias gm GChkMaster
 del alias:gl -Force # default is Get-Location
@@ -82,7 +88,6 @@ del alias:gc -Force # default is Get-Content
 Set-Alias gc GChk
 del alias:gcm -Force # default is Get-Command
 Set-Alias gcm GCmmtM
-Set-Alias ghb GHub
 
 function GStatus {
     git status
@@ -117,9 +122,10 @@ function GLog {
 }
 
 function GHub {
-    Start-Process https://github.com/
+    Start-Process https://github.com/ian-from-dover?tab=repositories
 }
 
 # APPS
 New-Alias t notepad.exe
 # New-Alias p python3
+New-Alias kmonad 'C:\Program Files\kmonad\.stack-work\install\f9de1b14\bin\kmonad.exe'

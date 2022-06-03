@@ -129,3 +129,9 @@ function GHub {
 New-Alias t notepad.exe
 # New-Alias p python3
 New-Alias kmonad 'C:\Program Files\kmonad\.stack-work\install\f9de1b14\bin\kmonad.exe'
+New-Alias mr Miryoku
+
+function Miryoku {
+    kmonad 'C:\Users\Ian Hong\Desktop\gh\miryoku_kmonad\src\build\miryoku_kmonad.kbd'
+}
+

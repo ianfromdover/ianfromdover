@@ -1,5 +1,5 @@
 # How to install Miryoku
-- Get Miryoku from [the original repo](https://github.com/manna-harbour/miryoku_kmonad), and get KMonad from [its original repo](https://github.com/kmonad/kmonad)
+- Get Miryoku from [my own repo. the keyboard layouts are already in there](https://github.com/ianfromdover/miryoku_kmonad), and get KMonad from [its original repo](https://github.com/kmonad/kmonad)
 
 
 # Windows

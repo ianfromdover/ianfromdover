@@ -4,8 +4,8 @@ If you only want this user to execute this, save under
 If you want it to be global, save under
 - echo $PsHome
 
-    Last Edit: 6th June 2022
-    Reason: Update ghb and g commands.
+    Last Edit: 5th June 2022
+    Reason: Update miryoku path
     Context: Install Miryoku
 #>
 
@@ -132,6 +132,6 @@ New-Alias kmonad 'C:\Program Files\kmonad\.stack-work\install\f9de1b14\bin\kmona
 New-Alias mr Miryoku
 
 function Miryoku {
-    kmonad 'C:\Users\Ian Hong\Desktop\gh\miryoku_kmonad\src\build\miryoku_kmonad.kbd'
+    kmonad 'C:\Users\Ian Hong\Desktop\gh\miryoku_kmonad\src\build\win_miryoku.kbd'
 }
 

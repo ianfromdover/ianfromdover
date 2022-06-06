@@ -4,9 +4,9 @@ If you only want this user to execute this, save under
 If you want it to be global, save under
 - echo $PsHome
 
-    Last Edit: 5th June 2022
-    Reason: Update miryoku path
-    Context: Install Miryoku
+    Last Edit: 6th June 2022
+    Reason: Update GHB address
+    Context: ianfromdover github username change
 #>
 
 # NAVIGATION
@@ -122,7 +122,7 @@ function GLog {
 }
 
 function GHub {
-    Start-Process https://github.com/ian-from-dover?tab=repositories
+    Start-Process https://github.com/ianfromdover?tab=repositories
 }
 
 # APPS

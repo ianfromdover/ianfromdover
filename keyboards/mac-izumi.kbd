@@ -1,16 +1,13 @@
-;; Ian's Personal number-row-symbol combined for Mac, adapted from
-;; Copyright 2021 Manna Harbour
+;; Ian's Personal number-row-symbol combined for Mac, adapted from Miryoku
+;; Copyright 2021 Manna Harbour, Ian Hong.
 ;; github.com/manna-harbour/miryoku
-
-;; WARNING! THIS IS CURRENTLY NOT FUNCTIONAL ON THE APPLE KEYBOARD!
-;; fix: go previous version and get apple.kbd
+;; repeated del on mac is fnlayer-bspc
 
 ;; Todo:
-;; mac-based copy paste etc
 ;; terminal button
-;; repeat key for arrow keys & bspc
-;; permanent switch-layer for qwerty for wasd and vim
+;; perfected the rest of the operations on 9 June.
 ;; https://github.com/kmonad/kmonad/blob/master/keymap/tutorial.kbd
+;; https://github.com/kmonad/kmonad/blob/master/src/KMonad/Keyboard/Keycode.hs
        
 (defcfg
   input  (iokit-name)
@@ -27,55 +24,61 @@
 )
 
 (defalias
-  q #(C-c lctl) ;; press C-c in term after. cant automate.
+  q #(C-c met) ;; kill kmonad. press C-c in term after. cant automate.
   ck (layer-switch CLMK)
   qt (layer-switch QRTY)
-)
 
-;; removed U_MOUSE
+  hm M-left
+  ed M-right
+  ud M-z
+  rd S-M-z
+  cp M-c
+  pst M-v
+  ct M-x
+)
 
 ;; ----- Base Layers ----- 
 
 (deflayer CLMK
 q	w	f	p	b	j	l	u	y	'
-(tap-hold-next-release 350 a met)	(tap-hold-next-release 350 r alt)	(tap-hold-next-release 350 s ctl)	(tap-hold-next-release 350 t sft)	g	m	(tap-hold-next-release 350 n sft)	(tap-hold-next-release 350 e ctl)	(tap-hold-next-release 350 i alt)	(tap-hold-next-release 350 o met)
+(tap-hold-next-release 250 a ctl)	(tap-hold-next-release 250 r alt)	(tap-hold-next-release 250 s met)	(tap-hold-next-release 250 t sft)	g	m	(tap-hold-next-release 250 n sft)	(tap-hold-next-release 250 e met)	(tap-hold-next-release 250 i alt)	(tap-hold-next-release 250 o ctl)
 z   x	c	d	v	k	h	,	.   /
-(tap-hold-next-release 350 esc (layer-toggle MUS))	(tap-hold-next-release 350 bspc (layer-toggle NAV))	(tap-hold-next-release 350 tab (layer-switch QRTY))	ent (tap-hold-next-release 350 spc (layer-toggle NSM))	(tap-hold-next-release 350 del (layer-toggle FUN))
+(tap-hold-next-release 350 esc (layer-toggle MUS))	(tap-hold-next-release 250 bspc (layer-toggle NAV))	(tap-hold 250 tab `)	ent (tap-hold-next-release 250 spc (layer-toggle NSM))	(tap-hold-next-release 250 del (layer-toggle FUN))
 )
 
 (deflayer QRTY
 q	w	e	r	t	y	u	i	o	p
-a   s   d   f  	g	h	(tap-hold-next-release 350 j sft)	(tap-hold-next-release 350 k ctl)	(tap-hold-next-release 350 l alt)	(tap-hold-next-release 350 ' met)
+a   s   d   f  	g	h	(tap-hold-next-release 250 j sft)	(tap-hold-next-release 250 k met)	(tap-hold-next-release 250 l alt)	(tap-hold-next-release 250 ' ctl)
 z	x	c	v	b	n	m	,	.   /
-(tap-hold-next-release 350 esc (layer-toggle MUS))	(tap-hold-next-release 350 bspc (layer-toggle NAV))	(tap-hold-next-release 350 tab (layer-switch CLMK))	ent (tap-hold-next-release 350 spc (layer-toggle NSM))	(tap-hold-next-release 350 del (layer-toggle FUN))
+(tap-hold-next-release 350 esc (layer-toggle MUS))	(tap-hold-next-release 250 bspc (layer-toggle NAV))	(tap-hold 250 tab `)	ent (tap-hold-next-release 250 spc (layer-toggle NSM))	(tap-hold-next-release 250 del (layer-toggle FUN))
 )
 
 ;; ----- Top Layers ----- 
 
 (deflayer NAV
-@q  @ck	@qt XX  XX	C-y	    C-v	    C-c	    C-x	    C-z
-met	alt	ctl	sft	XX	caps	left	down	up	    right
-XX  XX  XX  XX  XX  ins	    home	pgdn	pgup	end
+@q  @ck	@qt caps XX	@rd	    @pst    @cp     @ct     @ud
+ctl	alt	met sft	XX	XX  	left	down	up	    right
+XX  XX  XX  XX  XX  ins	    @hm 	pgdn	pgup	@ed
 		XX	XX	XX	ent	spc	del
 )
 
 (deflayer NSM
 1   2   3   4   5   6   7   8   9   0
-=	\(	\)	{	}	:	;	ctl	alt	\\
-!   @   #   $   %   ^   &   *   [   ]
+=	\(	\)	{	}	:	;	ctl	alt	\\  ;; | is shift-num-\
+!   @   A-3 $   %   ^   &   *   [   ]
 		+	.	-	\_	XX	`           ;; ~ is shift-`
 )
 
 (deflayer MUS
 XX	XX  XX  XX  XX  XX  XX	XX	XX	XX
-XX	XX  XX  XX  XX	XX	previoussong	vold	volu	nextsong
+XX	brdn bru XX XX  XX prev	vold volu	nextsong
 XX  XX  XX  XX  XX  XX  XX  XX  XX  XX
 		XX	XX	XX	stopcd	playpause	mute
 )
 
 (deflayer FUN
 f1  f2  f3  f4  f5  f6  f7  f8  f9  f10
-f11	f12 XX	XX	XX	XX	sft	ctl	alt	met
+f11	f12 XX	XX	XX	XX	sft	ctl	alt	ctl
 XX	XX	XX	XX	XX	XX	XX  XX  XX  XX
 		comp	bspc	tab	XX	XX	XX
 )

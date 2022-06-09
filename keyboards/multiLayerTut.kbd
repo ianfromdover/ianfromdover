@@ -17,7 +17,7 @@
 ;;     return A;
 
 ;; tap-hold
-;;   if (held & otherKeyPresed & timeOver):
+;;   if (held & (otherKeyPresed | timeOver):
 ;;     return B;
 ;;   else if (tapped):
 ;;     return A;

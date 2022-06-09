@@ -2,6 +2,9 @@
 ;; Copyright 2021 Manna Harbour
 ;; github.com/manna-harbour/miryoku
 
+;; WARNING! THIS IS CURRENTLY NOT FUNCTIONAL ON THE APPLE KEYBOARD!
+;; fix: go previous version and get apple.kbd
+
 ;; Todo:
 ;; mac-based copy paste etc
 ;; terminal button

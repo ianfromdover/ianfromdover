@@ -4,26 +4,43 @@
 3. for `mii.kbd`, quit by selecting this terminal again, do NAV-q, and type Ctrl-c again to cancel the kmonad process
 
 # Layers and maps
-### Izumi
-All
+## Izumi
+### All
 ![all](./imgs/all.png)
+
 *Work in progress*
 
 Other Layers
+
 *Work in progress*
 
 ### From Miryoku
+
 All
+
 ![all](https://github.com/manna-harbour/miryoku/raw/master/data/layers/miryoku-kle-reference.png)
+
 Base
+
 ![base](https://github.com/manna-harbour/miryoku/raw/master/data/layers/miryoku-kle-base.png)
+
 Nav
+
 ![nav](https://github.com/manna-harbour/miryoku/raw/master/data/layers/miryoku-kle-nav.png)
+
+Media
+
 ![media](https://github.com/manna-harbour/miryoku/raw/master/data/layers/miryoku-kle-media.png)
+
+Func
+
 ![func](https://github.com/manna-harbour/miryoku/raw/master/data/layers/miryoku-kle-fun.png)
 
+
+
+
 # How to build Miryoku
-- Get Miryoku from [my own repo. the keyboard layouts are already in there](https://github.com/ianfromdover/miryoku_kmonad), and get KMonad from [its original repo](https://github.com/kmonad/kmonad)
+- Get Miryoku from [its original repo](https://github.com/kmonad/kmonad), and get KMonad from [its original repo](https://github.com/kmonad/kmonad)
 
 
 # Windows

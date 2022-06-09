@@ -1,16 +1,38 @@
 # Running Miryoku
 1. Simply navigate to this folder
 2. use the `kmonad.exe` to run any .kbd file
-3. for `mii.kbd`, quit by selecting this terminal again, do NAV-q, and type Ctrl-c again to cancel the kmonad process
+3. for `izumi.kbd`, quit by selecting this terminal again, do NAV-q, and type Ctrl-c again to cancel the kmonad process
 
-# Layers and maps
-## Izumi
+# Izumi Keyboard Map
 ### All
 ![all](./imgs/all.png)
 
-*Work in progress*
+### Base - Colemak DH Matrix
 
-Other Layers
+![base]()
+
+### Qwerty
+
+This layer is for Unity's WASD and Vim (until kmonad gets repeat key support). For now, the emulated arrow keys suffice for navigation.
+
+![qwerty]()
+
+### Numbers and Symbols
+
+![nsm]()
+
+### Navigation
+
+![nav]()
+
+### Media
+
+![media]()
+
+### Function
+
+![func]()
+
 
 *Work in progress*
 

@@ -39,10 +39,10 @@ alias ghb="open https://github.com" # change this to use the push address of git
 
 # Miryoku and KMonad
 alias kmonad="/Users/base/Documents/gh/kmonad/.stack-work/install/x86_64-osx/9f984d0d37b664e38914834423db2b495401b310152614c196b54f87b1af978b/8.10.7/bin/kmonad"
-miryoku () {
-    sudo kmonad /Users/base/Documents/gh/miryoku_kmonad/src/build/mac_miryoku.kbd
+izumiKeyboard () {
+    sudo kmonad /Users/base/Documents/gh/ian-from-dover/keyboards/mac-izumi.kbd
 }
-alias mr="miryoku"
+alias iz="izumiKeyboard"
 
 
 # APPS

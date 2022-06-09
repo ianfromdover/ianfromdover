@@ -1,11 +1,10 @@
-;; Ian's Personal number-row-symbol combined for Mac, adapted from Miryoku
-;; Copyright 2021 Manna Harbour, Ian Hong.
+;; Izumi Layout for Mac, adapted from Miryoku
+;; Copyright 2021 Manna Harbour, Ian Hong
 ;; github.com/manna-harbour/miryoku
 ;; repeated del on mac is fnlayer-bspc
 
 ;; Todo:
-;; terminal button
-;; perfected the rest of the operations on 9 June.
+;; add a 'launch terminal' button
 ;; https://github.com/kmonad/kmonad/blob/master/keymap/tutorial.kbd
 ;; https://github.com/kmonad/kmonad/blob/master/src/KMonad/Keyboard/Keycode.hs
        
@@ -20,14 +19,16 @@
   esc 1 2 3 4 8 9 0 - =
   tab q w e r i o p [ ]
   caps a s d f k l ; ' ent
-                x c v n m ,
+        x c v n m ,
 )
 
 (defalias
-  q #(C-c met) ;; kill kmonad. press C-c in term after. cant automate.
+  q #(C-c met) ;; kill kmonad. select the terminal and nav-Q
   ck (layer-switch CLMK)
   qt (layer-switch QRTY)
 
+  ;; Macs don't have working copy-paste.
+  ;; All these are for the NAV layer.
   hm M-left
   ed M-right
   ud M-z
@@ -64,7 +65,7 @@ XX  XX  XX  XX  XX  ins	    @hm 	pgdn	pgup	@ed
 
 (deflayer NSM
 1   2   3   4   5   6   7   8   9   0
-=	\(	\)	{	}	:	;	ctl	alt	\\  ;; | is shift-num-\
+=	\(	\)	{	}	:	;	met	alt	\\  ;; | is shift-num-\
 !   @   A-3 $   %   ^   &   *   [   ]
 		+	.	-	\_	XX	`           ;; ~ is shift-`
 )
@@ -78,7 +79,7 @@ XX  XX  XX  XX  XX  XX  XX  XX  XX  XX
 
 (deflayer FUN
 f1  f2  f3  f4  f5  f6  f7  f8  f9  f10
-f11	f12 XX	XX	XX	XX	sft	ctl	alt	ctl
+f11	f12 XX	XX	XX	XX	sft	met	alt	ctl
 XX	XX	XX	XX	XX	XX	XX  XX  XX  XX
 		comp	bspc	tab	XX	XX	XX
 )

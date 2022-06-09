@@ -1,9 +1,12 @@
-# Running Miryoku
-1. Simply navigate to this folder
-2. use the `kmonad.exe` to run any .kbd file
-3. for `izumi.kbd`, quit by selecting this terminal again, do NAV-q, and type Ctrl-c again to cancel the kmonad process
+# The Izumi Layout
 
-# Izumi Keyboard Map
+*Izumi is a 36-key layout. Taking Colemak DH Matrix and Miryoku's home-row modifiers as a base, 
+Izumi halves the number of layers in the layout, making it easier to learn. 
+It also moves the number row back to the top of the keyboard, 
+as opposed to the number pad (that Ian wasn't used to). The navigation layer
+offers useful shortcuts like home and end, along with copy and paste.
+My favourite feature is controlling music directly from the home row.*
+
 ### All
 ![all](./imgs/all.png)
 
@@ -14,6 +17,8 @@
 ### Qwerty
 
 This layer is for Unity's WASD and Vim (until kmonad gets repeat key support). For now, the emulated arrow keys suffice for navigation.
+
+*Work in progress*
 
 ![qwerty]()
 
@@ -33,8 +38,11 @@ This layer is for Unity's WASD and Vim (until kmonad gets repeat key support). F
 
 ![func]()
 
+# Running the Izumi Layout
+1. Simply navigate to this folder
+2. use the `kmonad.exe` to run any .kbd file
+3. for `izumi.kbd`, quit by selecting this terminal again, do NAV-q, and type Ctrl-c again to cancel the kmonad process
 
-*Work in progress*
 
 ### From Miryoku
 

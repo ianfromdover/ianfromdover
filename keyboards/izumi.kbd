@@ -34,16 +34,16 @@
 
 (deflayer CLMK
 q	w	f	p	b	j	l	u	y	'
-(tap-hold-next-release 400 a met)	(tap-hold-next-release 400 r alt)	(tap-hold-next-release 400 s ctl)	(tap-hold-next-release 400 t sft)	g	m	(tap-hold-next-release 400 n sft)	(tap-hold-next-release 400 e ctl)	(tap-hold-next-release 400 i alt)	(tap-hold-next-release 400 o met)
+(tap-hold-next-release 350 a met)	(tap-hold-next-release 350 r alt)	(tap-hold-next-release 350 s ctl)	(tap-hold-next-release 350 t sft)	g	m	(tap-hold-next-release 350 n sft)	(tap-hold-next-release 350 e ctl)	(tap-hold-next-release 350 i alt)	(tap-hold-next-release 350 o met)
 z   x	c	d	v	k	h	,	.   /
-(tap-hold-next-release 400 esc (layer-toggle MUS))	(tap-hold-next-release 400 bspc (layer-toggle NAV))	(tap-hold-next-release 400 tab (layer-switch QRTY))	ent (tap-hold-next-release 400 spc (layer-toggle NSM))	(tap-hold-next-release 400 del (layer-toggle FUN))
+(tap-hold-next-release 350 esc (layer-toggle MUS))	(tap-hold-next-release 350 bspc (layer-toggle NAV))	(tap-hold-next-release 350 tab (layer-switch QRTY))	ent (tap-hold-next-release 350 spc (layer-toggle NSM))	(tap-hold-next-release 350 del (layer-toggle FUN))
 )
 
 (deflayer QRTY
 q	w	e	r	t	y	u	i	o	p
-a   s   d   f  	g	h	(tap-hold-next-release 400 j sft)	(tap-hold-next-release 400 k ctl)	(tap-hold-next-release 400 l alt)	(tap-hold-next-release 400 ' met)
+a   s   d   f  	g	h	(tap-hold-next-release 350 j sft)	(tap-hold-next-release 350 k ctl)	(tap-hold-next-release 350 l alt)	(tap-hold-next-release 350 ' met)
 z	x	c	v	b	n	m	,	.   /
-(tap-hold-next-release 400 esc (layer-toggle MUS))	(tap-hold-next-release 400 bspc (layer-toggle NAV))	(tap-hold-next-release 400 tab (layer-switch CLMK))	ent (tap-hold-next-release 400 spc (layer-toggle NSM))	(tap-hold-next-release 400 del (layer-toggle FUN))
+(tap-hold-next-release 350 esc (layer-toggle MUS))	(tap-hold-next-release 350 bspc (layer-toggle NAV))	(tap-hold-next-release 350 tab (layer-switch CLMK))	ent (tap-hold-next-release 350 spc (layer-toggle NSM))	(tap-hold-next-release 350 del (layer-toggle FUN))
 )
 
 ;; ----- Top Layers ----- 

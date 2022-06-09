@@ -4,8 +4,8 @@ If you only want this user to execute this, save under
 If you want it to be global, save under
 - echo $PsHome
 
-    Last Edit: 6th June 2022
-    Reason: Update GHB address
+    Last Edit: 9th June 2022
+    Reason: Change miryoku to izumi shortcut
     Context: ianfromdover github username change
 #>
 
@@ -128,10 +128,10 @@ function GHub {
 # APPS
 New-Alias t notepad.exe
 # New-Alias p python3
-New-Alias kmonad 'C:\Program Files\kmonad\.stack-work\install\f9de1b14\bin\kmonad.exe'
-New-Alias mr Miryoku
+New-Alias kmonad 'C:\Users\Ian Hong\Desktop\gh\ian-from-dover\keyboards\kmonad-0.4.1-win.exe'
+New-Alias iz IzumiKeyboard
 
-function Miryoku {
-    kmonad 'C:\Users\Ian Hong\Desktop\gh\miryoku_kmonad\src\build\win_miryoku.kbd'
+function IzumiKeyboard {
+ kmonad 'C:\Users\Ian Hong\Desktop\gh\ian-from-dover\keyboards\izumi.kbd'
 }
 

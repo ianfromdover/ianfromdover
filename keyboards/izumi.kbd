@@ -1,0 +1,78 @@
+;; Ian's Personal number-row-symbol combined for Windows, adapted from
+;; Copyright 2021 Manna Harbour
+;; github.com/manna-harbour/miryoku
+
+;; Todo:
+;; terminal button
+;; repeat key for arrow keys & bspc
+;; permanent switch-layer for qwerty for wasd and vim
+;; https://github.com/kmonad/kmonad/blob/master/keymap/tutorial.kbd
+       
+(defcfg
+  input (low-level-hook)
+  output (send-event-sink)
+  fallthrough false
+)
+
+;; separated hands, no reverse angle
+(defsrc
+  esc 1 2 3 4 8 9 0 - =
+  tab q w e r i o p [ ]
+  caps a s d f k l ; ' ent
+                x c v n m ,
+)
+
+(defalias
+  q #(C-c lctl) ;; press C-c in term after. cant automate.
+  ck (layer-switch CLMK)
+  qt (layer-switch QRTY)
+)
+
+;; removed U_MOUSE
+
+;; ----- Base Layers ----- 
+
+(deflayer CLMK
+q	w	f	p	b	j	l	u	y	'
+(tap-hold-next-release 400 a met)	(tap-hold-next-release 400 r alt)	(tap-hold-next-release 400 s ctl)	(tap-hold-next-release 400 t sft)	g	m	(tap-hold-next-release 400 n sft)	(tap-hold-next-release 400 e ctl)	(tap-hold-next-release 400 i alt)	(tap-hold-next-release 400 o met)
+z   x	c	d	v	k	h	,	.   /
+(tap-hold-next-release 400 esc (layer-toggle MUS))	(tap-hold-next-release 400 bspc (layer-toggle NAV))	(tap-hold-next-release 400 tab (layer-switch QRTY))	ent (tap-hold-next-release 400 spc (layer-toggle NSM))	(tap-hold-next-release 400 del (layer-toggle FUN))
+)
+
+(deflayer QRTY
+q	w	e	r	t	y	u	i	o	p
+a   s   d   f  	g	h	(tap-hold-next-release 400 j sft)	(tap-hold-next-release 400 k ctl)	(tap-hold-next-release 400 l alt)	(tap-hold-next-release 400 ' met)
+z	x	c	v	b	n	m	,	.   /
+(tap-hold-next-release 400 esc (layer-toggle MUS))	(tap-hold-next-release 400 bspc (layer-toggle NAV))	(tap-hold-next-release 400 tab (layer-switch CLMK))	ent (tap-hold-next-release 400 spc (layer-toggle NSM))	(tap-hold-next-release 400 del (layer-toggle FUN))
+)
+
+;; ----- Top Layers ----- 
+
+(deflayer NAV
+@q  @ck	@qt XX  XX	C-y	    C-v	    C-c	    C-x	    C-z
+met	alt	ctl	sft	XX	caps	left	down	up	    right
+XX  XX  XX  XX  XX  ins	    home	pgdn	pgup	end
+		XX	XX	XX	ent	spc	del
+)
+
+(deflayer NSM
+1   2   3   4   5   6   7   8   9   0
+=	\(	\)	{	}	:	;	ctl	alt	\\
+!   @   #   $   %   ^   &   *   [   ]
+		+	.	-	\_	XX	`           ;; ~ is shift-`
+)
+
+(deflayer MUS
+XX	XX  XX  XX  XX  XX  XX	XX	XX	XX
+XX	XX  XX  XX  XX	XX	previoussong	vold	volu	nextsong
+XX  XX  XX  XX  XX  XX  XX  XX  XX  XX
+		XX	XX	XX	stopcd	playpause	mute
+)
+
+(deflayer FUN
+f1  f2  f3  f4  f5  f6  f7  f8  f9  f10
+f11	f12 XX	XX	XX	XX	sft	ctl	alt	met
+XX	XX	XX	XX	XX	XX	XX  XX  XX  XX
+		comp	bspc	tab	XX	XX	XX
+)
+

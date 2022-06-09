@@ -44,14 +44,14 @@
 q	w	f	p	b	j	l	u	y	'
 (tap-hold-next-release 250 a ctl)	(tap-hold-next-release 250 r alt)	(tap-hold-next-release 250 s met)	(tap-hold-next-release 250 t sft)	g	m	(tap-hold-next-release 250 n sft)	(tap-hold-next-release 250 e met)	(tap-hold-next-release 250 i alt)	(tap-hold-next-release 250 o ctl)
 z   x	c	d	v	k	h	,	.   /
-(tap-hold-next-release 350 esc (layer-toggle MUS))	(tap-hold-next-release 250 bspc (layer-toggle NAV))	(tap-hold 250 tab `)	ent (tap-hold-next-release 250 spc (layer-toggle NSM))	(tap-hold-next-release 250 del (layer-toggle FUN))
+(tap-hold-next-release 350 esc (layer-toggle MUS))	(tap-hold-next-release 250 bspc (layer-toggle NAV))	tab	ent (tap-hold-next-release 250 spc (layer-toggle NSM))	(tap-hold-next-release 250 del (layer-toggle FUN))
 )
 
 (deflayer QRTY
 q	w	e	r	t	y	u	i	o	p
 a   s   d   f  	g	h	(tap-hold-next-release 250 j sft)	(tap-hold-next-release 250 k met)	(tap-hold-next-release 250 l alt)	(tap-hold-next-release 250 ' ctl)
 z	x	c	v	b	n	m	,	.   /
-(tap-hold-next-release 350 esc (layer-toggle MUS))	(tap-hold-next-release 250 bspc (layer-toggle NAV))	(tap-hold 250 tab `)	ent (tap-hold-next-release 250 spc (layer-toggle NSM))	(tap-hold-next-release 250 del (layer-toggle FUN))
+(tap-hold-next-release 350 esc (layer-toggle MUS))	(tap-hold-next-release 250 bspc (layer-toggle NAV))	tab	ent (tap-hold-next-release 250 spc (layer-toggle NSM))	(tap-hold-next-release 250 del (layer-toggle FUN))
 )
 
 ;; ----- Top Layers ----- 
@@ -63,11 +63,12 @@ XX  XX  XX  XX  XX  ins	    @hm 	pgdn	pgup	@ed
 		XX	XX	XX	ent	spc	del
 )
 
+;; use Shift-Num =, `, -, and backslash to get +, ~, _ and |.
 (deflayer NSM
 1   2   3   4   5   6   7   8   9   0
-=	\(	\)	{	}	:	;	met	alt	\\  ;; | is shift-num-\
+{	\(	\)	}	=	:	;	met	alt	\\
 !   @   A-3 $   %   ^   &   *   [   ]
-		+	.	-	\_	XX	`           ;; ~ is shift-`
+		`	.	-	XX	XX	XX
 )
 
 (deflayer MUS

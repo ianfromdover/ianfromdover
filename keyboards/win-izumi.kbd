@@ -15,8 +15,8 @@
   fallthrough false
 )
 
-;; separated hands, no reverse angle
 (defsrc
+;; separated hands, no reverse angle
   esc 1 2 3 4 8 9 0 - =
   tab q w e r i o p [ ]
   caps a s d f k l ; ' ent
@@ -29,22 +29,20 @@
   qt (layer-switch QRTY)
 )
 
-;; removed U_MOUSE
-
 ;; ----- Base Layers ----- 
 
 (deflayer CLMK
 q	w	f	p	b	j	l	u	y	'
 (tap-hold-next-release 250 a met)	(tap-hold-next-release 250 r alt)	(tap-hold-next-release 250 s ctl)	(tap-hold-next-release 250 t sft)	g	m	(tap-hold-next-release 250 n sft)	(tap-hold-next-release 250 e ctl)	(tap-hold-next-release 250 i alt)	(tap-hold-next-release 250 o met)
 z   x	c	d	v	k	h	,	.   /
-(tap-hold-next-release 350 esc (layer-toggle MUS))	(tap-hold-next-release 250 bspc (layer-toggle NAV))	(tap-hold 250 tab `)	ent (tap-hold-next-release 250 spc (layer-toggle NSM))	(tap-hold-next-release 250 del (layer-toggle FUN))
+(tap-hold-next-release 350 esc (layer-toggle MUS))	(tap-hold-next-release 250 bspc (layer-toggle NAV))	tab	ent (tap-hold-next-release 250 spc (layer-toggle NSM))	(tap-hold-next-release 250 del (layer-toggle FUN))
 )
 
 (deflayer QRTY
 q	w	e	r	t	y	u	i	o	p
 a   s   d   f  	g	h	(tap-hold-next-release 250 j sft)	(tap-hold-next-release 250 k ctl)	(tap-hold-next-release 250 l alt)	(tap-hold-next-release 250 ' met)
 z	x	c	v	b	n	m	,	.   /
-(tap-hold-next-release 350 esc (layer-toggle MUS))	(tap-hold-next-release 250 bspc (layer-toggle NAV))	(tap-hold 250 tab `)	ent (tap-hold-next-release 250 spc (layer-toggle NSM))	(tap-hold-next-release 250 del (layer-toggle FUN))
+(tap-hold-next-release 350 esc (layer-toggle MUS))	(tap-hold-next-release 250 bspc (layer-toggle NAV))	tab	ent (tap-hold-next-release 250 spc (layer-toggle NSM))	(tap-hold-next-release 250 del (layer-toggle FUN))
 )
 
 ;; ----- Top Layers ----- 
@@ -57,10 +55,12 @@ XX  XX  XX  XX  XX  ins	    home	pgdn	pgup	end
 )
 
 (deflayer NSM
+;; use Shift-Num =, `, -, and backslash to get +, ~, _ and |.
+
 1   2   3   4   5   6   7   8   9   0
-=	\(	\)	{	}	:	;	ctl	alt	\\
+{	\(	\)	}	=	:	;	ctl	alt	\\
 !   @   #   $   %   ^   &   *   [   ]
-		+	.	-	\_	XX	`           ;; ~ is shift-`
+		`	.	-	XX	XX	XX
 )
 
 (deflayer MUS

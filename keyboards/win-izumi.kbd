@@ -65,7 +65,7 @@ XX  XX  XX  XX  XX  ins	    home	pgdn	pgup	end
 
 (deflayer MUS
 XX	XX  XX  XX  XX  XX  XX	XX	XX	XX
-XX	brdn bru XX XX	XX prev vold volu	nextsong
+XX brdn bru XX XX XX previoussong vold volu nextsong
 XX  XX  XX  XX  XX  XX  XX  XX  XX  XX
 		XX	XX	XX	stopcd	playpause	mute
 )

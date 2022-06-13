@@ -40,7 +40,7 @@ z   x	c	d	v	k	h	,	.   /
 
 (deflayer QRTY
 q	w	e	r	t	y	u	i	o	p
-a   s   d   f  	g	h	(tap-hold-next-release 250 j sft)	(tap-hold-next-release 250 k ctl)	(tap-hold-next-release 250 l alt)	(tap-hold-next-release 250 ' met)
+(tap-hold-next-release 250 a met)   (tap-hold-next-release 250 s alt)   (tap-hold-next-release 250 d ctl)   (tap-hold-next-release 250 f sft)  	g	h	(tap-hold-next-release 250 j sft)	(tap-hold-next-release 250 k ctl)	(tap-hold-next-release 250 l alt)	(tap-hold-next-release 250 ' met)
 z	x	c	v	b	n	m	,	.   /
 (tap-hold-next-release 350 esc (layer-toggle MUS))	(tap-hold-next-release 250 bspc (layer-toggle NAV))	tab	ent (tap-hold-next-release 250 spc (layer-toggle NSM))	(tap-hold-next-release 250 del (layer-toggle FUN))
 )

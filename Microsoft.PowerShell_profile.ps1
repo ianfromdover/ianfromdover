@@ -1,12 +1,12 @@
 <#
+    Author: Ian Hong
+    Last Edit: 13th June 2022
+    Reason: Change miryoku to izumi shortcut
+    Context: ianfromdover github username change
 If you only want this user to execute this, save under
 - echo $profile
 If you want it to be global, save under
 - echo $PsHome
-
-    Last Edit: 9th June 2022
-    Reason: Change miryoku to izumi shortcut
-    Context: ianfromdover github username change
 #>
 
 # NAVIGATION
@@ -114,7 +114,7 @@ function GBranch {
 }
 
 function GChkMaster {
-    git checkout master
+    git checkout main
 }
 
 function GLog {

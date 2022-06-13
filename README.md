@@ -52,10 +52,6 @@ My name is Ian and I'm studying Computer Science at NUS. I hope to be a UX Desig
   </a> 
 </p>
 
-<br>
-<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=ian-from-dover&show_icons=true&title_color=0061ff&bg_color=ffffff&hide_border=true&locale=en" alt="ian-from-dover" />
-</p>
-
 <p align="left"> 
   <img src="https://komarev.com/ghpvc/?username=ian-from-dover&label=Profile%20views&color=77bb41&style=flat" alt="ian-from-dover" /> 
 </p>

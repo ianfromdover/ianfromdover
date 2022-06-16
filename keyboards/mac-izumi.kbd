@@ -4,7 +4,7 @@
 ;; repeated del on mac is fnlayer-bspc
 
 ;; Todo:
-;; add a 'launch terminal' button
+;; add a 'launch/select terminal window' button
 ;; https://github.com/kmonad/kmonad/blob/master/keymap/tutorial.kbd
 ;; https://github.com/kmonad/kmonad/blob/master/src/KMonad/Keyboard/Keycode.hs
        
@@ -14,12 +14,12 @@
   fallthrough false
 )
 
-;; separated hands, no reverse angle
 (defsrc
+  ;; separated hands, no reverse angle
   esc 1 2 3 4 8 9 0 - =
   tab q w e r i o p [ ]
   caps a s d f k l ; ' ent
-        x c v n m ,
+        x c v m , .
 )
 
 (defalias
@@ -44,14 +44,15 @@
 q	w	f	p	b	j	l	u	y	'
 (tap-hold-next-release 250 a ctl)	(tap-hold-next-release 250 r alt)	(tap-hold-next-release 250 s met)	(tap-hold-next-release 250 t sft)	g	m	(tap-hold-next-release 250 n sft)	(tap-hold-next-release 250 e met)	(tap-hold-next-release 250 i alt)	(tap-hold-next-release 250 o ctl)
 z   x	c	d	v	k	h	,	.   /
-(tap-hold-next-release 350 esc (layer-toggle MUS))	(tap-hold-next-release 250 bspc (layer-toggle NAV))	tab	ent (tap-hold-next-release 250 spc (layer-toggle NSM))	(tap-hold-next-release 250 del (layer-toggle FUN))
+(tap-hold-next-release 350 esc (layer-toggle MUS))	(tap-hold-next-release 250 bspc (layer-toggle NAV))	(tap-hold-next-release 250 tab sft)	ent (tap-hold-next-release 250 spc (layer-toggle NSM))	(tap-hold-next-release 250 del (layer-toggle FUN))
 )
 
 (deflayer QRTY
+;; The meta keys on the LH are moved 1 row down to accomodate holding down WASD in Unity and games. If they remained the same, when i want to hold A to go left, it triggers the meta key instead.
 q	w	e	r	t	y	u	i	o	p
-a   s   d   f  	g	h	(tap-hold-next-release 250 j sft)	(tap-hold-next-release 250 k met)	(tap-hold-next-release 250 l alt)	(tap-hold-next-release 250 ' ctl)
-z	x	c	v	b	n	m	,	.   /
-(tap-hold-next-release 350 esc (layer-toggle MUS))	(tap-hold-next-release 250 bspc (layer-toggle NAV))	tab	ent (tap-hold-next-release 250 spc (layer-toggle NSM))	(tap-hold-next-release 250 del (layer-toggle FUN))
+a   s   d   f   g	h	(tap-hold-next-release 250 j sft)	(tap-hold-next-release 250 k met)	(tap-hold-next-release 250 l alt)	(tap-hold-next-release 250 ' ctl)
+(tap-hold-next-release 250 z ctl)   (tap-hold-next-release 250 x alt)   (tap-hold-next-release 250 c met)   (tap-hold-next-release 250 v sft)  	b   n   m   ,   .   /
+(tap-hold-next-release 350 esc (layer-toggle MUS))	(tap-hold-next-release 250 bspc (layer-toggle NAV))	(tap-hold-next-release 250 tab sft)	ent (tap-hold-next-release 250 spc (layer-toggle NSM))	(tap-hold-next-release 250 del (layer-toggle FUN))
 )
 
 ;; ----- Top Layers ----- 
@@ -63,8 +64,9 @@ XX  XX  XX  XX  XX  ins	    @hm 	pgdn	pgup	@ed
 		XX	XX	XX	ent	spc	del
 )
 
-;; use Shift-Num =, `, -, and backslash to get +, ~, _ and |.
 (deflayer NSM
+;; use Shift-Num =, `, -, and backslash to get +, ~, _ and |.
+
 1   2   3   4   5   6   7   8   9   0
 {	\(	\)	}	=	:	;	met	alt	\\
 !   @   A-3 $   %   ^   &   *   [   ]

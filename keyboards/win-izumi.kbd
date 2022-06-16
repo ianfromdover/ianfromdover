@@ -5,7 +5,7 @@
 ;; differences from Mac: swap meta and control, and the copy pastes are different
 
 ;; Todo:
-;; add a 'launch terminal' button
+;; add a 'launch/select powershell window' button
 ;; https://github.com/kmonad/kmonad/blob/master/keymap/tutorial.kbd
 ;; https://github.com/kmonad/kmonad/blob/master/src/KMonad/Keyboard/Keycode.hs
        
@@ -16,7 +16,7 @@
 )
 
 (defsrc
-;; separated hands, no reverse angle
+  ;; separated hands, no reverse angle
   esc 1 2 3 4 8 9 0 - =
   tab q w e r i o p [ ]
   caps a s d f k l ; ' ent
@@ -38,8 +38,8 @@ z   x	c	d	v	k	h	,	.   /
 (tap-hold-next-release 350 esc (layer-toggle MUS))	(tap-hold-next-release 250 bspc (layer-toggle NAV))	(tap-hold-next-release 250 tab sft)	ent (tap-hold-next-release 250 spc (layer-toggle NSM))	(tap-hold-next-release 250 del (layer-toggle FUN))
 )
 
-;; The meta keys on the LH are moved 1 row down to accomodate holding down WASD in Unity and games. If they remained the same, when i want to hold A to go left, it triggers the meta key instead.
 (deflayer QRTY
+;; The meta keys on the LH are moved 1 row down to accomodate holding down WASD in Unity and games. If they remained the same, when i want to hold A to go left, it triggers the meta key instead.
 q	w	e	r	t	y	u	i	o	p
 a   s   d   f   g	h	(tap-hold-next-release 250 j sft)	(tap-hold-next-release 250 k ctl)	(tap-hold-next-release 250 l alt)	(tap-hold-next-release 250 ' met)
 (tap-hold-next-release 250 z met)   (tap-hold-next-release 250 x alt)   (tap-hold-next-release 250 c ctl)   (tap-hold-next-release 250 v sft)  	b   n   m   ,   .   /

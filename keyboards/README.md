@@ -6,17 +6,16 @@
 - number row is on the top of the keyboard (if you're not used to a number pad)
 - navigation layer has arrow keys, `home`, `end`, `copy`, `paste`, and many useful shortcuts
 - favourite feature: control music volume and playback directly from the home row
+*Work in progress*
 
-### Base - Colemak DH Matrix
-Also known by more avid keyboard enthusiasts as 'alphas'.
+
+### Base(Alphas) - Colemak DH Matrix
 
 ![base](./imgs/base.png)
 
 ### Qwerty
 
-This layer is for Unity's WASD and Vim (until kmonad gets repeat key support). For now, the emulated arrow keys suffice for navigation.
-
-*Work in progress*
+This layer is for Unity's WASD for navigation. 
 
 ![qwerty](./imgs/qwerty.png)
 

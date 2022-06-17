@@ -44,7 +44,7 @@
 q	w	f	p	b	j	l	u	y	'
 (tap-hold-next-release 250 a ctl)	(tap-hold-next-release 250 r alt)	(tap-hold-next-release 250 s met)	(tap-hold-next-release 250 t sft)	g	m	(tap-hold-next-release 250 n sft)	(tap-hold-next-release 250 e met)	(tap-hold-next-release 250 i alt)	(tap-hold-next-release 250 o ctl)
 z   x	c	d	v	k	h	,	.   /
-(tap-hold-next-release 350 esc (layer-toggle MUS))	(tap-hold-next-release 250 bspc (layer-toggle NAV))	(tap-hold-next-release 250 tab sft)	ent (tap-hold-next-release 250 spc (layer-toggle NSM))	(tap-hold-next-release 250 del (layer-toggle FUN))
+(tap-hold-next-release 350 esc (layer-toggle MED))	(tap-hold-next-release 250 bspc (layer-toggle NAV))	(tap-hold-next-release 250 tab sft)	ent (tap-hold-next-release 250 spc (layer-toggle NSM))	(tap-hold-next-release 250 del (layer-toggle FUN))
 )
 
 (deflayer QRTY
@@ -52,15 +52,15 @@ z   x	c	d	v	k	h	,	.   /
 q	w	e	r	t	y	u	i	o	p
 a   s   d   f   g	h	(tap-hold-next-release 250 j sft)	(tap-hold-next-release 250 k met)	(tap-hold-next-release 250 l alt)	(tap-hold-next-release 250 ' ctl)
 (tap-hold-next-release 250 z ctl)   (tap-hold-next-release 250 x alt)   (tap-hold-next-release 250 c met)   (tap-hold-next-release 250 v sft)  	b   n   m   ,   .   /
-(tap-hold-next-release 350 esc (layer-toggle MUS))	(tap-hold-next-release 250 bspc (layer-toggle NAV))	(tap-hold-next-release 250 tab sft)	ent (tap-hold-next-release 250 spc (layer-toggle NSM))	(tap-hold-next-release 250 del (layer-toggle FUN))
+(tap-hold-next-release 350 esc (layer-toggle MED))	(tap-hold-next-release 250 bspc (layer-toggle NAV))	(tap-hold-next-release 250 tab sft)	ent (tap-hold-next-release 250 spc (layer-toggle NSM))	(tap-hold-next-release 250 del (layer-toggle FUN))
 )
 
 ;; ----- Top Layers ----- 
 
 (deflayer NAV
-@q  @ck	@qt caps XX	@rd	    @pst    @cp     @ct     @ud
-ctl	alt	met sft	XX	XX  	left	down	up	    right
-XX  XX  XX  XX  XX  ins	    @hm 	pgdn	pgup	@ed
+@q  @ck	@qt caps ins XX XX  XX  XX XX
+@ud @ct @cp @pst @rd XX left down	up	    right
+XX  XX  XX  XX   XX  XX @hm pgdn	pgup	@ed
 		XX	XX	XX	ent	spc	del
 )
 
@@ -73,8 +73,8 @@ XX  XX  XX  XX  XX  ins	    @hm 	pgdn	pgup	@ed
 		`	.	-	XX	XX	XX
 )
 
-(deflayer MUS
-XX	XX  XX  XX  XX  XX  XX	XX	XX	XX
+(deflayer MED
+XX	bldn blup XX  XX  XX  XX	XX	XX	XX
 XX	brdn bru XX XX  XX prev	vold volu	nextsong
 XX  XX  XX  XX  XX  XX  XX  XX  XX  XX
 		XX	XX	XX	stopcd	playpause	mute

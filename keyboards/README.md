@@ -7,9 +7,6 @@
 - navigation layer has arrow keys, `home`, `end`, `copy`, `paste`, and many useful shortcuts
 - favourite feature: control music volume and playback directly from the home row
 
-### All
-![all](./imgs/all.png)
-
 ### Base - Colemak DH Matrix
 Also known by more avid keyboard enthusiasts as 'alphas'.
 
@@ -21,11 +18,11 @@ This layer is for Unity's WASD and Vim (until kmonad gets repeat key support). F
 
 *Work in progress*
 
-![qwerty]()
+![qwerty](./imgs/qwerty.png)
 
 ### Numbers and Symbols
 
-![nsm](./imgs/num.png)
+![nsm](./imgs/numsym.png)
 
 ### Navigation
 
@@ -37,7 +34,7 @@ This layer is for Unity's WASD and Vim (until kmonad gets repeat key support). F
 
 ### Function
 
-![func]()
+![func](./imgs/fn.png)
 
 # Running the Izumi Layout
 

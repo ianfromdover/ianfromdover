@@ -62,6 +62,7 @@
   pst M-v
   ct M-x
   nap M-tab
+  nw M-`
 )
 
 ;; ----- Base Layers ----- 
@@ -99,8 +100,8 @@ XX      XX      XX      XX      XX          XX      !       @       A-3     XX
 )
 
 (deflayer CODE
-XX	    XX	    XX	    XX	    XX	        &       {       \(      \)      }
-ctl     alt     met     sft     XX          %       0       A-3     *       $
+XX	    XX	    XX	    XX	    XX	        &       A-3     \(      \)      *
+ctl     alt     met     sft     XX          %       {       0       $       }
 XX      XX      XX      XX      XX          :       ;       !       \\      |
                 XX      XX      XX          ent     spc     ~
 )
@@ -115,8 +116,8 @@ XX      XX      XX      XX      XX          XX      f1      f2      f3       XX
 ;; --- RH ---
 
 (deflayer NAV
-@hm     up      @ed     @nap    XX          XX      XX      XX      XX      XX
-left    down    rght    tab     XX          XX      sft     met     alt     ctl
+@hm     up      @ed     @nap    @nw         XX      XX      XX      XX      XX
+left    down    rght    tab     `           XX      sft     met     alt     ctl
 @ud     @ct     @cp     @pst    @rd         XX      spc     XX      XX      XX
                 esc     bspc    @sym        XX      XX      XX
 )

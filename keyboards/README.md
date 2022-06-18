@@ -1,9 +1,7 @@
 # The Izumi Layout
 
 *Izumi is a 36-key layout.* Features: 
-- uses colemak DH matrix and Miryoku's home-row modifiers as a base
-- has half the number of layers Miryoku has, making it easier to learn
-- number row is on the top of the keyboard (if you're not used to a number pad)
+- uses colemak DH matrix and the Miryoku layout as a base
 - navigation layer has arrow keys, `home`, `end`, `copy`, `paste`, and many useful shortcuts
 - favourite feature: control music volume and playback directly from the home row
 *Work in progress*
@@ -19,21 +17,29 @@ This layer is for Unity's WASD for navigation.
 
 ![qwerty](./imgs/qwerty.png)
 
-### Numbers and Symbols
+### Numbers
 
-![nsm](./imgs/numsym.png)
+![num](./imgs/num.png)
+
+### Symbols
+
+![sym](./imgs/sym.png)
+
+### Code
+
+![code](./imgs/code.png)
+
+### Function
+
+![func](./imgs/fn.png)
 
 ### Navigation
 
 ![nav](./imgs/nav.png)
 
-### Media
+### System
 
-![media](./imgs/media.png)
-
-### Function
-
-![func](./imgs/fn.png)
+![system](./imgs/sys.png)
 
 # Running the Izumi Layout
 

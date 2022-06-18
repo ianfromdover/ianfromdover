@@ -7,58 +7,50 @@
 ;;   - copy shortcuts custom
 ;;   - # is A-3
 
-;; Todo:
-;; add a 'launch/select terminal window' button
-;; https://github.com/kmonad/kmonad/blob/master/keymap/tutorial.kbd
-;; https://github.com/kmonad/kmonad/blob/master/src/KMonad/Keyboard/Keycode.hs
-       
 (defcfg
   input  (iokit-name)
   output (kext)
   fallthrough false
+  allow-cmd true
 )
 
 (defsrc
   ;; separated hands, no reverse angle
-  esc 1 2 3 4 8 9 0 - =
-  tab q w e r i o p [ ]
-  caps a s d f k l ; ' ent
-        x c v m , .
+  esc  1 2 3 4     8 9 0 - =
+  tab  q w e r     i o p [ ]
+  caps a s d f     k l ; ' ent
+         x c v     m , .
 )
 
 (defalias
-  ;; arst hold Control Alt Meta Shift
-  ahc (tap-hold-next-release 250 a ctl)
-  rha (tap-hold-next-release 250 r alt)	
-  shm (tap-hold-next-release 250 s met)	
-  ths (tap-hold-next-release 250 t sft)	
+  ;; rs hold Alt Meta 
+  rha (tap-hold-next-release 250 r lalt)	
+  shm (tap-hold-next-release 250 s lmet)	
 
-  ;; neio hold Shift Meta Alt Control
-  nhs (tap-hold-next-release 250 n sft)	
-  ehm (tap-hold-next-release 250 e met)	
-  iha (tap-hold-next-release 250 i alt)	
-  ohc (tap-hold-next-release 250 o ctl)
+  ;; ei hold Meta Alt 
+  ehm (tap-hold-next-release 250 e rmet)	
+  iha (tap-hold-next-release 250 i ralt)	
 
   ;; kl, xc hold Meta Alt for Qwerty
-  khm (tap-hold-next-release 250 k met)	
-  lha (tap-hold-next-release 250 l alt)	
-  xha (tap-hold-next-release 250 l alt)	
-  chm (tap-hold-next-release 250 k met)	
+  khm (tap-hold-next-release 250 k rmet)	
+  lha (tap-hold-next-release 250 l ralt)	
+  xha (tap-hold-next-release 250 l lalt)	
+  chm (tap-hold-next-release 250 k lmet)	
 
   ;; thumb layers
   ecd (tap-hold-next-release 250 esc (layer-toggle CODE))
   bnm (tap-hold-next-release 250 bspc (layer-toggle NUM))
-  sym (tap-hold-next-release 250 sft (layer-toggle SYM)) ;; make tap-sticky
-  tct (tap-hold-next-release 250 ent ctl)
+  sym (tap-hold-next-release 250 del (layer-toggle SYM))
+  sys (tap-hold-next-release 250 ent (layer-toggle SYSTEM))
   nav (tap-hold-next-release 250 spc (layer-toggle NAV))
-  sys (tap-hold-next-release 250 del (layer-toggle SYSTEM))
+  sf (sticky-key 500 lsft)
   fun (tap-hold-next-release 250 XX (layer-toggle FUN))
 
   ;; system functions
   q #(C-c met) ;; kill kmonad. select the terminal and nav-Q
   ck (layer-switch CLMK)
   qt (layer-switch QRTY)
-  ter XX ;; put terminal cmd here
+  ter (cmd-button "open -a Terminal ")
 
   ;; Macs don't have working copy-paste.
   ;; All these are for the NAV layer.
@@ -76,9 +68,9 @@
 
 (deflayer CLMK
 q	    w	    f	    p	    b	        j       l	    u	    y	    '
-@ahc    @rha    @shm    @ths    g           m       @nhs    @ehm    @iha    @ohc
+a       @rha    @shm    t       g           m       n       @ehm    @iha    o
 z       x	    c	    d	    v	        k	    h	    ,	    .       /
-                @ecd    @bnm    @sym        @tct    @nav    @sys
+                @ecd    @bnm    @sym        @sys    @nav    @sf
 )
 
 (deflayer QRTY
@@ -86,7 +78,7 @@ z       x	    c	    d	    v	        k	    h	    ,	    .       /
 q	    w	    e	    r	    t	        y	    u	    i	    o	    p
 a       s       d       f       g	        h	    j       @khm    @lha    '
 z       @xha    @chm    v       b           n       m       ,       .       /
-                @ecd    @bnm    @sym        @tct    @nav    @sys
+                @ecd    @bnm    @sym        @sys    @nav    @sf
 )
 
 ;; ----- Transient Layers ----- num, code, sym, nav, system, fn

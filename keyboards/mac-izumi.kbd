@@ -1,7 +1,11 @@
 ;; Izumi Layout for Mac, adapted from Miryoku
 ;; Copyright 2021 Manna Harbour, Ian Hong
 ;; github.com/manna-harbour/miryoku
-;; repeated del on mac is fnlayer-bspc
+
+;; Mac differences:
+;;   - met and ctl swap positions
+;;   - copy shortcuts custom
+;;   - # is A-3
 
 ;; Todo:
 ;; add a 'launch/select terminal window' button
@@ -23,9 +27,38 @@
 )
 
 (defalias
+  ;; arst hold Control Alt Meta Shift
+  ahc (tap-hold-next-release 250 a ctl)
+  rha (tap-hold-next-release 250 r alt)	
+  shm (tap-hold-next-release 250 s met)	
+  ths (tap-hold-next-release 250 t sft)	
+
+  ;; neio hold Shift Meta Alt Control
+  nhs (tap-hold-next-release 250 n sft)	
+  ehm (tap-hold-next-release 250 e met)	
+  iha (tap-hold-next-release 250 i alt)	
+  ohc (tap-hold-next-release 250 o ctl)
+
+  ;; kl, xc hold Meta Alt for Qwerty
+  khm (tap-hold-next-release 250 k met)	
+  lha (tap-hold-next-release 250 l alt)	
+  xha (tap-hold-next-release 250 l alt)	
+  chm (tap-hold-next-release 250 k met)	
+
+  ;; thumb layers
+  ecd (tap-hold-next-release 250 esc (layer-toggle CODE))
+  bnm (tap-hold-next-release 250 bspc (layer-toggle NUM))
+  sym (tap-hold-next-release 250 sft (layer-toggle SYM)) ;; make tap-sticky
+  tct (tap-hold-next-release 250 ent ctl)
+  nav (tap-hold-next-release 250 spc (layer-toggle NAV))
+  sys (tap-hold-next-release 250 del (layer-toggle SYSTEM))
+  fun (tap-hold-next-release 250 XX (layer-toggle FUN))
+
+  ;; system functions
   q #(C-c met) ;; kill kmonad. select the terminal and nav-Q
   ck (layer-switch CLMK)
   qt (layer-switch QRTY)
+  ter XX ;; put terminal cmd here
 
   ;; Macs don't have working copy-paste.
   ;; All these are for the NAV layer.
@@ -36,54 +69,70 @@
   cp M-c
   pst M-v
   ct M-x
+  nap M-tab
 )
 
 ;; ----- Base Layers ----- 
 
 (deflayer CLMK
-q	w	f	p	b	j	l	u	y	'
-(tap-hold-next-release 250 a ctl)	(tap-hold-next-release 250 r alt)	(tap-hold-next-release 250 s met)	(tap-hold-next-release 250 t sft)	g	m	(tap-hold-next-release 250 n sft)	(tap-hold-next-release 250 e met)	(tap-hold-next-release 250 i alt)	(tap-hold-next-release 250 o ctl)
-z   x	c	d	v	k	h	,	.   /
-(tap-hold-next-release 350 esc (layer-toggle MED))	(tap-hold-next-release 250 bspc (layer-toggle NAV))	(tap-hold-next-release 250 tab sft)	ent (tap-hold-next-release 250 spc (layer-toggle NSM))	(tap-hold-next-release 250 del (layer-toggle FUN))
+q	    w	    f	    p	    b	        j       l	    u	    y	    '
+@ahc    @rha    @shm    @ths    g           m       @nhs    @ehm    @iha    @ohc
+z       x	    c	    d	    v	        k	    h	    ,	    .       /
+                @ecd    @bnm    @sym        @tct    @nav    @sys
 )
 
 (deflayer QRTY
-;; The meta keys on the LH are moved 1 row down to accomodate holding down WASD in Unity and games. If they remained the same, when i want to hold A to go left, it triggers the meta key instead.
-q	w	e	r	t	y	u	i	o	p
-a   s   d   f   g	h	(tap-hold-next-release 250 j sft)	(tap-hold-next-release 250 k met)	(tap-hold-next-release 250 l alt)	(tap-hold-next-release 250 ' ctl)
-(tap-hold-next-release 250 z ctl)   (tap-hold-next-release 250 x alt)   (tap-hold-next-release 250 c met)   (tap-hold-next-release 250 v sft)  	b   n   m   ,   .   /
-(tap-hold-next-release 350 esc (layer-toggle MED))	(tap-hold-next-release 250 bspc (layer-toggle NAV))	(tap-hold-next-release 250 tab sft)	ent (tap-hold-next-release 250 spc (layer-toggle NSM))	(tap-hold-next-release 250 del (layer-toggle FUN))
+;; The modifiers on the LH are moved 1 row down to accomodate holding down WASD in Unity and games. If they remained the same, when i want to hold A to go left, it holds the meta key instead.
+q	    w	    e	    r	    t	        y	    u	    i	    o	    p
+a       s       d       f       g	        h	    j       @khm    @lha    '
+z       @xha    @chm    v       b           n       m       ,       .       /
+                @ecd    @bnm    @sym        @tct    @nav    @sys
 )
 
-;; ----- Top Layers ----- 
+;; ----- Transient Layers ----- num, code, sym, nav, system, fn
+;; --- LH ---
 
-(deflayer NAV
-@q  @ck	@qt caps ins XX XX  XX  XX XX
-@ud @ct @cp @pst @rd XX left down	up	    right
-XX  XX  XX  XX   XX  XX @hm pgdn	pgup	@ed
-		XX	XX	XX	ent	spc	del
+(deflayer NUM
+XX	    XX	    XX	    XX	    XX	        [       7	    8	    9	    ]
+ctl     alt     met     sft     XX          $       4       5       6       =
+XX      XX      XX      caps    XX          %       1       2       3       +
+                @fun    XX      XX          -       0       .
 )
 
-(deflayer NSM
-;; use Shift-Num =, `, -, and backslash to get +, ~, _ and |.
-
-1   2   3   4   5   6   7   8   9   0
-{	\(	\)	}	=	:	;	met	alt	\\
-!   @   A-3 $   %   ^   &   *   [   ]
-		`	.	-	XX	XX	XX
+(deflayer SYM
+XX	    XX	    XX	    XX	    XX	        XX      &	    *	    \(	    XX
+ctl     alt     met     sft     XX          XX      $       %       ^       =
+XX      XX      XX      XX      XX          XX      !       @       A-3     XX
+                XX      XX      XX          \_      \)      `
 )
 
-(deflayer MED
-XX	bldn blup XX  XX  XX  XX	XX	XX	XX
-XX	brdn bru XX XX  XX prev	vold volu	nextsong
-XX  XX  XX  XX  XX  XX  XX  XX  XX  XX
-		XX	XX	XX	stopcd	playpause	mute
+(deflayer CODE
+XX	    XX	    XX	    XX	    XX	        &       {       \(      \)      }
+ctl     alt     met     sft     XX          %       0       A-3     *       $
+XX      XX      XX      XX      XX          :       ;       !       \\      |
+                XX      XX      XX          ent     spc     ~
 )
 
 (deflayer FUN
-f1  f2  f3  f4  f5  f6  f7  f8  f9  f10
-f11	f12 XX	XX	XX	XX	sft	met	alt	ctl
-XX	XX	XX	XX	XX	XX	XX  XX  XX  XX
-		comp	bspc	tab	XX	XX	XX
+XX	    XX	    XX	    XX	    XX	        XX      f7	    f8	    f9       XX
+ctl     alt     met     sft     XX          f11     f4      f5      f6       f12
+XX      XX      XX      XX      XX          XX      f1      f2      f3       XX
+                XX      XX      XX          comp    f10     XX
+)
+
+;; --- RH ---
+
+(deflayer NAV
+@hm     up      @ed     @nap    XX          XX      XX      XX      XX      XX
+left    down    rght    tab     XX          XX      sft     met     alt     ctl
+@ud     @ct     @cp     @pst    @rd         XX      spc     XX      XX      XX
+                esc     bspc    @sym        XX      XX      XX
+)
+
+(deflayer SYSTEM
+brdn    volu    brup    blup    XX          XX      XX      XX      XX      XX
+prev    vold    next    bldn    XX          XX      XX      XX      XX      XX
+@q      @ter    @qt     @ck     XX          XX      XX      XX      XX      XX
+                mute    pp      stopcd      XX      XX      XX
 )
 

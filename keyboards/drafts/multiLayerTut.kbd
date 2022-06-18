@@ -1,0 +1,50 @@
+(defcfg
+  input (low-level-hook)
+  output (send-event-sink)
+
+  fallthrough true
+)
+
+(defsrc
+  a s d f j k l ;
+  c
+)
+
+;; tap-next
+;;   if (held & otherKeyPresed):
+;;     return B;
+;;   else if (tapped):
+;;     return A;
+
+;; tap-hold
+;;   if (held & (otherKeyPresed | timeOver):
+;;     return B;
+;;   else if (tapped):
+;;     return A;
+
+;; tap-next-release
+;;   if (otherKeyPresed):
+;;     return B; // and repeat the other key a lot if it was held.
+;;   else if (tapped | hold-release):
+;;     return A;
+
+(defalias
+    q #(C-c lctl) ;; press C-c after. there is no way to automate this.
+    l (around-next (layer-toggle QWTY)) ;; hold to change layer
+
+    tn (tap-next a lsft)
+    tnr (tap-next-release a lsft)
+    th (tap-hold 500 a lsft)
+    thn (tap-hold-next 500 a lsft) ;; i dont see a use for this
+    thnr (tap-hold-next-release 500 a lsft) ;; i still dont get this
+)
+
+(deflayer BASE
+  @l @tn @tnr @th @thn @thnr l ;
+  @q
+)
+
+(deflayer QWTY
+  q w e r t y u i
+  c
+)

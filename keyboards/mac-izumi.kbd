@@ -6,6 +6,7 @@
 ;;   - met and ctl swap positions
 ;;   - copy shortcuts custom
 ;;   - # is A-3
+;;   - note: stopcd doesnt work, so cannot stop music
 
 (defcfg
   input  (iokit-name)

@@ -31,6 +31,7 @@
   ;; ei hold Meta Alt 
   ehm (tap-hold-next-release 250 e rmet)	
   iha (tap-hold-next-release 250 i ralt)	
+  ohc (tap-hold-next-release 250 o rctl)	
 
   ;; kl, xc hold Meta Alt for Qwerty
   khm (tap-hold-next-release 250 k rmet)	

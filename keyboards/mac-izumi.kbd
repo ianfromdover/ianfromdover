@@ -1,6 +1,7 @@
 ;; Izumi Layout for Mac, adapted from Miryoku
-;; Copyright 2021 Manna Harbour, Ian Hong
+;; Copyright 2021 Manna Harbour, 2022 Ian Hong
 ;; github.com/manna-harbour/miryoku
+;; github.com/ianfromdover/ianfromdover/tree/main/keyboards
 
 ;; Mac differences:
 ;;   - met and ctl swap positions
@@ -24,20 +25,22 @@
 )
 
 (defalias
-  ;; rs hold Alt Meta 
-  rha (tap-hold-next-release 250 r lalt)	
-  shm (tap-hold-next-release 250 s lmet)	
+  ;; modifiers on colemak's btm row 
+  ;; reason: colemak uses home row extensively
+  z (tap-hold-next-release 250 z lctl)	
+  x (tap-hold-next-release 250 x lalt)	
+  c (tap-hold-next-release 250 c lmet)	
+  d (tap-hold-next-release 250 d lsft)	
 
-  ;; ei hold Meta Alt 
-  ehm (tap-hold-next-release 250 e rmet)	
-  iha (tap-hold-next-release 250 i ralt)	
-  ohc (tap-hold-next-release 250 o rctl)	
+  h  (tap-hold-next-release 250 h rsft)	
+  cm (tap-hold-next-release 250 , rmet)	
+  pd (tap-hold-next-release 250 . ralt)	
+  sl (tap-hold-next-release 250 / rctl)	
 
-  ;; kl, xc hold Meta Alt for Qwerty
-  khm (tap-hold-next-release 250 k rmet)	
-  lha (tap-hold-next-release 250 l ralt)	
-  xha (tap-hold-next-release 250 l lalt)	
-  chm (tap-hold-next-release 250 k lmet)	
+  ;; modifiers on qwerty's btm row 
+  ;; reason: free WASD for Unity
+  v (tap-hold-next-release 250 v lsft)
+  m (tap-hold-next-release 250 m rsft)
 
   ;; thumb layers
   ecd (tap-hold-next-release 250 esc (layer-toggle CODE))
@@ -46,49 +49,51 @@
   sys (tap-hold-next-release 250 ent (layer-toggle SYSTEM))
   nav (tap-hold-next-release 250 spc (layer-toggle NAV))
   sf (sticky-key 500 lsft)
+
   fun (tap-hold-next-release 250 XX (layer-toggle FUN))
 
   ;; system functions
   q #(C-c met) ;; kill kmonad. select the terminal and nav-Q
-  ck (layer-switch CLMK)
+  ter (cmd-button "open -a Terminal")
   qt (layer-switch QRTY)
-  ter (cmd-button "open -a Terminal ")
+  ck (layer-switch CLMK)
 
-  ;; Macs don't have working copy-paste.
-  ;; All these are for the NAV layer.
+  ;; Navigation
   hm M-left
   ed M-right
+  ta M-tab ;; toggle app
+  tw M-`   ;; toggle window
+
+  ;; Copy Paste
+  ;; Macs need custom copy-paste aliases
   ud M-z
-  rd S-M-z
+  ct M-x
   cp M-c
   pst M-v
-  ct M-x
-  nap M-tab
-  nw M-`
+  rd S-M-z
 )
 
 ;; ----- Base Layers ----- 
 
 (deflayer CLMK
 q	    w	    f	    p	    b	        j       l	    u	    y	    '
-a       @rha    @shm    t       g           m       n       @ehm    @iha    o
-z       x	    c	    d	    v	        k	    h	    ,	    .       /
+a       r       s       t       g           m       n       e       i       o
+@z      @x	    @c	    @d	    v	        k	    @h	    @cm	    @pd     @sl
                 @ecd    @bnm    @sym        @sys    @nav    @sf
 )
 
 (deflayer QRTY
-;; The modifiers on the LH are moved 1 row down to accomodate holding down WASD in Unity and games. If they remained the same, when i want to hold A to go left, it holds the meta key instead.
 q	    w	    e	    r	    t	        y	    u	    i	    o	    p
-a       s       d       f       g	        h	    j       @khm    @lha    '
-z       @xha    @chm    v       b           n       m       ,       .       /
+a       s       d       f       g	        h	    j       k       l       '
+@z      @x      @c      @v      b           n       @m      @cm	    @pd     @sl
                 @ecd    @bnm    @sym        @sys    @nav    @sf
 )
 
-;; ----- Transient Layers ----- num, code, sym, nav, system, fn
+;; ----- Transient Layers -----
 ;; --- LH ---
 
 (deflayer NUM
-XX	    XX	    XX	    XX	    XX	        [       7	    8	    9	    ]
+XX	    XX	    XX	    XX	    XX	        \(      7	    8	    9	    \)
 ctl     alt     met     sft     XX          $       4       5       6       =
 XX      XX      XX      caps    XX          %       1       2       3       +
                 @fun    XX      XX          -       0       .
@@ -102,10 +107,10 @@ XX      XX      XX      XX      XX          XX      !       @       A-3     XX
 )
 
 (deflayer CODE
-XX	    XX	    XX	    XX	    XX	        &       A-3     \(      \)      *
-ctl     alt     met     sft     XX          %       {       0       $       }
-XX      XX      XX      XX      XX          :       ;       !       \\      |
-                XX      XX      XX          ent     spc     ~
+XX	    XX	    XX	    XX	    XX	        XX      +       [       ]       XX
+ctl     alt     met     sft     XX          XX      :       \(      \)      ;
+XX      XX      XX      XX      XX          XX      "       '       |       \\
+                XX      XX      XX          \_      spc     ~
 )
 
 (deflayer FUN
@@ -118,9 +123,9 @@ XX      XX      XX      XX      XX          XX      f1      f2      f3       XX
 ;; --- RH ---
 
 (deflayer NAV
-@hm     up      @ed     @nap    @nw         XX      XX      XX      XX      XX
-left    down    rght    tab     `           XX      sft     met     alt     ctl
-@ud     @ct     @cp     @pst    @rd         XX      spc     XX      XX      XX
+@hm     up      @ed     @ta     @tw         XX      0       A-3     *       $
+left    down    rght    tab     `           XX      {       w       b       }
+@ud     @ct     @cp     @pst    @rd         XX      spc     met     XX      XX
                 esc     bspc    @sym        XX      XX      XX
 )
 

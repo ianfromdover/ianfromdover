@@ -125,7 +125,7 @@ XX      XX      XX      XX      XX          XX      f1      f2      f3       XX
 (deflayer NAV
 @hm     up      @ed     @ta     @tw         XX      {       b       w       }
 left    down    rght    tab     `           spc     sft     met     alt     ctl
-@ud     @ct     @cp     @pst    @rd         XX      0       A-3     *       $
+@ud     @ct     @cp     @pst    @rd         %       0       A-3     *       $
                 esc     bspc    @sym        XX      XX      XX
 )
 

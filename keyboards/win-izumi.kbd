@@ -1,80 +1,141 @@
 ;; Izumi Layout for Windows, adapted from Miryoku
-;; Copyright 2021 Manna Harbour, Ian Hong
+;; Copyright 2021 Manna Harbour, 2022 Ian Hong
 ;; github.com/manna-harbour/miryoku
-;; sadly key repeat is not available on windows
-;; differences from Mac: swap meta and control, and the copy pastes are different
+;; github.com/ianfromdover/ianfromdover/tree/main/keyboards
 
-;; Todo:
-;; add a 'launch/select powershell window' button
-;; https://github.com/kmonad/kmonad/blob/master/keymap/tutorial.kbd
-;; https://github.com/kmonad/kmonad/blob/master/src/KMonad/Keyboard/Keycode.hs
-       
+;; next improvement: figma: all non-letters to small size style.
+
+;; Mac differences:
+;;   - # is A-3 in the maps themselves. the rest of the changes are in the aliases.
+;;   - meta and control swap positions
+;;   - windows also needs copy shortcuts custom
+;;   - terminal command is different
+;;   - to test: note: stopcd doesnt work, so cannot stop music
+
 (defcfg
-  input (low-level-hook)
+  input  (low-level-hook)
   output (send-event-sink)
   fallthrough false
+  allow-cmd true
 )
 
 (defsrc
   ;; separated hands, no reverse angle
-  esc 1 2 3 4 8 9 0 - =
-  tab q w e r i o p [ ]
-  caps a s d f k l ; ' ent
-        x c v m , .
+  esc  1 2 3 4     8 9 0 - =
+  tab  q w e r     i o p [ ]
+  caps a s d f     k l ; ' ent
+         x c v     m , .
 )
 
 (defalias
-  q #(C-c lctl) ;; nav-Q then press C-c in terminal after. cant automate.
-  ck (layer-switch CLMK)
+  ;; modifiers on colemak's btm row 
+  ;; reason: colemak uses home row extensively
+  z (tap-hold-next-release 250 z lmet)	
+  x (tap-hold-next-release 250 x lalt)	
+  c (tap-hold-next-release 250 c lctl)	
+  d (tap-hold-next-release 250 d lsft)	
+
+  h  (tap-hold-next-release 250 h rsft)	
+  cm (tap-hold-next-release 250 , rctl)	
+  pd (tap-hold-next-release 250 . ralt)	
+  sl (tap-hold-next-release 250 / rmet)	
+
+  ;; modifiers on qwerty's btm row 
+  ;; reason: free WASD for Unity
+  v (tap-hold-next-release 250 v lsft)
+  m (tap-hold-next-release 250 m rsft)
+
+  ;; thumb layers
+  ecd (tap-hold-next-release 250 esc (layer-toggle CODE))
+  bnm (tap-hold-next-release 250 bspc (layer-toggle NUM))
+  sym (tap-hold-next-release 250 del (layer-toggle SYM))
+  sys (tap-hold-next-release 250 ent (layer-toggle SYSTEM))
+  nav (tap-hold-next-release 250 spc (layer-toggle NAV))
+  sf (sticky-key 500 lsft)
+
+  fun (tap-hold-next-release 250 XX (layer-toggle FUN))
+
+  ;; system functions
+  q #(C-c ctl) ;; kill kmonad. select the terminal, press nav-Q, then press C-c after. Can't automate.
+  ter (cmd-button "open -a Terminal")
   qt (layer-switch QRTY)
+  ck (layer-switch CLMK)
+
+  ;; Navigation
+  hm M-left
+  ed M-right
+  ta M-tab ;; toggle app
+  tw M-`   ;; toggle window
+
+  ;; Copy Paste
+  ;; Windows need custom copy-paste aliases
+  ud C-z
+  ct C-x
+  cp C-c
+  pst C-v
+  rd C-y
 )
 
 ;; ----- Base Layers ----- 
 
 (deflayer CLMK
-q	w	f	p	b	j	l	u	y	'
-(tap-hold-next-release 250 a met)	(tap-hold-next-release 250 r alt)	(tap-hold-next-release 250 s ctl)	(tap-hold-next-release 250 t sft)	g	m	(tap-hold-next-release 250 n sft)	(tap-hold-next-release 250 e ctl)	(tap-hold-next-release 250 i alt)	(tap-hold-next-release 250 o met)
-z   x	c	d	v	k	h	,	.   /
-(tap-hold-next-release 350 esc (layer-toggle MED))	(tap-hold-next-release 250 bspc (layer-toggle NAV))	(tap-hold-next-release 250 tab sft)	ent (tap-hold-next-release 250 spc (layer-toggle NSM))	(tap-hold-next-release 250 del (layer-toggle FUN))
+q	    w	    f	    p	    b	        j       l	    u	    y	    '
+a       r       s       t       g           m       n       e       i       o
+@z      @x	    @c	    @d	    v	        k	    @h	    @cm	    @pd     @sl
+                @ecd    @bnm    @sym        @sys    @nav    @sf
 )
 
 (deflayer QRTY
-;; The meta keys on the LH are moved 1 row down to accomodate holding down WASD in Unity and games. If they remained the same, when i want to hold A to go left, it triggers the meta key instead.
-q	w	e	r	t	y	u	i	o	p
-a   s   d   f   g	h	(tap-hold-next-release 250 j sft)	(tap-hold-next-release 250 k ctl)	(tap-hold-next-release 250 l alt)	(tap-hold-next-release 250 ' met)
-(tap-hold-next-release 250 z met)   (tap-hold-next-release 250 x alt)   (tap-hold-next-release 250 c ctl)   (tap-hold-next-release 250 v sft)  	b   n   m   ,   .   /
-(tap-hold-next-release 350 esc (layer-toggle MED))	(tap-hold-next-release 250 bspc (layer-toggle NAV))	(tap-hold-next-release 250 tab sft)	ent (tap-hold-next-release 250 spc (layer-toggle NSM))	(tap-hold-next-release 250 del (layer-toggle FUN))
+q	    w	    e	    r	    t	        y	    u	    i	    o	    p
+a       s       d       f       g	        h	    j       k       l       '
+@z      @x      @c      @v      b           n       @m      @cm	    @pd     @sl
+                @ecd    @bnm    @sym        @sys    @nav    @sf
 )
 
-;; ----- Top Layers ----- 
+;; ----- Transient Layers -----
+;; --- LH ---
 
-(deflayer NAV
-@q  @ck	@qt caps ins XX XX  XX  XX  XX
-C-z C-x C-c C-v C-y	XX	left	down	up	    right
-XX  XX  XX  XX  XX  ins	home	pgdn	pgup	end
-		XX	XX	XX	ent	spc	del
+(deflayer NUM
+XX	    XX	    XX	    XX	    XX	        \(      7	    8	    9	    \)
+ctl     alt     met     sft     XX          $       4       5       6       =
+XX      XX      XX      caps    XX          %       1       2       3       +
+                @fun    XX      XX          -       0       .
 )
 
-(deflayer NSM
-;; use Shift-Num =, `, -, and backslash to get +, ~, _ and |.
-
-1   2   3   4   5   6   7   8   9   0
-{	\(	\)	}	=	:	;	ctl	alt	\\
-!   @   #   $   %   ^   &   *   [   ]
-		`	.	-	XX	XX	XX
+(deflayer SYM
+XX	    XX	    XX	    XX	    XX	        XX      &	    *	    \(	    XX
+ctl     alt     met     sft     XX          XX      $       %       ^       =
+XX      XX      XX      XX      XX          XX      !       @       #     +
+                XX      XX      XX          \_      \)      `
 )
 
-(deflayer MED
-XX bldn blup XX  XX  XX  XX	XX	XX	XX
-XX brdn bru XX XX XX previoussong vold volu nextsong
-XX  XX  XX  XX  XX  XX  XX  XX  XX  XX
-		XX	XX	XX	stopcd	playpause	mute
+(deflayer CODE
+XX	    XX	    XX	    XX	    XX	        XX      +       [       ]       XX
+ctl     alt     met     sft     XX          XX      :       \(      \)      ;
+XX      XX      XX      XX      XX          XX      "       '       |       \\
+                XX      XX      XX          \_      spc     ~
 )
 
 (deflayer FUN
-f1  f2  f3  f4  f5  f6  f7  f8  f9  f10
-f11	f12 XX	XX	XX	XX	sft	ctl	alt	met
-XX	XX	XX	XX	XX	XX	XX  XX  XX  XX
-		comp	bspc	tab	XX	XX	XX
+XX	    XX	    XX	    XX	    XX	        XX      f7	    f8	    f9       XX
+ctl     alt     met     sft     XX          f11     f4      f5      f6       f12
+XX      XX      XX      XX      XX          XX      f1      f2      f3       XX
+                XX      XX      XX          comp    f10     XX
+)
+
+;; --- RH ---
+
+(deflayer NAV
+@hm     up      @ed     @ta     @tw         XX      {       b       w       }
+left    down    rght    tab     `           spc     sft     met     alt     ctl
+@ud     @ct     @cp     @pst    @rd         %       0       #     *       $
+                esc     bspc    @sym        XX      XX      XX
+)
+
+(deflayer SYSTEM
+brdn    volu    brup    blup    XX          XX      XX      XX      XX      XX
+prev    vold    next    bldn    XX          XX      XX      XX      XX      XX
+@q      @ter    @qt     @ck     XX          XX      XX      XX      XX      XX
+                mute    pp      stopcd      XX      XX      XX
 )
 

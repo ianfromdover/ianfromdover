@@ -6,10 +6,12 @@
 ;; next improvement: figma: all non-letters to small size style.
 
 ;; Mac differences:
+;;   - previoussong, playpause and nextsong have to be the long form in media.
 ;;   - # is A-3 in the maps themselves. the rest of the changes are in the aliases.
-;;   - meta and control swap positions
+;;   - meta and control swap positions. the top layers also need to indiv swap.
 ;;   - windows also needs copy shortcuts custom
 ;;   - terminal command is different
+;;   - sticky-key doesn't work
 ;;   - to test: note: stopcd doesnt work, so cannot stop music
 
 (defcfg
@@ -51,7 +53,7 @@
   sym (tap-hold-next-release 250 del (layer-toggle SYM))
   sys (tap-hold-next-release 250 ent (layer-toggle SYSTEM))
   nav (tap-hold-next-release 250 spc (layer-toggle NAV))
-  sf (sticky-key 500 lsft)
+  sf lsft ;; (sticky-key 500 lsft)
 
   fun (tap-hold-next-release 250 XX (layer-toggle FUN))
 
@@ -97,28 +99,28 @@ a       s       d       f       g	        h	    j       k       l       '
 
 (deflayer NUM
 XX	    XX	    XX	    XX	    XX	        \(      7	    8	    9	    \)
-ctl     alt     met     sft     XX          $       4       5       6       =
+met     alt     ctl     sft     XX          $       4       5       6       =
 XX      XX      XX      caps    XX          %       1       2       3       +
                 @fun    XX      XX          -       0       .
 )
 
 (deflayer SYM
 XX	    XX	    XX	    XX	    XX	        XX      &	    *	    \(	    XX
-ctl     alt     met     sft     XX          XX      $       %       ^       =
+met     alt     ctl     sft     XX          XX      $       %       ^       =
 XX      XX      XX      XX      XX          XX      !       @       #     +
                 XX      XX      XX          \_      \)      `
 )
 
 (deflayer CODE
 XX	    XX	    XX	    XX	    XX	        XX      +       [       ]       XX
-ctl     alt     met     sft     XX          XX      :       \(      \)      ;
+met     alt     ctl     sft     XX          XX      :       \(      \)      ;
 XX      XX      XX      XX      XX          XX      "       '       |       \\
                 XX      XX      XX          \_      spc     ~
 )
 
 (deflayer FUN
 XX	    XX	    XX	    XX	    XX	        XX      f7	    f8	    f9       XX
-ctl     alt     met     sft     XX          f11     f4      f5      f6       f12
+met     alt     ctl     sft     XX          f11     f4      f5      f6       f12
 XX      XX      XX      XX      XX          XX      f1      f2      f3       XX
                 XX      XX      XX          comp    f10     XX
 )
@@ -127,15 +129,15 @@ XX      XX      XX      XX      XX          XX      f1      f2      f3       XX
 
 (deflayer NAV
 @hm     up      @ed     @ta     @tw         XX      {       b       w       }
-left    down    rght    tab     `           spc     sft     met     alt     ctl
+left    down    rght    tab     `           spc     sft     ctl     alt     met
 @ud     @ct     @cp     @pst    @rd         %       0       #     *       $
                 esc     bspc    @sym        XX      XX      XX
 )
 
 (deflayer SYSTEM
-brdn    volu    brup    blup    XX          XX      XX      XX      XX      XX
-prev    vold    next    bldn    XX          XX      XX      XX      XX      XX
+brdn    volu    brup    XX      XX          XX      XX      XX      XX      XX
+previoussong    vold    nextsong    XX      XX          XX      XX      XX      XX      XX
 @q      @ter    @qt     @ck     XX          XX      XX      XX      XX      XX
-                mute    pp      stopcd      XX      XX      XX
+                mute    playpause      stopcd      XX      XX      XX
 )
 

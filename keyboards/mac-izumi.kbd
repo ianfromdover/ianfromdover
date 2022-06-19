@@ -124,7 +124,7 @@ XX      XX      XX      XX      XX          XX      f1      f2      f3       XX
 
 (deflayer NAV
 @hm     up      @ed     @ta     @tw         XX      0       A-3     *       $
-left    down    rght    tab     `           XX      {       w       b       }
+left    down    rght    tab     `           XX      {       b       w       }
 @ud     @ct     @cp     @pst    @rd         XX      spc     met     XX      XX
                 esc     bspc    @sym        XX      XX      XX
 )

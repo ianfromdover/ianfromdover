@@ -124,10 +124,10 @@ XX      XX      XX      XX      XX          XX      "       '       |       \\
 )
 
 (deflayer FUN
-XX	    XX	    XX	    XX	    XX	        XX      f7	    f8	    f9       XX
-met     alt     ctl     sft     XX          f11     f4      f5      f6       f12
-XX      XX      XX      XX      XX          XX      f1      f2      f3       XX
-                XX      XX      XX          comp    f10     XX
+XX      f7	    f8	    f9       XX         XX	    XX	    XX	    XX	    XX
+f11     f4      f5      f6       f12        XX      sft     ctl     alt     met
+XX      f1      f2      f3       XX         XX	    XX	    XX	    XX	    XX
+                comp    f10      XX         XX	    XX	    XX
 )
 
 ;; --- RH ---

@@ -43,14 +43,12 @@
   m (tap-hold-next-release 250 m rsft)
 
   ;; thumb layers
-  ecd (tap-hold-next-release 250 esc (layer-toggle CODE))
-  bnm (tap-hold-next-release 250 bspc (layer-toggle NUM))
-  sym (tap-hold-next-release 250 del (layer-toggle SYM))
-  sys (tap-hold-next-release 250 ent (layer-toggle SYSTEM))
-  nav (tap-hold-next-release 250 spc (layer-toggle NAV))
-  sf (sticky-key 500 lsft)
-
-  fun (tap-hold-next-release 250 XX (layer-toggle FUN))
+  escs (tap-hold-next-release 250 esc (layer-toggle CODE))
+  bsps (tap-hold-next-release 250 bspc (layer-toggle NUM))
+  tabs (tap-hold-next-release 250 tab (layer-toggle SYM))
+  rets (tap-hold-next-release 250 ent (layer-toggle SYSTEM))
+  spcs (tap-hold-next-release 250 spc (layer-toggle NAV))
+  dels (tap-hold-next-release 250 del (layer-toggle FUN))
 
   ;; system functions
   q #(C-c met) ;; kill kmonad. select the terminal and nav-Q
@@ -79,14 +77,15 @@
 q	    w	    f	    p	    b	        j       l	    u	    y	    '
 a       r       s       t       g           m       n       e       i       o
 @z      @x	    @c	    @d	    v	        k	    @h	    @cm	    @pd     @sl
-                @ecd    @bnm    @sym        @sys    @nav    @sf
+                @escs   @bsps   @tabs       @rets   @spcs   @dels
 )
 
 (deflayer QRTY
+;; Apostrophe and Slash are replaced with Spc and Sft for controlling hands in MRTK in Unity.
 q	    w	    e	    r	    t	        y	    u	    i	    o	    p
-a       s       d       f       g	        h	    j       k       l       '
-@z      @x      @c      @v      b           n       @m      @cm	    @pd     @sl
-                @ecd    @bnm    @sym        @sys    @nav    @sf
+a       s       d       f       g	        h	    j       k       l       spc
+@z      @x      @c      @v      b           n       @m      @cm	    @pd     sft
+                @escs   @bsps   @tabs       @rets   @spcs   @dels
 )
 
 ;; ----- Transient Layers -----
@@ -96,7 +95,7 @@ a       s       d       f       g	        h	    j       k       l       '
 XX	    XX	    XX	    XX	    XX	        \(      7	    8	    9	    \)
 ctl     alt     met     sft     XX          $       4       5       6       =
 XX      XX      XX      caps    XX          %       1       2       3       +
-                @fun    XX      XX          -       0       .
+                XX      XX      XX          -       0       .
 )
 
 (deflayer SYM
@@ -126,7 +125,7 @@ XX      XX      XX      XX      XX          XX      f1      f2      f3       XX
 @hm     up      @ed     @ta     @tw         XX      {       b       w       }
 left    down    rght    tab     `           spc     sft     met     alt     ctl
 @ud     @ct     @cp     @pst    @rd         %       0       A-3     *       $
-                esc     bspc    @sym        XX      XX      XX
+                esc     bspc    @tabs       XX      XX      XX
 )
 
 (deflayer SYSTEM

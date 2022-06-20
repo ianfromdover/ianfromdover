@@ -5,14 +5,20 @@
 
 ;; next improvement: figma: all non-letters to small size style.
 
+;; suggestion: have a table: |----|----|---| markdown style, with function, mac and win, with 2 sections: in aliases, keymap
 ;; Mac differences:
 ;;   - previoussong, playpause and nextsong have to be the long form in media.
-;;   - # is A-3 in the maps themselves. the rest of the changes are in the aliases.
+;;   - brightness up and down and backlight doesn't work on windows
+;;   - # is A-3 in the maps themselves. 
+
+;; the rest of the changes are in the aliases.
 ;;   - meta and control swap positions. the top layers also need to indiv swap.
 ;;   - windows also needs copy shortcuts custom
 ;;   - terminal command is different
-;;   - sticky-key doesn't work
-;;   - to test: note: stopcd doesnt work, so cannot stop music
+;;   - sticky-key doesn't work on windows
+;;   - toggle window shortcut is A-tab, not M-tab
+;;   - eol, sol use home and end instead of M-left M-right
+;;   - mac to test: note: stopcd doesnt work on mac. works on windows!
 
 (defcfg
   input  (low-level-hook)
@@ -48,14 +54,12 @@
   m (tap-hold-next-release 250 m rsft)
 
   ;; thumb layers
-  ecd (tap-hold-next-release 250 esc (layer-toggle CODE))
-  bnm (tap-hold-next-release 250 bspc (layer-toggle NUM))
-  sym (tap-hold-next-release 250 del (layer-toggle SYM))
-  sys (tap-hold-next-release 250 ent (layer-toggle SYSTEM))
-  nav (tap-hold-next-release 250 spc (layer-toggle NAV))
-  sf lsft ;; (sticky-key 500 lsft)
-
-  fun (tap-hold-next-release 250 XX (layer-toggle FUN))
+  escs (tap-hold-next-release 250 esc (layer-toggle CODE))
+  bsps (tap-hold-next-release 250 bspc (layer-toggle NUM))
+  tabs (tap-hold-next-release 250 tab (layer-toggle SYM))
+  rets (tap-hold-next-release 250 ent (layer-toggle SYSTEM))
+  spcs (tap-hold-next-release 250 spc (layer-toggle NAV))
+  dels (tap-hold-next-release 250 del (layer-toggle FUN))
 
   ;; system functions
   q #(C-c ctl) ;; kill kmonad. select the terminal, press nav-Q, then press C-c after. Can't automate.
@@ -64,10 +68,10 @@
   ck (layer-switch CLMK)
 
   ;; Navigation
-  hm M-left
-  ed M-right
-  ta M-tab ;; toggle app
-  tw M-`   ;; toggle window
+  hm home
+  ed end
+  ta A-tab ;; toggle window (toggle app on mac)
+  tw S-A-tab   ;; toggle window backwards
 
   ;; Copy Paste
   ;; Windows need custom copy-paste aliases
@@ -84,14 +88,15 @@
 q	    w	    f	    p	    b	        j       l	    u	    y	    '
 a       r       s       t       g           m       n       e       i       o
 @z      @x	    @c	    @d	    v	        k	    @h	    @cm	    @pd     @sl
-                @ecd    @bnm    @sym        @sys    @nav    @sf
+                @escs   @bsps   @tabs       @rets   @spcs   @dels
 )
 
 (deflayer QRTY
+;; Apostrophe and Slash are replaced with Spc and Sft for controlling hands in MRTK in Unity.
 q	    w	    e	    r	    t	        y	    u	    i	    o	    p
-a       s       d       f       g	        h	    j       k       l       '
-@z      @x      @c      @v      b           n       @m      @cm	    @pd     @sl
-                @ecd    @bnm    @sym        @sys    @nav    @sf
+a       s       d       f       g	        h	    j       k       l       spc
+@z      @x      @c      @v      b           n       @m      @cm	    @pd     sft
+                @escs   @bsps   @tabs       @rets   @spcs   @dels
 )
 
 ;; ----- Transient Layers -----
@@ -101,7 +106,7 @@ a       s       d       f       g	        h	    j       k       l       '
 XX	    XX	    XX	    XX	    XX	        \(      7	    8	    9	    \)
 met     alt     ctl     sft     XX          $       4       5       6       =
 XX      XX      XX      caps    XX          %       1       2       3       +
-                @fun    XX      XX          -       0       .
+                XX      XX      XX          -       0       .
 )
 
 (deflayer SYM
@@ -131,13 +136,13 @@ XX      XX      XX      XX      XX          XX      f1      f2      f3       XX
 @hm     up      @ed     @ta     @tw         XX      {       b       w       }
 left    down    rght    tab     `           spc     sft     ctl     alt     met
 @ud     @ct     @cp     @pst    @rd         %       0       #     *       $
-                esc     bspc    @sym        XX      XX      XX
+                esc     bspc    @tabs       XX      XX      XX
 )
 
 (deflayer SYSTEM
-brdn    volu    brup    XX      XX          XX      XX      XX      XX      XX
-previoussong    vold    nextsong    XX      XX          XX      XX      XX      XX      XX
-@q      @ter    @qt     @ck     XX          XX      XX      XX      XX      XX
-                mute    playpause      stopcd      XX      XX      XX
+brightnessup    volu    brightnessdown    kbdillumdown      XX          XX      XX      XX      XX      XX
+previoussong    vold    nextsong          kbdillumup        XX          XX      XX      XX      XX      XX
+@q              @ter    @qt               @ck               XX          XX      XX      XX      XX      XX
+                mute    playpause         stopcd                        XX      XX      XX
 )
 

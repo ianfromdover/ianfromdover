@@ -8,7 +8,7 @@
 ;; suggestion: have a table: |----|----|---| markdown style, with function, mac and win, with 2 sections: in aliases, keymap
 ;; Mac differences:
 ;;   - previoussong, playpause and nextsong have to be the long form in media.
-;;   - brightness up and down and backlight doesn't work on windows
+;;   - brightness up and down and backlight doesn't work on windows. removed kbd backlight 
 ;;   - # is A-3 in the maps themselves. 
 
 ;; the rest of the changes are in the aliases.
@@ -140,7 +140,7 @@ left    down    up      rght    tab         spc     sft     ctl     alt     met
 )
 
 (deflayer SYSTEM
-kbdillumdown    brightnessdown      brightnessup    kbdillumupdown      XX          XX      XX      XX      XX      XX
+XX    brightnessdown      brightnessup    XX      XX          XX      XX      XX      XX      XX
 previoussong    vold                volu            nextsong            XX          XX      XX      XX      XX      XX
 @q              @ter                @qt             @ck                 XX          XX      XX      XX      XX      XX
                                     mute            playpause           stopcd      XX      XX      XX

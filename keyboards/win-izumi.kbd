@@ -133,16 +133,16 @@ XX      f1      f2      f3       XX         XX	    XX	    XX	    XX	    XX
 ;; --- RH ---
 
 (deflayer NAV
-@hm     up      @ed     @ta     @tw         XX      {       b       w       }
-left    down    rght    tab     `           spc     sft     ctl     alt     met
+@tw     @ta     @hm     @ed     `           XX      {       b       w       }
+left    down    up      rght    tab         spc     sft     ctl     alt     met
 @ud     @ct     @cp     @pst    @rd         %       0       #     *       $
                 esc     bspc    @tabs       XX      XX      XX
 )
 
 (deflayer SYSTEM
-brightnessup    volu    brightnessdown    kbdillumdown      XX          XX      XX      XX      XX      XX
-previoussong    vold    nextsong          kbdillumup        XX          XX      XX      XX      XX      XX
-@q              @ter    @qt               @ck               XX          XX      XX      XX      XX      XX
-                mute    playpause         stopcd                        XX      XX      XX
+kbdillumdown    brightnessdown      brightnessup    kbdillumupdown      XX          XX      XX      XX      XX      XX
+previoussong    vold                volu            nextsong            XX          XX      XX      XX      XX      XX
+@q              @ter                @qt             @ck                 XX          XX      XX      XX      XX      XX
+                                    mute            playpause           stopcd      XX      XX      XX
 )
 

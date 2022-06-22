@@ -122,15 +122,15 @@ XX      f1      f2      f3       XX         XX	    XX	    XX	    XX	    XXk
 ;; --- RH ---
 
 (deflayer NAV
-@hm     up      @ed     @ta     @tw         XX      {       b       w       }
-left    down    rght    tab     `           spc     sft     met     alt     ctl
+@tw     @ta     @hm     @ed     `           XX      {       b       w       }
+left    down    up      rght    tab         spc     sft     met     alt     ctl
 @ud     @ct     @cp     @pst    @rd         %       0       A-3     *       $
                 esc     bspc    @tabs       XX      XX      XX
 )
 
 (deflayer SYSTEM
-brdn    volu    brup    blup    XX          XX      XX      XX      XX      XX
-prev    vold    next    bldn    XX          XX      XX      XX      XX      XX
+bldn    brdn    brup    blup    XX          XX      XX      XX      XX      XX
+prev    vold    volu    next    XX          XX      XX      XX      XX      XX
 @q      @ter    @qt     @ck     XX          XX      XX      XX      XX      XX
                 mute    pp      stopcd      XX      XX      XX
 )

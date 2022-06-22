@@ -93,29 +93,29 @@ a       s       d       f       g	        h	    j       k       l       spc
 
 (deflayer NUM
 XX	    XX	    XX	    XX	    XX	        \(      7	    8	    9	    \)
-ctl     alt     met     sft     XX          $       4       5       6       =
-XX      XX      XX      caps    XX          %       1       2       3       +
+ctl     alt     met     sft     XX          +       4       5       6       =
+XX      XX      XX      caps    XX          $       1       2       3       %
                 XX      XX      XX          -       0       .
 )
 
 (deflayer SYM
 XX	    XX	    XX	    XX	    XX	        XX      &	    *	    \(	    XX
-ctl     alt     met     sft     XX          XX      $       %       ^       =
-XX      XX      XX      XX      XX          XX      !       @       A-3     +
+ctl     alt     met     sft     XX          +       $       %       ^       =
+XX      XX      XX      XX      XX          XX      !       @       A-3     XX
                 XX      XX      XX          \_      \)      `
 )
 
 (deflayer CODE
-XX	    XX	    XX	    XX	    XX	        XX      +       [       ]       XX
-ctl     alt     met     sft     XX          XX      :       \(      \)      ;
-XX      XX      XX      XX      XX          XX      "       '       |       \\
+XX	    XX	    XX	    XX	    XX	        XX      =       [       ]       XX
+ctl     alt     met     sft     XX          +       :       \(      \)      ;
+XX      XX      XX      XX      XX          XX      "       &       |       \\
                 XX      XX      XX          \_      spc     ~
 )
 
 (deflayer FUN
 XX      f7	    f8	    f9       XX         XX	    XX	    XX	    XX	    XX
 f11     f4      f5      f6       f12        XX      sft     met     alt     ctl
-XX      f1      f2      f3       XX         XX	    XX	    XX	    XX	    XXk
+XX      f1      f2      f3       XX         XX	    XX	    XX	    XX	    XX
                 comp    f10      XX         XX	    XX	    XX
 )
 
@@ -124,7 +124,7 @@ XX      f1      f2      f3       XX         XX	    XX	    XX	    XX	    XXk
 (deflayer NAV
 @tw     @ta     @hm     @ed     `           XX      0       A-3     *       $  
 left    down    up      rght    tab         spc     sft     met     alt     ctl
-@ud     @ct     @cp     @pst    @rd         %       {       b       w       }
+@ud     @ct     @cp     @pst    @rd         %       b       {       }       w
                 esc     bspc    @tabs       XX      XX      XX
 )
 

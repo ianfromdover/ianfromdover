@@ -8,16 +8,14 @@
     - place relevant symbols in the same layer, duplicating them at times
     - includes all keys found on a TKL layout excluding mouse emulation
 - moves Miryoku's home row modifiers to the bottom row as it was slowing down typing
-- layers with things to be typed on the LH, functional layers on the RH
-- navigation layer has arrow keys, `home`, `end`, that you can pair with shift and meta key, `copy`, `paste`, window toggling and vim shortcuts like `{` and `}` in accessible positions.
+- places layers with things to be typed on the LH, functional layers on the RH
 - if a thumb key is held down, the corresponding hand's home row becomes modifiers that can be held down as well
-- qwerty layer for gaming and unity control.
+- qwerty layer for gaming and Unity viewport control
+- navigation layer includes arrow keys, `home`, `end`, that you can pair with shift and meta key, `copy`, `paste`, window toggling and vim shortcuts like `{` and `}` in accessible positions
 - favourite feature: control music volume and playback directly from the home row
 - ergonomics determined by this chart from the colemak github:
 
 ![effort values](./imgs/effort.png)
-
-*Work in progress*
 
 ### Base(Alphas) - Colemak DH Matrix
 

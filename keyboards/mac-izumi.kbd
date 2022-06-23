@@ -39,17 +39,17 @@
   z (tap-hold-next-release 200 z lctl)	
   x (tap-hold-next-release 200 x lalt)	
   c (tap-hold-next-release 200 c lmet)	
-  d (tap-hold-next-release 150 d lsft)	
+  d (tap-hold-next-release 200 d lsft)	
 
-  h  (tap-hold-next-release 150 h rsft)	
+  h  (tap-hold-next-release 200 h rsft)	
   cm (tap-hold-next-release 200 , rmet)	
   pd (tap-hold-next-release 200 . ralt)	
   sl (tap-hold-next-release 200 / rctl)	
 
   ;; modifiers on qwerty's btm row 
   ;; reason: free WASD for Unity
-  v (tap-hold-next-release 150 v lsft)
-  m (tap-hold-next-release 150 m rsft)
+  v (tap-hold-next-release 200 v lsft)
+  m (tap-hold-next-release 200 m rsft)
 
   ;; thumb layers
   escs (tap-hold-next-release 200 esc (layer-toggle CODE))

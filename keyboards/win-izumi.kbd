@@ -2,21 +2,21 @@
 ;; Copyright 2022 Ian Hong
 ;; github.com/ianfromdover/ianfromdover/tree/main/keyboards
 
-| function        | mac                | windows         |
-|-----------------|--------------------|-----------------|
-| • IN ALIASES •  |                    |                 |
-| command key     | met next to sft    | ctl next to sft |
-| open terminal   | "open -a Terminal" | idk             |
-| music control   | prev, pp, next     | long form       |
-| lights          | br, bl updn        | NA              |
-| copy paste cuts | M-zxcv             | C-zxcv          |
-| sticky key      | works              | NA              |
-| toggle windows  | M-tab              | A-tab           |
-| home, end       | M-left, M-right    | home, end       |
-| • IN LAYERS •   | x                  | x               |
-| #               | A-3                | #               |
-| command key     | M near sft         | C near sft      |
-| stop music      | NA                 | stopcd          |
+;; | function        | mac                | windows         |
+;; |-----------------|--------------------|-----------------|
+;; | • IN ALIASES •  |                    |                 |
+;; | command key     | met next to sft    | ctl next to sft |
+;; | open terminal   | "open -a Terminal" | idk             |
+;; | music control   | prev, pp, next     | long form       |
+;; | lights          | br, bl updn        | NA              |
+;; | copy paste cuts | M-zxcv             | C-zxcv          |
+;; | sticky key      | works              | NA              |
+;; | toggle windows  | M-tab              | A-tab           |
+;; | home, end       | M-left, M-right    | home, end       |
+;; | • IN LAYERS •   | x                  | x               |
+;; | #               | A-3                | #               |
+;; | command key     | M near sft         | C near sft      |
+;; | stop music      | NA                 | stopcd          |
 
 (defcfg
   input  (low-level-hook)

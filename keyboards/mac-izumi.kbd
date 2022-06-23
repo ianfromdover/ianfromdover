@@ -1,13 +1,22 @@
 ;; Izumi Layout for Mac, adapted from Miryoku
-;; Copyright 2021 Manna Harbour, 2022 Ian Hong
-;; github.com/manna-harbour/miryoku
+;; Copyright 2022 Ian Hong
 ;; github.com/ianfromdover/ianfromdover/tree/main/keyboards
 
-;; Mac differences:
-;;   - met and ctl swap positions
-;;   - copy shortcuts custom
-;;   - # is A-3
-;;   - note: stopcd doesnt work, so cannot stop music
+| function        | mac                | windows         |
+|-----------------|--------------------|-----------------|
+| • IN ALIASES •  |                    |                 |
+| command key     | met next to sft    | ctl next to sft |
+| open terminal   | "open -a Terminal" | idk             |
+| music control   | prev, pp, next     | long form       |
+| lights          | br, bl updn        | NA              |
+| copy paste cuts | M-zxcv             | C-zxcv          |
+| sticky key      | works              | NA              |
+| toggle windows  | M-tab              | A-tab           |
+| home, end       | M-left, M-right    | home, end       |
+| • IN LAYERS •   |                    |                 |
+| #               | A-3                | #               |
+| command key     | M near sft         | C near sft      |
+| stop music      | NA                 | stopcd          |
 
 (defcfg
   input  (iokit-name)
@@ -27,28 +36,28 @@
 (defalias
   ;; modifiers on colemak's btm row 
   ;; reason: colemak uses home row extensively
-  z (tap-hold-next-release 250 z lctl)	
-  x (tap-hold-next-release 250 x lalt)	
-  c (tap-hold-next-release 250 c lmet)	
-  d (tap-hold-next-release 250 d lsft)	
+  z (tap-hold-next-release 200 z lctl)	
+  x (tap-hold-next-release 200 x lalt)	
+  c (tap-hold-next-release 200 c lmet)	
+  d (tap-hold-next-release 150 d lsft)	
 
-  h  (tap-hold-next-release 250 h rsft)	
-  cm (tap-hold-next-release 250 , rmet)	
-  pd (tap-hold-next-release 250 . ralt)	
-  sl (tap-hold-next-release 250 / rctl)	
+  h  (tap-hold-next-release 150 h rsft)	
+  cm (tap-hold-next-release 200 , rmet)	
+  pd (tap-hold-next-release 200 . ralt)	
+  sl (tap-hold-next-release 200 / rctl)	
 
   ;; modifiers on qwerty's btm row 
   ;; reason: free WASD for Unity
-  v (tap-hold-next-release 250 v lsft)
-  m (tap-hold-next-release 250 m rsft)
+  v (tap-hold-next-release 150 v lsft)
+  m (tap-hold-next-release 150 m rsft)
 
   ;; thumb layers
-  escs (tap-hold-next-release 250 esc (layer-toggle CODE))
-  bsps (tap-hold-next-release 250 bspc (layer-toggle NUM))
-  tabs (tap-hold-next-release 250 tab (layer-toggle SYM))
-  rets (tap-hold-next-release 250 ent (layer-toggle SYSTEM))
-  spcs (tap-hold-next-release 250 spc (layer-toggle NAV))
-  dels (tap-hold-next-release 250 del (layer-toggle FUN))
+  escs (tap-hold-next-release 200 esc (layer-toggle CODE))
+  bsps (tap-hold-next-release 200 bspc (layer-toggle NUM))
+  tabs (tap-hold-next-release 200 tab (layer-toggle SYM))
+  rets (tap-hold-next-release 200 ent (layer-toggle SYSTEM))
+  spcs (tap-hold-next-release 200 spc (layer-toggle NAV))
+  dels (tap-hold-next-release 200 del (layer-toggle FUN))
 
   ;; system functions
   q #(C-c met) ;; kill kmonad. select the terminal and nav-Q

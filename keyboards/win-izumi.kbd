@@ -1,24 +1,22 @@
 ;; Izumi Layout for Windows, adapted from Miryoku
-;; Copyright 2021 Manna Harbour, 2022 Ian Hong
-;; github.com/manna-harbour/miryoku
+;; Copyright 2022 Ian Hong
 ;; github.com/ianfromdover/ianfromdover/tree/main/keyboards
 
-;; next improvement: figma: all non-letters to small size style.
-
-;; suggestion: have a table: |----|----|---| markdown style, with function, mac and win, with 2 sections: in aliases, keymap
-;; Mac differences:
-;;   - previoussong, playpause and nextsong have to be the long form in media.
-;;   - brightness up and down and backlight doesn't work on windows. removed kbd backlight 
-;;   - # is A-3 in the maps themselves. 
-
-;; the rest of the changes are in the aliases.
-;;   - meta and control swap positions. the top layers also need to indiv swap.
-;;   - windows also needs copy shortcuts custom
-;;   - terminal command is different
-;;   - sticky-key doesn't work on windows
-;;   - toggle window shortcut is A-tab, not M-tab
-;;   - eol, sol use home and end instead of M-left M-right
-;;   - mac to test: note: stopcd doesnt work on mac. works on windows!
+| function        | mac                | windows         |
+|-----------------|--------------------|-----------------|
+| • IN ALIASES •  |                    |                 |
+| command key     | met next to sft    | ctl next to sft |
+| open terminal   | "open -a Terminal" | idk             |
+| music control   | prev, pp, next     | long form       |
+| lights          | br, bl updn        | NA              |
+| copy paste cuts | M-zxcv             | C-zxcv          |
+| sticky key      | works              | NA              |
+| toggle windows  | M-tab              | A-tab           |
+| home, end       | M-left, M-right    | home, end       |
+| • IN LAYERS •   | x                  | x               |
+| #               | A-3                | #               |
+| command key     | M near sft         | C near sft      |
+| stop music      | NA                 | stopcd          |
 
 (defcfg
   input  (low-level-hook)
@@ -38,28 +36,28 @@
 (defalias
   ;; modifiers on colemak's btm row 
   ;; reason: colemak uses home row extensively
-  z (tap-hold-next-release 250 z lmet)	
-  x (tap-hold-next-release 250 x lalt)	
-  c (tap-hold-next-release 250 c lctl)	
-  d (tap-hold-next-release 250 d lsft)	
+  z (tap-hold-next-release 200 z lmet)	
+  x (tap-hold-next-release 200 x lalt)	
+  c (tap-hold-next-release 200 c lctl)	
+  d (tap-hold-next-release 150 d lsft)	
 
-  h  (tap-hold-next-release 250 h rsft)	
-  cm (tap-hold-next-release 250 , rctl)	
-  pd (tap-hold-next-release 250 . ralt)	
-  sl (tap-hold-next-release 250 / rmet)	
+  h  (tap-hold-next-release 150 h rsft)	
+  cm (tap-hold-next-release 200 , rctl)	
+  pd (tap-hold-next-release 200 . ralt)	
+  sl (tap-hold-next-release 200 / rmet)	
 
   ;; modifiers on qwerty's btm row 
   ;; reason: free WASD for Unity
-  v (tap-hold-next-release 250 v lsft)
-  m (tap-hold-next-release 250 m rsft)
+  v (tap-hold-next-release 150 v lsft)
+  m (tap-hold-next-release 150 m rsft)
 
   ;; thumb layers
-  escs (tap-hold-next-release 250 esc (layer-toggle CODE))
-  bsps (tap-hold-next-release 250 bspc (layer-toggle NUM))
-  tabs (tap-hold-next-release 250 tab (layer-toggle SYM))
-  rets (tap-hold-next-release 250 ent (layer-toggle SYSTEM))
-  spcs (tap-hold-next-release 250 spc (layer-toggle NAV))
-  dels (tap-hold-next-release 250 del (layer-toggle FUN))
+  escs (tap-hold-next-release 200 esc (layer-toggle CODE))
+  bsps (tap-hold-next-release 200 bspc (layer-toggle NUM))
+  tabs (tap-hold-next-release 200 tab (layer-toggle SYM))
+  rets (tap-hold-next-release 200 ent (layer-toggle SYSTEM))
+  spcs (tap-hold-next-release 200 spc (layer-toggle NAV))
+  dels (tap-hold-next-release 200 del (layer-toggle FUN))
 
   ;; system functions
   q #(C-c ctl) ;; kill kmonad. select the terminal, press nav-Q, then press C-c after. Can't automate.

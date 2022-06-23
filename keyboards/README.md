@@ -1,11 +1,23 @@
 # The Izumi Layout
 
-*Izumi is a 36-key layout.* Features: 
+*Izumi is a 36-key layout.* Design Principles:
 - uses colemak DH matrix and the Miryoku layout as a base
-- navigation layer has arrow keys, `home`, `end`, `copy`, `paste`, and many useful shortcuts
+    - use layers instead of reaching
+    - use the home positions as much as possible, paying special attention to the three central rows on each hand
+    - make use of the thumbs
+    - place relevant symbols in the same layer, duplicating them at times
+    - includes all keys found on a TKL layout excluding mouse emulation
+- moves Miryoku's home row modifiers to the bottom row as it was slowing down typing
+- layers with things to be typed on the LH, functional layers on the RH
+- navigation layer has arrow keys, `home`, `end`, that you can pair with shift and meta key, `copy`, `paste`, window toggling and vim shortcuts like `{` and `}` in accessible positions.
+- if a thumb key is held down, the corresponding hand's home row becomes modifiers that can be held down as well
+- qwerty layer for gaming and unity control.
 - favourite feature: control music volume and playback directly from the home row
-*Work in progress*
+- ergonomics determined by this chart from the colemak github:
 
+![effort values](./imgs/effort.png)
+
+*Work in progress*
 
 ### Base(Alphas) - Colemak DH Matrix
 

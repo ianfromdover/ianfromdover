@@ -111,14 +111,14 @@ XX      XX      XX      caps    XX          $       1       2       3       %
 XX	    XX	    XX	    XX	    XX	        XX      &	    *	    \(	    XX
 ctl     alt     met     sft     XX          +       $       %       ^       =
 XX      XX      XX      XX      XX          XX      !       @       A-3     XX
-                XX      XX      XX          \_      \)      `
+                XX      XX      XX          \_      \)      ~
 )
 
 (deflayer CODE
 XX	    XX	    XX	    XX	    XX	        XX      =       [       ]       XX
 ctl     alt     met     sft     XX          +       :       \(      \)      ;
 XX      XX      XX      XX      XX          XX      "       &       |       \\
-                XX      XX      XX          \_      spc     ~
+                XX      XX      XX          \_      spc     `
 )
 
 (deflayer FUN

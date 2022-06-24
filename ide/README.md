@@ -34,7 +34,10 @@
 
 ### Installation
 Rider: File > Manage IDE Settings > Import Settings... > choose the zip file
+
 IntelliJ: File > Manage IDE Settings > Import Settings... > choose the zip file
+
 VS Code: Command Palette > Open Keyboard Shortcuts (JSON), Explorer: view open editors, show keybindings in finder
+
 replace keybindings.json in /Users/YOUR_USER_NAME/Library/Application Support/Code/User
 

@@ -33,7 +33,7 @@ alias gcm="git commit -m"
 gam () { # Git add all + commit message
     ga
     gs
-    gcm $1
+    gcm "$*"
 }
 alias gd="git diff"
 alias gb="git branch"

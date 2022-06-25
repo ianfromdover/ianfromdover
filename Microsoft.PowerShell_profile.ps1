@@ -87,7 +87,10 @@ Set-Alias gl GLog
 del alias:gc -Force # default is Get-Content
 Set-Alias gc GChk
 del alias:gcm -Force # default is Get-Command
-Set-Alias gcm GCmmtM
+
+function gcm {
+    git commit -m $args
+}
 
 function GStatus {
     git status
@@ -99,10 +102,6 @@ function GAdd {
 
 function GChk {
     git checkout
-}
-
-function GCmmtM {
-    git commit -m
 }
 
 function GDiff {

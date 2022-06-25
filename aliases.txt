@@ -30,7 +30,11 @@ alias gs="git status"
 alias ga="git add *"
 alias gc="git checkout"
 alias gcm="git commit -m"
-alias gam="git commit -a -m"
+gam () { # Git add all + commit message
+    ga
+    gs
+    gcm $1
+}
 alias gd="git diff"
 alias gb="git branch"
 alias gm="git checkout main" # or master when you're working on that

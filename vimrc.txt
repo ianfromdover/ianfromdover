@@ -1,8 +1,8 @@
 set nocp          " Use VIM settings rather than Vi settings, esp when the `vim -u` flag is passed
 
 " Owner: Hong Yi En, Ian <ian09hong@gmail.com>
-" Last Change: 22 June 2022
-" Why: Add colemak bindings, remove kj escape
+" Last Change: 25 June 2022
+" Why: Make colemak bindings to neio hjkl only.
 
 " Essentials: Line numbers and looking around
 syntax on         " on colours
@@ -16,36 +16,14 @@ set so=5          " always show 5 lines around the cursor for context (scrolloff
 set backspace=eol,start,indent " allow backspacing over everything in insert mode indent,eol,start, but tbh i never understood what this meant
 
 " Colemak Vim Rebindings for normal mode
-" when muscle memory recovers, reorganise by function.
-" A             " same as colemak is annotated this way.
-" noremap r s   " not used is annotated this way.
-noremap s d
-" noremap t f
-" G
-" noremap m '
 noremap n h
 noremap e j
 noremap i k
 noremap o l
-" Top row
-" Q
-" W
-noremap f e
-noremap p r
-" noremap b t
-noremap j y
-noremap l u
-noremap u i
-noremap y o
-noremap ' p
-" Btm row
-" Z
-" X
-" C
-noremap d v
-noremap v b
+noremap h o
+noremap j e
 noremap k n
-" noremap h m
+noremap l i
 
 " when escaping, cursor stays in same position
 autocmd InsertLeave * :normal! `^

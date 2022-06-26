@@ -16,7 +16,7 @@
 ;; | • IN LAYERS •   |                    |                 |
 ;; | #               | A-3                | #               |
 ;; | command key     | M near sft         | C near sft      |
-;; | stop music      | NA                 | stopcd          |
+;; | stop music      | M-.                | stopcd          |
 
 (defcfg
   input  (iokit-name)
@@ -141,6 +141,6 @@ left    down    up      rght    tab         spc     sft     met     alt     ctl
 bldn    brdn    brup    blup    XX          XX      XX      XX      XX      XX
 prev    vold    volu    next    XX          XX      XX      XX      XX      XX
 @q      @ter    @qt     @ck     XX          XX      XX      XX      XX      XX
-                mute    pp      stopcd      XX      XX      XX
+                mute    pp      M-.         XX      XX      XX
 )
 

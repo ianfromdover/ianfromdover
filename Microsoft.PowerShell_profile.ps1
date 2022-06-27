@@ -134,3 +134,11 @@ function IzumiKeyboard {
  kmonad 'C:\Users\Ian Hong\Desktop\gh\ian-from-dover\keyboards\izumi.kbd'
 }
 
+# Set Vim (Windows) search youtube how to write powershell scripts
+function svw {
+    # copy vimrc in ianfromdover repo to the following locations:
+    '~\.vimrc'
+    '~\_vimrc'
+    '~\.ideavimrc'
+}
+

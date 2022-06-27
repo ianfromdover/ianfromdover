@@ -124,6 +124,13 @@ function GHub {
     Start-Process https://github.com/ianfromdover?tab=repositories
 }
 
+function gam { # git add all + commit message + push
+    ga
+    gs
+    gcm $args
+    git push
+}
+
 # APPS
 New-Alias t notepad.exe
 # New-Alias p python3

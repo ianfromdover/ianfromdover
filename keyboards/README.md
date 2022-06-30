@@ -17,7 +17,7 @@
 
 ![effort values](./imgs/effort.png)
 
-### Base(Alphas) - Colemak DH Matrix
+### Base(Alphas) - Colemak DH
 
 ![base](./imgs/base.png)
 
@@ -39,10 +39,6 @@ This layer is for Unity's WASD for navigation.
 
 ![code](./imgs/code.png)
 
-### Function
-
-![func](./imgs/fn.png)
-
 ### Navigation
 
 ![nav](./imgs/nav.png)
@@ -50,6 +46,16 @@ This layer is for Unity's WASD for navigation.
 ### System
 
 ![system](./imgs/sys.png)
+
+### Function
+
+![func](./imgs/fn.png)
+
+### Note: Vim Remappings
+
+Allows O(1) access to vim navigation. Sacrifices vim's J, L, K functionality
+
+![vim](./imgs/vim-remap.png)
 
 # Running the Izumi Layout
 

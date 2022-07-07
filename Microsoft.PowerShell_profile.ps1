@@ -134,11 +134,11 @@ function gam { # git add all + commit message + push
 # APPS
 New-Alias t notepad.exe
 # New-Alias p python3
-New-Alias kmonad 'C:\Users\Ian Hong\Desktop\gh\ian-from-dover\keyboards\kmonad-0.4.1-win.exe'
+New-Alias kmonad 'C:\Users\Ian Hong\Desktop\gh\ianfromdover\keyboards\kmonad-0.4.1-win.exe'
 New-Alias iz IzumiKeyboard
 
 function IzumiKeyboard {
- kmonad 'C:\Users\Ian Hong\Desktop\gh\ian-from-dover\keyboards\izumi.kbd'
+ kmonad 'C:\Users\Ian Hong\Desktop\gh\ianfromdover\keyboards\izumi.kbd'
 }
 
 # Set Vim (Windows) search youtube how to write powershell scripts

@@ -1,7 +1,7 @@
 echo 'Setting powershell profile with location:'
 echo $profile
-$a = Get-Content -Path '..\Microsoft.Powershell_profile.ps1'
-Set-Content -Path $profile $a
+$from = Get-Content -Path '..\Microsoft.Powershell_profile.ps1'
+Set-Content -Path $profile $from
 echo 'Powershell profile has been set'
 
 # idea: make the get and set scripts into an update script instead,

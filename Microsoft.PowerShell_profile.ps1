@@ -138,7 +138,7 @@ New-Alias kmonad 'C:\Users\Ian Hong\Desktop\gh\ianfromdover\keyboards\kmonad-0.4
 New-Alias iz IzumiKeyboard
 
 function IzumiKeyboard {
- kmonad 'C:\Users\Ian Hong\Desktop\gh\ianfromdover\keyboards\izumi.kbd'
+ kmonad 'C:\Users\Ian Hong\Desktop\gh\ianfromdover\keyboards\win-izumi.kbd'
 }
 
 # Set Vim (Windows) search youtube how to write powershell scripts

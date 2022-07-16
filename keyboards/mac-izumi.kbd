@@ -36,20 +36,20 @@
 (defalias
   ;; modifiers on colemak's btm row 
   ;; reason: colemak uses home row extensively
-  z (tap-hold-next-release 200 z lctl)	
-  x (tap-hold-next-release 200 x lalt)	
-  c (tap-hold-next-release 200 c lmet)	
-  d (tap-hold-next-release 200 d lsft)	
+  z (tap-next-release z lsft) ;; z is used less than the inner letters. no delay, when held, becomes shift if you press another key. if you keep holding this after pressing another one, it stays as shift
+  x (tap-hold-next-release 200 x lctl)	
+  c (tap-hold-next-release 200 c lalt)	
+  d (tap-hold-next-release 200 d lmet)	
 
-  h  (tap-hold-next-release 200 h rsft)	
-  cm (tap-hold-next-release 200 , rmet)	
-  pd (tap-hold-next-release 200 . ralt)	
-  sl (tap-hold-next-release 200 / rctl)	
+  h  (tap-hold-next-release 200 h rmet)	
+  cm (tap-hold-next-release 200 , ralt)	
+  pd (tap-hold-next-release 200 . rctl)	
+  sl (tap-next-release / rsft)
 
   ;; modifiers on qwerty's btm row 
   ;; reason: free WASD for Unity
-  v (tap-hold-next-release 200 v lsft)
-  m (tap-hold-next-release 200 m rsft)
+  v (tap-hold-next-release 200 v lmet)
+  m (tap-hold-next-release 200 m rmet)
 
   ;; thumb layers
   escs (tap-hold-next-release 200 esc (layer-toggle CODE))

@@ -86,7 +86,7 @@
 q	    w	    f	    p	    b	        j       l	    u	    y	    '
 a       r       s       t       g           m       n       e       i       o
 @z      @x	    @c	    @d	    v	        k	    @h	    @cm	    @pd     @sl
-                @escs   @bsps   @tabs       @rets   @spcs   @dels
+                @escs   @bsps   @tabs       @rets   @spcs   rsft
 )
 
 (deflayer QRTY
@@ -94,7 +94,7 @@ a       r       s       t       g           m       n       e       i       o
 q	    w	    e	    r	    t	        y	    u	    i	    o	    p
 a       s       d       f       g	        h	    j       k       l       spc
 @z      @x      @c      @v      b           n       @m      @cm	    @pd     sft
-                @escs   @bsps   @tabs       @rets   @spcs   @dels
+                @escs   @bsps   @tabs       @rets   @spcs   rsft
 )
 
 ;; ----- Transient Layers -----
@@ -134,7 +134,7 @@ XX      f1      f2      f3       XX         XX	    XX	    XX	    XX	    XX
 @tw     @ta     @hm     @ed     `           XX      ^       A-3     *       $  
 left    down    up      rght    tab         spc     sft     met     alt     ctl
 @ud     @ct     @cp     @pst    @rd         %       b       {       }       w
-                esc     bspc    @tabs       XX      XX      XX
+                esc     bspc    @tabs       XX      XX      @dels
 )
 
 (deflayer SYSTEM

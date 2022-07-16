@@ -1,5 +1,9 @@
 # The Izumi Layout
 
+thumbshift branch: the shift shouldnt be on the same thumb as the space because it will be a same-finger bigram and it will be slower. i will stick to the sticky shifts on the extra corne keys.
+
+however, in the future if i want to have a 36 key layout then id make z and / tap-holds to be sticky shifts and holds to be their character, and move the home row mods one finger inner.
+
 *Izumi is a 36-key layout.* Design Principles:
 - uses colemak DH matrix and the Miryoku layout as a base
     - use layers instead of reaching

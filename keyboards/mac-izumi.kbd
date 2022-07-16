@@ -59,6 +59,9 @@
   spcs (tap-hold-next-release 200 spc (layer-toggle NAV))
   dels (tap-hold-next-release 200 del (layer-toggle FUN))
 
+  ;; sticky shift
+  ss (sticky-key 500 rsft)
+
   ;; system functions
   q #(C-c met) ;; kill kmonad. select the terminal and nav-Q
   ter (cmd-button "open -a Terminal")
@@ -86,7 +89,7 @@
 q	    w	    f	    p	    b	        j       l	    u	    y	    '
 a       r       s       t       g           m       n       e       i       o
 @z      @x	    @c	    @d	    v	        k	    @h	    @cm	    @pd     @sl
-                @escs   @bsps   @tabs       @rets   @spcs   rsft
+                @escs   @bsps   @tabs       @rets   @spcs   @ss
 )
 
 (deflayer QRTY

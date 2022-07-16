@@ -44,6 +44,7 @@
   h  (tap-hold-next-release 200 h rmet)	
   cm (tap-hold-next-release 200 , ralt)	
   pd (tap-hold-next-release 200 . rctl)	
+  sl (tap-hold-next-release 200 (sticky-key 500 rsft) /)
 
   ;; modifiers on qwerty's btm row 
   ;; reason: free WASD for Unity

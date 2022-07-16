@@ -36,15 +36,15 @@
 (defalias
   ;; modifiers on colemak's btm row 
   ;; reason: colemak uses home row extensively
-  z (tap-hold-next-release 200 z lmet)	
-  x (tap-hold-next-release 200 x lalt)	
-  c (tap-hold-next-release 200 c lctl)	
-  d (tap-hold-next-release 200 d lsft)	
+  z (tap-hold-next-release 200 (sticky-key 500 lsft) z)
+  x (tap-hold-next-release 200 x lmet)	
+  c (tap-hold-next-release 200 c lalt)	
+  d (tap-hold-next-release 200 d lctl)	
 
-  h  (tap-hold-next-release 200 h rsft)	
-  cm (tap-hold-next-release 200 , rctl)	
-  pd (tap-hold-next-release 200 . ralt)	
-  sl (tap-hold-next-release 200 / rmet)	
+  h  (tap-hold-next-release 200 h rctl)	
+  cm (tap-hold-next-release 200 , ralt)	
+  pd (tap-hold-next-release 200 . rmet)	
+  sl (tap-hold-next-release 200 (sticky-key 500 rsft) /)	
 
   ;; modifiers on qwerty's btm row 
   ;; reason: free WASD for Unity

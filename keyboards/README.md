@@ -1,17 +1,15 @@
 # The Izumi Layout
 
-*Izumi is a 36-key layout.* Design Principles:
+*Izumi is a 42-key layout.* Design Principles:
 - uses colemak DH matrix and the Miryoku layout as a base
+    - includes all keys found on a TKL layout
     - use layers instead of reaching
-    - use the home positions as much as possible, paying special attention to the three central rows on each hand
+    - use sticky keys instead of holding
+    - use the home positions as much as possible
     - make use of the thumbs
-    - place relevant symbols in the same layer, duplicating them at times
-    - includes all keys found on a TKL layout excluding mouse emulation
-- moves Miryoku's home row modifiers to the bottom row as it was slowing down typing
-- places layers with things to be typed on the LH, functional layers on the RH
 - if a thumb key is held down, the corresponding hand's home row becomes modifiers that can be held down as well
 - qwerty layer for gaming and Unity viewport control
-- navigation layer includes arrow keys, `home`, `end`, that you can pair with shift and meta key, `copy`, `paste`, window toggling and vim shortcuts like `{` and `}` in accessible positions
+- navigation layer includes arrow keys, `home`, `end`, that you can pair with shift and meta key, `copy`, `paste`, and window toggling
 - favourite feature: control music volume and playback directly from the home row
 - ergonomics determined by this chart from the colemak github:
 
@@ -23,7 +21,7 @@
 
 ### Qwerty
 
-This layer is for Unity's WASD for navigation. 
+This layer is for playing Minecraft one-handed and navigating in Unity using WASD.
 
 ![qwerty](./imgs/qwerty.png)
 
@@ -31,13 +29,15 @@ This layer is for Unity's WASD for navigation.
 
 ![num](./imgs/num.png)
 
-### Symbols
-
-![sym](./imgs/sym.png)
-
 ### Code
 
 ![code](./imgs/code.png)
+
+### One-Shot
+
+Tapping any button in this layer brings you out of the layer. Meant for quick one-time-use functions.
+
+![oneshot](./imgs/oneshot.png)
 
 ### Navigation
 
@@ -46,10 +46,6 @@ This layer is for Unity's WASD for navigation.
 ### System
 
 ![system](./imgs/sys.png)
-
-### Function
-
-![func](./imgs/fn.png)
 
 ### Note: Vim Remappings
 

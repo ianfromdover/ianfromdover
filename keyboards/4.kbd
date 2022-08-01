@@ -1,0 +1,132 @@
+;; Izumi Layout Version 4 for Mac, adapted from Miryoku
+;; Copyright 2022 Ian Hong
+;; github.com/ianfromdover/ianfromdover/tree/main/keyboards
+
+;; | function        | mac                | windows         |
+;; |-----------------|--------------------|-----------------|
+;; | • IN ALIASES •  |                    |                 |
+;; | command key     | met next to sft    | ctl next to sft |
+;; | open terminal   | "open -a Terminal" | idk             |
+;; | music control   | prev, pp, next     | long form       |
+;; | lights          | br, bl updn        | NA              |
+;; | copy paste cuts | M-zxcv             | C-zxcv          |
+;; | sticky key      | works              | NA              |
+;; | toggle windows  | M-tab              | A-tab           |
+;; | home, end       | M-left, M-right    | home, end       |
+;; | • IN LAYERS •   |                    |                 |
+;; | #               | A-3                | #               |
+;; | command key     | M near sft         | C near sft      |
+;; | stop music      | M-.                | stopcd          |
+
+(defcfg
+  input  (iokit-name)
+  output (kext)
+  fallthrough false
+  allow-cmd true
+)
+
+(defsrc
+  ;; separated hands, no reverse angle
+  esc  1 2 3 4 5     8 9 0 - = bspc
+  tab  q w e r t     i o p [ ] \
+  caps a s d f g     k l ; ' ent
+           c v b     m , .
+)
+
+(defalias
+  ;; thumb layers
+  escs (tap-hold-next-release 200 esc (layer-toggle CODE))
+  bsps (tap-hold-next-release 200 bspc (layer-toggle NUM))
+  sfts (sticky-key 500 lsft)
+  os   (around-next (layer-toggle ONESHOT)) ;; layer-next will be deprecated
+  dels (tap-hold-next-release 200 del rmet))
+
+  ;; system functions
+  q   #(C-c met) ;; kill kmonad. select the terminal and nav-Q
+  ter (cmd-button "open -a Terminal")
+  emo C-M-spc
+  nav (layer-switch NAV)
+  ;; qt  (layer-switch QRTY)
+  sys (layer-switch SYSTEM)
+  base (layer-switch CLMK)
+
+  stc (sticky-key 500 lctl)
+  sto (sticky-key 500 ralt)
+  spt M-spc
+  saf #(M-spc s a f ent) ;; need test! can i nest aliases?
+  ;; notion, tele. next line: ter, txtedt, music, mail
+  ss  S-M-4
+  ssf S-M-3
+
+  ;; Navigation
+  hm M-left
+  ed M-right
+  ta M-tab ;; toggle app
+  tw M-`   ;; toggle window
+  wb M-[   ;; web back
+  wf M-]
+
+  ;; Copy Paste
+  ;; Macs need custom copy-paste aliases
+  ud M-z
+  ct M-x
+  cp M-c
+  pst M-v
+  r alt-ctl
+)
+
+;; ----- Base Layers ----- 
+
+(deflayer CLMK
+@stc    q	    w	    f	    p	    b	        j       l	    u	    y	    '       @sto
+tab     a       r       s       t       g           m       n       e       i       o       ent
+@nav    z       x       c       d       v           k       h       ,       .       /
+                        @escs   @bsps   @sfts       @os     spc     @dels
+)
+
+;; (deflayer QRTY
+;; Apostrophe and Slash are replaced with Spc and Sft for controlling hands in MRTK in Unity.
+;; q	    w	    e	    r	    t	        y	    u	    i	    o	    p
+;; a       s       d       f       g	        h	    j       k       l       spc
+;; @z      @x      @c      @v      b           n       @m      @cm	    @pd     sft
+                ;; @escs   @bsps   @tabs       @rets   @spcs   @dels
+;; )
+
+;; ----- Transient Layers -----
+;; --- LH ---
+
+(deflayer NUM
+XX      XX	    XX	    XX	    XX	    XX	        *       7	    8	    9	    %       XX
+XX      ctl     alt     met     sft     XX          +       4       5       6       =       XX
+XX      XX      XX      XX      XX      XX          $       1       2       3       .
+                        XX      XX      XX          -       spc     0
+)
+
+(deflayer CODE
+XX      XX	    XX	    XX	    XX	    XX	        XX      <       [       ]       >       XX
+XX      ctl     alt     met     sft     XX          +       :       \(      \)      ;       XX
+XX      XX      XX      XX      XX      XX          XX      "       &       |       \\
+                        XX      XX      XX          \_      spc     `
+)
+
+(deflayer ONESHOT
+XX      XX	    XX	    @ssf	@ss	    XX	        XX      XX      XX      XX      XX       XX
+XX      @tw     @ta     @emo    @sys    XX          XX      @spt    @saf    XX      XX       XX
+XX      XX      XX      XX      caps    XX          XX      @ter    XX      XX      XX 
+                        mute    pp      next        @base   XX      XX
+)
+
+(deflayer NAV
+@wb     @tw     @ta     @hm     @ed     `           XX      ^       A-3     *       $       XX
+@wf     left    down    up      rght    tab         spc     sft     met     alt     ctl     XX
+@base   @ud     @ct     @cp     @pst    @r          %       b       {       }       w
+                        @stc    @sfts   bspc        XX      XX      XX
+)
+
+(deflayer SYSTEM
+XX      bldn    brdn    brup    blup    XX          XX      f7      f8      f9      f10     XX
+XX      prev    vold    volu    next    XX          XX      f4      f5      f6      f11     XX
+XX      @q      @ter    @qt     @ck     XX          XX      f1      f2      f3      f12
+                        mute    pp      M-.         @base   @sfts   @stc
+)
+        

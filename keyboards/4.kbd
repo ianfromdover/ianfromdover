@@ -38,6 +38,7 @@
   escs (tap-hold-next-release 200 esc (layer-toggle CODE))
   bsps (tap-hold-next-release 200 bspc (layer-toggle NUM))
   sfts (sticky-key 500 lsft)
+  spcs (tap-hold-next-release 200 spc (layer-toggle NAV))
   os   (around-next (layer-toggle ONESHOT)) ;; layer-next will be deprecated
   ents (tap-hold-next-release 200 ent rmet)
 
@@ -84,7 +85,7 @@
 @stc    q	    w	    f	    p	    b	        j       l	    u	    y	    '       @sto
 tab     a       r       s       t       g           m       n       e       i       o       @os
 @nav    z       x       c       d       v           k       h       ,       .       /
-                        @escs   @bsps   @sfts       @ents    spc    del
+                        @escs   @bsps   @sfts       @ents   @spcs   del
 )
 
 ;; (deflayer QRTY
@@ -119,10 +120,10 @@ XX      XX      XX      XX      caps    XX          XX      @ter    @txt    @mus
                         mute    pp      next        XX      XX      XX
 )
 
-(deflayer NAV
+(deflayer NAV ;; change this to mouse layer. nav should be its own temp layer
 @wb     @tw     @ta     @hm     @ed     `           XX      ^       A-3     *       $       XX
 @wf     left    down    up      rght    tab         spc     sft     met     alt     ctl     XX
-@base   @ud     @ct     @cp     @pst    XX          %       b       {       }       w ;; move the mouse to single-line here, i really need the modifiers to be on home row..
+@base   @ud     @ct     @cp     @pst    XX          %       b       {       }       w 
                         esc     bspc    lsft        ent     spc     del
 )
 

@@ -42,6 +42,12 @@
   os   (around-next (layer-toggle ONESHOT)) ;; layer-next will be deprecated
   ents (tap-hold-next-release 200 ent rmet)
 
+  ;; btm row mods
+  c (tap-hold-next-release 200 c lctl)
+  d (tap-hold-next-release 200 d lalt)
+  h (tap-hold-next-release 200 h ralt)
+  cm (tap-hold-next-release 200 , rctl)
+
   ;; system functions
   q   #(C-c met) ;; kill kmonad. select the terminal and nav-Q
   ter (cmd-button "open -a Terminal")
@@ -84,7 +90,7 @@
 (deflayer CLMK
 @stc    q	    w	    f	    p	    b	        j       l	    u	    y	    '       @sto
 tab     a       r       s       t       g           m       n       e       i       o       @os
-@nav    z       x       c       d       v           k       h       ,       .       /
+@nav    z       x       @c      @d      v           k       @h      @cm     .       /
                         @escs   @bsps   @sfts       @ents   @spcs   del
 )
 
@@ -116,20 +122,20 @@ XX      XX      XX      XX      XX      XX          XX      "       &       |   
 (deflayer ONESHOT
 XX      XX	    XX	    @ssf	@ss	    XX	        XX      XX      XX      XX      XX       XX
 XX      @tw     @ta     @emo    @sys    XX          XX      @spt    @saf    @not    @tel     @base
-XX      XX      XX      XX      caps    XX          XX      @ter    @txt    @mus    @mil 
+XX      @q      @ter    XX      caps    XX          XX      @ter    @txt    @mus    @mil 
                         mute    pp      next        XX      XX      XX
 )
 
 (deflayer NAV ;; change this to mouse layer. nav should be its own temp layer
-@wb     @tw     @ta     @hm     @ed     `           XX      ^       A-3     *       $       XX
-@wf     left    down    up      rght    tab         spc     sft     met     alt     ctl     XX
-@base   @ud     @ct     @cp     @pst    XX          %       b       {       }       w 
+@wf     @tw     @ta     @hm     @ed     `           XX      ^       A-3     *       $       XX
+@wb     left    down    up      rght    tab         %       sft     met     lt     ctl     XX
+@base   @ud     @ct     @cp     @pst    XX          XX      b       {       }       w 
                         esc     bspc    lsft        ent     spc     del
 )
 
 (deflayer SYSTEM
 XX      bldn    brdn    brup    blup    XX          XX      f7      f8      f9      f10     XX
-XX      prev    vold    volu    next    XX          XX      f4      f5      f6      f11     XX
+XX      prev    vold    volu    next    XX          XX      f4      f5      f6      f11     @base
 XX      @q      @ter    XX      XX      XX          XX      f1      f2      f3      f12
                         mute    pp      M-.         @base   @sfts   @stc
 )

@@ -21,8 +21,6 @@
 
 ### Qwerty
 
-This layer is for playing Minecraft one-handed and navigating in Unity using WASD.
-
 ![qwerty](./imgs/qwerty.png)
 
 ### Numbers
@@ -42,6 +40,12 @@ Tapping any button in this layer brings you out of the layer. Meant for quick on
 ### Navigation
 
 ![nav](./imgs/nav.png)
+
+### FPS
+
+This layer is for playing Minecraft one-handed and navigating in Unity using WASD.
+
+![fps](./imgs/fps.png)
 
 ### System
 

@@ -128,7 +128,7 @@ XX      @q      @ter    XX      caps    XX          XX      @ter    @txt    @mus
 
 (deflayer NAV ;; change this to mouse layer. nav should be its own temp layer
 @wf     @tw     @ta     @hm     @ed     `           XX      ^       A-3     *       $       XX
-@wb     left    down    up      rght    tab         %       sft     met     lt     ctl     XX
+@wb     left    down    up      rght    tab         %       sft     met     alt     ctl     XX
 @base   @ud     @ct     @cp     @pst    XX          XX      b       {       }       w 
                         esc     bspc    lsft        ent     spc     del
 )

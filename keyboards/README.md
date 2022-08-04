@@ -1,7 +1,7 @@
 # The Izumi Layout
 
 *Izumi is a 42-key layout.* Design Principles:
-- uses colemak DH matrix and the Miryoku layout as a base
+- derived from the Miryoku layout
     - includes all keys found on a TKL layout
     - use layers instead of reaching
     - use sticky keys instead of holding
@@ -41,15 +41,15 @@ Tapping any button in this layer brings you out of the layer. Meant for quick on
 
 ![nav](./imgs/nav.png)
 
+### System
+
+![system](./imgs/sys.png)
+
 ### FPS
 
 This layer is for playing Minecraft one-handed and navigating in Unity using WASD.
 
 ![fps](./imgs/fps.png)
-
-### System
-
-![system](./imgs/sys.png)
 
 ### Note: Vim Remappings
 
@@ -57,7 +57,14 @@ Allows O(1) access to vim navigation. Sacrifices vim's J, L, K functionality
 
 ![vim](./imgs/vim-remap.png)
 
-# Running the Izumi Layout
+# Flashing the Izumi Layout to a Corne
+
+Follow the instructions on the [official corne page](https://github.com/foostan/crkbd/blob/main/doc/firmware_en.md)
+but use the .hex file in this repo to flash through QMK Toolbox instead.
+
+# Running the Izumi Layout Using KMonad
+
+Note: the latest layout version on KMonad is v4.6
 
 ## Windows
 1. Simply navigate to this folder

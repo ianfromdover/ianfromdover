@@ -40,7 +40,7 @@
   sfts (sticky-key 500 lsft)
   spcs (tap-hold-next-release 200 spc (layer-toggle NAV))
   os   (around-next (layer-toggle ONESHOT)) ;; layer-next will be deprecated
-  ents (tap-hold-next-release 200 ent rmet)
+  dels (tap-hold-next-release 200 del rmet)
 
   ;; btm row mods
   c (tap-hold-next-release 200 c lctl)
@@ -91,7 +91,7 @@
 @stc    q	    w	    f	    p	    b	        j       l	    u	    y	    '       @sto
 tab     a       r       s       t       g           m       n       e       i       o       @os
 @nav    z       x       @c      @d      v           k       @h      @cm     .       /
-                        @escs   @bsps   @sfts       @ents   @spcs   del
+                        @sfts   @bsps   @escs       ent   @spcs   @dels
 )
 
 ;; (deflayer QRTY

@@ -1,14 +1,14 @@
 # The Izumi Layout
 
 *Izumi is a 42-key layout.* Design Principles:
-- derived from the Miryoku layout
+- derived from the Miryoku and Callum layouts
     - includes all keys found on a TKL layout
     - use layers instead of reaching
     - use sticky keys instead of holding
     - use the home positions as much as possible
     - make use of the thumbs
-- if a thumb key is held down, the corresponding hand's home row becomes modifiers that can be held down as well
-- qwerty layer for gaming and Unity viewport control
+- if a thumb key is held down, the corresponding hand's home row becomes modifiers that can be held down as well when appropriate
+- qwerty layer for mouse control, gaming and Unity viewport control
 - navigation layer includes arrow keys, `home`, `end`, that you can pair with shift and meta key, `copy`, `paste`, and window toggling
 - favourite feature: control music volume and playback directly from the home row
 - ergonomics determined by this chart from the colemak github:
@@ -19,9 +19,9 @@
 
 ![base](./imgs/base.png)
 
-### Qwerty
+### Navigation
 
-![qwerty](./imgs/qwerty.png)
+![nav](./imgs/nav.png)
 
 ### Numbers
 
@@ -31,25 +31,21 @@
 
 ![code](./imgs/code.png)
 
-### One-Shot
+### FPS
 
-Tapping any button in this layer brings you out of the layer. Meant for quick one-time-use functions.
+Also considered a 'mouse' layer, this layer is for playing Minecraft one-handed, or navigating in Unity using WASD.
 
-![oneshot](./imgs/oneshot.png)
-
-### Navigation
-
-![nav](./imgs/nav.png)
+![fps](./imgs/fps.png)
 
 ### System
 
 ![system](./imgs/sys.png)
 
-### FPS
+### One-Shot
 
-This layer is for playing Minecraft one-handed and navigating in Unity using WASD.
+Tapping any button in this layer brings you out of the layer. Meant for quick one-time-use functions. Launching the apps are achieved using macros.
 
-![fps](./imgs/fps.png)
+![oneshot](./imgs/oneshot.png)
 
 ### Note: Vim Remappings
 

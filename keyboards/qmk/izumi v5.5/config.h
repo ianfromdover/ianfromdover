@@ -1,8 +1,10 @@
 /*
-This is the c configuration file for the keymap
+This is the c configuration file for the izumi keymap
+Documentation: https://docs.qmk.fm/#/config_options
 
 Copyright 2012 Jun Wako <wakojun@gmail.com>
 Copyright 2015 Jack Humbert
+Copyright 2022 Ian Hong @ianfromdover
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -26,11 +28,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define MASTER_LEFT
 // #define MASTER_RIGHT
-// #define EE_HANDS
 
-//#define TAPPING_FORCE_HOLD
+#define TAPPING_FORCE_HOLD // the second hold after a tap will be interpreted as a hold, not a tap.
+// note: Breaks any Tap Toggle functionality (TT or the One Shot Tap Toggle)
 #define TAPPING_TERM 200
-#define ONESHOT_TIMEOUT 500
+#define ONESHOT_TIMEOUT 1500
 
 #define MOUSEKEY_MAX_SPEED 6
 

@@ -46,11 +46,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // Mac
   [0] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
- LT(5, KC_NO),    KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                         KC_J,    KC_L,  KC_U,   KC_Y,   KC_QUOT, LT(5, KC_NO),
+LT(5, KC_NO),    KC_Q,   KC_W,    KC_F,    KC_P,    KC_B,                         KC_J,    KC_L,   KC_U,    KC_Y,   KC_QUOT, LT(5, KC_NO),
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_TAB,     KC_A,    KC_R,    KC_S,    KC_T,    KC_G,                         KC_M,    KC_N,  KC_E,   KC_I,   KC_O, OSL(6),
+LALT_T(KC_TAB),  KC_A,   KC_R,    KC_S,    KC_T,    KC_G,                         KC_M,    KC_N,   KC_E,    KC_I,   KC_O,    OSL(6),
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-  KC_CAPS, LCTL_T(KC_Z), LALT_T(KC_X), KC_C, KC_D,    KC_V,               KC_K, KC_H, KC_COMM, RALT_T(KC_DOT), RCTL_T(KC_SLSH), TG(4),
+LCTL_T(KC_CAPS), KC_Z,   KC_X,    KC_C,    KC_D,    KC_V,                         KC_K,    KC_H,   KC_COMM, KC_DOT, KC_SLSH, TG(4),
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                        OSM(MOD_LSFT), LT(2, KC_BSPC), LT(3, KC_ESC),     KC_ENT, LT(1, KC_SPC), RGUI_T(KC_DEL)
                                       //`--------------------------'  `--------------------------'
@@ -59,11 +59,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // Win
   [7] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
- LT(12, KC_NO),    KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                      KC_J,    KC_L,    KC_U,   KC_Y,   KC_QUOT, LT(12, KC_NO),
+LT(12, KC_NO),   KC_Q,  KC_W,    KC_F,    KC_P,    KC_B,                         KC_J,    KC_L,    KC_U,    KC_Y,   KC_QUOT, LT(12, KC_NO),
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_TAB,     KC_A,    KC_R,    KC_S,    KC_T,    KC_G,                       KC_M,    KC_N,    KC_E,   KC_I,   KC_O,    OSL(13),
+LALT_T(KC_TAB),  KC_A,  KC_R,    KC_S,    KC_T,    KC_G,                         KC_M,    KC_N,    KC_E,    KC_I,   KC_O,    OSL(13),
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-  KC_CAPS, LGUI_T(KC_Z), LALT_T(KC_X), KC_C, KC_D,    KC_V,               KC_K, KC_H, KC_COMM, RALT_T(KC_DOT), RGUI_T(KC_SLSH), TG(11),
+LGUI_T(KC_CAPS), KC_Z,  KC_X,    KC_C,    KC_D,    KC_V,                         KC_K,    KC_H,    KC_COMM, KC_DOT, KC_SLSH, TG(11),
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
                        OSM(MOD_LSFT), LT(9, KC_BSPC), LT(10, KC_ESC),     KC_ENT, LT(8, KC_SPC), RCTL_T(KC_DEL)
                                       //`--------------------------'  `--------------------------'
@@ -103,11 +103,11 @@ KC_NO, G(KC_GRV), G(KC_TAB), G(KC_LEFT), G(KC_RGHT), KC_NO,                     
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
       KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                        KC_ASTR, KC_7,    KC_8,    KC_9,    KC_SLSH, KC_NO,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_NO,   KC_LCTL, KC_LALT, KC_LGUI, KC_LSFT, KC_NO,                        KC_PLUS, KC_4,    KC_5,    KC_6,    KC_0,    KC_EQL,
+      KC_NO,   KC_LCTL, KC_LALT, KC_LGUI, KC_LSFT, KC_NO,                        KC_PLUS, KC_4,    KC_5,    KC_6,    KC_EQL,  KC_SPC,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                        KC_DLR,  KC_1,    KC_2,    KC_3,    KC_PERC, KC_NO,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_NO,   KC_NO,   KC_NO,      KC_MINS, KC_SPC,  KC_DOT
+                                          KC_NO,   KC_NO,   KC_NO,      KC_MINS, KC_0,    KC_DOT
                                       //`--------------------------'  `--------------------------'
   ),
 
@@ -116,11 +116,11 @@ KC_NO, G(KC_GRV), G(KC_TAB), G(KC_LEFT), G(KC_RGHT), KC_NO,                     
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
       KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                        KC_ASTR, KC_7,    KC_8,    KC_9,    KC_SLSH, KC_NO,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_NO,   KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, KC_NO,                        KC_PLUS, KC_4,    KC_5,    KC_6,    KC_0,    KC_EQL,
+      KC_NO,   KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, KC_NO,                        KC_PLUS, KC_4,    KC_5,    KC_6,    KC_EQL,  KC_SPC,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                        KC_DLR,  KC_1,    KC_2,    KC_3,    KC_PERC, KC_NO,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          KC_NO,   KC_NO,   KC_NO,      KC_MINS, KC_SPC,  KC_DOT
+                                          KC_NO,   KC_NO,   KC_NO,      KC_MINS, KC_0,   KC_DOT
                                       //`--------------------------'  `--------------------------'
   ),
   // ● ---------- CODE Layers ---------- ●
@@ -177,6 +177,8 @@ KC_NO, G(KC_GRV), G(KC_TAB), G(KC_LEFT), G(KC_RGHT), KC_NO,                     
                                       //`--------------------------'  `--------------------------'
   ),
   // ● ---------- System and Function Layers ---------- ●
+  // note: if this layer really doesn't need top row mods and is placed at the top, then the firmware size can be smaller when both layers refer to it.
+  // just remove layer 5 and get both bases to point to it.
   // Mac
   [5] = LAYOUT_split_3x6_3(
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.

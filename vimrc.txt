@@ -25,6 +25,10 @@ noremap j e
 noremap k n
 noremap l i
 
+" escape with .,
+imap ., <Esc>
+cnoremap ., <C-C>
+
 " when escaping, cursor stays in same position
 autocmd InsertLeave * :normal! `^
 set virtualedit=onemore

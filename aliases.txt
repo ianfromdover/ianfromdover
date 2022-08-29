@@ -54,4 +54,5 @@ alias iz="izumiKeyboard"
 alias t="open -a \"textedit\""
 alias p="python3"
 alias v="vim"
-
+alias glc="~/opengl_compile.sh"
+alias glca="~/opengl_compile_all.sh"

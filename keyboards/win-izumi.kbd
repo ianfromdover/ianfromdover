@@ -36,7 +36,7 @@
 
 (defalias
   ;; thumb layers
-  sfts (sticky-key 1500 lsft)
+  ;; sfts (sticky-key 1500 lsft)
   bsps (tap-hold-next-release 200 bspc (layer-toggle NUM))
   escs (tap-hold-next-release 200 esc (layer-toggle CODE))
   spcs (tap-hold-next-release 200 spc (layer-toggle NAV))
@@ -89,7 +89,7 @@
 @sys    q	      w	      f	      p	      b	          j       l	      u	      y	      '       @sys
 @tab    a       r       s       t       g           m       n       e       i       o       @os
 @cap    z       x       c       d       v           k       h       ,       .       /
-                        @sfts   @bsps   @escs       ent     @spcs   @dels
+                        lsft   @bsps   @escs       ent     @spcs   @dels
 )
 
 (deflayer FPS

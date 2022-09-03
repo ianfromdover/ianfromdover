@@ -58,14 +58,14 @@
   emo M-.
 
   ;; app macros
-  saf #(met c h r o ent)
-  not #(met n o t i o ent)
-  tel #(met t e l ent)
-  txt #(met n o t e p ent)
-  ter (met p o w e r s h e l ent)
-  fig #(met f i g ent)
-  mus #(met m u s i c ent)
-  mil #(met o u t l o ent)
+  saf #(lmet c h r o ent)
+  not #(lmet n o t i o ent)
+  tel #(lmet t e l ent)
+  txt #(lmet n o t e p ent)
+  ter #(lmet p o w e r s h e l ent)
+  fig #(lmet f i g ent)
+  mus #(lmet m u s i c ent)
+  mil #(lmet o u t l o ent)
 
   ;; Navigation
   hm home

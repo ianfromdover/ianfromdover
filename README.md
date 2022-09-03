@@ -2,7 +2,7 @@
 
 My name is Ian and I'm studying **Computer Science** at the **National University of Singapore**. 
 
-- Interests: UX design, game dev, software engineering
+- Interests: `UX design`, `game dev`, `software engineering`
 - Aspirations: I hope to be a UX Designer for VR experiences. Though the role is not common now, I believe it soon will be.
 
 ### I'm Currently 🤹
@@ -12,13 +12,13 @@ My name is Ian and I'm studying **Computer Science** at the **National Universit
 
 ### I Want To 🎯
 
-- Open an open-source library compiling XR interactions patterns. `xr-interaction-design-library` will be accepting contributions soon.
-- Make a VR app that lets users make AI companions by combining existing AI assistants like `Microsoft XiaoIce` with virtual avatars they can make in apps like the `Metahuman Creator`
+- Open an open-source library compiling XR interactions patterns. My `xr-interaction-design-library` repo will be accepting contributions soon.
+- Make a VR app that lets users make AI companions by combining AI assistants like `Microsoft XiaoIce` with their virtual avatars made using `Metahuman Creator`
 - beat my QWERTY typing speed on Colemak-DH (Currently at 80wpm, 30 wpm to go)
 
 ### Get in Touch 👋
 
-[LinkedIn](https://www.linkedin.com/in/ian-hong-59280a161/) • [Email](ianhong@u.nus.edu)
+[LinkedIn](https://www.linkedin.com/in/ian-hong-59280a161/) • [Email](ianhong@u.nus.edu) • [Resume](https://docs.google.com/document/d/1yrpODUNngE-mawk5GQXz_QCzIhNsF3aB/edit?usp=sharing&ouid=103789535229616727779&rtpof=true&sd=true)
 
 ### Major Projects 🎒
 <!-- table -->

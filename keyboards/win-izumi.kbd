@@ -58,14 +58,14 @@
   emo M-.
 
   ;; app macros
-  saf #(met c h r o ent :delay 15)
-  not #(met n o t i o ent :delay 15)
-  tel #(met t e l ent :delay 15)
-  txt #(met n o t e p ent :delay 15)
-  ter (cmd-button "open -a Terminal")
-  fig #(met f i g ent :delay 15)
-  mus #(met m u s i c ent :delay 15)
-  mil #(met o u t l o ent :delay 15)
+  saf #(met c h r o ent)
+  not #(met n o t i o ent)
+  tel #(met t e l ent)
+  txt #(met n o t e p ent)
+  ter (met p o w e r s h e l ent)
+  fig #(met f i g ent)
+  mus #(met m u s i c ent)
+  mil #(met o u t l o ent)
 
   ;; Navigation
   hm home

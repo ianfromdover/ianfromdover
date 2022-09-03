@@ -1,0 +1,146 @@
+;; Izumi Layout for Windows, adapted from Miryoku
+;; Copyright 2022 Ian Hong
+;; github.com/ianfromdover/ianfromdover/tree/main/keyboards
+
+;; | function        | mac                | windows         |
+;; |-----------------|--------------------|-----------------|
+;; | • IN ALIASES •  |                    |                 |
+;; | command key     | met next to sft    | ctl next to sft |
+;; | open terminal   | "open -a Terminal" | idk             |
+;; | music control   | prev, pp, next     | long form       |
+;; | lights          | br, bl updn        | NA              |
+;; | copy paste cuts | M-zxcv             | C-zxcv          |
+;; | sticky key      | works              | NA              |
+;; | toggle windows  | M-tab              | A-tab           |
+;; | home, end       | M-left, M-right    | home, end       |
+;; | • IN LAYERS •   | x                  | x               |
+;; | #               | A-3                | #               |
+;; | command key     | M near sft         | C near sft      |
+;; | stop music      | NA                 | stopcd          |
+
+(defcfg
+  input  (low-level-hook)
+  output (send-event-sink)
+  fallthrough false
+  allow-cmd true
+)
+
+(defsrc
+  ;; separated hands, no reverse angle
+  esc  1 2 3 4     8 9 0 - =
+  tab  q w e r     i o p [ ]
+  caps a s d f     k l ; ' ent
+         x c v     m , .
+)
+
+(defalias
+  ;; modifiers on colemak's btm row 
+  ;; reason: colemak uses home row extensively
+  z (tap-next-release z lsft)
+  x (tap-hold-next-release 200 x lmet)	
+  c (tap-hold-next-release 200 c lalt)	
+  d (tap-hold-next-release 200 d lctl)	
+
+  h  (tap-hold-next-release 200 h rctl)	
+  cm (tap-hold-next-release 200 , ralt)	
+  pd (tap-hold-next-release 200 . rmet)	
+  sl (tap-next-release / rsft)
+
+  ;; modifiers on qwerty's btm row 
+  ;; reason: free WASD for Unity
+  v (tap-hold-next-release 200 v lctl)
+  m (tap-hold-next-release 200 m rctl)
+
+  ;; thumb layers
+  escs (tap-hold-next-release 200 esc (layer-toggle CODE))
+  bsps (tap-hold-next-release 200 bspc (layer-toggle NUM))
+  tabs (tap-hold-next-release 200 tab (layer-toggle SYM))
+  rets (tap-hold-next-release 200 ent (layer-toggle SYSTEM))
+  spcs (tap-hold-next-release 200 spc (layer-toggle NAV))
+  dels (tap-hold-next-release 200 del (layer-toggle FUN))
+
+  ;; system functions
+  q #(C-c ctl) ;; kill kmonad. select the terminal, press nav-Q, then press C-c after. Can't automate.
+  ter (cmd-button "open -a Terminal")
+  qt (layer-switch QRTY)
+  ck (layer-switch CLMK)
+
+  ;; Navigation
+  hm home
+  ed end
+  ta A-tab ;; toggle window (toggle app on mac)
+  tw S-A-tab   ;; toggle window backwards
+
+  ;; Copy Paste
+  ;; Windows need custom copy-paste aliases
+  ud C-z
+  ct C-x
+  cp C-c
+  pst C-v
+  rd C-y
+)
+
+;; ----- Base Layers ----- 
+
+(deflayer CLMK
+q	    w	    f	    p	    b	        j       l	    u	    y	    '
+a       r       s       t       g           m       n       e       i       o
+@z      @x	    @c	    @d	    v	        k	    @h	    @cm	    @pd     @sl
+                @escs   @bsps   @tabs       @rets   @spcs   @dels
+)
+
+(deflayer QRTY
+;; Apostrophe and Slash are replaced with Spc and Sft for controlling hands in MRTK in Unity.
+q	    w	    e	    r	    t	        y	    u	    i	    o	    p
+a       s       d       f       g	        h	    j       k       l       spc
+@z      @x      @c      @v      b           n       @m      @cm	    @pd     sft
+                @escs   @bsps   @tabs       @rets   @spcs   @dels
+)
+
+;; ----- Transient Layers -----
+;; --- LH ---
+
+(deflayer NUM
+XX	    XX	    XX	    XX	    XX	        \(      7	    8	    9	    \)
+met     alt     ctl     sft     XX          +       4       5       6       =
+XX      XX      XX      caps    XX          $       1       2       3       %
+                XX      XX      XX          -       0       .
+)
+
+(deflayer SYM
+XX	    XX	    XX	    XX	    XX	        XX      &	    *	    \(	    XX
+met     alt     ctl     sft     XX          +       $       %       ^       =
+XX      XX      XX      XX      XX          XX      !       @       #       XX
+                XX      XX      XX          \_      \)      ~
+)
+
+(deflayer CODE
+XX	    XX	    XX	    XX	    XX	        XX      =       [       ]       XX
+met     alt     ctl     sft     XX          +       :       \(      \)      ;
+XX      XX      XX      XX      XX          XX      "       &       |       \\
+                XX      XX      XX          \_      spc     `
+)
+
+(deflayer FUN
+XX      f7	    f8	    f9       XX         XX	    XX	    XX	    XX	    XX
+f11     f4      f5      f6       f12        XX      sft     ctl     alt     met
+XX      f1      f2      f3       XX         XX	    XX	    XX	    XX	    XX
+                comp    f10      XX         XX	    XX	    XX
+)
+
+;; --- RH ---
+
+(deflayer NAV
+@tw     @ta     @hm     @ed     `           XX      ^       #       *       $ 
+left    down    up      rght    tab         spc     sft     ctl     alt     met
+@ud     @ct     @cp     @pst    @rd         %       b       {       }       w
+                esc     bspc    @tabs       XX      XX      XX
+)
+
+(deflayer SYSTEM
+XX    brightnessdown      brightnessup    XX      XX          XX      XX      XX      XX      XX
+previoussong    vold                volu            nextsong            XX          XX      XX      XX      XX      XX
+@q              @ter                @qt             @ck                 XX          XX      XX      XX      XX      XX
+                                    mute            playpause           stopcd      XX      XX      XX
+)
+

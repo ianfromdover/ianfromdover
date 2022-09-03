@@ -2,6 +2,8 @@
 ;; Copyright 2022 Ian Hong
 ;; github.com/ianfromdover/ianfromdover/tree/main/keyboards
 
+;; WARNING: the one shot layer and macros are not safe to use on windows.
+
 ;; | function        | mac                | windows         |
 ;; |-----------------|--------------------|-----------------|
 ;; | • IN ALIASES •  |                    |                 |
@@ -43,7 +45,7 @@
   dels (tap-hold-next-release 200 del rctl)
 
   ;; side layers
-  os   (around-next (layer-toggle ONESHOT))
+  os   lsft ;; disabling layer for safety (around-next (layer-toggle ONESHOT))
   sys (tap-hold-next-release 200 esc (layer-toggle SYSTEM))
 
   ;; side row mods

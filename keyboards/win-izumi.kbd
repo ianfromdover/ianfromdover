@@ -139,7 +139,7 @@ XX      @q      XX      @fps    @ck     XX          XX      @ter    @fig    @mus
 
 (deflayer SYSTEM
 XX      met     alt     ctl     sft     XX          XX      f7      f8      f9      f11     XX
-XX      previoussong    vold    volu    nextsong    XX      f4      f5      f6      f10     XX
+XX previoussong vold    volu   nextsong XX          XX      f4      f5      f6      f10     XX
 XX XX brightnessdown brightnessup XX    XX          XX      f1      f2      f3      f12
                         mute playpause  stopcd      XX      XX      XX
 )

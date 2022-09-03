@@ -1,28 +1,26 @@
 # Heyo 👋
 
-My name is Ian and I'm studying **Computer Science** at the **National University of Singapore**. I am interested in UX design, game development and software engineering. I hope to be a UX Designer for VR experiences in the future. Though the role does not exist now, I believe it soon will.
+My name is Ian and I'm studying **Computer Science** at the **National University of Singapore**. 
+
+- Interests: UX design, game dev, software engineering
+- Aspirations: I hope to be a UX Designer for VR experiences. Though the role is not common now, I believe it soon will be.
 
 ### I'm Currently 🤹
 
 - Working with OpenGL 2.1 in [CS3241 Computer Graphics](https://nusmods.com/modules/CS3241/computer-graphics)
-- Learning the mechanics behind creating engaging experiences in [NM4260 Game Design](https://nusmods.com/modules/NM4260/game-design)
+- Creating engaging experiences in [NM4260 Game Design](https://nusmods.com/modules/NM4260/game-design)
 
 ### I Want To 🎯
 
-- Compile an open-source library of XR interactions patterns. (coming soon) Do contribute by adding an entry in `xr-interaction-design-library`!
-- Make a VR app that lets users make AI companions by combining existing AI assistants `Microsoft XiaoIce` / `Google Assistant` with customisable virtual avatars `Metahuman Creator` / `VRoid Studio`
+- Open an open-source library compiling XR interactions patterns. `xr-interaction-design-library` will be accepting contributions soon.
+- Make a VR app that lets users make AI companions by combining existing AI assistants like `Microsoft XiaoIce` with virtual avatars they can make in apps like the `Metahuman Creator`
 - beat my QWERTY typing speed on Colemak-DH (Currently at 80wpm, 30 wpm to go)
-
-### Past Projects 🎒
-
-- `HyperPong`, `vr-skeet-shooting`: Developed 2 VR games with my team as part of [CS4240: Interaction Design for VR and AR](https://nusmods.com/modules/CS4240/interaction-design-for-virtual-and-augmented-reality). Used Unity, XR Interaction Toolkit, the Oculus Integration package and C#.
-- `PeopleSoft`: Made a CLI-based HR payroll management app with my team as part of [CS2103T: Software Engineering](https://nusmods.com/modules/CS2103T/software-engineering). Used Java, JavaFX, JUnit, Gradle, Git, and Github Actions for CI.
 
 ### Get in Touch 👋
 
 [LinkedIn](https://www.linkedin.com/in/ian-hong-59280a161/) • [Email](ianhong@u.nus.edu)
 
-### Major Projects
+### Major Projects 🎒
 <!-- table -->
 <!-- https://github.com/simple-icons/simple-icons/blob/develop/slugs.md -->
 | Year | Project                                  | Built With                             |
@@ -32,8 +30,8 @@ My name is Ian and I'm studying **Computer Science** at the **National Universit
 | 2022 | [TikTok Frontend Coding Camp](https://github.com/tiktok-camp-besties/hangman) | ![HTML](https://img.shields.io/badge/-HTML5-black?style=flat-square&logo=html5) ![CSS](https://img.shields.io/badge/-CSS3-black?style=flat-square&logo=css3) ![JavaScript](https://img.shields.io/badge/-JavaScript-black?style=flat-square&logo=javascript) ![React](https://img.shields.io/badge/-React-black?style=flat-square&logo=react) |
 
 <!-- add more projects when I have time
-
-| 2021 | [VR Skeet Shooting]() | Unity, XR Interaction Toolkit, Oculus Integration, C#.   
+| 2021 | [PeopleSoft, a Payroll Management App]() | Java, JavaFX, JUnit, Gradle, Git, GitHub Actions |
+| 2022 | [VR Skeet Shooting]() | Unity, XR Interaction Toolkit, Oculus Integration, C#.   
 ![Python](https://img.shields.io/badge/-Python-black?style=flat-square&logo=python) 
 ![NumPy](https://img.shields.io/badge/-NumPy-black?style=flat-square&logo=numpy) 
 ![SQLite](https://img.shields.io/badge/-SQLite-black?style=flat-square&logo=sqlite) 

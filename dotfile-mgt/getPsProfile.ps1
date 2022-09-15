@@ -3,7 +3,7 @@ echo $profile
 $from = Get-Content -Path $profile
 $to = '..\Microsoft.Powershell_profile.ps1'
 Set-Content -Path $to $from
-echo 'Git Powershell profile has been updated'
+echo 'Git Powershell profile in repo has been updated 🎉'
 
 # idea: make the get and set scripts into an update script instead,
 # compare the last modified date and use the later one to update the newer one

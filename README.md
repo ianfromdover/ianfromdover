@@ -14,7 +14,7 @@ My name is Ian and I'm studying **Computer Science** at the **National Universit
 
 - Open an open-source library compiling XR interactions patterns. My `xr-interaction-design-library` repo will be accepting contributions soon.
 - Make a VR app that lets users make AI companions by combining AI assistants like `Microsoft XiaoIce` with their virtual avatars made using `Metahuman Creator`
-- beat my QWERTY typing speed on Colemak-DH (Currently at 80wpm, 30 wpm to go)
+- beat my QWERTY typing speed on Colemak-DH (Currently at 90wpm, 20 wpm to go)
 
 ### Get in Touch 👋
 

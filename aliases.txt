@@ -25,7 +25,7 @@ alias hm="cd ~/Desktop/tiktok/hangman" # temp
 
 # GIT
 alias g="cd ~/Documents/gh"
-alias gg="cd ~/Documents/gh/ian-from-dover"
+alias gg="cd ~/Documents/gh/ianfromdover"
 alias gs="git status"
 alias ga="git add *"
 alias gc="git checkout"

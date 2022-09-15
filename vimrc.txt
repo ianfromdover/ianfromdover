@@ -1,8 +1,8 @@
 set nocp          " Use VIM settings rather than Vi settings, esp when the `vim -u` flag is passed
 
 " Owner: Hong Yi En, Ian <ian09hong@gmail.com>
-" Last Change: 25 June 2022
-" Why: Make colemak bindings to neio hjkl only.
+" Last Change: 15 September 2022
+" Why: Make ,. trigger escape.
 
 " Essentials: Line numbers and looking around
 syntax on         " on colours

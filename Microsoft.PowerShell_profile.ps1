@@ -1,12 +1,15 @@
 <#
     Author: Ian Hong
-    Last Edit: 13th June 2022
-    Reason: Change miryoku to izumi shortcut
-    Context: ianfromdover github username change
+    Last Edit: 15th Sep 2022
+    Reason: update vim shortcut
+    Context: remoting from mac
 If you only want this user to execute this, save under
 - echo $profile
 If you want it to be global, save under
 - echo $PsHome
+
+Guide for creating aliases that accept arguments:
+- make a function and simply place the $args at the end of the shortcut
 #>
 
 # NAVIGATION
@@ -15,8 +18,12 @@ New-Alias ... BackTwo
 New-Alias .... BackThree
 New-Alias ..... BackFour
 New-Alias e Exitz
-New-Alias v vim
 New-Alias c clear
+# v launches vim
+
+function v {
+    vim $args
+}
 
 function Back {
     cd ..
@@ -70,7 +77,7 @@ function GRepos {
 }
 
 function GLastRepo {
-    cd 'C:\Users\Ian Hong\Desktop\gh\ian-from-dover'
+    cd 'C:\Users\Ian Hong\Desktop\gh\ianfromdover'
 }
 
 

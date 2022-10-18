@@ -1,16 +1,17 @@
 set nocp          " Use VIM settings rather than Vi settings, esp when the `vim -u` flag is passed
 
 " Owner: Hong Yi En, Ian <ian09hong@gmail.com>
-" Last Change: 15 September 2022
-" Why: Make ,. trigger escape.
+" Last Change: 25 June 2022
+" Why: Make colemak bindings to neio hjkl only.
 
 " Essentials: Line numbers and looking around
 syntax on         " on colours
+set re=0          " set regexp engine automatically, makes syntax on c++ files work
 " set t_Co=256    " disabled because powershell is ugly
 set encoding=utf-8
 set nu rnu        " on numbers, relative line numbers
 set ruler         " show cursor's (row, col)
-set cc=72         " colorcolumn at 72 chars length
+set cc=80         " colorcolumn at 72 chars length
 set showmatch     " show matching parentheses
 set so=5          " always show 5 lines around the cursor for context (scrolloff)
 set backspace=eol,start,indent " allow backspacing over everything in insert mode indent,eol,start, but tbh i never understood what this meant
@@ -24,6 +25,9 @@ noremap h o
 noremap j e
 noremap k n
 noremap l i
+
+" leader to space
+let mapleader = " "
 
 " escape with .,
 imap ., <Esc>
@@ -59,10 +63,81 @@ set wildmenu      " show autocomplete options in command mode
 " Disabled: set ignorecase  " ignore upper/lowercase when searching | shortform: ic
 
 " Ctrl-L clears search highlighting. <CR> means enter
-nnoremap <silent> <C-L> :let @/ = ""<CR>
+nnoremap <silent> <leader>l :let @/ = ""<CR>
 
 " enable clicking mouse to place cursor and enter visual mode
 set mouse+=a
 
+" Get Vim-Plug if it doesn't exist
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+" Enable vim-plug
+" Note: after pasting this vimrc, run the following cmd to install the plugins
+" :PlugInstall
+call plug#begin('~/.vim/plugged')
+" call plug#begin('~/vimfiles/plugged') for windows
+
+" Plugins
+Plug 'JafarDakhan/vim-gml'
+Plug 'dense-analysis/ale'
+Plug 'ackyshake/VimCompletesMe'
+Plug 'tpope/vim-fugitive' " README: https://github.com/tpope/vim-fugitive
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim' " README: https://github.com/junegunn/fzf.vim
+
+Plug 'itchyny/lightline.vim'
+    set laststatus=2 " enable lightline
+    let g:lightline = {
+        \ 'active': {
+        \   'left': [ [ 'mode', 'paste' ],
+        \             [ 'readonly', 'filename' ] ],
+        \ },
+        \ 'component_function': {
+        \   'filetype': 'LightlineFiletype',
+        \   'fileformat': 'LightlineFileformat',
+        \   'filename': 'LightlineFilename',
+        \   'fileencoding': 'LightlineFileencoding',
+        \ },
+        \ }
+  
+    " Hides file format
+    function! LightlineFileformat()
+      return ''
+    endfunction
+
+    " Hides file encoding
+    function! LightlineFileencoding()
+      return ''
+    endfunction
+
+    " Hides filetype on short windows
+    function! LightlineFiletype()
+      return winwidth(0) > 50 ? (&filetype !=# '' ? &filetype : 'no ft') : ''
+    endfunction
+
+    " Custom modified sign
+    function! LightlineFilename()
+      let filename = expand('%:t') !=# '' ? expand('%:t') : 'Untitled'
+      let modified = &modified ? ' [+]' : ''
+      return filename . modified
+    endfunction
+
+" Plugin Shortcuts
+" Spc-P fzf, Ctrl-V for vs, Ctrl-X for sp.
+nnoremap <leader>p :GFiles<Cr>
+" Spc-F Grep within git project
+nnoremap <leader>f :Ag<Cr>
+" Spc-Y Git Commit Tree
+nnoremap <leader>y :Commits<Cr>
+
+
+call plug#end() " init plugin systems
+
 " Tutorial: Vim script language
 " `nnoremap`: first n = 'normal mode', `nore` = 'non-recursive', map
+"
+"

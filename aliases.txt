@@ -59,6 +59,8 @@ alias glc="~/opengl_compile.sh"
 alias glca="~/opengl_compile_all.sh"
 
 # FZF
-alias sd="cd ~ && cd \$(find * -type d | fzf)" # Set Dir
-alias st="vim \$(find * -type f | fzf)"  # Set Text
+# val=$(printf "%s" $(sed 1!d filename))
+# alias sd="cd ~ && cd \$(find * -type d | fzf)" # Set Dir
+alias sd="cd ~ && cd \"\$(find * -type d | fzf)\"" # Set Dir
+alias st="vim \"\$(find * -type f | fzf)\""  # Set Text
 

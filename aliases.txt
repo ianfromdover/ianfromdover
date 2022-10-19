@@ -1,6 +1,6 @@
 # Author: Ian Hong
 # Last Update: 19 Oct 2022
-# Reason: Add FZF sd and st shortcuts
+# Reason: Fix FZF aliases to work on paths with spaces
 # Assumptions: fzf installed
 
 # Explicitly expand aliases
@@ -18,7 +18,6 @@ alias e="exit"
 alias o="open"
 
 # COMMON DIRECTORIES
-alias home="cd ~"
 alias dt="cd ~/Desktop"
 alias dl="cd ~/Downloads"
 alias dc="cd ~/Documents"

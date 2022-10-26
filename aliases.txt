@@ -35,8 +35,7 @@ add_git () { # Git add all + git status
 alias gc="git checkout"
 alias gcm="git commit -m"
 gam () { # Git add all + commit message
-    ga
-    gs
+    git add *
     gcm "$*"
     git push
 }

@@ -1,6 +1,6 @@
 # Author: Ian Hong
-# Last Update: 19 Oct 2022
-# Reason: Fix FZF aliases to work on paths with spaces
+# Last Update: 27 Oct 2022
+# Reason: Add status to git add
 # Assumptions: fzf installed
 
 # Explicitly expand aliases
@@ -27,7 +27,11 @@ alias hm="cd ~/Desktop/tiktok/hangman" # temp
 alias g="cd ~/Documents/gh"
 alias gg="cd ~/Documents/gh/ianfromdover"
 alias gs="git status"
-alias ga="git add *"
+alias ga=add_git
+add_git () { # Git add all + git status
+    git add *
+    gs
+}
 alias gc="git checkout"
 alias gcm="git commit -m"
 gam () { # Git add all + commit message
@@ -56,10 +60,18 @@ alias p="python3"
 alias v="vim"
 alias glc="~/opengl_compile.sh"
 alias glca="~/opengl_compile_all.sh"
+alias glc3="~/opengl_compile_lab3.sh"
 
 # FZF
-# val=$(printf "%s" $(sed 1!d filename))
-# alias sd="cd ~ && cd \$(find * -type d | fzf)" # Set Dir
-alias sd="cd ~ && cd \"\$(find * -type d | fzf)\"" # Set Dir
+alias sd="cd ~ && cd \"\$(find * -type d | fzf --preview=\"tree -L 1 {}\" --bind=\"space:toggle-preview\" --preview-window=:hidden)\" && pwd && tree -L 2" # Set Dir
 alias st="vim \"\$(find * -type f | fzf)\""  # Set Text
+
+# Key bindings
+# Inspired by nixcasts
+# bind '"\C-f":"cd_with_fzf\n"'
+bind '"\C-f":"cd ~ && cd \"\$(find * -type d | fzf --preview=\"tree -L 1 {}\" --bind=\"space:toggle-preview\" --preview-window=:hidden)\" && pwd && tree -L 2\n"'
+
+cd_with_fzf() {
+    cd $HOME && cd "\$(fd -t d | fzf --preview=\"tree -L 1 {}\" --bind=\"space:toggle-preview\" --preview-window=:hidden)" && echo "$PWD" && tree -L 2
+}
 

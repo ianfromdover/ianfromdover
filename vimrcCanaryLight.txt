@@ -1,12 +1,8 @@
 set nocp
 
-" Owner: Hong Yi En, Ian <ianfromdover>
-" Last Change: 15 Nov 2022
-" Why: Make Canary function
-" todo: reorganise vimrc by
-    " 1. essental options
-    " 2. load plugins and functions
-    " 3. keymaps
+" Owner: Hong Yi En, Ian <ian09hong@gmail.com>
+" Last Change: 25 June 2022
+" Why: Make colemak bindings to neio hjkl only.
 
 " Essentials: Line numbers and looking around
 syntax on         " on colours
@@ -14,96 +10,40 @@ set re=0          " set regexp engine automatically, makes syntax on c++ files w
 set encoding=utf-8
 set nu rnu        " on numbers, relative line numbers
 set ruler         " show cursor's (row, col)
+set cc=80         " colorcolumn at 72 chars length
 set showmatch     " show matching parentheses
-set cc=80         " colorcolumn at 80 chars length
 set so=5          " always show 5 lines around the cursor for context (scrolloff)
-set backspace=eol,start,indent " allow backspacing over everything in insert mode indent,eol,start
+set backspace=eol,start,indent " allow backspacing over everything in insert mode indent,eol,start, but tbh i never understood what this meant
 " set t_Co=256    " disabled because powershell is ugly
 
 " leader to space
 let mapleader = " "
-    " see ide shortcuts here: https://github.com/ianfromdover/ianfromdover/tree/main/ide
-    " == leader bindings ==
-    " LD-L clear highlights
-    " LD-CN toggle canary mode
-    " LD-B toggle prev buffer
-    "
-    " - plugins -
-    " LD-BL buffer list with fzf (:bd 2 closes buffer 2)
-    " LD-Y Git commit tree
-    " LD-AG ag within Git proj
-    " LD-P fzf within Git proj (C-V for vs, C-X for sp)
-    " LD-F fzf (same as above)
-    " (with ale, enable disable linting)
-    " go to definition
-    " find references
-    " rename
-
-" set movement to home positions
-noremap j h
-noremap k j
-noremap l k
-noremap ; l
 
 " Lets user use original vim bindings with CanaryFX keyboard input
-" note: movement is done through home row
+" note: movement is done through homerow
 let g:isincanarymode = 0
 function ToggleCanary()
     if g:isincanarymode ==# 0
-        " canary key -> vim command
-        " movement
-        noremap n h
-        noremap e j
-        noremap i k
-        noremap a l
+        nnoremap n h
+        nnoremap N H
+        nnoremap e j
+        nnoremap E J
+        nnoremap i k
+        nnoremap I K
+        nnoremap a l
+        nnoremap A L
 
-        noremap l w
-        noremap q b
-        noremap y e
-        noremap m n
-        noremap M N
-        noremap b g
-        noremap B G
+        nnoremap h n
+        nnoremap H N
+        nnoremap j e
+        nnoremap J E
+        nnoremap k a
+        nnoremap K A
+        nnoremap l i
+        nnoremap L I
+        nunmap ;
 
-        noremap h m
-        noremap x '
-        noremap X "
-        
-        " enter insert mode
-        noremap o i
-        noremap O I
-        noremap c a
-        noremap C A
-        noremap u o
-        noremap U O
-        noremap r s
-        noremap R S
-        noremap p r
-        noremap P R
-
-        " editing
-        noremap d c
-        noremap D C
-        noremap s d
-        noremap S D
         noremap z y
-        noremap Z Y
-        noremap ' p
-        noremap " P
-        noremap f u
-        noremap v x
-        noremap N J
-
-        " others
-            " macros (@@ is repeat last macro)
-        noremap w q
-            " quick file opening and closing, folds
-        noremap j z
-            " enter visual mode
-        noremap g v
-        noremap G V
-
-        " t, f not used
 
         let g:isincanarymode = 1
         echom "Canary Enabled"
@@ -113,53 +53,7 @@ function ToggleCanary()
         nunmap i
         nunmap a
 
-        nunmap l
-        nunmap q
-        nunmap y
-        nunmap m
-        nunmap M
-        nunmap b
-        nunmap B
-
         nunmap h
-        nunmap x
-        nunmap X
-        
-        " enter insert mode
-        nunmap o
-        nunmap O
-        nunmap c
-        nunmap C
-        nunmap u
-        nunmap U
-        nunmap r
-        nunmap R
-        nunmap p
-        nunmap P
-
-        " editing
-        nunmap d
-        nunmap D
-        nunmap s
-        nunmap S
-        nunmap z
-        nunmap Z
-        nunmap '
-        nunmap "
-        nunmap f
-        nunmap v
-        nunmap N
-
-        " others
-            " macros (@@ is repeat last macro)
-        nunmap w
-            " quick file opening and closing, folds
-        nunmap j
-            " enter visual mode
-        nunmap g
-        nunmap G
-
-        " move QWERTY movements to home row
         noremap j h
         noremap k j
         noremap l k
@@ -169,6 +63,12 @@ function ToggleCanary()
         echom "Canary Disabled"
     endif
 endfunction
+
+" set movement to jkl;
+noremap j h
+noremap k j
+noremap l k
+noremap ; l
 
 " toggle Canary mode with leader-cn (Cr means return)
 nnoremap <leader>cn :call ToggleCanary()<Cr>
@@ -190,22 +90,23 @@ set visualbell    " instead of beeping, blink vim window
 set smarttab      " start the line according to shiftwidth, not tabstop i believe it lets del remove the 2x spaces
 set autoindent
 set smartindent
-set linebreak     " if line too long, soft-wrap its display to the next line
+set linebreak     " if line too long, soft-wrap to next line
 set expandtab     " <tab> expands into spaces instead
-set tabstop=4    " <tab> becomes 4 spaces
-set shiftwidth=0 " autoindent is 4 spaces
+set tabstop =4    " <tab> becomes 4 spaces
+set shiftwidth =0 " autoindent is 4 spaces
 
 " file handling
-filetype plugin indent on " enables plugin per filetype & enables auto-indent per filetype
 set showcmd       " shows partial command on last line of screen
+filetype plugin indent on " enables plugin per filetype & enables auto-indent per filetype
 set nobackup      " both of these to not create a backup
 
 " Searching 
 set hls           " highlight search matches
 set is            " Inclusive Search: show partial matches as you type
 set wildmenu      " show autocomplete options in command mode
+" Disabled: set ignorecase  " ignore upper/lowercase when searching | shortform: ic
 
-" Ctrl-L clears search highlighting.
+" Ctrl-L clears search highlighting. <CR> means enter
 nnoremap <silent> <leader>l :let @/ = ""<CR>
 
 " enable clicking mouse to place cursor and enter visual mode
@@ -225,11 +126,15 @@ call plug#begin('~/.vim/plugged')
 " call plug#begin('~/vimfiles/plugged') for windows
 
 " Plugins
+Plug 'JafarDakhan/vim-gml' " probably gonna remove soon cuz i won't be touching GML
 " Plug 'dense-analysis/ale' " lint, go do definition, find references
-Plug 'ackyshake/VimCompletesMe' " window-scoped tab completion
-Plug 'tpope/vim-fugitive'       " README: https://github.com/tpope/vim-fugitive
+    " :ALEGoToDefinition
+    " :ALEFindReferences
+    " :ALERename
+Plug 'ackyshake/VimCompletesMe'
+Plug 'tpope/vim-fugitive' " README: https://github.com/tpope/vim-fugitive
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'         " README: https://github.com/junegunn/fzf.vim
+Plug 'junegunn/fzf.vim' " README: https://github.com/junegunn/fzf.vim
 
 Plug 'itchyny/lightline.vim'
     set laststatus=2 " enable lightline
@@ -274,24 +179,15 @@ nnoremap <leader>p :GFiles<Cr>
 " Spc-F fzf, Ctrl-V for vs, Ctrl-X for sp.
 nnoremap <leader>f :Files<Cr>
 " Spc-F Grep within git project
-nnoremap <leader>ag :Ag<Cr>
+nnoremap <leader>d :Ag<Cr>
 " Spc-Y Git Commit Tree
 nnoremap <leader>y :Commits<Cr>
-" ALE commands
-    " s rename
-    " d definition
-    " f find usages
-nnoremap <leader>s :ALERename<Cr>
-    " :ALEGoToDefinition
-    " :ALEFindReferences
-" Spc-B Previous Buffer
-nnoremap <leader>b :bp<Cr>
-" Spc-BL fzf Buffer list (:bd 2) to close buffer 2
-nnoremap <leader>bl :Buffers<Cr>
-" Spc-O reveal in finder (implementation left as exercise)
-" nnoremap <leader>bl :Buffers<Cr>
-" Spc-Z terminal
-nnoremap <leader>z :vert ter<Cr>
+
 
 call plug#end() " init plugin systems
+
+" Tutorial: Vim script language
+" `nnoremap`: first n = 'normal mode', `nore` = 'non-recursive', map
+"
+"
 

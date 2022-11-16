@@ -2,13 +2,16 @@ set nocp
 
 " Owner: Hong Yi En, Ian <ianfromdover>
 " Last Change: 15 Nov 2022
-" Why: Make Canary function
-" todo: reorganise vimrc by
-    " 1. essental options
-    " 2. load plugins and functions
-    " 3. keymaps
+" Why: Organise by 3 sections
+" Next Improvements:
+"   - rebind U to redo (U -> <C-R>)
+"   - test on windows
+"   - lightline canary mode and word counter
 
-" Essentials: Line numbers and looking around
+" -----------------------
+" -- Essential Options --
+" -----------------------
+
 syntax on         " on colours
 set re=0          " set regexp engine automatically, makes syntax on c++ files work
 set encoding=utf-8
@@ -17,34 +20,52 @@ set ruler         " show cursor's (row, col)
 set showmatch     " show matching parentheses
 set cc=80         " colorcolumn at 80 chars length
 set so=5          " always show 5 lines around the cursor for context (scrolloff)
-set backspace=eol,start,indent " allow backspacing over everything in insert mode indent,eol,start
-" set t_Co=256    " disabled because powershell is ugly
+set backspace=eol,start,indent " allow backspacing over indent,eol,start in insert mode 
 
-" leader to space
-let mapleader = " "
-    " see ide shortcuts here: https://github.com/ianfromdover/ianfromdover/tree/main/ide
-    " == leader bindings ==
-    " LD-L clear highlights
-    " LD-CN toggle canary mode
-    " LD-B toggle prev buffer
-    "
-    " - plugins -
-    " LD-BL buffer list with fzf (:bd 2 closes buffer 2)
-    " LD-Y Git commit tree
-    " LD-AG ag within Git proj
-    " LD-P fzf within Git proj (C-V for vs, C-X for sp)
-    " LD-F fzf (same as above)
-    " (with ale, enable disable linting)
-    " go to definition
-    " find references
-    " rename
+" set t_Co=256    " disabled because it makes vim on powershell ugly
 
-" set movement to home positions
-noremap j h
-noremap k j
-noremap l k
-noremap ; l
+" escape with .,
+imap ., <Esc>
+cnoremap ., <C-C>
 
+" when escaping, cursor stays in same position
+autocmd InsertLeave * :normal! `^
+set virtualedit=onemore
+
+" stop flashing when cursor reaches end of page or cannot find search results
+set noerrorbells  " don't beep
+set t_vb=         " if visualbell is set, vim will neither flash nor beep. does nothing if visualbell not set.
+set visualbell    " instead of beeping, blink vim window
+
+" indentation help
+set smarttab      " start the line according to shiftwidth, not tabstop i believe it lets del remove the 2x spaces
+set autoindent
+set smartindent
+set linebreak     " if line too long, soft-wrap its display to the next line
+set expandtab     " <tab> expands into spaces instead
+set tabstop=4    " <tab> becomes 4 spaces
+set shiftwidth=0 " autoindent is 4 spaces
+
+" file handling
+filetype plugin indent on " enables plugin per filetype & enables auto-indent per filetype
+set showcmd       " shows partial command on last line of screen
+set nobackup      " both of these to not create a backup
+
+" Searching 
+set hls           " highlight search matches
+set is            " Inclusive Search: show partial matches as you type
+set wildmenu      " show autocomplete options in command mode
+
+" enable clicking mouse to place cursor and enter visual mode
+set mouse+=a
+
+
+
+" ---------------------------------------
+" -- Load Plugins and Custom Functions --
+" ---------------------------------------
+
+" ---- Custom Functions ----
 " Lets user use original vim bindings with CanaryFX keyboard input
 " note: movement is done through home row
 let g:isincanarymode = 0
@@ -63,6 +84,7 @@ function ToggleCanary()
         noremap m n
         noremap M N
         noremap b g
+        noremap bb gg
         noremap B G
 
         noremap h m
@@ -99,6 +121,8 @@ function ToggleCanary()
         noremap w q
             " quick file opening and closing, folds
         noremap j z
+        noremap J Z
+        noremap JJ ZZ
             " enter visual mode
         noremap g v
         noremap G V
@@ -119,6 +143,7 @@ function ToggleCanary()
         nunmap m
         nunmap M
         nunmap b
+        nunmap bb
         nunmap B
 
         nunmap h
@@ -155,6 +180,8 @@ function ToggleCanary()
         nunmap w
             " quick file opening and closing, folds
         nunmap j
+        nunmap J
+        nunmap JJ
             " enter visual mode
         nunmap g
         nunmap G
@@ -170,81 +197,37 @@ function ToggleCanary()
     endif
 endfunction
 
-" toggle Canary mode with leader-cn (Cr means return)
-nnoremap <leader>cn :call ToggleCanary()<Cr>
-
-" escape with .,
-imap ., <Esc>
-cnoremap ., <C-C>
-
-" when escaping, cursor stays in same position
-autocmd InsertLeave * :normal! `^
-set virtualedit=onemore
-
-" stop flashing when cursor reaches end of page or cannot find search results
-set noerrorbells  " don't beep
-set t_vb=         " if visualbell is set, vim will neither flash nor beep. does nothing if visualbell not set.
-set visualbell    " instead of beeping, blink vim window
-
-" indentation help
-set smarttab      " start the line according to shiftwidth, not tabstop i believe it lets del remove the 2x spaces
-set autoindent
-set smartindent
-set linebreak     " if line too long, soft-wrap its display to the next line
-set expandtab     " <tab> expands into spaces instead
-set tabstop=4    " <tab> becomes 4 spaces
-set shiftwidth=0 " autoindent is 4 spaces
-
-" file handling
-filetype plugin indent on " enables plugin per filetype & enables auto-indent per filetype
-set showcmd       " shows partial command on last line of screen
-set nobackup      " both of these to not create a backup
-
-" Searching 
-set hls           " highlight search matches
-set is            " Inclusive Search: show partial matches as you type
-set wildmenu      " show autocomplete options in command mode
-
-" Ctrl-L clears search highlighting.
-nnoremap <silent> <leader>l :let @/ = ""<CR>
-
-" enable clicking mouse to place cursor and enter visual mode
-set mouse+=a
-
-" Get Vim-Plug if it doesn't exist
-let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
-if empty(glob(data_dir . '/autoload/plug.vim'))
-  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
-
 " Enable vim-plug
-" Note: after pasting this vimrc, run the following cmd to install the plugins
-" :PlugInstall
+" Note: if installing for the first time, download plug.vim from junegunn/vim-plug/master/plug.vim
+" Note: after pasting this vimrc, run :PlugInstall to install the plugins
+
 call plug#begin('~/.vim/plugged')
 " call plug#begin('~/vimfiles/plugged') for windows
 
-" Plugins
-" Plug 'dense-analysis/ale' " lint, go do definition, find references
-Plug 'ackyshake/VimCompletesMe' " window-scoped tab completion
+" ---- Plugins ----
+Plug 'dense-analysis/ale'       " lint, go do definition, find references
+Plug 'ackyshake/VimCompletesMe' " tab completion
 Plug 'tpope/vim-fugitive'       " README: https://github.com/tpope/vim-fugitive
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'         " README: https://github.com/junegunn/fzf.vim
+Plug 'itchyny/lightline.vim'    " pretty status line
 
-Plug 'itchyny/lightline.vim'
-    set laststatus=2 " enable lightline
-    let g:lightline = {
-        \ 'active': {
-        \   'left': [ [ 'mode', 'paste' ],
-        \             [ 'readonly', 'filename' ] ],
-        \ },
-        \ 'component_function': {
-        \   'filetype': 'LightlineFiletype',
-        \   'fileformat': 'LightlineFileformat',
-        \   'filename': 'LightlineFilename',
-        \   'fileencoding': 'LightlineFileencoding',
-        \ },
-        \ }
+call plug#end() " init plugin systems
+
+" ---- Plugin Options ----
+set laststatus=2 " enable lightline
+let g:lightline = {
+    \ 'active': {
+    \   'left': [ [ 'mode', 'paste' ],
+    \             [ 'readonly', 'filename' ] ],
+    \ },
+    \ 'component_function': {
+    \   'filetype': 'LightlineFiletype',
+    \   'fileformat': 'LightlineFileformat',
+    \   'filename': 'LightlineFilename',
+    \   'fileencoding': 'LightlineFileencoding',
+    \ },
+    \ }
   
     " Hides file format
     function! LightlineFileformat()
@@ -268,30 +251,102 @@ Plug 'itchyny/lightline.vim'
       return filename . modified
     endfunction
 
-" Plugin Shortcuts
-" Spc-P fzf within Git project, Ctrl-V for vs, Ctrl-X for sp.
-nnoremap <leader>p :GFiles<Cr>
-" Spc-F fzf, Ctrl-V for vs, Ctrl-X for sp.
-nnoremap <leader>f :Files<Cr>
-" Spc-F Grep within git project
-nnoremap <leader>ag :Ag<Cr>
-" Spc-Y Git Commit Tree
-nnoremap <leader>y :Commits<Cr>
-" ALE commands
-    " s rename
-    " d definition
-    " f find usages
-nnoremap <leader>s :ALERename<Cr>
-    " :ALEGoToDefinition
-    " :ALEFindReferences
-" Spc-B Previous Buffer
-nnoremap <leader>b :bp<Cr>
-" Spc-BL fzf Buffer list (:bd 2) to close buffer 2
-nnoremap <leader>bl :Buffers<Cr>
-" Spc-O reveal in finder (implementation left as exercise)
-" nnoremap <leader>bl :Buffers<Cr>
-" Spc-Z terminal
-nnoremap <leader>z :vert ter<Cr>
+" Lightline add wordcount toggle
+" https://www.vivi.sh/blog/technical/live-wordcount-vim-airline/index
+" Lightline add canary mode
 
-call plug#end() " init plugin systems
+
+" ---------------------
+" -- Custom Mappings --
+" ---------------------
+    " see ide shortcuts here: https://github.com/ianfromdover/ianfromdover/tree/main/ide
+    " == leader bindings ==
+    " LD-L clear highlights
+    " LD-CN toggle canary mode
+    " LD-B toggle prev buffer
+    " LD-W toggle btwn windows
+    " LD-O reveal in finder
+    " LD-Z open vsplit term
+    " LD-B toggle prev buffer
+    "
+    " - plugins -
+    " LD-G fzf (global)
+    " LD-P fzf (git) (C-V for vs, C-X for sp)
+    " LD-BL buffer list with fzf (:bd 2 closes buffer 2)
+    " LD-Y Git commit tree
+    " LD-LD Search everywhere (Ag)
+    " Ale:
+    " LD-S rename
+    " LD-D definition
+    " LD-F find usages
+    " LD-H toggle linting
+
+
+
+" ---- Normal Mappings ----
+" set movement to home positions when canary mode is not on yet
+noremap j h
+noremap k j
+noremap l k
+noremap ; l
+
+" Space: leader
+let mapleader = " "
+
+" I HAVENT FOUND OUT HOW TO MAKE THE LETTERS RECURSE, SO IN CANARY
+" YOU MUST USE THE CANARY LETTERS AFTER SPACE.
+"
+" idea 1: find out the text mode using leader is
+" idea 2: put the mappings below into a function, when
+"       canary mode is on or off, call the function again
+
+" Lead_L: Clears search highlighting. <CR> means Hit Return
+nmap <silent> <leader>l :let @/ = ""<CR>
+
+" Lead_CN: Toggle Canary mode
+nmap <leader>cn :call ToggleCanary()<Cr>
+
+" Lead_B: Previous Buffer
+nmap <leader>b :bp<Cr>
+
+" Lead_W: Toggle between windows
+nmap <leader>w <C-w>p
+
+" Lead_O: Reveal in Finder
+" replace . with current file variable (google how to get)
+nmap <leader>o :!open .<Cr>
+
+" Lead_Z: Terminal
+nmap <leader>z :vert ter<Cr>
+
+
+
+" ---- Plugin Mappings ----
+" Lead_G: Global FZF, Ctrl-V for vs, Ctrl-X for sp.
+nmap <leader>g :Files<Cr>
+
+" Lead_P: (git) FZF. Ctrl-V for vs, Ctrl-X for sp.
+nmap <leader>p :GFiles<Cr>
+
+" Lead_BL: FZF Buffer List
+" :bd 2 to close buffer 2
+nmap <leader>bl :Buffers<Cr>
+
+" Lead_Lead: (git) Search Everywhere
+nmap <leader><leader> :Ag<Cr>
+
+" Lead_Y: Git Commit Tree
+nmap <leader>y :Commits<Cr>
+
+" ALE commands
+    " Lead_S: rename
+    " Lead_D: definition
+    " Lead_F: find usages
+    " Lead_H: toggle linting
+nmap <leader>s :ALERename<Cr>
+nmap <leader>d :ALEGoToDefinition<Cr>
+nmap <leader>f :ALEFindReferences<Cr>
+nmap <leader>h :ALEToggle<Cr>
+
+" ---- End of File ----
 

@@ -156,3 +156,9 @@ function svw {
     '~\.ideavimrc'
 }
 
+# GL Compile All
+function glca {
+    # "C:\Program Files\WindowsPowerShell\powershell.exe" -Parameter "C:\Users\Ian Hong\Desktop\gh\ianfromdover\utils\win_opengl_compile.ps1"
+    powershell.exe -Parameter "C:\Users\Ian Hong\Desktop\gh\ianfromdover\utils\win_opengl_compile.ps1"
+}
+

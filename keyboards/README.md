@@ -8,14 +8,14 @@
     - use the home positions as much as possible
     - make use of the thumbs
 - if a thumb key is held down, the corresponding hand's home row becomes modifiers that can be held down as well when appropriate
-- qwerty layer for mouse control, gaming and Unity viewport control
+- qwerty layer for shortcuts(eg. cmd-Q), mouse control, gaming and Unity viewport control
 - navigation layer includes arrow keys, `home`, `end`, that you can pair with shift and meta key, `copy`, `paste`, and window toggling
 - favourite feature: control music volume and playback directly from the home row
 - ergonomics determined by this chart from the colemak github:
 
 ![effort values](./imgs/effort.png)
 
-### Base(Alphas) - Colemak DH
+### Base(Alphas) - Canary
 
 ![base](./imgs/base.png)
 
@@ -49,6 +49,7 @@ Tapping any button in this layer brings you out of the layer. Meant for quick on
 
 ### Note: Vim Remappings
 
+(currently out of order)
 Allows O(1) access to vim navigation. Sacrifices vim's J, L, K functionality
 
 ![vim](./imgs/vim-remap.png)

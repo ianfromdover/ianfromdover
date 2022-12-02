@@ -81,3 +81,36 @@ Note: the latest layout version on KMonad is v4.6
 3. `stack` might timeout when installing, just wait half an hour and try again.
 4. The new kmonad executable is in `/Users/USERNAME/Documents/PATH-THAT-YOU-CLONED-KMONAD/kmonad/.stack-work/install/x86_64-osx/SOME-HASH/8.10.7/bin/kmonad`
 
+# Izumi Canary
+
+This is the (standard) row stagger keyboard layout for Izumi Canary, designed to be used with angle mod:
+
+```
+w l y p k z f o u ' [ ] \
+ c r s t g m n e i a ;
+  j v d b q x h , . /
+```
+
+I have modified it so that I can use the same layout on my ortho and row stagger keyboards. Here are some ways in which it is different from [vanilla Canary](https://github.com/Apsu/Canary):
+- `'` and `;` are swapped
+- `,`, `.` and `/` are in their QWERTY positions because my `Esc` is bound to `,.` in Vim
+- `g` and `m` and `f` are moved to their positions in the ortho version of Canary, making words like `of`, `fountain` and `biology` easier to type
+- `b` and `x` have been relegated to less convenient locations
+
+Additionally, some people on the Canary discord have inspired me to make this a 'programmer' layout. Hence, when you hold down `⌘`, the keymap reverts to QWERTY so that you can use shortcuts normally.
+
+## Running Izumi Canary Using Karabiner
+
+To get Izumi Canary, first install [Homebrew](https://brew.sh) with
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+Afterwards, simply install [Karabiner](https://github.com/pqrs-org/Karabiner-Elements) with
+
+```bash
+brew install --cask karabiner-elements
+```
+
+Finally, place `karabiner.json` from this repo into `~/.config/karabiner`

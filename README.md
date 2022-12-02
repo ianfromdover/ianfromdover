@@ -84,3 +84,9 @@ My name is Ian and I'm studying **Computer Science** at the **National Universit
   </a> 
 </p>
 
+
+<!--
+4th year Computer Science student studying at NUS. I currently work at Horangi as a Cloud Security Engineer. I have an interest in cyber security and actively developing my skills in the area. My current job requires me to use and be familiar with the various major cloud services such as Amazon Web Services, Google Cloud Platform and Microsoft Azure. In my previous internship at Defence Science and Technology Agency, I researched on encryption algorithms and worked on attempting to optimise a lightweight cryptography algorithm known as SPARKLE using Intel's AVX2 instruction set. I am looking forward to developing my knowledge and expertise in the security domain. If there is one experience I would like to gain, it would be penetration testing.
+
+I enjoy meaningful conversations with people and welcome any good opportunities. Feel free to connect with me!
+-->

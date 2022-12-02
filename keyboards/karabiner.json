@@ -179,7 +179,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "b"
+                                        "key_code": "g"
                                     }
                                 ],
                                 "type": "basic"
@@ -190,7 +190,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "x"
+                                        "key_code": "m"
                                     }
                                 ],
                                 "type": "basic"
@@ -289,7 +289,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "g"
+                                        "key_code": "b"
                                     }
                                 ],
                                 "type": "basic"
@@ -311,7 +311,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "m"
+                                        "key_code": "x"
                                     }
                                 ],
                                 "type": "basic"
@@ -630,7 +630,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "b",
+                                        "key_code": "g",
                                         "modifiers": [
                                             "left_shift"
                                         ]
@@ -649,7 +649,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "x",
+                                        "key_code": "m",
                                         "modifiers": [
                                             "left_shift"
                                         ]
@@ -820,7 +820,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "g",
+                                        "key_code": "b",
                                         "modifiers": [
                                             "left_shift"
                                         ]
@@ -858,7 +858,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "m",
+                                        "key_code": "x",
                                         "modifiers": [
                                             "left_shift"
                                         ]
@@ -1167,7 +1167,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "b",
+                                        "key_code": "g",
                                         "modifiers": [
                                             "right_shift"
                                         ]
@@ -1186,7 +1186,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "x",
+                                        "key_code": "m",
                                         "modifiers": [
                                             "right_shift"
                                         ]
@@ -1357,7 +1357,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "g",
+                                        "key_code": "b",
                                         "modifiers": [
                                             "right_shift"
                                         ]
@@ -1395,7 +1395,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "m",
+                                        "key_code": "x",
                                         "modifiers": [
                                             "right_shift"
                                         ]
@@ -1704,7 +1704,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "b",
+                                        "key_code": "g",
                                         "modifiers": [
                                             "caps_lock"
                                         ]
@@ -1723,7 +1723,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "x",
+                                        "key_code": "m",
                                         "modifiers": [
                                             "caps_lock"
                                         ]
@@ -1894,7 +1894,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "g",
+                                        "key_code": "b",
                                         "modifiers": [
                                             "caps_lock"
                                         ]
@@ -1932,7 +1932,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "m",
+                                        "key_code": "x",
                                         "modifiers": [
                                             "caps_lock"
                                         ]
@@ -2740,7 +2740,7 @@
             "parameters": {
                 "delay_milliseconds_before_open_device": 1000
             },
-            "selected": true,
+            "selected": false,
             "simple_modifications": [],
             "virtual_hid_keyboard": {
                 "country_code": 0,
@@ -2937,7 +2937,7 @@
             "parameters": {
                 "delay_milliseconds_before_open_device": 1000
             },
-            "selected": false,
+            "selected": true,
             "simple_modifications": [],
             "virtual_hid_keyboard": {
                 "country_code": 0,

@@ -1,7 +1,7 @@
 set nocp
 
 " Owner: Hong Yi En, Ian <ianfromdover>
-" Last Change: 15 Nov 2022
+" Last Change: 16 Nov 2022
 " Why: Organise by 3 sections
 " Next Improvements:
 "   - rebind U to redo (U -> <C-R>)
@@ -71,7 +71,7 @@ set mouse+=a
 let g:isincanarymode = 0
 function ToggleCanary()
     if g:isincanarymode ==# 0
-        " canary key -> vim command
+        " canary key -> qwerty vim command
         " movement
         noremap n h
         noremap e j
@@ -81,15 +81,12 @@ function ToggleCanary()
         noremap l w
         noremap q b
         noremap y e
-        noremap m n
-        noremap M N
-        noremap b g
-        noremap bb gg
-        noremap B G
+        noremap x n
+        noremap X N
 
         noremap h m
-        noremap x '
-        noremap X "
+        noremap m '
+        noremap M "
         
         " enter insert mode
         noremap o i
@@ -124,8 +121,8 @@ function ToggleCanary()
         noremap J Z
         noremap JJ ZZ
             " enter visual mode
-        noremap g v
-        noremap G V
+        noremap b v
+        noremap B V
 
         " t, f not used
 
@@ -140,15 +137,12 @@ function ToggleCanary()
         nunmap l
         nunmap q
         nunmap y
-        nunmap m
-        nunmap M
-        nunmap b
-        nunmap bb
-        nunmap B
-
-        nunmap h
         nunmap x
         nunmap X
+
+        nunmap h
+        nunmap m
+        nunmap M
         
         " enter insert mode
         nunmap o
@@ -183,8 +177,8 @@ function ToggleCanary()
         nunmap J
         nunmap JJ
             " enter visual mode
-        nunmap g
-        nunmap G
+        nunmap b
+        nunmap B
 
         " move QWERTY movements to home row
         noremap j h

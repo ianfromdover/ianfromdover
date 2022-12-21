@@ -1,8 +1,8 @@
 set nocp
 
 " Owner: Hong Yi En, Ian <ianfromdover>
-" Last Change: 16 Nov 2022
-" Why: Organise by 3 sections
+" Last Change: 21 Dec 2022
+" Why: Fix Canary Mode
 " Next Improvements:
 "   - rebind big U to redo (U -> <C-R>)
 "   - test on windows
@@ -28,17 +28,17 @@ set backspace=eol,start,indent " allow backspacing over indent,eol,start in inse
 imap ., <Esc>
 cnoremap ., <C-C>
 
-" when escaping, cursor stays in same position
+" when escaping, make cursor stay in the same position
 autocmd InsertLeave * :normal! `^
 set virtualedit=onemore
 
-" stop flashing when cursor reaches end of page or cannot find search results
+" stop the whole screen from flashing when cursor reaches end of page or cannot find search results
 set noerrorbells  " don't beep
-set t_vb=         " if visualbell is set, vim will neither flash nor beep. does nothing if visualbell not set.
 set visualbell    " instead of beeping, blink vim window
+set t_vb=         " if (visualbell enabled), vim wont flash or beep. else, does nothing
 
 " indentation help
-set smarttab      " start the line according to shiftwidth, not tabstop i believe it lets del remove the 2x spaces
+set smarttab      " start the line according to shiftwidth, not tabstop. i believe it lets del remove the 2x spaces
 set autoindent
 set smartindent
 set linebreak     " if line too long, soft-wrap its display to the next line
@@ -66,11 +66,12 @@ set mouse+=a
 " ---------------------------------------
 
 " ---- Custom Functions ----
-" Lets user use original vim bindings with CanaryFX keyboard input
-" note: movement is done through home row
+" Lets user use original vim bindings with Ian's modified Canary keyboard input
 let g:isincanarymode = 0
+
 function ToggleCanary()
     if g:isincanarymode ==# 0
+        " pattern:
         " canary key -> qwerty vim command
         " movement
         noremap n h
@@ -287,9 +288,10 @@ noremap ; l
 " Space: leader
 let mapleader = " "
 
-" I HAVENT FOUND OUT HOW TO MAKE THE LETTERS RECURSE, SO IN CANARY
-" YOU MUST USE THE CANARY LETTERS AFTER SPACE.
+" I HAVENT FOUND OUT HOW TO MAKE THE LETTERS RECURSE
+" So, if the user is using canary, they must type the leader sequence in canary
 "
+" Solutions:
 " idea 1: find out the text mode using leader is
 " idea 2: put the mappings below into a function, when
 "       canary mode is on or off, call the function again

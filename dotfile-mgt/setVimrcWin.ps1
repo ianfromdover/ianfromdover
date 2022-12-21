@@ -10,5 +10,7 @@ Set-Content -Path '~\_vimrc' $a
 echo 'Setting ~\.ideavimrc'
 Set-Content -Path '~\.ideavimrc' $a
 
-echo 'All 3 vimrcs successfully set 🎉'
+echo 'All 3 vimrcs successfully set :)'
+
+echo "IMPORTANT: to load plugins, find plug#begin, ('~/.vim/plugged') -> ('~/vimfiles/plugged')"
 

@@ -69,8 +69,12 @@ set mouse+=a
 " Lets user use original vim bindings with Ian's modified Canary keyboard input
 let g:isincanarymode = 0
 
-function ToggleCanary()
-    if g:isincanarymode ==# 0
+        " unmap home position qwerty movement
+        nunmap j
+        nunmap k
+        nunmap l
+        nunmap ;
+
         " pattern:
         " canary key -> qwerty vim command
         " movement

@@ -226,16 +226,17 @@ let g:lightline = {
     \             [ 'canarymode' ],
     \             [ 'gitbranch' ] ],
     \   'right': [ [ 'lineinfo' ],
-    \              [ 'percent' ],
+    \              [ 'wordcount', 'percent' ],
     \              [ 'fileformat', 'fileencoding', 'filetype' ] ]
     \ },
     \ 'component_function': {
     \   'filename': 'LightlineFilename',
-    \   'filetype': 'LightlineFiletype',
+    \   'wordcount': 'LightlineWordCount',
+    \   'canarymode': 'LightlineCanaryMode',
+    \   'gitbranch': 'FugitiveHead',
     \   'fileformat': 'LightlineFileformat',
     \   'fileencoding': 'LightlineFileencoding',
-    \   'gitbranch': 'FugitiveHead',
-    \   'canarymode': 'LightlineCanaryMode'
+    \   'filetype': 'LightlineFiletype'
     \ },
     \ }
   
@@ -266,8 +267,30 @@ let g:lightline = {
       return g:isincanarymode ==# 1 ? 'C' : ''
     endfunction
 
-" Lightline add wordcount toggle
-" https://www.vivi.sh/blog/technical/live-wordcount-vim-airline/index
+    function! LightlineWordCount()
+        if &filetype ==# 'markdown' || &filetype ==# 'text'
+            return CountWords()
+        else
+            return ''
+        endif
+    endfunction
+    " Displays the word count for selected file types
+    " Referenced from https://www.vivi.sh/blog/technical/live-wordcount-vim-airline/index
+    function! CountWords()
+        let position = getpos(".")
+        exe ":silent normal g\<c-g>"
+        let stat = v:statusmsg
+        let s:word_count = 0
+        if stat !=# '--No lines in buffer--'
+            if mode() ==# "V"
+                let s:word_count = str2nr(split(stat)[5])
+            else
+                let s:word_count = str2nr(split(stat)[11])
+            endif
+        endif
+        call setpos('.', position)
+        return s:word_count
+    endfunction
 
 
 " ---------------------

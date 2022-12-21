@@ -1,8 +1,8 @@
 <#
     Author: Ian Hong
-    Last Edit: 15th Sep 2022
-    Reason: update vim shortcut
-    Context: remoting from mac
+    Last Edit: 21 Dec 2022
+    Reason: add gs to ga command
+    Context: rushing for hiverlab cannon project
 If you only want this user to execute this, save under
 - echo $profile
 If you want it to be global, save under
@@ -63,6 +63,7 @@ function Desktopz {
 }
 
 <#
+if i remember correctly this binding is already used
 function Downloadz {
     cd 'C:\Users\Ian Hong\Downloads'
 }
@@ -105,6 +106,7 @@ function GStatus {
 
 function GAdd {
     git add *
+    gs
 }
 
 function GChk {
@@ -154,6 +156,7 @@ function svw {
     '~\.vimrc'
     '~\_vimrc'
     '~\.ideavimrc'
+    # this is already available as a separate script in dotfile mgt
 }
 
 # GL Compile All

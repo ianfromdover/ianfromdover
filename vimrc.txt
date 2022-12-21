@@ -5,7 +5,6 @@ set nocp
 " Why: Fix Canary Mode
 " Next Improvements:
 "   - rebind big U to redo (U -> <C-R>)
-"   - test on windows
 "   - lightline canary mode and word counter
 
 " -----------------------
@@ -68,7 +67,8 @@ set mouse+=a
 " ---- Custom Functions ----
 " Lets user use original vim bindings with Ian's modified Canary keyboard input
 let g:isincanarymode = 0
-
+function ToggleCanary()
+    if g:isincanarymode ==# 0
         " unmap home position qwerty movement
         nunmap j
         nunmap k
@@ -201,7 +201,8 @@ endfunction
 " Note: after pasting this vimrc, run :PlugInstall to install the plugins
 
 call plug#begin('~/.vim/plugged')
-" call plug#begin('~/vimfiles/plugged') for windows
+" call plug#begin('~/vimfiles/plugged') is the proper way for windows, but i
+" am lazy and i just let it create a new .vim folder for the plugins files
 
 " ---- Plugins ----
 Plug 'dense-analysis/ale'       " lint, go do definition, find references

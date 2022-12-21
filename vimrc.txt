@@ -4,7 +4,7 @@ set nocp
 " Last Change: 21 Dec 2022 (works in Rider)
 " Why: Fix Canary Mode
 " Next Improvements:
-"   - lightline canary mode and word counter
+"   - lightline canary mode and word counter (make it toggle-able after)
 
 " -----------------------
 " -- Essential Options --

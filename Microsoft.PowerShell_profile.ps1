@@ -135,7 +135,6 @@ function GHub {
 
 function gam { # git add all + commit message + push
     ga
-    gs
     gcm $args
     git push
 }

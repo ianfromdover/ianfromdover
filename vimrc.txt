@@ -4,7 +4,7 @@ set nocp
 " Last Change: 16 Nov 2022
 " Why: Organise by 3 sections
 " Next Improvements:
-"   - rebind U to redo (U -> <C-R>)
+"   - rebind big U to redo (U -> <C-R>)
 "   - test on windows
 "   - lightline canary mode and word counter
 

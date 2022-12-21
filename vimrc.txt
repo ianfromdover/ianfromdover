@@ -2,9 +2,10 @@ set nocp
 
 " Owner: Hong Yi En, Ian <ianfromdover>
 " Last Change: 21 Dec 2022 (works in Rider)
-" Why: Fix Canary Mode
+" Why: Add Canary Mode indicator to Lightline, 
+"      fix cw not working after canary mode disabled.
 " Next Improvements:
-"   - lightline canary mode and word counter (make it toggle-able after)
+"   - word counter (make it toggle-able after)
 
 " -----------------------
 " -- Essential Options --
@@ -69,11 +70,10 @@ let g:isincanarymode = 0
 function ToggleCanary()
     if g:isincanarymode ==# 0
         " unmap home position qwerty movement
-        nunmap j
-        nunmap k
-        nunmap l
-        nunmap ;
-        nunmap U
+        unmap j
+        unmap k
+        unmap l
+        unmap ;
 
         " pattern:
         " canary key -> qwerty vim command
@@ -132,69 +132,67 @@ function ToggleCanary()
         " t, f not used
 
         let g:isincanarymode = 1
-        echom "Canary Enabled"
+        echom "-- CANARY ENABLED --"
     else
-        nunmap n
-        nunmap e
-        nunmap i
-        nunmap a
+        unmap n
+        unmap e
+        unmap i
+        unmap a
 
-        nunmap l
-        nunmap q
-        nunmap y
-        nunmap x
-        nunmap X
+        unmap l
+        unmap q
+        unmap y
+        unmap x
+        unmap X
 
-        nunmap h
-        nunmap m
-        nunmap M
+        unmap h
+        unmap m
+        unmap M
         
         " enter insert mode
-        nunmap o
-        nunmap O
-        nunmap c
-        nunmap C
-        nunmap u
-        nunmap U
-        nunmap r
-        nunmap R
-        nunmap p
-        nunmap P
+        unmap o
+        unmap O
+        unmap c
+        unmap C
+        unmap u
+        unmap U
+        unmap r
+        unmap R
+        unmap p
+        unmap P
 
         " editing
-        nunmap d
-        nunmap D
-        nunmap s
-        nunmap S
-        nunmap z
-        nunmap Z
-        nunmap '
-        nunmap "
-        nunmap f
-        nunmap v
-        nunmap N
+        unmap d
+        unmap D
+        unmap s
+        unmap S
+        unmap z
+        unmap Z
+        unmap '
+        unmap "
+        unmap f
+        unmap v
+        unmap N
 
         " others
             " macros (@@ is repeat last macro)
-        nunmap w
+        unmap w
             " quick file opening and closing, folds
-        nunmap j
-        nunmap J
-        nunmap JJ
+        unmap j
+        unmap J
+        unmap JJ
             " enter visual mode
-        nunmap b
-        nunmap B
+        unmap b
+        unmap B
 
         " move QWERTY movements to home row
         noremap j h
         noremap k j
         noremap l k
         noremap ; l
-        " map big-U to redo
-        noremap U <C-R>
 
         let g:isincanarymode = 0
-        echom "Canary Disabled"
+        echom "-- CANARY DISABLED --"
     endif
 endfunction
 
@@ -218,16 +216,26 @@ call plug#end() " init plugin systems
 
 " ---- Plugin Options ----
 set laststatus=2 " enable lightline
+set showmode   " enable -- INSERT -- for Rider
+
+
 let g:lightline = {
     \ 'active': {
     \   'left': [ [ 'mode', 'paste' ],
-    \             [ 'readonly', 'filename' ] ],
+    \             [ 'readonly', 'filename' ],
+    \             [ 'canarymode' ],
+    \             [ 'gitbranch' ] ],
+    \   'right': [ [ 'lineinfo' ],
+    \              [ 'percent' ],
+    \              [ 'fileformat', 'fileencoding', 'filetype' ] ]
     \ },
     \ 'component_function': {
+    \   'filename': 'LightlineFilename',
     \   'filetype': 'LightlineFiletype',
     \   'fileformat': 'LightlineFileformat',
-    \   'filename': 'LightlineFilename',
     \   'fileencoding': 'LightlineFileencoding',
+    \   'gitbranch': 'FugitiveHead',
+    \   'canarymode': 'LightlineCanaryMode'
     \ },
     \ }
   
@@ -253,9 +261,13 @@ let g:lightline = {
       return filename . modified
     endfunction
 
+    " Displays 'C' with yellow bg when using canary mode
+    function! LightlineCanaryMode()
+      return g:isincanarymode ==# 1 ? 'C' : ''
+    endfunction
+
 " Lightline add wordcount toggle
 " https://www.vivi.sh/blog/technical/live-wordcount-vim-airline/index
-" Lightline add canary mode
 
 
 " ---------------------
@@ -291,8 +303,6 @@ noremap j h
 noremap k j
 noremap l k
 noremap ; l
-" map big-U to redo
-noremap U <C-R>
 
 " Space: leader
 let mapleader = " "

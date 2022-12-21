@@ -1,10 +1,9 @@
 set nocp
 
 " Owner: Hong Yi En, Ian <ianfromdover>
-" Last Change: 21 Dec 2022
+" Last Change: 21 Dec 2022 (works in Rider)
 " Why: Fix Canary Mode
 " Next Improvements:
-"   - rebind big U to redo (U -> <C-R>)
 "   - lightline canary mode and word counter
 
 " -----------------------
@@ -74,6 +73,7 @@ function ToggleCanary()
         nunmap k
         nunmap l
         nunmap ;
+        nunmap U
 
         " pattern:
         " canary key -> qwerty vim command
@@ -190,6 +190,8 @@ function ToggleCanary()
         noremap k j
         noremap l k
         noremap ; l
+        " map big-U to redo
+        noremap U <C-R>
 
         let g:isincanarymode = 0
         echom "Canary Disabled"
@@ -289,6 +291,8 @@ noremap j h
 noremap k j
 noremap l k
 noremap ; l
+" map big-U to redo
+noremap U <C-R>
 
 " Space: leader
 let mapleader = " "

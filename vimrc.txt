@@ -86,8 +86,8 @@ function ToggleCanary()
         noremap l w
         noremap q b
         noremap y e
-        noremap x n
-        noremap X N
+        noremap b n
+        noremap B N
 
         noremap h m
         noremap m '
@@ -120,14 +120,14 @@ function ToggleCanary()
 
         " others
             " macros (@@ is repeat last macro)
-        noremap w q
+        noremap x q
             " quick file opening and closing, folds
         noremap j z
         noremap J Z
         noremap JJ ZZ
             " enter visual mode
-        noremap b v
-        noremap B V
+        noremap w v
+        noremap W V
 
         " t, f not used
 
@@ -142,8 +142,8 @@ function ToggleCanary()
         unmap l
         unmap q
         unmap y
-        unmap x
-        unmap X
+        unmap b
+        unmap B
 
         unmap h
         unmap m
@@ -176,14 +176,14 @@ function ToggleCanary()
 
         " others
             " macros (@@ is repeat last macro)
-        unmap w
+        unmap x
             " quick file opening and closing, folds
         unmap j
         unmap J
         unmap JJ
             " enter visual mode
-        unmap b
-        unmap B
+        unmap w
+        unmap W
 
         " move QWERTY movements to home row
         noremap j h

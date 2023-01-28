@@ -1,12 +1,86 @@
 # The Izumi Layout
 
-*Izumi is a 42-key layout.* Design Principles:
+This layout first originated from `Miryoku` for a corne keyboard (with `Colemak-DH`),
+incorporated ideas from `Callum`, and then it moved to a 68-key tofu65, with the alphas
+slowly changing from `vanilla Canary` to my own concoction, borrowing inspiration from `Nerps`.
+
+The latest iteration is Izumi68 v0.2
+
+*Izumi68 is a 68-key layout.* The alphas are derived from Canary and Nerps. Here is the heatmap:
+
+![heatmap](./imgs/tofu/alphas-keymap.png)
+
+73.3% Similarity to Canary:
+
+![canary](./imgs/tofu/canary.png)
+
+I didn't like where the position of `X`, `B`, and `W` were so I moved them around.
+I also wanted the positions of `G` and `M` from Colemak-DH.
+
+60% Similarity to Nerps:
+
+![nerps](./imgs/tofu/nerps.png)
+
+I referred to Nerps to decide where to place the positions of the letters I didn't like in Canary, taking care to avoid SFBs.
+
+Design considerations:
+
+- use sticky keys instead of holding shift
+- have macros for my most frequently used keys
+- if a thumb key is held down, the corresponding hand's home row becomes modifiers that can be held down as well when appropriate
+- qwerty layer for shortcuts(eg. cmd-Q), mouse control, gaming and Unity viewport control
+- navigation layer includes arrow keys, `home`, `end`, that you can pair with shift and meta key, `copy`, `paste`, and window toggling
+- favourite feature: control music volume and playback directly from the home row
+
+## Izumi68 Layout
+
+### Alphas - Izumi
+
+![izumi](./imgs/tofu/izumi.png)
+
+### QWERTY
+
+![normie](./imgs/tofu/normie.png)
+
+### Numbers
+
+![num](./imgs/tofu/num.png)
+
+### Code
+
+![code](./imgs/tofu/code.png)
+
+### Navigation
+
+![nav](./imgs/tofu/nav.png)
+
+### Function Layer
+
+![func](./imgs/tofu/fn.png)
+
+### Mouse
+
+![mouse](./imgs/tofu/mouse.png)
+
+Can also be used to play "FPS games" like Minecraft.
+
+### One-Shot
+
+![oneshot](./imgs/tofu/oneshot.png)
+
+
+## Izumi42
+
+Section kept for legacy reasons.
+
+*Izumi42 is a 42-key layout.* Design Principles:
+
 - derived from the Miryoku and Callum layouts
-    - includes all keys found on a TKL layout
-    - use layers instead of reaching
-    - use sticky keys instead of holding
-    - use the home positions as much as possible
-    - make use of the thumbs
+  - includes all keys found on a TKL layout
+  - use layers instead of reaching
+  - use sticky keys instead of holding
+  - use the home positions as much as possible
+  - make use of the thumbs
 - if a thumb key is held down, the corresponding hand's home row becomes modifiers that can be held down as well when appropriate
 - qwerty layer for shortcuts(eg. cmd-Q), mouse control, gaming and Unity viewport control
 - navigation layer includes arrow keys, `home`, `end`, that you can pair with shift and meta key, `copy`, `paste`, and window toggling

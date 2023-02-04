@@ -14,7 +14,7 @@ set nocp
 syntax on         " on colours
 set re=0          " set regexp engine automatically, makes syntax on c++ files work
 set encoding=utf-8
-set nu rnu        " on numbers, relative line numbers
+set rnu           " relative line numbers
 set ruler         " show cursor's (row, col)
 set showmatch     " show matching parentheses
 set cc=80         " colorcolumn at 80 chars length

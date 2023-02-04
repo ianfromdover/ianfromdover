@@ -42,6 +42,10 @@ open .
 # handle failure
 # echo -e "${RED}There was an error downloading${NC}"
 
+echo -n -e "if you see ${RED}env: python: No such file or directory${NC}, install youtube-dl or overwrite its links"
+echo # newline
+
+
 # change emoji here:
 # https://unicode.org/emoji/charts/full-emoji-list.html
 

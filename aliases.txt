@@ -27,13 +27,13 @@ alias hm="cd ~/Desktop/tiktok/hangman" # temp
 alias g="cd ~/Documents/gh"
 alias gg="cd ~/Documents/gh/ianfromdover"
 alias gs="git status"
+alias gc="git checkout"
+alias gcm="git commit -m"
 alias ga=add_git
 add_git () { # Git add all + git status
     git add *
     gs
 }
-alias gc="git checkout"
-alias gcm="git commit -m"
 gam () { # Git add all + commit message
     git add *
     gcm "$*"
@@ -44,6 +44,8 @@ alias gb="git branch"
 alias gm="git checkout main" # or master when you're working on that
 alias gl="git log --oneline --graph --decorate --all"
 alias ghb="open https://github.com" # change this to use the push address of git remote -v of curr repo, not sure how.
+alias ps="git push origin $(git rev-parse --abbrev-ref HEAD)"
+alias pl="git pull origin $(git rev-parse --abbrev-ref HEAD)"
 
 # Miryoku and KMonad
 alias kmonad="/Users/base/Documents/gh/kmonad/.stack-work/install/x86_64-osx/9f984d0d37b664e38914834423db2b495401b310152614c196b54f87b1af978b/8.10.7/bin/kmonad"
@@ -60,6 +62,7 @@ alias v="vim"
 alias glc="~/opengl_compile.sh"
 alias glca="~/opengl_compile_all.sh"
 alias glc3="~/opengl_compile_lab3.sh"
+alias cpc="clang++ main.cpp -o main -std=c++17 -O2" # C++ compile, for CS3230
 
 # FZF
 alias sd="cd ~ && cd \"\$(find * -type d | fzf --preview=\"tree -L 1 {}\" --bind=\"space:toggle-preview\" --preview-window=:hidden)\" && pwd && tree -L 2" # Set Dir

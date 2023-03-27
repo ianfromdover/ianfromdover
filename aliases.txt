@@ -26,6 +26,8 @@ alias hm="cd ~/Desktop/tiktok/hangman" # temp
 # GIT
 alias g="cd ~/Documents/gh"
 alias gg="cd ~/Documents/gh/ianfromdover"
+alias pu="git pull"
+alias ps="git push"
 alias gs="git status"
 alias gc="git checkout"
 alias gcm="git commit -m"
@@ -35,8 +37,7 @@ add_git () { # Git add all + git status
     gs
 }
 gam () { # Git add all + commit message
-    git add *
-    gcm "$*"
+    git commit -am "$*"
     git push
 }
 alias gd="git diff"
@@ -62,7 +63,9 @@ alias v="vim"
 alias glc="~/opengl_compile.sh"
 alias glca="~/opengl_compile_all.sh"
 alias glc3="~/opengl_compile_lab3.sh"
-alias cpc="clang++ main.cpp -o main -std=c++17 -O2" # C++ compile, for CS3230
+cpc () { # C++ compile, for CS3230
+    clang++ "$*" -o main -std=c++17 -O2
+}
 
 # FZF
 alias sd="cd ~ && cd \"\$(find * -type d | fzf --preview=\"tree -L 1 {}\" --bind=\"space:toggle-preview\" --preview-window=:hidden)\" && pwd && tree -L 2" # Set Dir

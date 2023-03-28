@@ -1,8 +1,8 @@
 <#
     Author: Ian Hong
-    Last Edit: 21 Dec 2022
-    Reason: add gs to ga command
-    Context: rushing for hiverlab cannon project
+    Last Edit: 28 Mar 2023
+    Reason: add pl and ps for git
+    Context: Wk 11 getting nerps while doing cs3247
 If you only want this user to execute this, save under
 - echo $profile
 If you want it to be global, save under
@@ -19,8 +19,8 @@ New-Alias .... BackThree
 New-Alias ..... BackFour
 New-Alias e Exitz
 New-Alias c clear
-# v launches vim
 
+# v launches vim
 function v {
     vim $args
 }
@@ -84,6 +84,9 @@ function GLastRepo {
 
 # GIT
 Set-Alias gs GStatus
+New-Alias pl GPull
+del alias:ps -Force # default is process something
+New-Alias ps GPush
 Set-Alias ga GAdd
 Set-Alias gd GDiff
 Set-Alias gb GBranch
@@ -102,6 +105,12 @@ function gcm {
 
 function GStatus {
     git status
+}
+function GPull {
+    git pull
+}
+function GPush {
+    git push
 }
 
 function GAdd {
@@ -142,6 +151,9 @@ function gam { # git add all + commit message + push
 # APPS
 New-Alias t notepad.exe
 # New-Alias p python3
+function ig {
+    & "C:\Users\Ian Hong\Desktop\gh\ianfromdover\utils\git-igitt.exe"
+}
 New-Alias kmonad 'C:\Users\Ian Hong\Desktop\gh\ianfromdover\keyboards\kmonad-0.4.1-win.exe'
 New-Alias iz IzumiKeyboard
 

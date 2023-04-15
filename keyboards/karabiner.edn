@@ -1,0 +1,321 @@
+;; Programmer Sturdy
+;; Sturdy on alphas, retains qwerty shortcuts when command or option is held
+;; brew services start goku 
+;; goku ;; to check if compiles properly
+;; learn how to create a symlink from dotfiles to wherever on the system
+{:layers {}
+ :main [
+  {:des "Toggle Profile"
+   :rules [
+     [:!Tspacebar "'/Library/Application Support/org.pqrs/Karabiner-Elements/bin/karabiner_cli' --select-profile 'Vanilla'"] 
+  ]}
+  {:des "Sturdy"
+   :rules [
+     [:q :v] 
+     [:w :m] 
+     [:e :l]
+     [:r :c]
+     [:t :p]
+     [:y :x]
+     [:u :f]
+     [:i :o]
+     [:o :u]
+     [:p :j]
+
+     [:a :s]
+     [:s :t]
+     [:d :r]
+     [:f :d]
+     [:g :y]
+     [:h :period]
+     [:j :n]
+     [:k :a]
+     [:l :e]
+     [:semicolon :i]
+     [:quote :slash]
+
+     [:z :k]
+     [:x :q]
+     [:c :g]
+     [:v :w]
+     [:b :z]
+     [:n :b]
+     [:m :h]
+     [:comma :quote]
+     [:period :semicolon]
+     [:slash :comma]
+  ]}
+  {:des "Sturdy Left Shift"
+   :rules [
+     [:!Sq :!Sv] 
+     [:!Sw :!Sm] 
+     [:!Se :!Sl]
+     [:!Sr :!Sc]
+     [:!St :!Sp]
+     [:!Sy :!Sx]
+     [:!Su :!Sf]
+     [:!Si :!So]
+     [:!So :!Su]
+     [:!Sp :!Sj]
+
+     [:!Sa :!Ss]
+     [:!Ss :!St]
+     [:!Sd :!Sr]
+     [:!Sf :!Sd]
+     [:!Sg :!Sy]
+     [:!Sh :!Speriod]
+     [:!Sj :!Sn]
+     [:!Sk :!Sa]
+     [:!Sl :!Se]
+     [:!Ssemicolon :!Si]
+     [:!Squote :!Sslash]
+
+     [:!Sz :!Sk]
+     [:!Sx :!Sq]
+     [:!Sc :!Sg]
+     [:!Sv :!Sw]
+     [:!Sb :!Sz]
+     [:!Sn :!Sb]
+     [:!Sm :!Sh]
+     [:!Scomma :!Squote]
+     [:!Speriod :!Ssemicolon]
+     [:!Sslash :!Scomma]
+  ]}
+  {:des "Sturdy Right Shift"
+   :rules [
+     [:!Rq :!Rv] 
+     [:!Rw :!Rm] 
+     [:!Re :!Rl]
+     [:!Rr :!Rc]
+     [:!Rt :!Rp]
+     [:!Ry :!Rx]
+     [:!Ru :!Rf]
+     [:!Ri :!Ro]
+     [:!Ro :!Ru]
+     [:!Rp :!Rj]
+
+     [:!Ra :!Rs]
+     [:!Rs :!Rt]
+     [:!Rd :!Rr]
+     [:!Rf :!Rd]
+     [:!Rg :!Ry]
+     [:!Rh :!Rperiod]
+     [:!Rj :!Rn]
+     [:!Rk :!Ra]
+     [:!Rl :!Re]
+     [:!Rsemicolon :!Ri]
+     [:!Rquote :!Rslash]
+
+     [:!Rz :!Rk]
+     [:!Rx :!Rq]
+     [:!Rc :!Rg]
+     [:!Rv :!Rw]
+     [:!Rb :!Rz]
+     [:!Rn :!Rb]
+     [:!Rm :!Rh]
+     [:!Rcomma :!Rquote]
+     [:!Rperiod :!Rsemicolon]
+     [:!Rslash :!Rcomma]
+  ]}
+  {:des "Sturdy Caps"
+   :rules [
+     [:!Pq :!Pv] 
+     [:!Pw :!Pm] 
+     [:!Pe :!Pl]
+     [:!Pr :!Pc]
+     [:!Pt :!Pp]
+     [:!Py :!Px]
+     [:!Pu :!Pf]
+     [:!Pi :!Po]
+     [:!Po :!Pu]
+     [:!Pp :!Pj]
+
+     [:!Pa :!Ps]
+     [:!Ps :!Pt]
+     [:!Pd :!Pr]
+     [:!Pf :!Pd]
+     [:!Pg :!Py]
+     [:!Ph :!Pperiod]
+     [:!Pj :!Pn]
+     [:!Pk :!Pa]
+     [:!Pl :!Pe]
+     [:!Psemicolon :!Pi]
+     [:!Pquote :!Pslash]
+
+     [:!Pz :!Pk]
+     [:!Px :!Pq]
+     [:!Pc :!Pg]
+     [:!Pv :!Pw]
+     [:!Pb :!Pz]
+     [:!Pn :!Pb]
+     [:!Pm :!Ph]
+     [:!Pcomma :!Pquote]
+     [:!Pperiod :!Psemicolon]
+     [:!Pslash :!Pcomma]
+  ]}
+  {:des "Sturdy Caps LShift"
+   :rules [
+     [:!PSq :!PSv] 
+     [:!PSw :!PSm] 
+     [:!PSe :!PSl]
+     [:!PSr :!PSc]
+     [:!PSt :!PSp]
+     [:!PSy :!PSx]
+     [:!PSu :!PSf]
+     [:!PSi :!PSo]
+     [:!PSo :!PSu]
+     [:!PSp :!PSj]
+
+     [:!PSa :!PSs]
+     [:!PSs :!PSt]
+     [:!PSd :!PSr]
+     [:!PSf :!PSd]
+     [:!PSg :!PSy]
+     [:!PSh :!PSperiod]
+     [:!PSj :!PSn]
+     [:!PSk :!PSa]
+     [:!PSl :!PSe]
+     [:!PSsemicolon :!PSi]
+     [:!PSquote :!PSslash]
+
+     [:!PSz :!PSk]
+     [:!PSx :!PSq]
+     [:!PSc :!PSg]
+     [:!PSv :!PSw]
+     [:!PSb :!PSz]
+     [:!PSn :!PSb]
+     [:!PSm :!PSh]
+     [:!PScomma :!PSquote]
+     [:!PSperiod :!PSsemicolon]
+     [:!PSslash :!PScomma]
+  ]}
+  {:des "Sturdy Caps RShift"
+   :rules [
+     [:!PRq :!PRv] 
+     [:!PRw :!PRm] 
+     [:!PRe :!PRl]
+     [:!PRr :!PRc]
+     [:!PRt :!PRp]
+     [:!PRy :!PRx]
+     [:!PRu :!PRf]
+     [:!PRi :!PRo]
+     [:!PRo :!PRu]
+     [:!PRp :!PRj]
+
+     [:!PRa :!PRs]
+     [:!PRs :!PRt]
+     [:!PRd :!PRr]
+     [:!PRf :!PRd]
+     [:!PRg :!PRy]
+     [:!PRh :!PRperiod]
+     [:!PRj :!PRn]
+     [:!PRk :!PRa]
+     [:!PRl :!PRe]
+     [:!PRsemicolon :!PRi]
+     [:!PRquote :!PRslash]
+
+     [:!PRz :!PRk]
+     [:!PRx :!PRq]
+     [:!PRc :!PRg]
+     [:!PRv :!PRw]
+     [:!PRb :!PRz]
+     [:!PRn :!PRb]
+     [:!PRm :!PRh]
+     [:!PRcomma :!PRquote]
+     [:!PRperiod :!PRsemicolon]
+     [:!PRslash :!PRcomma]
+  ]}
+  {:des "⌘ QWERTY Left" ;; Resets keys to QWERTY when cmd is held so shortcuts are retained
+   :rules [
+     [:!C##q :!Cq] 
+     [:!C##w :!Cw] 
+     [:!C##e :!Ce]
+     [:!C##r :!Cr]
+     [:!C##t :!Ct]
+     [:!C##y :!Cy]
+     [:!C##u :!Cu]
+     [:!C##i :!Ci]
+     [:!C##o :!Co]
+     [:!C##p :!Cp]
+     [:!C##a :!Ca]
+     [:!C##s :!Cs]
+     [:!C##d :!Cd]
+     [:!C##f :!Cf]
+     [:!C##g :!Cg]
+     [:!C##h :!Ch]
+     [:!C##j :!Cj]
+     [:!C##k :!Ck]
+     [:!C##l :!Cl]
+     [:!C##z :!Cz]
+     [:!C##x :!Cx]
+     [:!C##c :!Cc]
+     [:!C##v :!Cv]
+     [:!C##b :!Cb]
+     [:!C##n :!Cn]
+     [:!C##m :!Cm]
+     [:!C##quote :!Cquote]
+     [:!C##comma :!Ccomma]
+     [:!C##slash :!Cslash]
+     [:!C##period :!Cperiod]
+     [:!C##semicolon :!Csemicolon]
+  ]}
+  {:des "⌘ QWERTY Right" ;; Resets keys to QWERTY when cmd is held so shortcuts are retained
+   :rules [
+     [:!Q##q :!Qq] 
+     [:!Q##w :!Qw] 
+     [:!Q##e :!Qe]
+     [:!Q##r :!Qr]
+     [:!Q##t :!Qt]
+     [:!Q##y :!Qy]
+     [:!Q##u :!Qu]
+     [:!Q##i :!Qi]
+     [:!Q##o :!Qo]
+     [:!Q##p :!Qp]
+     [:!Q##a :!Qa]
+     [:!Q##s :!Qs]
+     [:!Q##d :!Qd]
+     [:!Q##f :!Qf]
+     [:!Q##g :!Qg]
+     [:!Q##h :!Qh]
+     [:!Q##j :!Qj]
+     [:!Q##k :!Qk]
+     [:!Q##l :!Ql]
+     [:!Q##z :!Qz]
+     [:!Q##x :!Qx]
+     [:!Q##c :!Qc]
+     [:!Q##v :!Qv]
+     [:!Q##b :!Qb]
+     [:!Q##n :!Qn]
+     [:!Q##m :!Qm]
+     [:!Q##quote :!Qquote]
+     [:!Q##comma :!Qcomma]
+     [:!Q##slash :!Qslash]
+     [:!Q##period :!Qperiod]
+     [:!Q##semicolon :!Qsemicolon]
+]}]}
+
+;; goku on crack: https://medium.com/@nikitavoloboev/karabiner-god-mode-7407a5ddc8f6
+;; this is someones goku: https://gist.github.com/kaushikgopal/ff7a92bbc887e59699c804b59074a126
+
+;; essential tutorial for edn config file https://github.com/yqrashawn/GokuRakuJoudo/blob/master/tutorial.md
+;; clojure language primitives https://clojure.org/reference/reader
+;; {:key :value} map, [vector of things], (list of things)
+
+;; karabiner definition of mandatory and optional
+;; https://karabiner-elements.pqrs.org/docs/json/complex-modifications-manipulator-definition/from/modifiers/
+
+;; ---- From Goku Docs ----
+;; !  | means mandatory
+;; #  | means optional
+;; C  | left_command
+;; T  | left_control
+;; O  | left_option
+;; S  | left_shift
+;; F  | fn
+;; Q  | right_command
+;; W  | right_control
+;; E  | right_option
+;; R  | right_shift
+;; P  | caps_lock
+;; !! | mandatory command + control + optional + shift (hyper)
+;; ## | optional any // any modifier pressed will also be applied after key conversion

@@ -1,8 +1,16 @@
 ;; Programmer Sturdy
 ;; Sturdy on alphas, retains qwerty shortcuts when command or option is held
+;;
+;; Owner: Hong Yi En, Ian <ianfromdover>
+;; Last Change: 16 Apr 2023
+;; Why: Init
+;; Next Improvements:
+;;   - Layers?
+;;
+;; Usage
 ;; brew services start goku 
 ;; goku ;; to check if compiles properly
-;; learn how to create a symlink from dotfiles to wherever on the system
+
 {:layers {}
  :main [
   {:des "Toggle Profile"
@@ -319,3 +327,4 @@
 ;; P  | caps_lock
 ;; !! | mandatory command + control + optional + shift (hyper)
 ;; ## | optional any // any modifier pressed will also be applied after key conversion
+

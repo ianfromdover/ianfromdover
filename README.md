@@ -7,8 +7,8 @@ My name is Ian and I'm studying **Computer Science** at the **National Universit
 
 ### I'm Currently 🤹
 
-- Working on [SpatialWork](https://www.spatialwork.io/) under Hiverlab
-  - My current internship requires me to be familiar with XR for `Unity` and its `WebRequest` API
+- Working on [SpatialWork](https://www.spatialwork.io/) under an internship with [Hiverlab](https://www.hiverlab.com/about)
+  - My role requires me to be familiar with XR for `Unity` and its `WebRequest` API
 - Collaborating with my friends on [Capsule Cat's Big Space Adventure](https://github.com/timiditi/CapsuleCat) in preparation for [CS4350 Game Development Project](https://nusmods.com/modules/CS4350/game-development-project)
 - Teaching ![Python](https://img.shields.io/badge/-Python-black?style=flat-square&logo=python) weekly for beginners with my christian club
 
@@ -70,7 +70,7 @@ All the above projects involved collaborative development over git and github.
     <img src="https://www.vectorlogo.zone/logos/unity3d/unity3d-icon.svg" alt="unity" width="40" height="40"/> 
   </a>
   <a href="https://www.unrealengine.com/en-US/" target="_blank" rel="noreferrer"> 
-    <img src="https://cdn2.unrealengine.com/ue-logo-white-e34b6ba9383f.svg" alt="unreal engine" width="40" height="40"/> 
+    <img src="https://dl2.boxcloud.com/api/2.0/files/809821467008/content?preview=true&version=866775157808&access_token=1!qSfrLwNWO_Zceh5SfS75_egzz7BR2cRhB7jVpdYKxIOI3E5RGJoMDTCmkwYrSkbEzbfqFXbFzb3FEbMdMsgmfEIUR9HYDy33TXuPcYhA3oKPORQ9CPoKXrcDDoXXBksxw1LbEgi4nioawe4YMJf2M8_YXSRn8dSDyv6oDpwGmiJJuGQmRyEBSgrwa5Z8AmPXQpSAiRoqdPlq24VwXy30DZJGPyaUsUe321w7HeCOk2fEiZybuWv0LnAu1cvydna1AuCcXmG0uSjUJe4l-PFn3PU1O0FrW8r4Tn9ZHSZ2MLa7Hgg1XA5uuknzvbMk9Nljj9tysZKx93NcLDc3imwm8EOFRNocSuWo0JyRF0rumQFX3V5uDTru5TwLoW_b_izK24O4HZt1h_ZdGNIb7JSNJB2C23YWmx4WSFUDgoMsU9GsAWe2GDXKEeEIUCFJMDdwel9mEsK8tY6IhBZahts2gMs7cNxpymaS_K1IDJl1WlFKKsttfAPJzS6TjqKzgb5oGSBDxB7LQdoCe50VxuFBDS19V6i7H9ZBsPqqgXUeaYyyDFpxEooRGIDt5qaFutSTgqBJ&shared_link=https%3A%2F%2Fepicgames.ent.box.com%2Fs%2Fc2m8idcyejqvg5mjf4e2q73b7jbaghft&box_client_name=box-content-preview&box_client_version=2.90.0" alt="unreal engine" width="40" height="40"/> 
   </a>
   <a href="https://www.vim.org/" target="_blank" rel="noreferrer"> 
      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Vimlogo.svg/240px-Vimlogo.svg.png" alt="vim" width="40" height="40"/>

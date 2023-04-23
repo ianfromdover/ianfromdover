@@ -1,9 +1,9 @@
-;; Programmer Sturdy
-;; Sturdy on alphas, retains qwerty shortcuts when command or option is held
+;; Programmer Gallium
+;; Gallium on alphas, retains qwerty shortcuts when command or option is held
 ;;
 ;; Owner: Hong Yi En, Ian <ianfromdover>
-;; Last Change: 16 Apr 2023
-;; Why: Init
+;; Last Change: 23 Apr 2023
+;; Why: Sturdy -> Gallium
 ;; Next Improvements:
 ;;   - Layers?
 ;;
@@ -17,225 +17,225 @@
    :rules [
      [:!Tspacebar "'/Library/Application Support/org.pqrs/Karabiner-Elements/bin/karabiner_cli' --select-profile 'Vanilla'"] 
   ]}
-  {:des "Sturdy"
+  {:des "Gallium"
    :rules [
-     [:q :v] 
-     [:w :m] 
-     [:e :l]
+     [:q :b]
+     [:w :l] 
+     [:e :d]
      [:r :c]
-     [:t :p]
-     [:y :x]
-     [:u :f]
+     [:t :v]
+     [:y :z]
+     [:u :y]
      [:i :o]
      [:o :u]
-     [:p :j]
+     [:p :comma] ;
 
-     [:a :s]
-     [:s :t]
-     [:d :r]
-     [:f :d]
-     [:g :y]
-     [:h :period]
-     [:j :n]
+     [:a :n]
+     [:s :r]
+     [:d :t]
+     [:f :s]
+     [:g :g]
+     [:h :p]
+     [:j :h]
      [:k :a]
      [:l :e]
      [:semicolon :i]
-     [:quote :slash]
+     [:quote :slash] ;
 
-     [:z :k]
-     [:x :q]
-     [:c :g]
+     [:z :q]
+     [:x :x] ;; keep for standardisation sake
+     [:c :m]
      [:v :w]
-     [:b :z]
-     [:n :b]
-     [:m :h]
+     [:b :j]
+     [:n :k]
+     [:m :f]
      [:comma :quote]
      [:period :semicolon]
-     [:slash :comma]
+     [:slash :period]
   ]}
-  {:des "Sturdy Left Shift"
+  {:des "Gallium Left Shift"
    :rules [
-     [:!Sq :!Sv] 
-     [:!Sw :!Sm] 
-     [:!Se :!Sl]
+     [:!Sq :!Sb]
+     [:!Sw :!Sl] 
+     [:!Se :!Sd]
      [:!Sr :!Sc]
-     [:!St :!Sp]
-     [:!Sy :!Sx]
-     [:!Su :!Sf]
+     [:!St :!Sv]
+     [:!Sy :!Sz]
+     [:!Su :!Sy]
      [:!Si :!So]
      [:!So :!Su]
-     [:!Sp :!Sj]
+     [:!Sp :!Scomma] ;
 
-     [:!Sa :!Ss]
-     [:!Ss :!St]
-     [:!Sd :!Sr]
-     [:!Sf :!Sd]
-     [:!Sg :!Sy]
-     [:!Sh :!Speriod]
-     [:!Sj :!Sn]
+     [:!Sa :!Sn]
+     [:!Ss :!Sr]
+     [:!Sd :!St]
+     [:!Sf :!Ss]
+     [:!Sg :!Sg]
+     [:!Sh :!Sp]
+     [:!Sj :!Sh]
      [:!Sk :!Sa]
      [:!Sl :!Se]
      [:!Ssemicolon :!Si]
-     [:!Squote :!Sslash]
+     [:!Squote :!Sslash] ;
 
-     [:!Sz :!Sk]
-     [:!Sx :!Sq]
-     [:!Sc :!Sg]
+     [:!Sz :!Sq]
+     [:!Sx :!Sx] ;; keep for standardisation sake
+     [:!Sc :!Sm]
      [:!Sv :!Sw]
-     [:!Sb :!Sz]
-     [:!Sn :!Sb]
-     [:!Sm :!Sh]
+     [:!Sb :!Sj]
+     [:!Sn :!Sk]
+     [:!Sm :!Sf]
      [:!Scomma :!Squote]
      [:!Speriod :!Ssemicolon]
-     [:!Sslash :!Scomma]
+     [:!Sslash :!Speriod]
   ]}
-  {:des "Sturdy Right Shift"
+  {:des "Gallium Right Shift"
    :rules [
-     [:!Rq :!Rv] 
-     [:!Rw :!Rm] 
-     [:!Re :!Rl]
+     [:!Rq :!Rb]
+     [:!Rw :!Rl] 
+     [:!Re :!Rd]
      [:!Rr :!Rc]
-     [:!Rt :!Rp]
-     [:!Ry :!Rx]
-     [:!Ru :!Rf]
+     [:!Rt :!Rv]
+     [:!Ry :!Rz]
+     [:!Ru :!Ry]
      [:!Ri :!Ro]
      [:!Ro :!Ru]
-     [:!Rp :!Rj]
+     [:!Rp :!Rcomma] ;
 
-     [:!Ra :!Rs]
-     [:!Rs :!Rt]
-     [:!Rd :!Rr]
-     [:!Rf :!Rd]
-     [:!Rg :!Ry]
-     [:!Rh :!Rperiod]
-     [:!Rj :!Rn]
+     [:!Ra :!Rn]
+     [:!Rs :!Rr]
+     [:!Rd :!Rt]
+     [:!Rf :!Rs]
+     [:!Rg :!Rg]
+     [:!Rh :!Rp]
+     [:!Rj :!Rh]
      [:!Rk :!Ra]
      [:!Rl :!Re]
      [:!Rsemicolon :!Ri]
-     [:!Rquote :!Rslash]
+     [:!Rquote :!Rslash] ;
 
-     [:!Rz :!Rk]
-     [:!Rx :!Rq]
-     [:!Rc :!Rg]
+     [:!Rz :!Rq]
+     [:!Rx :!Rx] ;; keep for standardisation sake
+     [:!Rc :!Rm]
      [:!Rv :!Rw]
-     [:!Rb :!Rz]
-     [:!Rn :!Rb]
-     [:!Rm :!Rh]
+     [:!Rb :!Rj]
+     [:!Rn :!Rk]
+     [:!Rm :!Rf]
      [:!Rcomma :!Rquote]
      [:!Rperiod :!Rsemicolon]
-     [:!Rslash :!Rcomma]
+     [:!Rslash :!Rperiod]
   ]}
-  {:des "Sturdy Caps"
+  {:des "Gallium Caps"
    :rules [
-     [:!Pq :!Pv] 
-     [:!Pw :!Pm] 
-     [:!Pe :!Pl]
+     [:!Pq :!Pb]
+     [:!Pw :!Pl] 
+     [:!Pe :!Pd]
      [:!Pr :!Pc]
-     [:!Pt :!Pp]
-     [:!Py :!Px]
-     [:!Pu :!Pf]
+     [:!Pt :!Pv]
+     [:!Py :!Pz]
+     [:!Pu :!Py]
      [:!Pi :!Po]
      [:!Po :!Pu]
-     [:!Pp :!Pj]
+     [:!Pp :!Pcomma] ;
 
-     [:!Pa :!Ps]
-     [:!Ps :!Pt]
-     [:!Pd :!Pr]
-     [:!Pf :!Pd]
-     [:!Pg :!Py]
-     [:!Ph :!Pperiod]
-     [:!Pj :!Pn]
+     [:!Pa :!Pn]
+     [:!Ps :!Pr]
+     [:!Pd :!Pt]
+     [:!Pf :!Ps]
+     [:!Pg :!Pg]
+     [:!Ph :!Pp]
+     [:!Pj :!Ph]
      [:!Pk :!Pa]
      [:!Pl :!Pe]
      [:!Psemicolon :!Pi]
-     [:!Pquote :!Pslash]
+     [:!Pquote :!Pslash] ;
 
-     [:!Pz :!Pk]
-     [:!Px :!Pq]
-     [:!Pc :!Pg]
+     [:!Pz :!Pq]
+     [:!Px :!Px] ;; keep for standardisation sake
+     [:!Pc :!Pm]
      [:!Pv :!Pw]
-     [:!Pb :!Pz]
-     [:!Pn :!Pb]
-     [:!Pm :!Ph]
+     [:!Pb :!Pj]
+     [:!Pn :!Pk]
+     [:!Pm :!Pf]
      [:!Pcomma :!Pquote]
      [:!Pperiod :!Psemicolon]
-     [:!Pslash :!Pcomma]
+     [:!Pslash :!Pperiod]
   ]}
-  {:des "Sturdy Caps LShift"
+  {:des "Gallium Caps LShift"
    :rules [
-     [:!PSq :!PSv] 
-     [:!PSw :!PSm] 
-     [:!PSe :!PSl]
+     [:!PSq :!PSb]
+     [:!PSw :!PSl] 
+     [:!PSe :!PSd]
      [:!PSr :!PSc]
-     [:!PSt :!PSp]
-     [:!PSy :!PSx]
-     [:!PSu :!PSf]
+     [:!PSt :!PSv]
+     [:!PSy :!PSz]
+     [:!PSu :!PSy]
      [:!PSi :!PSo]
      [:!PSo :!PSu]
-     [:!PSp :!PSj]
+     [:!PSp :!PScomma] ;
 
-     [:!PSa :!PSs]
-     [:!PSs :!PSt]
-     [:!PSd :!PSr]
-     [:!PSf :!PSd]
-     [:!PSg :!PSy]
-     [:!PSh :!PSperiod]
-     [:!PSj :!PSn]
+     [:!PSa :!PSn]
+     [:!PSs :!PSr]
+     [:!PSd :!PSt]
+     [:!PSf :!PSs]
+     [:!PSg :!PSg]
+     [:!PSh :!PSp]
+     [:!PSj :!PSh]
      [:!PSk :!PSa]
      [:!PSl :!PSe]
      [:!PSsemicolon :!PSi]
-     [:!PSquote :!PSslash]
+     [:!PSquote :!PSslash] ;
 
-     [:!PSz :!PSk]
-     [:!PSx :!PSq]
-     [:!PSc :!PSg]
+     [:!PSz :!PSq]
+     [:!PSx :!PSx] ;; keep for standardisation sake
+     [:!PSc :!PSm]
      [:!PSv :!PSw]
-     [:!PSb :!PSz]
-     [:!PSn :!PSb]
-     [:!PSm :!PSh]
+     [:!PSb :!PSj]
+     [:!PSn :!PSk]
+     [:!PSm :!PSf]
      [:!PScomma :!PSquote]
      [:!PSperiod :!PSsemicolon]
-     [:!PSslash :!PScomma]
+     [:!PSslash :!PSperiod]
   ]}
-  {:des "Sturdy Caps RShift"
+  {:des "Gallium Caps RShift"
    :rules [
-     [:!PRq :!PRv] 
-     [:!PRw :!PRm] 
-     [:!PRe :!PRl]
+     [:!PRq :!PRb]
+     [:!PRw :!PRl] 
+     [:!PRe :!PRd]
      [:!PRr :!PRc]
-     [:!PRt :!PRp]
-     [:!PRy :!PRx]
-     [:!PRu :!PRf]
+     [:!PRt :!PRv]
+     [:!PRy :!PRz]
+     [:!PRu :!PRy]
      [:!PRi :!PRo]
      [:!PRo :!PRu]
-     [:!PRp :!PRj]
+     [:!PRp :!PRcomma] ;
 
-     [:!PRa :!PRs]
-     [:!PRs :!PRt]
-     [:!PRd :!PRr]
-     [:!PRf :!PRd]
-     [:!PRg :!PRy]
-     [:!PRh :!PRperiod]
-     [:!PRj :!PRn]
+     [:!PRa :!PRn]
+     [:!PRs :!PRr]
+     [:!PRd :!PRt]
+     [:!PRf :!PRs]
+     [:!PRg :!PRg]
+     [:!PRh :!PRp]
+     [:!PRj :!PRh]
      [:!PRk :!PRa]
      [:!PRl :!PRe]
      [:!PRsemicolon :!PRi]
-     [:!PRquote :!PRslash]
+     [:!PRquote :!PRslash] ;
 
-     [:!PRz :!PRk]
-     [:!PRx :!PRq]
-     [:!PRc :!PRg]
+     [:!PRz :!PRq]
+     [:!PRx :!PRx] ;; keep for standardisation sake
+     [:!PRc :!PRm]
      [:!PRv :!PRw]
-     [:!PRb :!PRz]
-     [:!PRn :!PRb]
-     [:!PRm :!PRh]
+     [:!PRb :!PRj]
+     [:!PRn :!PRk]
+     [:!PRm :!PRf]
      [:!PRcomma :!PRquote]
      [:!PRperiod :!PRsemicolon]
-     [:!PRslash :!PRcomma]
+     [:!PRslash :!PRperiod]
   ]}
   {:des "⌘ QWERTY Left" ;; Resets keys to QWERTY when cmd is held so shortcuts are retained
    :rules [
-     [:!C##q :!Cq] 
+     [:!C##q :!Cq] ;; don't need to change when layout changes
      [:!C##w :!Cw] 
      [:!C##e :!Ce]
      [:!C##r :!Cr]
@@ -269,7 +269,7 @@
   ]}
   {:des "⌘ QWERTY Right" ;; Resets keys to QWERTY when cmd is held so shortcuts are retained
    :rules [
-     [:!Q##q :!Qq] 
+     [:!Q##q :!Qq] ;; don't need to change when layout changes
      [:!Q##w :!Qw] 
      [:!Q##e :!Qe]
      [:!Q##r :!Qr]

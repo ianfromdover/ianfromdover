@@ -1,0 +1,75 @@
+{:layers {:navlayer {:key :spacebar}
+          :symbols {:key :tab}}
+ :main [
+        {:des "tapholds"
+         :rules [[:caps_lock :left_control nil {:alone :escape}],
+                 [:tab :left_alt nil {:alone :tab}],
+                 ],
+        }
+        {:des "navlayer"
+         :rules [:navlayer
+                 [:##a :left_command]
+                 [:##s :left_option]
+                 [:##d :left_control]
+                 [:##f :left_shift]
+                 [:##y :home]
+                 [:##close_bracket :end]
+                 [:##l :left_arrow]
+                 [:##semicolon :down_arrow]
+                 [:##p :up_arrow]
+                 [:##quote :right_arrow]]}
+         
+        {:des "symbols"
+         :rules [:symbols
+                 [:##o :!Sopen_bracket]
+                 [:##p :!Sclose_bracket]
+                 [:##l :open_bracket]
+                 [:##semicolon :close_bracket]
+                 [:##comma :backslash]
+                 [:##period :!Ssemicolon]
+                 [:##slash :semicolon]]}
+         {:des "rsthdmak"
+          :rules [
+                  [:##q :w]
+                  [:##w :c]
+                  [:##e :g]
+                  [:##r :f]
+                  [:##t :k]
+                  [:##y :backslash]
+                  [:##u :semicolon]
+                  [:##i :j]
+                  [:##o :l]
+                  [:##p :u]
+                  [:##open_bracket :y]
+                  [:##close_bracket :return_or_enter]
+                  [:##backslash :quote]
+
+                  [:##a :r]
+                  [:##s :s]
+                  [:##d :t]
+                  [:##f :h]
+                  [:##g :d]
+                  [:##h :open_bracket]
+                  [:##j :close_bracket]
+                  [:##k :m]
+                  [:##l :n]
+                  [:##semicolon :a]
+                  [:##quote :i]
+                  [:##return_or_enter :o]
+
+                  [:##z :v]
+                  [:##x :b]
+                  [:##c :p]
+                  [:##v :q]
+                  [:##b :backslash]
+                  [:##m :z]
+                  [:##comma :slash]
+                  [:##period :x]
+                  [:##slash :comma]
+                  [:##right_shift :period]
+
+                  [:##right_command :e]
+                  [:##right_alt :semicolon]
+                  ]}
+]}
+

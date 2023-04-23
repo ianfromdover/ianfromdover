@@ -2,8 +2,8 @@ set nocp
 
 " Owner: Hong Yi En, Ian <ianfromdover>
 " Last Change: 21 Dec 2022 (works in Rider)
-" Why: Add Canary Mode indicator to Lightline, 
-"      fix cw not working after canary mode disabled.
+" Why: Add Gallium Mode indicator to Lightline, 
+"      fix cw not working after gallium mode disabled.
 " Next Improvements:
 "   - word counter (make it toggle-able after)
 
@@ -66,10 +66,10 @@ set mouse+=a
 " ---------------------------------------
 
 " ---- Custom Functions ----
-" Lets user use original vim bindings with Ian's modified Canary keyboard input
-let g:isincanarymode = 0
-function ToggleCanary()
-    if g:isincanarymode ==# 0
+" Lets user use original vim bindings with Ian's modified Gallium keyboard input
+let g:isingalliummode = 0
+function ToggleGallium()
+    if g:isingalliummode ==# 0
         " unmap home position qwerty movement
         unmap j
         unmap k
@@ -77,7 +77,10 @@ function ToggleCanary()
         unmap ;
 
         " pattern:
-        " canary key -> qwerty vim command
+        " gallium key -> qwerty vim command
+" previous version was izumi canary
+" TODO: change izumi canary bindings to gallium after i learn to touch type it
+
         " movement
         noremap n h
         noremap e j
@@ -132,8 +135,8 @@ function ToggleCanary()
 
         " t, f not used
 
-        let g:isincanarymode = 1
-        echom "-- CANARY ENABLED --"
+        let g:isingalliummode = 1
+        echom "-- GALLIUM ENABLED --"
     else
         unmap n
         unmap e
@@ -192,8 +195,8 @@ function ToggleCanary()
         noremap l k
         noremap ; l
 
-        let g:isincanarymode = 0
-        echom "-- CANARY DISABLED --"
+        let g:isingalliummode = 0
+        echom "-- GALLIUM DISABLED --"
     endif
 endfunction
 
@@ -224,7 +227,7 @@ let g:lightline = {
     \ 'active': {
     \   'left': [ [ 'mode', 'paste' ],
     \             [ 'readonly', 'filename' ],
-    \             [ 'canarymode' ],
+    \             [ 'galliummode' ],
     \             [ 'gitbranch' ] ],
     \   'right': [ [ 'lineinfo' ],
     \              [ 'wordcount', 'percent' ],
@@ -233,7 +236,7 @@ let g:lightline = {
     \ 'component_function': {
     \   'filename': 'LightlineFilename',
     \   'wordcount': 'LightlineWordCount',
-    \   'canarymode': 'LightlineCanaryMode',
+    \   'galliummode': 'LightlineGalliumMode',
     \   'gitbranch': 'FugitiveHead',
     \   'fileformat': 'LightlineFileformat',
     \   'fileencoding': 'LightlineFileencoding',
@@ -263,9 +266,9 @@ let g:lightline = {
       return filename . modified
     endfunction
 
-    " Displays 'C' with yellow bg when using canary mode
-    function! LightlineCanaryMode()
-      return g:isincanarymode ==# 1 ? 'C' : ''
+    " Displays 'G' with yellow bg when using gallium mode
+    function! LightlineGalliumMode()
+      return g:isingalliummode ==# 1 ? 'C' : ''
     endfunction
 
     function! LightlineWordCount()
@@ -300,7 +303,7 @@ let g:lightline = {
     " see ide shortcuts here: https://github.com/ianfromdover/ianfromdover/tree/main/ide
     " == leader bindings ==
     " LD-L clear highlights
-    " LD-CN toggle canary mode
+    " LD-GL toggle gallium mode
     " LD-B toggle prev buffer
     " LD-W toggle btwn windows
     " LD-O reveal in finder
@@ -322,7 +325,7 @@ let g:lightline = {
 
 
 " ---- Normal Mappings ----
-" set movement to home positions when canary mode is not on yet
+" set movement to home positions when gallium mode is not on yet
 noremap j h
 noremap k j
 noremap l k
@@ -332,18 +335,20 @@ noremap ; l
 let mapleader = " "
 
 " I HAVENT FOUND OUT HOW TO MAKE THE LETTERS RECURSE
-" So, if the user is using canary, they must type the leader sequence in canary
+" So, if the user is using gallium, they must type the leader sequence in
+" gallium
 "
 " Solutions:
 " idea 1: find out the text mode using leader is
 " idea 2: put the mappings below into a function, when
-"       canary mode is on or off, call the function again
+"       gallium mode is on or off, call the function again
 
 " Lead_L: Clears search highlighting. <CR> means Hit Return
 nmap <silent> <leader>l :let @/ = ""<CR>
 
-" Lead_CN: Toggle Canary mode
-nmap <leader>cn :call ToggleCanary()<Cr>
+" Lead_GL: Toggle Gallium mode
+" TODO: muscle-memory learn the gl shortcut
+nmap <leader>gl :call ToggleGallium()<Cr>
 
 " Lead_B: Previous Buffer
 nmap <leader>b :bp<Cr>

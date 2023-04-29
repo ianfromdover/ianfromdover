@@ -67,9 +67,9 @@ set mouse+=a
 
 " ---- Custom Functions ----
 " Lets user use original vim bindings with Ian's modified Gallium keyboard input
-let g:isingalliummode = 0
+let g:inGalliumMode = 0
 function ToggleGallium()
-    if g:isingalliummode ==# 0
+    if g:inGalliumMode ==# 0
         " unmap home position qwerty movement
         unmap j
         unmap k
@@ -82,120 +82,112 @@ function ToggleGallium()
 " TODO: change izumi canary bindings to gallium after i learn to touch type it
 
         " movement
-        noremap n h
-        noremap e j
-        noremap i k
-        noremap a l
+        noremap h h
+        noremap a j
+        noremap e k
+        noremap i l
 
         noremap l w
-        noremap q b
-        noremap y e
-        noremap b n
-        noremap B N
+        noremap j b
+        noremap d e
+        noremap k n
+        noremap K N
 
-        noremap h m
-        noremap m '
-        noremap M "
+        noremap f m
+        noremap / '
+        noremap ? "
         
         " enter insert mode
         noremap o i
         noremap O I
-        noremap c a
-        noremap C A
+        noremap n a
+        noremap N A
         noremap u o
         noremap U O
         noremap r s
         noremap R S
-        noremap p r
-        noremap P R
+        noremap c r
+        noremap C R
 
         " editing
-        noremap d c
-        noremap D C
-        noremap s d
-        noremap S D
+        noremap m c
+        noremap M C
+        noremap t d
+        noremap T D
         noremap z y
         noremap Z Y
-        noremap ' p
-        noremap " P
-        noremap f u
-        noremap v x
-        noremap N J
+        noremap , p
+        noremap < P
+        noremap y u
+        noremap x x
+        noremap H J
 
         " others
             " macros (@@ is repeat last macro)
-        noremap x q
+        noremap b q
             " quick file opening and closing, folds
-        noremap j z
-        noremap J Z
-        noremap JJ ZZ
+        noremap q z
+        noremap Q Z
+        noremap QQ ZZ
             " enter visual mode
         noremap w v
         noremap W V
 
         " t, f not used
 
-        let g:isingalliummode = 1
+        let g:inGalliumMode = 1
         echom "-- GALLIUM ENABLED --"
     else
-        unmap n
+        " to change layout,
+        " copy paste above, then noremap -> unmap, delete 2nd arg
+        unmap h
+        unmap a
         unmap e
         unmap i
-        unmap a
-
         unmap l
-        unmap q
-        unmap y
-        unmap b
-        unmap B
-
-        unmap h
-        unmap m
-        unmap M
-        
-        " enter insert mode
+        unmap j
+        unmap d
+        unmap k
+        unmap K
+        unmap f
+        unmap /
+        unmap ?
         unmap o
         unmap O
-        unmap c
-        unmap C
+        unmap n
+        unmap N
         unmap u
         unmap U
         unmap r
         unmap R
-        unmap p
-        unmap P
-
-        " editing
-        unmap d
-        unmap D
-        unmap s
-        unmap S
+        unmap c
+        unmap C
+        unmap m
+        unmap M
+        unmap t
+        unmap T
         unmap z
         unmap Z
-        unmap '
-        unmap "
-        unmap f
-        unmap v
-        unmap N
-
-        " others
-            " macros (@@ is repeat last macro)
+        unmap ,
+        unmap <
+        unmap y
         unmap x
-            " quick file opening and closing, folds
-        unmap j
-        unmap J
-        unmap JJ
-            " enter visual mode
+        unmap H
+        unmap b
+        unmap q
+        unmap Q
+        unmap QQ
         unmap w
         unmap W
 
+        " -- DO NOT TOUCH THIS BLOCK --
         " move QWERTY movements to home row
         noremap j h
         noremap k j
         noremap l k
         noremap ; l
 
-        let g:isingalliummode = 0
+        let g:inGalliumMode = 0
         echom "-- GALLIUM DISABLED --"
     endif
 endfunction
@@ -268,7 +260,7 @@ let g:lightline = {
 
     " Displays 'G' with yellow bg when using gallium mode
     function! LightlineGalliumMode()
-      return g:isingalliummode ==# 1 ? 'C' : ''
+      return g:inGalliumMode ==# 1 ? 'C' : ''
     endfunction
 
     function! LightlineWordCount()

@@ -5,7 +5,11 @@ set nocp
 " Why: Add Gallium Mode indicator to Lightline, 
 "      fix cw not working after gallium mode disabled.
 " Next Improvements:
+"   - fix: slash for search not working
 "   - word counter (make it toggle-able after)
+" Usage Notes:
+"   - in Gallium mode, to undo, do double stroke instead of pressing once.
+"     this is to overcome the timeout problem. uu instead of u
 
 " -----------------------
 " -- Essential Options --
@@ -76,7 +80,6 @@ function ToggleGallium()
         " gallium key -> qwerty vim command
 " previous version was izumi canary
 
-        " SEARCH
         " escape with .,
         imap ., <nop>
         cnoremap ., <nop>
@@ -124,7 +127,9 @@ function ToggleGallium()
         noremap Z Y
         noremap , p
         noremap < P
-        noremap y u " not immediate undo
+        " SEARCH
+        noremap y u " does not immediate undo because of the possibility of y5w
+        noremap yy u " fix for immedate undo 
         noremap x x
         noremap H J
 
@@ -147,7 +152,6 @@ function ToggleGallium()
         " to change layout,
         " copy paste above, then noremap -> unmap, delete 2nd arg
 
-        " SEARCH
         " escape with .,
         imap ;' <nop>
         cnoremap ;' <nop>
@@ -186,6 +190,8 @@ function ToggleGallium()
         unmap ,
         unmap <
         unmap y
+        " SEARCH
+        unmap yy
         unmap x
         unmap H
         unmap b

@@ -1,15 +1,15 @@
 set nocp
 
 " Owner: Hong Yi En, Ian <ianfromdover>
-" Last Change: 21 Dec 2022 (works in Rider)
+" Last Change: 29 Apr 2023 (works in Rider)
 " Why: Add Gallium Mode indicator to Lightline, 
-"      fix cw not working after gallium mode disabled.
 " Next Improvements:
-"   - fix: slash for search not working
-"   - word counter (make it toggle-able after)
+"   - move to neovim
+"   - test in Rider
 " Usage Notes:
 "   - in Gallium mode, to undo, do double stroke instead of pressing once.
 "     this is to overcome the timeout problem. uu instead of u
+"   - word counter appears for markdown and txt files
 
 " -----------------------
 " -- Essential Options --
@@ -103,8 +103,8 @@ function ToggleGallium()
         noremap f m
         noremap / '
         noremap ? "
-        noremap , /
-        noremap < ?
+        noremap . /
+        noremap > ?
         
         " enter insert mode
         noremap o i
@@ -127,7 +127,6 @@ function ToggleGallium()
         noremap Z Y
         noremap , p
         noremap < P
-        " SEARCH
         noremap y u " does not immediate undo because of the possibility of y5w
         noremap yy u " fix for immedate undo 
         noremap x x

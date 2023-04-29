@@ -24,10 +24,6 @@ set backspace=eol,start,indent " allow backspacing over indent,eol,start in inse
 
 " set t_Co=256    " disabled because it makes vim on powershell ugly
 
-" escape with .,
-imap ., <Esc>
-cnoremap ., <C-C>
-
 " when escaping, make cursor stay in the same position
 autocmd InsertLeave * :normal! `^
 set virtualedit=onemore
@@ -79,7 +75,15 @@ function ToggleGallium()
         " pattern:
         " gallium key -> qwerty vim command
 " previous version was izumi canary
-" TODO: change izumi canary bindings to gallium after i learn to touch type it
+
+        " SEARCH
+        " escape with .,
+        imap ., <nop>
+        cnoremap ., <nop>
+
+        " escape with .,
+        imap ;' <Esc>
+        cnoremap ;' <C-C>
 
         " movement
         noremap h h
@@ -96,6 +100,8 @@ function ToggleGallium()
         noremap f m
         noremap / '
         noremap ? "
+        noremap , /
+        noremap < ?
         
         " enter insert mode
         noremap o i
@@ -118,7 +124,7 @@ function ToggleGallium()
         noremap Z Y
         noremap , p
         noremap < P
-        noremap y u
+        noremap y u " not immediate undo
         noremap x x
         noremap H J
 
@@ -140,6 +146,15 @@ function ToggleGallium()
     else
         " to change layout,
         " copy paste above, then noremap -> unmap, delete 2nd arg
+
+        " SEARCH
+        " escape with .,
+        imap ;' <nop>
+        cnoremap ;' <nop>
+        " escape with .,
+        imap ., <Esc>
+        cnoremap ., <C-C>
+
         unmap h
         unmap a
         unmap e
@@ -260,7 +275,7 @@ let g:lightline = {
 
     " Displays 'G' with yellow bg when using gallium mode
     function! LightlineGalliumMode()
-      return g:inGalliumMode ==# 1 ? 'C' : ''
+      return g:inGalliumMode ==# 1 ? 'G' : ''
     endfunction
 
     function! LightlineWordCount()
@@ -322,6 +337,10 @@ noremap j h
 noremap k j
 noremap l k
 noremap ; l
+
+" escape with .,
+imap ., <Esc>
+cnoremap ., <C-C>
 
 " Space: leader
 let mapleader = " "

@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 source ~/.aliases
+source ~/.git-prompt # make sure it is symlinked
+
+# see git file history if need tutorial on adding pyenv and java zulu
 
 #-------------#
 # bash prompt
@@ -13,40 +16,15 @@ reset_color='\[\e[0m\]' # default colour
 path_color='\[\033[32m\]' # green
 git_repo_color='\[\e[91m\]' # red
 
-parse_git_branch() {
-    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
-    # why is it so hard to add a single space behind
-}
-
-export PS1="${git_repo_color}\$(parse_git_branch)${path_color}\W${reset_color}> "
+export PS1="${git_repo_color}\$(__git_ps1 \"(%s)\")${path_color}\W${reset_color}> "
+# --- prompt tutorial ---
+# \W immediate path, \w full path
+# \u user
+# \h ip-192-168-187-123
 
 alias ls='ls -GFh' # -G colorises output, 
                    # -h human readable size, 
                    # -F adds / after a dir, 
                            # * after an executable, 
                            # @ after a symlink
-
-#-----------------#
-# if adding pyenv
-#-----------------#
-
-# Setting PATH for Python 3.8
-# export PATH="/Library/Frameworks/Python.framework/Versions/3.8/bin:${PATH}"
-
-# Change default python version (not sys python version) to pyenv's one
-# if command -v pyenv 1>/dev/null 2>&1; then
-  # eval "$(pyenv init -)"
-# fi
-
-# export PYENV_ROOT="$HOME/.pyenv"
-# export PATH="$PYENV_ROOT/bin:$PATH"
-# eval "$(pyenv init --path)"
-
-#------------------------#
-# if adding java 11 zulu
-#------------------------#
-
-# export JAVA_HOME=$(/usr/libexec/java_home) # /Library/Java/JavaVirtualMachines/zulu-11.jdk/Contents/Home
-# export JDK_HOME=$(/usr/libexec/java_home)
-# set JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-11.0.12.jdk/Contents/Home
 

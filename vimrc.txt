@@ -131,6 +131,7 @@ function ToggleGallium()
         noremap yy u " fix for immedate undo 
         noremap x x
         noremap H J
+        noremap ; .
 
         " others
             " macros (@@ is repeat last macro)
@@ -170,6 +171,8 @@ function ToggleGallium()
         unmap f
         unmap /
         unmap ?
+        unmap .
+        unmap >
         unmap o
         unmap O
         unmap n
@@ -189,10 +192,10 @@ function ToggleGallium()
         unmap ,
         unmap <
         unmap y
-        " SEARCH
         unmap yy
         unmap x
         unmap H
+        unmap ;
         unmap b
         unmap q
         unmap Q

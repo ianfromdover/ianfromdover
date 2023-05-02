@@ -15,6 +15,9 @@ echo
 echo - ~/.bash_profile
 ln -s ../bash_profile.txt ~/.bash_profile 
 echo
+echo - ~/.git-prompt
+ln -s ../git-prompt.sh ~/.git-prompt 
+echo
 echo - ~/.config/karabiner.edn
 ln -s ../keyboards/karabiner.edn ~/.config/karabiner.edn
 echo

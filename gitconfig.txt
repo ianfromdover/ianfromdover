@@ -1,0 +1,33 @@
+[user]
+	name = Ian
+	email = hiverlab.ianhong@gmail.com
+[includeIf "gitdir:~/Desktop/hiverlab/"]
+    path = ~/Desktop/hiverlab/.gitconfig
+[color]
+	ui = true
+[core]
+	editor = vim
+	excludesfile = /Users/base/.gitignore_global
+[pull]
+	rebase = true
+[diff]
+	colorMoved = zebra
+[init]
+	defaultBranch = main
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Users/base/Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+[commit]
+	template = /Users/base/.stCommitMsg
+[alias]
+	s = status
+    # i won't be using aliases here because bash is better
+

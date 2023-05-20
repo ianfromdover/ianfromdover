@@ -28,5 +28,14 @@ alias ls='ls -GFh' # -G colorises output,
                            # * after an executable, 
                            # @ after a symlink
 
+#-------#
+# pyenv
+#-------#
+
+# Change default python version to pyenv's global one
+if command -v pyenv 1>/dev/null 2>&1; then
+    eval "$(pyenv init -)"
+fi
+
 export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
 

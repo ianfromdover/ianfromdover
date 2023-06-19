@@ -70,11 +70,6 @@ set mouse+=a
 let g:inGalliumMode = 0
 function ToggleGallium()
     if g:inGalliumMode ==# 0
-        " unmap home position qwerty movement
-        unmap j
-        unmap k
-        unmap l
-        unmap ;
 
         " pattern:
         " gallium key -> qwerty vim command
@@ -202,13 +197,6 @@ function ToggleGallium()
         unmap QQ
         unmap w
         unmap W
-
-        " -- DO NOT TOUCH THIS BLOCK --
-        " move QWERTY movements to home row
-        noremap j h
-        noremap k j
-        noremap l k
-        noremap ; l
 
         let g:inGalliumMode = 0
         echom "-- GALLIUM DISABLED --"
@@ -353,12 +341,6 @@ let g:lightline = {
 
 
 " ---- Normal Mappings ----
-" set movement to home positions when gallium mode is not on yet
-noremap j h
-noremap k j
-noremap l k
-noremap ; l
-
 " escape with .,
 imap ., <Esc>
 cnoremap ., <C-C>

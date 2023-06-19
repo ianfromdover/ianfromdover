@@ -49,6 +49,9 @@ alias gl="git log --oneline --graph --decorate --all"
 alias ghb="open https://github.com" # change this to use the push address of git remote -v of curr repo, not sure how.
 alias ps="git push origin $(git rev-parse --abbrev-ref HEAD)"
 alias pl="git pull origin $(git rev-parse --abbrev-ref HEAD)"
+alias gst="git stash"
+alias gstd="git stash drop"
+alias gstp="git stash pop"
 
 # Miryoku and KMonad
 alias kmonad="/Users/base/Documents/gh/kmonad/.stack-work/install/x86_64-osx/9f984d0d37b664e38914834423db2b495401b310152614c196b54f87b1af978b/8.10.7/bin/kmonad"

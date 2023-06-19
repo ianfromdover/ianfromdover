@@ -1,8 +1,8 @@
 set nocp
 
 " Owner: Hong Yi En, Ian <ianfromdover>
-" Last Change: 29 Apr 2023 (works in Rider)
-" Why: Add Gallium Mode indicator to Lightline, 
+" Last Change: 19 Jun 2023 (to test in Rider)
+" Why: Add mvt plugins like vim-sneak
 " Next Improvements:
 "   - move to neovim
 "   - test in Rider
@@ -226,7 +226,12 @@ call plug#begin('~/.vim/plugged')
 " ---- Plugins ----
 Plug 'dense-analysis/ale'       " lint, go do definition, find references
 Plug 'ackyshake/VimCompletesMe' " tab completion
+Plug 'justinmk/vim-sneak'       " better jumping around
 Plug 'tpope/vim-fugitive'       " README: https://github.com/tpope/vim-fugitive
+Plug 'tpope/vim-repeat'         " lets you repeat plugin cmds
+Plug 'tpope/vim-commentary'     " gcc comment line out, gc{ comment block out
+Plug 'tpope/vim-surround'       " cs[' change surrounding [ to ', 
+                                  " can del or add too, README: https://github.com/tpope/vim-surround
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'         " README: https://github.com/junegunn/fzf.vim
 Plug 'itchyny/lightline.vim'    " pretty status line
@@ -237,6 +242,14 @@ call plug#end() " init plugin systems
 set laststatus=2 " enable lightline
 set showmode   " enable -- INSERT -- for Rider
 
+" vim-sneak: let f and t be multiline
+nnoremap f <Plug>Sneak_f
+nnoremap F <Plug>Sneak_F
+nnoremap t <Plug>Sneak_t
+nnoremap T <Plug>Sneak_T
+
+" vim-sneak: enable label-mode
+let g:sneak#label = 1
 
 let g:lightline = {
     \ 'active': {

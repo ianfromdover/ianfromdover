@@ -5,6 +5,7 @@ set nocp
 " Why: Add mvt plugins like vim-sneak
 " Next Improvements:
 "   - move to neovim
+"   - group plugin settings and mappings to that plugin (increase modularity)
 "   - test in Rider
 " Usage Notes:
 "   - in Gallium mode, to undo, do double stroke instead of pressing once.
@@ -15,6 +16,7 @@ set nocp
 " -- Essential Options --
 " -----------------------
 
+""" Common Settings --------------------------------
 syntax on         " on colours
 set re=0          " set regexp engine automatically, makes syntax on c++ files work
 set encoding=utf-8
@@ -65,7 +67,7 @@ set mouse+=a
 " -- Load Plugins and Custom Functions --
 " ---------------------------------------
 
-" ---- Custom Functions ----
+""" Custom Functions  --------------------------------
 " Lets user use original vim bindings with Ian's modified Gallium keyboard input
 let g:inGalliumMode = 0
 function ToggleGallium()
@@ -211,7 +213,7 @@ call plug#begin('~/.vim/plugged')
 " call plug#begin('~/vimfiles/plugged') is the proper way for windows, but i
 " am lazy and i just let it create a new .vim folder for the plugins files
 
-" ---- Plugins ----
+""" Plugins  --------------------------------
 Plug 'dense-analysis/ale'       " lint, go do definition, find references
 Plug 'ackyshake/VimCompletesMe' " tab completion
 Plug 'justinmk/vim-sneak'       " better jumping around
@@ -226,15 +228,16 @@ Plug 'itchyny/lightline.vim'    " pretty status line
 
 call plug#end() " init plugin systems
 
-" ---- Plugin Options ----
+""" Plugin Options  --------------------------------
 set laststatus=2 " enable lightline
 set showmode   " enable -- INSERT -- for Rider
 
 " vim-sneak: let f and t be multiline
-nnoremap f <Plug>Sneak_f
-nnoremap F <Plug>Sneak_F
-nnoremap t <Plug>Sneak_t
-nnoremap T <Plug>Sneak_T
+" nnoremap f <Plug>Sneak_f
+" nnoremap F <Plug>Sneak_F
+" nnoremap t <Plug>Sneak_t
+" nnoremap T <Plug>Sneak_T
+" note: currently not working
 
 " vim-sneak: enable label-mode
 let g:sneak#label = 1
@@ -340,7 +343,7 @@ let g:lightline = {
 
 
 
-" ---- Normal Mappings ----
+""" My Mappings  --------------------------------
 " escape with .,
 imap ., <Esc>
 cnoremap ., <C-C>
@@ -379,7 +382,7 @@ nmap <leader>z :vert ter<Cr>
 
 
 
-" ---- Plugin Mappings ----
+""" Plugin Mappings  --------------------------------
 " Lead_G: Global FZF, Ctrl-V for vs, Ctrl-X for sp.
 nmap <leader>g :Files<Cr>
 

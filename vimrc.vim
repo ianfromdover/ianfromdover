@@ -86,10 +86,10 @@ function ToggleGallium()
         cnoremap ;' <C-C>
 
         " movement
-        noremap h h
-        noremap a j
-        noremap e k
-        noremap i l
+        noremap p h
+        noremap h j
+        noremap a k
+        noremap e l
 
         noremap l w
         noremap j b
@@ -98,7 +98,7 @@ function ToggleGallium()
         noremap K N
 
         noremap f m
-        noremap / '
+        noremap / ;
         noremap ? "
         noremap . /
         noremap > ?
@@ -110,10 +110,19 @@ function ToggleGallium()
         noremap N A
         noremap u o
         noremap U O
-        noremap r s
-        noremap R S
         noremap c r
         noremap C R
+
+        " jumping
+        noremap s f
+        noremap S F
+        noremap v t
+        noremap V T
+        " plugin vim-sneak
+        noremap r <Plug>Sneak_s
+        noremap R <Plug>Sneak_S
+        noremap i ;
+        noremap I :
 
         " editing
         noremap m c
@@ -124,8 +133,8 @@ function ToggleGallium()
         noremap Z Y
         noremap , p
         noremap < P
-        noremap y u " does not immediate undo because of the possibility of y5w
-        noremap yy u " fix for immedate undo 
+        noremap y u
+        noremap yy u
         noremap x x
         noremap H J
         noremap ; .
@@ -140,8 +149,6 @@ function ToggleGallium()
             " enter visual mode
         noremap w v
         noremap W V
-
-        " t, f not used
 
         let g:inGalliumMode = 1
         echom "-- GALLIUM ENABLED --"

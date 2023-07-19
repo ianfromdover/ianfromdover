@@ -10,5 +10,5 @@ set ideawrite=all
 """ Plugins  --------------------------------
 set sneak
 set surround
-set commentary " Does not support `gcA`.
+set commentary
 

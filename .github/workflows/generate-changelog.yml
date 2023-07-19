@@ -3,6 +3,7 @@ name: 'Generate Changelog'
 on:
   workflow_dispatch: # click the button on Github repo!
   push:
+     # get this to run only when i push a new tag
      branches:
        - 'main'
 

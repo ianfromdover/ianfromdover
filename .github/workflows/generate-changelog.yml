@@ -1,4 +1,5 @@
 name: 'Generate Changelog'
+  # gotten from https://github.com/orhun/git-cliff
 
 on:
   workflow_dispatch: # click the button on Github repo!
@@ -15,7 +16,7 @@ jobs:
       release_body: ${{ steps.git-cliff.outputs.content }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
@@ -32,7 +33,7 @@ jobs:
         run: cat "${{ steps.git-cliff.outputs.changelog }}" > changelog.md
 
       - name: Upload changelog as artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: changelog
           path: "changelog.md"

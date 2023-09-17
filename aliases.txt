@@ -1,6 +1,6 @@
 # Author: Ian Hong
-# Last Update: 27 Oct 2022
-# Reason: Add status to git add
+# Last Update: 17 Sep 2023
+# Reason: change gg to capsule cat
 # Assumptions: fzf installed
 
 # Explicitly expand aliases
@@ -21,12 +21,12 @@ alias o="open"
 alias dt="cd ~/Desktop"
 alias dl="cd ~/Downloads"
 alias dc="cd ~/Documents"
-alias hm="cd ~/Desktop/tiktok/hangman" # temp
+alias ccc="ssh e0543721@stu.comp.nus.edu.sg" # for CS2106
 
 # GIT
 alias g="cd ~/Documents/gh"
 alias ig="/Users/base/Documents/gh/ianfromdover/utils/git-igitt"
-alias gg="cd ~/Desktop/hiverlab/repos"
+alias gg="cd ~/Documents/gh/capsule-cat"
 
 alias pu="git pull"
 alias ps="git push"

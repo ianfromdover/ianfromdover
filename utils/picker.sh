@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-# if user is on mac and doesn't have ffmpeg and yt-dl,
-# brew install youtube-dl
+# if user is on mac and doesn't have ffmpeg and yt-dlp,
+# brew install yt-dlp
 # brew install ffmpeg
 
 # define formatting consts
@@ -28,11 +28,11 @@ echo -e "\U23EC ${BOLD}Paste${NC} the link to your unlisted YouTube playlist:"
 read LINK
 echo # newline
 
-echo -e "\U1F344 Starting download and conversion using ${BOLD}youtube-dl${NC}"
+echo -e "\U1F344 Starting download and conversion using ${BOLD}yt-dlp${NC}"
 echo # newline
 
 # improvement: grab channel's name also for the artist
-youtube-dl --ignore-errors --format bestaudio --extract-audio --audio-format mp3 --audio-quality 160K --output "%(title)s.%(ext)s" --yes-playlist $LINK
+yt-dlp --ignore-errors --format bestaudio --extract-audio --audio-format mp3 --audio-quality 160K --output "%(title)s.%(ext)s" --yes-playlist $LINK
 echo # newline
 
 # alert success
@@ -42,7 +42,7 @@ open .
 # handle failure
 # echo -e "${RED}There was an error downloading${NC}"
 
-echo -n -e "if you see ${RED}env: python: No such file or directory${NC}, install youtube-dl or overwrite its links"
+echo -n -e "if you see ${RED}env: python: No such file or directory${NC}, install yt-dlp or overwrite its links"
 echo # newline
 
 

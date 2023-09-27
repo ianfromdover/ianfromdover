@@ -6,7 +6,7 @@ https://brew.sh
 
 3. install the youtube downloader using terminal
 
-brew install youtube-dl
+brew install yt-dlp
 
 4. install ffmpeg, it's like VLC but it works purely in the terminal
 

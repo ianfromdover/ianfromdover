@@ -127,7 +127,8 @@ for i in /etc/*; do
 done
 
 # prints 1 to 5 inclusive on newlines
-for i in {1..5}; do
+end=5
+for i in $(seq 1 $end); do
     echo $i
 done
 

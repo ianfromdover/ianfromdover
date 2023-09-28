@@ -212,3 +212,5 @@ rm ls.out
 
 # what does this mean Y C?
 # if  diff -q $model_file "output.out" >/dev/null 2>&1 ; then
+# https://pressbooks.library.torontomu.ca/opsyshiraki/chapter/inputoutput/
+# merge error into stdout

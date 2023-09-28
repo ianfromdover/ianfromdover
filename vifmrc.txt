@@ -22,13 +22,6 @@ set wildstyle=popup " Show completions using popup with desc of the matches
 " MAPPING
 noremap ., <Esc>
 
-" ---- Normal Mappings ----
-" set movement to home positions when canary mode is not on yet
-noremap j h
-noremap k j
-noremap l k
-noremap ; l
-
 noremap s :shell<C-R>
 
 " ------------------------------------------------------------------------------

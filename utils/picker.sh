@@ -5,6 +5,13 @@ playlists=$@
 list_num=$#
 first=$1
 
+# The following solution reads from a file if the script is called with a file name as the first parameter $1 and otherwise from standard input.
+# Referenced from: https://stackoverflow.com/questions/6980090/how-to-read-from-a-file-or-standard-input-in-bash
+# while IFS= read -r line
+# do
+#   echo "$line"
+# done < "${1:-/dev/stdin}"
+
 # Colours :D
 NC='\033[0m' # No Color
 BOLD='\033[1m'

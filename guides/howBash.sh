@@ -48,13 +48,15 @@ echo "Hello $(whoami), today is $(date +%A), $(date +%d) $(date +%B) $(date +%y)
 
 echo
 -e (include newlines)
--n ??
+-n (do not print the trailing newline char)
 =---------=
 "
 
 : "
 =---------=
 = test statements
+
+used for if else
 =---------=
 "
 
@@ -200,17 +202,28 @@ rm ls.out
 # piping commands |
 # channel the output of prev cmd into input of second cmd
 
-ls | less
+ls | nano
 
 # executing stuff in parallel &
 # sequentially ;
-ls; date
 ls & date
+ls; date
 # a sample bash script is utils/picker.sh
 
 rm ls.out
 
-# what does this mean Y C?
-# if  diff -q $model_file "output.out" >/dev/null 2>&1 ; then
+# what does >/dev/null 2>&1; mean?
+#   discard stdout and merge stderr into stdout
+#   eg. if  diff -q $model_file "output.out" >/dev/null 2>&1 ; then
+#       do something
+#
+# 2> is the stderr stream.
+#   eg. cat chapter1 chapter4 2> errors.txt
+#   saves error messages in errors.txt but standard output is displayed on the screen
+#
+# >& is the merge operator
+#   usage: 2>&1 merges stream 2 into stream 1, which is by convention stderr and stdout
+#
+# good explanation:
 # https://pressbooks.library.torontomu.ca/opsyshiraki/chapter/inputoutput/
-# merge error into stdout
+

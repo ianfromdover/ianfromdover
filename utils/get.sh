@@ -1,8 +1,10 @@
 #!/bin/bash
-
-# Ensure that you have connected to the VPN
+# Download a file from server that you ssh-ed into to your local computer
+#   Assumes that you are doing CS2106 on NUS compute clusters
+#   Ensure that you have connected to the VPN
 # Usage: bash get.sh <path after ~/2106/>
-server_path="e0543721@stu.comp.nus.edu.sg:~/2106/$1"
+
+server_path="e05xxxxx@stu.comp.nus.edu.sg:~/2106/$1"
 echo -e "Getting files from $server_path"
 
 # Download to current directory

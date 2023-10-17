@@ -4,7 +4,7 @@
 #   Ensure that you have connected to the VPN
 # Usage: ./send.sh <file to send>
 
-scp -r $1 e0543721@stu.comp.nus.edu.sg:~/2106/
+scp -r $1 e05xxxxx@stu.comp.nus.edu.sg:~/2106/
 
 # Display success msg
 if [ $? -ne 0 ]; then

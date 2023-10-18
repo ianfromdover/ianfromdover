@@ -71,3 +71,10 @@ Add `#!/usr/bin/env bash` to the top of the script, not the usual bash one
 
 `git checkout zhongfu/fix-ui`
 
+## Quality of life stuff
+- let git auto handle tracking when you clone new repos
+- taken from https://stackoverflow.com/questions/19279937/how-do-i-configure-git-to-automatically-pull-from-current-branch-when-using-git
+
+`git config --global pull.default current`
+`git config --global push.default matching`
+`git config --global branch.autoSetupMerge always`

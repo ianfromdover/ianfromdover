@@ -7,17 +7,16 @@ My name is Ian and I'm studying **Computer Science** at the **National Universit
 
 ### I'm Currently 🤹
 
-- Working on [SpatialWork](https://www.spatialwork.io/) under an internship with [Hiverlab](https://www.hiverlab.com/about)
-  - My role requires me to be familiar with XR for `Unity` and its `WebRequest` API
-- Collaborating with my friends on [Capsule Cat's Big Space Adventure](https://github.com/timiditi/CapsuleCat) in preparation for [CS4350 Game Development Project](https://nusmods.com/modules/CS4350/game-development-project)
-- Teaching ![Python](https://img.shields.io/badge/-Python-black?style=flat-square&logo=python) weekly for beginners with my christian club
+- Starting a new UX design group project as part of [NM3243 User Experience Design](https://nusmods.com/courses/NM3243/user-experience-design)
+- Trying to release [Capsule Cat's Big Space Adventure](https://github.com/timiditi/CapsuleCat) on Steam to finish up our [CS4350 Game Development Project](https://nusmods.com/modules/CS4350/game-development-project)
+- Implementing private chat functionality in a world for VRChat as part of my final year project.
+<!-- - Teaching ![Python](https://img.shields.io/badge/-Python-black?style=flat-square&logo=python) weekly for beginners with my christian club -->
 
 ### I Want To 🎯
 
-- Open an open-source library compiling XR interactions patterns. My `xr-interaction-design-library` repo will be accepting contributions soon.
-- Make a VR app that lets users make AI companions by combining AI assistants like `Microsoft XiaoIce` with their virtual avatars made using `Metahuman Creator`
-- beat my QWERTY typing speed on [Sturdy](https://o-x-e-y.github.io/layouts/sturdy/index.html), a popular layout from the alt keyboard layouts discord server
-  - Currently at 30wpm (20th Apr 2023), 75 wpm to go
+- Do a UX teardown (analysis) and redesign of VRChat's website.
+- beat my QWERTY typing speed on [Gallium](https://github.com/GalileoBlues/Gallium), a popular layout from the alt keyboard layouts discord server
+  - Currently at 100wpm (24th Dec 2023), 15 wpm to go
 
 ### Get in Touch 👋
 

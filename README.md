@@ -71,7 +71,7 @@ All the above projects involved collaborative development over git and github.
     <img src="https://www.vectorlogo.zone/logos/unity3d/unity3d-icon.svg" alt="unity" width="40" height="40"/> 
   </a>
   <a href="https://www.unrealengine.com/en-US/" target="_blank" rel="noreferrer"> 
-    <img src="https://dl2.boxcloud.com/api/2.0/files/809821467008/content?preview=true&version=866775157808&access_token=1!qSfrLwNWO_Zceh5SfS75_egzz7BR2cRhB7jVpdYKxIOI3E5RGJoMDTCmkwYrSkbEzbfqFXbFzb3FEbMdMsgmfEIUR9HYDy33TXuPcYhA3oKPORQ9CPoKXrcDDoXXBksxw1LbEgi4nioawe4YMJf2M8_YXSRn8dSDyv6oDpwGmiJJuGQmRyEBSgrwa5Z8AmPXQpSAiRoqdPlq24VwXy30DZJGPyaUsUe321w7HeCOk2fEiZybuWv0LnAu1cvydna1AuCcXmG0uSjUJe4l-PFn3PU1O0FrW8r4Tn9ZHSZ2MLa7Hgg1XA5uuknzvbMk9Nljj9tysZKx93NcLDc3imwm8EOFRNocSuWo0JyRF0rumQFX3V5uDTru5TwLoW_b_izK24O4HZt1h_ZdGNIb7JSNJB2C23YWmx4WSFUDgoMsU9GsAWe2GDXKEeEIUCFJMDdwel9mEsK8tY6IhBZahts2gMs7cNxpymaS_K1IDJl1WlFKKsttfAPJzS6TjqKzgb5oGSBDxB7LQdoCe50VxuFBDS19V6i7H9ZBsPqqgXUeaYyyDFpxEooRGIDt5qaFutSTgqBJ&shared_link=https%3A%2F%2Fepicgames.ent.box.com%2Fs%2Fc2m8idcyejqvg5mjf4e2q73b7jbaghft&box_client_name=box-content-preview&box_client_version=2.90.0" alt="unreal engine" width="40" height="40"/> 
+    <img src="https://cdn.icon-icons.com/icons2/2389/PNG/512/unreal_engine_logo_icon_144771.png" alt="unreal engine" width="40" height="40"/> 
   </a>
   <a href="https://www.vim.org/" target="_blank" rel="noreferrer"> 
      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Vimlogo.svg/240px-Vimlogo.svg.png" alt="vim" width="40" height="40"/>

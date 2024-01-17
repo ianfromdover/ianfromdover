@@ -3,8 +3,8 @@
 | Function            | JetBrains IDEs        | VS Code      | Custom    |
 | ------------------- | --------------------- | ------------ | --------- |
 | Settings            | Ctrl-Alt-S            | Cmd ,        | Cmd ,     |
-| Search Everywhere   | Shift-Shift           | Ctrl-P       | JB        | <VS Go To File />
-| Run Anything        | Ctrl-Ctrl             | Shift-Ctrl-P | JB        | <VS Show all commands />
+| Search Everywhere   | Shift-Shift           | Ctrl-P       | Sft-Sft   | <VS Go To File />
+| Run Anything        | Ctrl-Ctrl             | Shift-Ctrl-P | Ctl-Ctl   | <VS Show all commands />
 | Context Action      | Alt-Enter             | Ctrl-.       | Alt-Enter | <VS Quick Fix />
 | Run Code            | F5                    | F5           | Alt-P     | <VS Run is Debug, P for Play in Unity. Alt-E confl mac />
 | Debug Code          | F5                    | F5           | Alt-A     |
@@ -21,10 +21,9 @@
 
 # shortcuts to deconflict:
 - with vim
-- with mac and windows
-    - Alt-2 becomes € on mac
-    - Alt-3 becomes # on mac, used for navigation
-- with editor
+- ensure that mac is using US English, not UK
+- with windows
+- with existing IDE shortcuts
 
 ### VS
 - switch tabs: Cmd 123. Switch panels: Ctrl 123. hide vs code activity bar.
@@ -36,6 +35,8 @@
 Rider: File > Manage IDE Settings > Import Settings... > choose the zip file
 
 IntelliJ: File > Manage IDE Settings > Import Settings... > choose the zip file
+
+CLion: File > Manage IDE Settings > Import Settings... > choose the zip file
 
 VS Code: Command Palette > Open Keyboard Shortcuts (JSON), Explorer: view open editors, show keybindings in finder
 

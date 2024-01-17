@@ -10,10 +10,6 @@
     "command": "workbench.action.quickOpen"
   },
   {
-    "key": "cmd+p",
-    "command": "-workbench.action.quickOpen"
-  },
-  {
     "key": "ctrl ctrl",
     "command": "workbench.action.showCommands"
   },
@@ -57,17 +53,12 @@
     "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
   },
   {
-    "key": "alt+a",
-    "command": "workbench.action.debug.continue",
-    "when": "debugState == 'stopped'"
-  },
-  {
     "key": "f5",
     "command": "-workbench.action.debug.continue",
     "when": "debugState == 'stopped'"
   },
   {
-    "key": "alt+a",
+    "key": "shift+cmd+r",
     "command": "workbench.action.debug.start",
     "when": "debuggersAvailable && debugState == 'inactive'"
   },
@@ -107,17 +98,12 @@
     "when": "!gitlens:disabled && config.gitlens.keymap == 'alternate'"
   },
   {
-    "key": "alt+d",
-    "command": "editor.action.previewDeclaration",
-    "when": "editorFocus"
-  },
-  {
     "key": "alt+f",
     "command": "editor.action.referenceSearch.trigger",
     "when": "editorFocus"
   },
   {
-    "key": "alt+h",
+    "key": "alt+2",
     "command": "git.openChange"
   },
   {
@@ -141,7 +127,7 @@
     "when": "terminal.active"
   },
   {
-    "key": "alt+x",
+    "key": "alt+3",
     "command": "workbench.view.debug",
     "when": "viewContainer.workbench.view.debug.enabled"
   },
@@ -151,7 +137,7 @@
     "when": "viewContainer.workbench.view.debug.enabled"
   },
   {
-    "key": "alt+4",
+    "key": "shift+alt+2",
     "command": "workbench.view.scm",
     "when": "workbench.scm.active"
   },
@@ -161,17 +147,12 @@
     "when": "workbench.scm.active"
   },
   {
-    "key": "alt+4",
-    "command": "workbench.view.scm",
-    "when": "workbench.scm.active && !gitlens:disabled && config.gitlens.keymap == 'chorded'"
-  },
-  {
     "key": "ctrl+shift+g",
     "command": "-workbench.view.scm",
     "when": "workbench.scm.active && !gitlens:disabled && config.gitlens.keymap == 'chorded'"
   },
   {
-    "key": "alt+5",
+    "key": "alt+4",
     "command": "workbench.actions.view.problems",
     "when": "workbench.panel.markers.view.active"
   },
@@ -194,7 +175,7 @@
     "when": "editorTextFocus && config.gitlens.keymap == 'alternate' && gitlens:activeFileStatus =~ /blameable/"
   },
   {
-    "key": "alt+v",
+    "key": "alt+o",
     "command": "revealFileInOS",
     "when": "!editorFocus"
   },
@@ -211,5 +192,165 @@
     "key": "alt+z",
     "command": "-workbench.action.terminal.sizeToContentWidth",
     "when": "terminalFocus && terminalHasBeenCreated && terminalIsOpen || terminalFocus && terminalIsOpen && terminalProcessSupported"
+  },
+  {
+    "key": "cmd+b",
+    "command": "workbench.action.tasks.build",
+    "when": "taskCommandsRegistered"
+  },
+  {
+    "key": "shift+cmd+b",
+    "command": "-workbench.action.tasks.build",
+    "when": "taskCommandsRegistered"
+  },
+  {
+    "key": "shift+cmd+r",
+    "command": "-rerunSearchEditorSearch",
+    "when": "inSearchEditor"
+  },
+  {
+    "key": "shift+cmd+r",
+    "command": "-reactSnippets.search",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "cmd+r",
+    "command": "-workbench.action.reloadWindow",
+    "when": "isDevelopment"
+  },
+  {
+    "key": "cmd+r",
+    "command": "-python.refreshTensorBoard",
+    "when": "python.hasActiveTensorBoardSession"
+  },
+  {
+    "key": "cmd+r",
+    "command": "workbench.action.debug.run",
+    "when": "debuggersAvailable && debugState != 'initializing'"
+  },
+  {
+    "key": "ctrl+f5",
+    "command": "-workbench.action.debug.run",
+    "when": "debuggersAvailable && debugState != 'initializing'"
+  },
+  {
+    "key": "cmd+.",
+    "command": "-editor.action.quickFix",
+    "when": "editorHasCodeActionsProvider && textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "alt+enter",
+    "command": "-notebook.cell.executeAndInsertBelow",
+    "when": "notebookCellListFocused && notebookCellType == 'markup' || notebookCellListFocused && notebookMissingKernelExtension && !notebookCellExecuting && notebookCellType == 'code' || notebookCellListFocused && !notebookCellExecuting && notebookCellType == 'code' && notebookKernelCount > 0 || notebookCellListFocused && !notebookCellExecuting && notebookCellType == 'code' && notebookKernelSourceCount > 0"
+  },
+  {
+    "key": "alt+g",
+    "command": "gitlens.key.alt+enter",
+    "when": "gitlens:key:alt+enter"
+  },
+  {
+    "key": "alt+enter",
+    "command": "-gitlens.key.alt+enter",
+    "when": "gitlens:key:alt+enter"
+  },
+  {
+    "key": "alt+d",
+    "command": "editor.action.revealDeclaration"
+  },
+  {
+    "key": "shift+f12",
+    "command": "-editor.action.goToReferences",
+    "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
+  },
+  {
+    "key": "shift+alt+f",
+    "command": "references-view.next",
+    "when": "reference-list.hasResult && references-view.canNavigate"
+  },
+  {
+    "key": "f4",
+    "command": "-references-view.next",
+    "when": "reference-list.hasResult && references-view.canNavigate"
+  },
+  {
+    "key": "shift+alt+f",
+    "command": "-notebook.formatCell",
+    "when": "editorHasDocumentFormattingProvider && editorTextFocus && inCompositeEditor && notebookEditable && !editorReadonly && activeEditor == 'workbench.editor.notebook'"
+  },
+  {
+    "key": "shift+alt+f",
+    "command": "-editor.action.formatDocument",
+    "when": "editorHasDocumentFormattingProvider && editorTextFocus && !editorReadonly && !inCompositeEditor"
+  },
+  {
+    "key": "shift+alt+f",
+    "command": "-editor.action.formatDocument.none",
+    "when": "editorTextFocus && !editorHasDocumentFormattingProvider && !editorReadonly"
+  },
+  {
+    "key": "shift+alt+f",
+    "command": "-notebook.format",
+    "when": "notebookEditable && !editorTextFocus && activeEditor == 'workbench.editor.notebook'"
+  },
+  {
+    "key": "shift+alt+f",
+    "command": "-search.action.restrictSearchToFolder",
+    "when": "folderMatchWithResourceFocus && searchViewletVisible"
+  },
+  {
+    "key": "shift+alt+f",
+    "command": "-filesExplorer.findInFolder",
+    "when": "explorerResourceIsFolder && filesExplorerFocus && foldersViewVisible && !inputFocus"
+  },
+  {
+    "key": "alt+5",
+    "command": "workbench.view.extension.test"
+  },
+  {
+    "key": "ctrl+0",
+    "command": "-workbench.action.lastEditorInGroup"
+  },
+  {
+    "key": "alt+]",
+    "command": "workbench.action.nextEditor"
+  },
+  {
+    "key": "shift+cmd+]",
+    "command": "-workbench.action.nextEditor"
+  },
+  {
+    "key": "alt+cmd+right",
+    "command": "-workbench.action.nextEditor"
+  },
+  {
+    "key": "alt+[",
+    "command": "workbench.action.previousEditor"
+  },
+  {
+    "key": "shift+cmd+[",
+    "command": "-workbench.action.previousEditor"
+  },
+  {
+    "key": "alt+cmd+left",
+    "command": "-workbench.action.previousEditor"
+  },
+  {
+    "key": "cmd+[",
+    "command": "-editor.action.outdentLines",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "cmd+[",
+    "command": "editor.action.outdentLines"
+  },
+  {
+    "key": "alt+]",
+    "command": "-editor.action.inlineSuggest.showNext",
+    "when": "inlineSuggestionVisible && !editorReadonly"
+  },
+  {
+    "key": "alt+[",
+    "command": "-editor.action.inlineSuggest.showPrevious",
+    "when": "inlineSuggestionVisible && !editorReadonly"
   }
 ]

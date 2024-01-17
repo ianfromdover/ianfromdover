@@ -12,7 +12,7 @@
 | **Edit Actions**    |               |
 | Context Action      | Alt-Enter     | <VS Quick Fix />
 | Rename Symbol       | Alt-S         |
-| Preview Declaration | Alt-D         | <JB Go To Declaration or Usages />
+| Go To Declaration   | Alt-D         | <JB Go To Declaration or Usages />
 | Show Usages         | Alt-F         | <VS Peek References. JB Note: NOT "Find" Usages />
 | **Tool Windows**    |               |
 | Close Active Win    | Alt-A         |

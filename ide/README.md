@@ -1,4 +1,4 @@
-# IDE Shortcuts / Keymaps
+# Izumisan v1.0 IDE Shortcuts / Keymaps
 
 | Function            | Shortcut      |
 | ------------------- | ------------- |
@@ -15,6 +15,7 @@
 | Preview Declaration | Alt-D         | <JB Go To Declaration or Usages />
 | Show Usages         | Alt-F         | <VS Peek References. JB Note: NOT "Find" Usages />
 | **Tool Windows**    |               |
+| Close Active Win    | Alt-A         |
 | Terminal            | Alt-Z         |
 | Project / Explorer  | Alt-1         | <VS Show Explorer />
 | Structure           | Shift-Alt-1   | 
@@ -26,15 +27,24 @@
 | TODO                | Shift-Alt-4   |
 | Unit Testing        | Alt-5         |
 | **Editor Tabs**     |               |
+| Tabs > Tab 1        | Cmd-1         |
+| Select Final Tab    | Cmd-9         |
+| Reopen Closed Tab   | Shift-Cmd-T   |
 | Select Next Tab     | Alt-]         |
-| Select Prev Tab     | Alt-[         | <JB Cannot make Cmd-1,2,3 be tab-1,2,3 :( />
+| Select Prev Tab     | Alt-[         |
+| **Debugging**       |               |
+| Step Over           |               |
+| Step Into           |               |
+| Step Out            |               |
+| Resume              |               |
+| Stop                |               |
 
 # ensure it doesn't conflict with:
 - vim
 - system shortcuts (eg. rectangle, alfred, notion)
 
 ### VS
-- switch tabs: Cmd 123. Switch panels: Alt- 123. hide vs code activity bar.
+- hide the activity bar
 - extension: resize window with [ and ]?
 - extension: fold/expand all regions
 
@@ -47,5 +57,3 @@ VS Code:
 2. Explorer: view open editors, show keybindings in finder
 3. replace keybindings.json in /Users/YOUR_USER_NAME/Library/Application Support/Code/User
 
-# TODO
-- [ ] update keymaps for rider, intellij, clion in this repo

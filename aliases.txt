@@ -26,7 +26,7 @@ alias ccc="ssh e0543721@stu.comp.nus.edu.sg" # for CS2106
 # GIT
 alias g="cd ~/Documents/gh"
 alias ig="/Users/base/Documents/gh/ianfromdover/utils/git-igitt"
-alias gg="cd ~/Documents/gh/capsule-cat"
+alias gg="cd ~/Documents/gh/23s2-cp-spa-team-05/"
 
 alias pu="git pull"
 alias ps="git push"

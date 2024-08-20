@@ -47,6 +47,11 @@ set linebreak     " if line too long, soft-wrap its display to the next line
 set expandtab     " <tab> expands into spaces instead
 set tabstop=4    " <tab> becomes 4 spaces
 set shiftwidth=0 " autoindent is 4 spaces
+set listchars=tab:▸\ 
+" temporarily see end of line add this
+" ,eol:¬
+" :h listchars to see how to do trailing spaces
+set list
 
 " file handling
 filetype plugin indent on " enables plugin per filetype & enables auto-indent per filetype

@@ -1,10 +1,15 @@
 set nocp
 
+" nocp explanation:
+" When cp is set, numerous other options are set to make Vim as
+" Vi-compatible as possible.  When this option is unset, various options
+" are set to make Vim more useful.
+
 " Owner: Hong Yi En, Ian <ianfromdover>
 " Last Change: 19 Jun 2023 (to test in Rider)
 " Why: Add mvt plugins like vim-sneak
 " Next Improvements:
-"   - move to neovim
+"   - move to neovim, but make it lighter than chadvim
 "   - group plugin settings and mappings to that plugin (increase modularity)
 "   - test in Rider
 " Usage Notes:
@@ -16,37 +21,44 @@ set nocp
 " -- Essential Options --
 " -----------------------
 
+
 """ Common Settings --------------------------------
+
 syntax on         " on colours
 set re=0          " set regexp engine automatically, makes syntax on c++ files work
-set encoding=utf-8
-set nu            " for the current line's absolute number
+set nu            " show the current line's absolute number
 set rnu           " relative line numbers
 set ruler         " show cursor's (row, col)
-set showmatch     " show matching parentheses
 set cc=80         " colorcolumn at 80 chars length
 set so=5          " scrolloff: always show 5 lines around the cursor for context
 set backspace=eol,start,indent " allow backspacing over indent,eol,start in insert mode 
-
-" set t_Co=256    " disabled because it makes vim on powershell ugly
 
 " when escaping, make cursor stay in the same position
 autocmd InsertLeave * :normal! `^
 set virtualedit=onemore
 
 " stop the whole screen from flashing when cursor reaches end of page or cannot find search results
-set noerrorbells  " don't beep
-set visualbell    " instead of beeping, blink vim window
-set t_vb=         " if (visualbell enabled), vim wont flash or beep. else, does nothing
+set noeb  " no error bell for error messages
+set vb t_vb= " disable flashing visualbell
+
+" enable clicking mouse to place cursor and enter visual mode
+set mouse+=a
 
 " indentation help
-set smarttab      " start the line according to shiftwidth, not tabstop. i believe it lets del remove the 2x spaces
-set autoindent
-set smartindent
-set linebreak     " if line too long, soft-wrap its display to the next line
-set expandtab     " <tab> expands into spaces instead
-set tabstop=4    " <tab> becomes 4 spaces
+set expandtab     " <tab> expands into spaces instead. this is the expectation for com sci
+set smarttab      " pressing <tab> inserts spaces according to shiftwidth, 
+                  " tabstop is used when cursor is in other places
+                  " <backspace> deletes a shiftwidth worth of space at start
+                  " of line
 set shiftwidth=0 " autoindent is 4 spaces
+set tabstop=4    " <tab> becomes 4 spaces, sometimes ppl set to 2
+set autoindent   " copy indent of current line when starting a new line
+set smartindent  " insert indent:
+" - After a line ending in '{'.
+" - After a line starting with a keyword from 'cinwords'.
+" - Before a line starting with '}'
+set linebreak     " if line too long, wrap its appearance to the next line (tho in the file it's still one line)
+
 set listchars=tab:▸\ 
 " temporarily see end of line add this
 " ,eol:¬
@@ -62,9 +74,8 @@ set nobackup      " both of these to not create a backup
 set hls           " highlight search matches
 set is            " Inclusive Search: show partial matches as you type
 set wildmenu      " show autocomplete options in command mode
-
-" enable clicking mouse to place cursor and enter visual mode
-set mouse+=a
+set sm            " showmatch: on typing a closing bracket, 
+                  " cursor briefly moves to its corresponding opening bracket
 
 
 

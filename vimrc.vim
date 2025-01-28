@@ -13,6 +13,7 @@ set nocp
 "   - group plugin settings and mappings to that plugin (increase modularity)
 "   - test in Rider
 " Usage Notes:
+"   - Plugins managed by vim-plug
 "   - in Gallium mode, to undo, do double stroke instead of pressing once.
 "     this is to overcome the timeout problem. uu instead of u
 "   - word counter appears for markdown and txt files
@@ -248,6 +249,12 @@ Plug 'tpope/vim-surround'       " cs[' change surrounding [ to ',
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'         " README: https://github.com/junegunn/fzf.vim
 Plug 'itchyny/lightline.vim'    " pretty status line
+Plug 'maximbaz/lightline-ale'   " ALE for lightline
+
+Plug 'mattn/emmet-vim'          " expand to html faster
+Plug 'Yggdroot/indentLine'      " show html levels
+Plug 'yuezk/vim-js'
+Plug 'sheerun/vim-polyglot'
 
 call plug#end() " init plugin systems
 
@@ -262,6 +269,17 @@ set showmode   " enable -- INSERT -- for Rider
 " nnoremap T <Plug>Sneak_T
 " note: currently not working
 
+" enable Prettier fixer for languages i use
+" use :ALEFix in these files to run Prettier
+let g:ale_fixers = {
+\   'javascript': ['prettier'],
+\   'css': ['prettier'],
+\   'html': ['prettier'],
+\}
+
+" Prettier config. docs: https://prettier.io/docs/en/configuration
+let g:ale_javascript_prettier_options = '--single-quote --trailing-comma all'
+
 " vim-sneak: enable label-mode
 let g:sneak#label = 1
 
@@ -273,7 +291,7 @@ let g:lightline = {
     \             [ 'gitbranch' ] ],
     \   'right': [ [ 'lineinfo' ],
     \              [ 'wordcount', 'percent' ],
-    \              [ 'fileformat', 'fileencoding', 'filetype' ] ]
+    \              [ 'fileformat', 'fileencoding', 'filetype' ]]
     \ },
     \ 'component_function': {
     \   'filename': 'LightlineFilename',

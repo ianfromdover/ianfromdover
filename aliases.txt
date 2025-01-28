@@ -86,3 +86,6 @@ cd_with_fzf() {
     cd $HOME && cd "\$(fd -t d | fzf --preview=\"tree -L 1 {}\" --bind=\"space:toggle-preview\" --preview-window=:hidden)" && echo "$PWD" && tree -L 2
 }
 
+# WEB DEV
+# Command line alias to start the browser-sync server
+alias serve="browser-sync start --server --files ."

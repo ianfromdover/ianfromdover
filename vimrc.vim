@@ -271,7 +271,7 @@ set showmode   " enable -- INSERT -- for Rider
 
 " enable Prettier fixer for languages i use
 " use :ALEFix in these files to run Prettier
-let g:ale_fixers = ['prettier', 'eslint']
+let g:ale_fixers = {'javascript': ['prettier'], 'css': ['prettier'], 'html': ['prettier'], 'csharp':['clang-format']}
 let g:ale_completion_enabled = 1
 
 " vim-sneak: enable label-mode

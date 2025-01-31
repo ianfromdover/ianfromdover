@@ -88,4 +88,4 @@ cd_with_fzf() {
 
 # WEB DEV
 # Command line alias to start the browser-sync server
-alias serve="browser-sync start --server --files ."
+# alias serve="browser-sync start --server --files ."

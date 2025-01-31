@@ -12,12 +12,12 @@
     "web-vitals": "^4.2.4"
   },
   "scripts": {
-    "start": "concurrently \"npm run scss:watch\" \"react-scripts start\" ",
-    "build": "react-scripts build",
+    "start": "concurrently \"npm run sass-watch\" \"react-scripts start\" ",
+    "build": "npm run sass-compile && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "scss:compile": "sass src/styles:build/static/css --style=compressed",
-    "scss:watch": "sass src/styles:build/css-live --watch"
+    "sass-compile": "sass src/styles:build/static/css --style=compressed",
+    "sass-watch": "sass src/styles:build/css-live --watch"
   },
   "eslintConfig": {
     "extends": [
@@ -39,6 +39,7 @@
   },
   "devDependencies": {
     "@azure/static-web-apps-cli": "^2.0.2",
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.0-placeholder-for-preset-env.2",
     "sass": "^1.83.4"
   }
 }

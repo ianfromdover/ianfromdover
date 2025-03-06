@@ -1,3 +1,4 @@
+// Main page of the application
 import { BlogPosts } from 'app/components/posts'
 import LikeButton from 'app/components/likeButton' // client component for interactivity
 // by default, in next.js, all components are server components and are stateless
@@ -7,7 +8,7 @@ import LikeButton from 'app/components/likeButton' // client component for inter
       <p className="mb-4">
       <div className="my-8">
 */
-export default function Page() {
+export default function Page() { // the export default says this is the main component to render for the page
   const fav_foods = ['Cup noodles', 'Meiji milk', 'Hot chocolate'];
 
   return (

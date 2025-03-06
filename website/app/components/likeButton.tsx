@@ -1,11 +1,11 @@
 'use client';
-import React from "react";
+import { useState } from "react";
 export default function LikeButton() {
   // this function is in the same function as the component,
   // and is place before the return statement
   // reactEvents are camelCased, like for onClick
 
-  const [likes, setLikes] = React.useState(0); // init value = 0
+  const [likes, setLikes] = useState(0); // init value = 0
   /**
    * State operates in 3 steps
    * 1. Trigger (when the set function is called)

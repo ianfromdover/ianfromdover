@@ -11,14 +11,30 @@ pnpm dev
 
 1. √ Fix the blog pages not loading before deploying next by merging to prod
 2. √ Add Next
-3. learn CSS
+3. learn CSS and how its related to the figma controls
 4. Add SCSS after learning CSS to customise components
 5. Convert pages to typescript using this prompt in Gemini `list common changes when going from javascript to typescript using next.js`
 5. Add `MDX` or `remark` to create pages from markdown
+  - learn [MDX - markdown for the component era](https://mdxjs.com/)
 6. Build my figma app in react
 7. Do some fun code graphics thingy (scroll makes a bendy text scroll?)
 8. Learn three.js and add some 3D model
 
+## To Read
+- fix the subpages not rendering when getting there. it's preventing deployment on prod
+- find: Figma controls and their related CSS
+  - literally just make boxes and autolayout in figma then copy in editor
+- practices
+  - frontendmentor challenges (projects): 
+    - [basic css](https://www.frontendmentor.io/learning-paths/getting-started-on-frontend-mentor-XJhRWRREZd/steps/67c99f43a98e92cdab2a5ce4/article/read)
+    - [advanced css (really really good)](https://www.frontendmentor.io/learning-paths/advanced-css-techniques-vdOtKjIC4V)
+  - Flexbox Froggy, learn flexbox https://flexboxfroggy.com/
+  - CSS Diner, learn selectors https://flukeout.github.io/
+  - CSS Garden, learn grids https://cssgridgarden.com/
+- one-by-one explainers
+- https://web.dev/learn/css
+- https://www.geeksforgeeks.org/how-to-learn-css-in-21-days/
+- [1-week free trial frontend masters](https://frontendmasters.com/learn/css/)
 
 ## File Structure
 

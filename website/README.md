@@ -3,6 +3,7 @@
 I want to learn webdev and host my portfolio on this website
 
 # Roadmap
+1. Fix the vim page not loading before deploying next by merging to prod
 1. Add Next
 2. Add `remark` to create pages from markdown
 3. learn CSS and generate it from SCSS
@@ -10,6 +11,8 @@ I want to learn webdev and host my portfolio on this website
 5. Do some fun code graphics thingy (scroll makes a bendy text scroll?)
 6. Learn three.js and add some 3D model
 7. Add SCSS after learning CSS to customise components
+
+launched from https://vercel.com/new/ian-hongs-projects-a7a7a726/templates/next.js/portfolio-starter-kit
 
 # Portfolio Blog Starter
 

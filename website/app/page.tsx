@@ -1,6 +1,6 @@
 // Main page of the application
 import { BlogPosts } from 'app/components/posts'
-import LikeButton from 'app/components/likeButton' // client component for interactivity
+import LikeButton from 'app/components/like-button' // client component for interactivity
 // by default, in next.js, all components are server components and are stateless
 
 /*
@@ -54,3 +54,5 @@ function Header({ title }) { // props is an object with a property "title".
     </h1>
   )
 }
+
+// note to self, Shift-Shift % is how to search for text across files for my vscode

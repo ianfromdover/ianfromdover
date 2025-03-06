@@ -1,5 +1,6 @@
 'use client';
 import { useState } from "react";
+import styles from 'app/components/like-button.module.css'
 export default function LikeButton() {
   // this function is in the same function as the component,
   // and is place before the return statement
@@ -14,6 +15,7 @@ export default function LikeButton() {
    */
 
   function handleClick() {
+    console.log("clicked");
     // setLikes(likes + 1); // triggers a re-render. 
     // It doesn't update it in the code thats alr running tho
     // to do that, pass an updater function
@@ -21,8 +23,10 @@ export default function LikeButton() {
     setLikes(l => l + 1);
   }
 
+  // for CSS Modules, instead of dash-naming which is normal, use camelCase
+  // justification https://github.com/facebook/create-react-app/issues/11155#issuecomment-870692095
   return (
-    <button onClick={handleClick}>{likes} others also like this</button>
+    <button className={styles.likeButton} onClick={handleClick}>{likes} others also like this</button>
   )
 }
 

@@ -1,4 +1,6 @@
 /* Original styling from portfolio template */
+/* styles.module.css for css modules that dont clash */
+/* add scss later on with this guide https://nextjs.org/docs/app/getting-started/css#sass */
 /*
 ::selection {
   background-color: #47a3f3;

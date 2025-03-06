@@ -89,6 +89,7 @@ jspm_packages
 .npm
 
 *.sublime*
+.vscode/
 
 psd
 thumb

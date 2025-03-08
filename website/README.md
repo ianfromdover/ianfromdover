@@ -14,7 +14,7 @@ pnpm dev
 3. learn CSS and how its related to the figma controls
 4. Add SCSS after learning CSS to customise components
 5. Convert pages to typescript using this prompt in Gemini `list common changes when going from javascript to typescript using next.js`
-5. Add `MDX` or `remark` to create pages from markdown
+5. Add `MDX` to create pages from markdown
   - learn [MDX - markdown for the component era](https://mdxjs.com/)
 6. Build my figma app in react
 7. Do some fun code graphics thingy (scroll makes a bendy text scroll?)

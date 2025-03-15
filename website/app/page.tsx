@@ -1,6 +1,7 @@
 // Main page of the application
 import { BlogPosts } from 'app/components/posts'
 import LikeButton from 'app/components/like-button' // client component for interactivity
+import AutoLayout from 'app/components/auto-layout'
 // by default, in next.js, all components are server components and are stateless
 
 /*
@@ -38,6 +39,7 @@ export default function Page() { // the export default says this is the main com
       <p>
         If you like any of them, Like them too!
       </p>
+      <AutoLayout />
       <div>
         <BlogPosts />
       </div>

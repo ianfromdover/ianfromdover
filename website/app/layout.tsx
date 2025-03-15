@@ -11,6 +11,7 @@ import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import Footer from './components/footer'
 import { baseUrl } from './sitemap'
+import Head from 'next/head'
 
 // generally in Typescript, var: Type is the syntax, opposite of C-langs
 // interfaces are like typed classes for objects

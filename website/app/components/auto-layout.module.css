@@ -1,0 +1,44 @@
+.autoLayout {
+  background-color: #e2e2e2;
+  height: 400px;
+  width: 400px;
+}
+
+.innerBlock {
+  /* Button */
+  /* The values dont auto-fit the text tho */
+  display: flex;
+  width: 84px;
+  height: 25px;
+  padding: 16px;
+  border-radius: 12px;
+  background-color: #F5F5F5;
+
+  overflow: clip;
+
+  /* Text */
+  color: #0C0C0C;
+  font-family: Geneva, Verdana, sans-serif;
+  font-size: 18px;
+  font-weight: normal;
+  letter-spacing: 0.05em;
+  font-style: italic;
+}
+
+/*
+Task: Embed Roboto
+[ ] learn where is the Head element in Next.js to put these into:
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+
+.roboto-<uniquifier> {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+*/

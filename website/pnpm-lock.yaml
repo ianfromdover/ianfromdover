@@ -47,6 +47,9 @@ importers:
       react-dom:
         specifier: 18.2.0
         version: 18.2.0(react@18.2.0)
+      sugar-high:
+        specifier: ^0.9.3
+        version: 0.9.3
       typescript:
         specifier: 5.3.3
         version: 5.3.3
@@ -779,6 +782,9 @@ packages:
         optional: true
       babel-plugin-macros:
         optional: true
+
+  sugar-high@0.9.3:
+    resolution: {integrity: sha512-sjJH8J76D1dRMU3QINnsYr1wfQyXbyEVQQvdgzJvIer6mkgM8ahB9fNrb+FDWzRKsLuITiBOR0ZbbhDZDUbqjg==}
 
   trim-lines@3.0.1:
     resolution: {integrity: sha512-kRj8B+YHZCc9kQYdWfJB2/oUl9rA99qbowYYBtr4ui4mZyAQ2JpvVBd/6U2YloATfqBhBTSMhTpgBHtU0Mf3Rg==}
@@ -1766,6 +1772,8 @@ snapshots:
     dependencies:
       client-only: 0.0.1
       react: 18.2.0
+
+  sugar-high@0.9.3: {}
 
   trim-lines@3.0.1: {}
 

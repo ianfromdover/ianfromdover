@@ -2,6 +2,7 @@
 import { BlogPosts } from 'app/components/posts'
 import LikeButton from 'app/components/like-button' // client component for interactivity
 import AutoLayout from 'app/components/auto-layout'
+import DvdBox from 'app/components/dvd-box'
 // by default, in next.js, all components are server components and are stateless
 
 /*
@@ -14,7 +15,7 @@ export default function Page() { // the export default says this is the main com
 
   return (
     <section>
-      <Header title="I love Vim a LOT!!"/>
+      <Header title="Ian's Next.JS Playground!!"/>
       <h1>
         My Portfolio
       </h1>
@@ -30,7 +31,7 @@ export default function Page() { // the export default says this is the main com
       </h3>
       <ol>
         {fav_foods.map(food => (
-          <div>
+          <div key={food}>
             <li key={food}>{food}</li>
             <LikeButton key={food + "l"}/>
           </div>
@@ -40,6 +41,7 @@ export default function Page() { // the export default says this is the main com
         If you like any of them, Like them too!
       </p>
       <AutoLayout />
+      <DvdBox />
       <div>
         <BlogPosts />
       </div>

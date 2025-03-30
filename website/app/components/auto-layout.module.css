@@ -1,12 +1,12 @@
-.autoLayout {
+.parent {
   background-color: #e2e2e2;
   height: 400px;
   width: 400px;
 }
 
-.innerBlock {
+.cashback {
   /* Button */
-  /* The values dont auto-fit the text tho */
+  /* The width and height cant auto-fit the text */
   display: flex;
   width: 84px;
   height: 25px;
@@ -21,8 +21,83 @@
   font-family: Geneva, Verdana, sans-serif;
   font-size: 18px;
   font-weight: normal;
-  letter-spacing: 0.05em;
-  font-style: italic;
+}
+
+.box {
+  /* 
+  Is there a standard order that coders normally 
+  arrange their CSS props in?
+  */
+
+  /* box */
+  background: #FFFFFF;
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 36px;
+  gap: 24px;
+
+  position: relative;
+  /* relative to? */
+  width: 312px;
+  height: 136px;
+
+  /* For inside stroke */
+  border: 1px solid #0C0C0C;
+  box-sizing: border-box;
+}
+
+.box > button {
+  /* 
+  Is this the best way to select the children?
+
+  What if i had 1 different type of child?
+
+  Is there a way to make the child squares of the same object type 
+  instead of selecting like this? Yet have A B and C
+  */
+  width: 64px;
+  height: 64px;
+  border-color: transparent;
+
+  /* Inside auto layout */
+  flex: none;
+  flex-grow: 0;
+  
+  /* Transition */
+  transition: 0.5s cubic-bezier(0.2, 0.0, 0, 1.0);
+  /* Resources
+  https://m3.material.io/styles/motion/easing-and-duration/tokens-specs
+
+  https://developer.mozilla.org/en-US/docs/Web/CSS/transition
+  */
+}
+
+.box > button:hover {
+  border-color: #0C0C0C;
+  transition: 0s
+}
+
+.box > button:active {
+  background-color:#263269;
+  transition: 0s
+}
+
+.a {
+  background-color: #B3D7ED;
+  order: 0;
+}
+
+.b {
+  background-color: #82A4DD;
+  order: 1;
+}
+
+.c {
+  background-color: #5A6EC4;
+  order: 2;
 }
 
 /*

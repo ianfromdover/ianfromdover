@@ -103,6 +103,7 @@ let components = {
 export function CustomMDX(props) {
   // TODO: Output contents of MDX
   // TODO: replace MDXRemote with the proper component by reading
+  // TODO: read https://nextjs.org/docs/pages/building-your-application/configuring/mdx
   /*
   return (
     <MDXRemote

@@ -1,8 +1,10 @@
 /* Catppuccin Frappe Palette */
 
 :root {
+  --ian-font: "Monaco";
   --vimium-rosewater: #f2d5cf;
   --vimium-peach: #ef9f76;
+  --vimium-mauve: #ca9ee6;
   --vimium-green: #a6d189;
   --vimium-blue: #8caaee;
   --vimium-teal: #81c8be;
@@ -24,6 +26,7 @@
 
 #vimiumHintMarkerContainer div span {
   color: var(--vimium-teal) !important;
+  font-family: var(--ian-font);
   text-shadow: none;
 }
 
@@ -41,11 +44,12 @@
   animation: show 200ms cubic-bezier(0.2, 0.0, 0, 1.0) forwards;
   max-height: calc(100vh - 70px);
   overflow: hidden;
+  font-family: var(--ian-font);
 }
 
 @keyframes show {
   0% {
-    transform: translateY(50px);
+    transform: translateY(30px);
     opacity: 0;
   }
   100% {
@@ -96,7 +100,7 @@
 }
 
 #vomnibar li .vomnibarUrl {
-  color: var(--vimium-rosewater);
+  color: var(--vimium-mauve);
 }
 
 #vomnibar li .vomnibarMatch {
@@ -116,6 +120,7 @@ div.vimiumHUD {
   background: var(--vimium-base);
   border: none;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  font-family: var(--ian-font);
 }
 
 div.vimiumHUD span#hud-find-input,
@@ -134,6 +139,7 @@ div.vimiumHUD .vimiumHUDSearchArea {
 
 body.vimiumBody, .vimiumBody {
   background-color: var(--vimium-base) !important;
+  font-family: var(--ian-font);
 }
 
 .vimiumBody #footerWrapper, #userDefinedLinkHintCss, #scrollStepSize, #linkHintNumbers, #newTabUrl, #nextPatterns, #previousPatterns, #searchUrl, #linkHintCharacters, #searchEngines, #keyMappings, #uploadBackup
@@ -158,5 +164,5 @@ body.vimiumBody a {
 
 body.vimiumBody .exclusionHeaderText, body.vimiumBody .example, body.vimiumBody .caption, body.vimiumBody header, body.vimiumBody textarea, body.vimiumBody input, body.vimiumBody label  {
   color: var(--vimium-text) !important;
+  font-family: var(--ian-font);
 }
-

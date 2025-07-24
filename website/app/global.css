@@ -1,3 +1,17 @@
+div {
+  background-color: #2B2D30;
+  background-color: #6C95EB;
+  background-color: #C191FF;
+  background-color: #E2BFFF;
+  background-color: #65C3CC;
+  background-color: #85C46C;
+  background-color: #3ACC9C;
+  background-color: #C8A16D;
+  background-color: #BDBDBD;
+  background-color: #EC94C0;
+  background-color: #ADEB96;
+  background-color: #65C3CC;
+}
 /* Original styling from portfolio template */
 /* styles.module.css for css modules that dont clash */
 /* add scss later on with this guide https://nextjs.org/docs/app/getting-started/css#sass */

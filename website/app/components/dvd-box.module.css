@@ -1,8 +1,8 @@
 /* Given by Claude */
 .container {
   position: relative;
-  width: 600px;
-  height: 600px;
+  width: 500px;
+  height: 500px;
   border: 1px solid #ccc;
   margin-top: 50px;
 }

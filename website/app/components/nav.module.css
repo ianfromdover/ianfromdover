@@ -2,9 +2,14 @@
   position: sticky;
   display: flex;
   justify-content: left;
+  background-color: black;
   top: 0;
   z-index: 1000; /* Ensures it stays on top of other content */
   gap: 8px;
+}
+
+.btnSelected {
+  color: plum;
 }
 
 /*

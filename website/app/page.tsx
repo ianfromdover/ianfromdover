@@ -14,7 +14,7 @@ export default function Page() { // the export default says this is the main com
       <section>
         <Header title="Ian meets user needs with computational thinking."/>
         <p>
-          Currently working on an Air Force control interface in DSTA.
+          Currently designing decision support systems for the Air Force in DSTA.
           <br />
           Previously a Visual Arts Scholar @ NUS.
           <br />
@@ -26,7 +26,7 @@ export default function Page() { // the export default says this is the main com
         Selected Works
         </h3>
         <p>
-          the home page will be the main project page. the Work footer will be an anchor link to this section
+          the home page will be the main project page. the Work footer will be an anchor link to this section. Change the blog page to a Work page.
         </p>
         <p>
           make projects component, with cards
@@ -43,10 +43,10 @@ export default function Page() { // the export default says this is the main com
         Hi! I'm Ian 👋
         </h3>
         <p>
-          (subheader) I'm a 
+          (subheader) I'm a yapper at heart but a nerd in art.
         </p>
         <p>
-          This will be a concise version of the About section, relevant to recruiters.
+          This will be a concise version of the About section, relevant to recruiters. I specialise in rigorous user research and designing user-centered solutions that are technically feasible.
         </p>
         <p>
           button: read more about me

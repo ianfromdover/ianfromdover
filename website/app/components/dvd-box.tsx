@@ -56,7 +56,7 @@ export default function DvdBox() {
         className={styles.button} 
         onClick={changePosition}
       >
-        Add 50
+        Move to random location
       </button>
     </div>
   );

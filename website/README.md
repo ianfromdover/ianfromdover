@@ -7,6 +7,9 @@ I want to learn webdev and host my portfolio on this website.
 pnpm dev
 ```
 
+- each folder has a page.tsx where you can edit it.
+- their .module.css files are placed beside it.
+
 ## Roadmap
 
 1. √ Fix the blog pages not loading before deploying next by merging to prod
@@ -24,6 +27,7 @@ pnpm dev
 - fix the subpages not rendering when getting there. it's preventing deployment on prod
 - find: Figma controls and their related CSS
   - literally just make boxes and autolayout in figma then copy in editor
+- css cheatsheet https://htmlcheatsheet.com/css/
 - practices
   - frontendmentor challenges (projects): 
     - [basic css](https://www.frontendmentor.io/learning-paths/getting-started-on-frontend-mentor-XJhRWRREZd/steps/67c99f43a98e92cdab2a5ce4/article/read)
@@ -35,6 +39,7 @@ pnpm dev
 - https://web.dev/learn/css
 - https://www.geeksforgeeks.org/how-to-learn-css-in-21-days/
 - [1-week free trial frontend masters](https://frontendmasters.com/learn/css/)
+- style guide https://airbnb.io/javascript/react/#basic-rules
 
 ## File Structure
 
@@ -75,7 +80,6 @@ Cloned from:
 
 - MDX and Markdown support // get MDX working
 - Optimized for SEO (sitemap, robots, JSON-LD schema)
-- RSS Feed
 - Dynamic OG images
 - Syntax highlighting
 - Vercel Speed Insights / Web Analytics

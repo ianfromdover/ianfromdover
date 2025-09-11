@@ -25,6 +25,17 @@ export default function Footer() {
             className={styles.anchorChild}
             rel="noopener noreferrer"
             target="_blank"
+            href="https://www.linkedin.com/in/hongyienian/"
+          >
+            <ArrowIcon />
+            <p>my linkedin</p>
+          </a>
+        </li>
+        <li>
+          <a
+            className={styles.anchorChild}
+            rel="noopener noreferrer"
+            target="_blank"
             href="https://github.com/ianfromdover/ianfromdover/tree/main/website"
           >
             <ArrowIcon />

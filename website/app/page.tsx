@@ -1,5 +1,4 @@
 // Main page of the application
-import { BlogPosts } from 'app/components/posts'
 // by default, in next.js, all components are server components and are stateless
 
 /*
@@ -43,7 +42,7 @@ export default function Page() { // the export default says this is the main com
         Hi! I'm Ian 👋
         </h3>
         <p>
-          (subheader) I'm a yapper at heart but a nerd in art.
+          (subheader) I'm a something that defines my identity to employers.
         </p>
         <p>
           This will be a concise version of the About section, relevant to recruiters. I specialise in rigorous user research and designing user-centered solutions that are technically feasible.

@@ -1,8 +1,4 @@
 // Main page of the application
-import { BlogPosts } from 'app/components/posts'
-import LikeButton from 'app/components/like-button' // client component for interactivity
-import AutoLayout from 'app/components/auto-layout'
-import DvdBox from 'app/components/dvd-box'
 // by default, in next.js, all components are server components and are stateless
 
 /*
@@ -11,41 +7,51 @@ import DvdBox from 'app/components/dvd-box'
       <div className="my-8">
 */
 export default function Page() { // the export default says this is the main component to render for the page
-  const fav_foods = ['Cup noodles', 'Meiji milk', 'Hot chocolate'];
 
   return (
-    <section>
-      <Header title="Ian's Next.JS Playground!!"/>
-      <h1>
-        My Portfolio
-      </h1>
-      <p>
-        {`I'm a Vim enthusiast and tab advocate, finding unmatched efficiency in
-        Vim's keystroke commands and tabs' flexibility for personal viewing
-        preferences. This extends to my support for static typing, where its
-        early error detection ensures cleaner code, and my preference for dark
-        mode, which eases long coding sessions by reducing eye strain.`}
-      </p>
-      <h3>
-        My favourite foods are:
-      </h3>
-      <ol>
-        {fav_foods.map(food => (
-          <div key={food}>
-            <li key={food}>{food}</li>
-            <LikeButton key={food + "l"}/>
-          </div>
-        ))}
-      </ol>
-      <p>
-        If you like any of them, Like them too!
-      </p>
-      <AutoLayout />
-      <DvdBox />
-      <div>
-        <BlogPosts />
-      </div>
-    </section>
+    <div>
+      <section>
+        <Header title="Ian meets user needs with computational thinking."/>
+        <p>
+          Currently designing decision support systems for the Air Force in DSTA.
+          <br />
+          Previously a Visual Arts Scholar @ NUS.
+          <br />
+          Studied Computer Science and UX Design.
+        </p>
+      </section>
+      <section>
+        <h3>
+        Selected Works
+        </h3>
+        <p>
+          the home page will be the main project page. the Work footer will be an anchor link to this section. Change the blog page to a Work page.
+        </p>
+        <p>
+          make projects component, with cards
+        </p>
+        <ul>
+          <li>header</li>
+          <li>tag: design type • design type, context (eg take-home task, hackathon, coursework, internship)</li>
+          <li>one-liner description of proj objective</li>
+          <li>image</li>
+        </ul>
+      </section>
+      <section>
+        <h3>
+        Hi! I'm Ian 👋
+        </h3>
+        <p>
+          (subheader) I'm a something that defines my identity to employers.
+        </p>
+        <p>
+          This will be a concise version of the About section, relevant to recruiters. I specialise in rigorous user research and designing user-centered solutions that are technically feasible.
+        </p>
+        <p>
+          button: read more about me
+        </p>
+      </section>
+    </div>
   )
 }
 

@@ -10,6 +10,8 @@ export default function DvdBox() {
    * 1. Trigger (when the set function is called)
    * 2. Render
    * 3. Commit to DOM (display)
+   * 
+   * one implementation: http://prgreen.github.io/blog/2013/09/30/the-bouncing-dvd-logo-explained/
    */
   const [position, setPosition] = useState({ x: 100, y: 100 });
   const [duration, setDuration] = useState(1);
@@ -34,9 +36,9 @@ export default function DvdBox() {
     setDuration(newDur);
   }
 
-  useEffect(() => {
-    setTimeout(() => changePosition(), duration);
-  }, [duration]);
+  // useEffect(() => {
+  //   setTimeout(() => changePosition(), duration);
+  // }, [duration]);
 
   return (
     <div className={styles.container}>
@@ -54,7 +56,7 @@ export default function DvdBox() {
         className={styles.button} 
         onClick={changePosition}
       >
-        Add 50
+        Move to random location
       </button>
     </div>
   );

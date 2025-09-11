@@ -14,6 +14,8 @@ pnpm dev
 
 1. √ Fix the blog pages not loading before deploying next by merging to prod
 2. √ Add Next
+3. Add content from Portfolio 15 Jan Ian Hong.pdf
+3. Add movement easing curves
 3. learn CSS and how its related to the figma controls
 4. Add SCSS after learning CSS to customise components
 5. Convert pages to typescript using this prompt in Gemini `list common changes when going from javascript to typescript using next.js`

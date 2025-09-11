@@ -55,7 +55,7 @@ export default function Footer() {
         </li>
       </ul>
       <p>
-        © IAN HONG ♦ OCT 2025
+        © Handmade by Ian Hong with React and CSS Modules ♦ Oct 2025
       </p>
     </footer>
   )

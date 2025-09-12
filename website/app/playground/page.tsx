@@ -13,7 +13,7 @@ export default function Page() {
   const fav_foods = ['Cup noodles', 'Meiji milk', 'Hot chocolate'];
 
   return (
-    <p>
+    <div>
       <section>
         <h1>Playground</h1>
         <p>Things that will be added are:</p>
@@ -54,6 +54,6 @@ export default function Page() {
         <p>Apr 2025</p>
         <p>to add another image here</p>
       </section>
-    </p>
+    </div>
   )
 }

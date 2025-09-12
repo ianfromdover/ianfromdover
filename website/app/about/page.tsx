@@ -11,7 +11,7 @@ export default function Page() {
     <section>
       <h1>Hi, I'm Ian!</h1>
       <p>
-        Now you gotta hear me yap! NANANANNAAAAAAAANANANANANAnANANNANAANANNANANANANNANA
+        In my spare time, I love reading the bible, enjoying conversations with friends, and learning songs by ear. Looking forward to meeting you 😃
       </p>
     </section>
   )

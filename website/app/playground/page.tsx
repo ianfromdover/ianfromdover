@@ -42,17 +42,23 @@ export default function Page() {
       </section>
       <section>
         <h3>Previous website versions</h3>
-        <p>newest first</p>
 
-        <p>Sep 2025</p>
         <Image
           src='/img/2.png'
           width={1920/4}
           height={1080/4}
           alt="How the website looks like in Sep 2025"
         />
+        <p>Sep 2025</p>
+        <br />
+
+        <Image
+          src='/img/1.png'
+          width={1920/4}
+          height={1080/4}
+          alt="How the website looks like in Apr 2025"
+        />
         <p>Apr 2025</p>
-        <p>to add another image here</p>
       </section>
     </div>
   )

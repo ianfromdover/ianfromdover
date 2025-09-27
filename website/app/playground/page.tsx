@@ -1,6 +1,7 @@
 import LikeButton from 'app/components/like-button' // client component for interactivity
 import AutoLayout from 'app/components/auto-layout'
 import DvdBox from 'app/components/dvd-box'
+import TypingText from 'app/components/typing-text'
 import Image from 'next/image'
 
 export const metadata = {
@@ -18,11 +19,15 @@ export default function Page() {
         <h1>Playground</h1>
         <p>Things that will be added are:</p>
         <ul>
-          <li>Typing text effect</li>
+          <li>Typing text effect √</li>
           <li>Picture that is rendered using dither characters</li>
           <li>up-down arrow movement for selecting things in menus</li>
           <li>scaffold for OS game</li>
         </ul>
+        <h3>
+          Typing text effect
+        </h3>
+        <TypingText />
         <h3>
           My favourite foods are:
         </h3>

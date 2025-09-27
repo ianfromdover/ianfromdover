@@ -1,0 +1,19 @@
+.typingText {
+  border-right: 1px solid white;
+  width: 89ch;
+  white-space: nowrap;
+  overflow: hidden;
+  animation:
+    typing 3s steps(89), 
+    blink-caret 1s step-end infinite;
+  
+}
+
+
+@keyframes typing {
+  from { width: 0; }
+}
+
+@keyframes blink-caret {
+  50% { border-color: transparent; }
+}

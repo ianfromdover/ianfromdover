@@ -11,11 +11,13 @@ export default function Page() { // the export default says this is the main com
   return (
     <div>
       <section>
-        <Header title="Ian meets user needs with computational thinking."/>
+        <Header title="Ian unifies user needs with computational thinking."/>
         <p>
           Currently designing decision support systems for the Air Force in DSTA.
           <br />
+          <br />
           Previously a Visual Arts Scholar @ NUS.
+          <br />
           <br />
           Studied Computer Science and UX Design.
         </p>
@@ -45,7 +47,7 @@ export default function Page() { // the export default says this is the main com
           (subheader) I'm a something that defines my identity to employers.
         </p>
         <p>
-          This will be a concise version of the About section, relevant to recruiters. I specialise in rigorous user research and designing user-centered solutions that are technically feasible.
+          This will be a concise version of the About section, relevant to recruiters. I specialise in rigorous user research and designing user-centered solutions that are technically feasible. // This paragraph is the same as the first paragraph in the About page.
         </p>
         <p>
           button: read more about me

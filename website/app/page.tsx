@@ -1,6 +1,8 @@
 // Main page of the application
 // by default, in next.js, all components are server components and are stateless
 
+import TypingText from "./components/typing-text"
+
 /*
       <h1 className="mb-8 text-2xl font-semibold tracking-tighter">
       <p className="mb-4">
@@ -11,7 +13,7 @@ export default function Page() { // the export default says this is the main com
   return (
     <div>
       <section>
-        <Header title="Ian unifies user needs with computational thinking."/>
+        <TypingText>Ian unifies user needs with computational thinking.</TypingText>
         <p>
           Currently designing decision support systems for the Air Force in DSTA.
           <br />
@@ -23,14 +25,12 @@ export default function Page() { // the export default says this is the main com
         </p>
       </section>
       <section>
-        <h3>
+        <h1>
         Selected Works
-        </h3>
+        </h1>
+        <div>Segmented control: I'm looking for a: UX Designer / ARVR Developer</div>
         <p>
-          the home page will be the main project page. the Work footer will be an anchor link to this section. Change the blog page to a Work page.
-        </p>
-        <p>
-          make projects component, with cards
+          make projects component, with cards (links that wrap divs)
         </p>
         <ul>
           <li>header</li>
@@ -38,19 +38,22 @@ export default function Page() { // the export default says this is the main com
           <li>one-liner description of proj objective</li>
           <li>image</li>
         </ul>
+        <p>
+          button: Browse all projects
+        </p>
       </section>
       <section>
-        <h3>
+        <h1>
         Hi! I'm Ian 👋
+        </h1>
+        <h3>
+          I'm a designer that can code.
         </h3>
         <p>
-          (subheader) I'm a something that defines my identity to employers.
+          I specialise in rigorous user research and designing user-centered solutions that are technically feasible. // This paragraph is the same as the first paragraph in the About page.
         </p>
         <p>
-          This will be a concise version of the About section, relevant to recruiters. I specialise in rigorous user research and designing user-centered solutions that are technically feasible. // This paragraph is the same as the first paragraph in the About page.
-        </p>
-        <p>
-          button: read more about me
+          button: Read more about me
         </p>
       </section>
     </div>
@@ -60,6 +63,8 @@ export default function Page() { // the export default says this is the main com
 function Header({ title }) { // props is an object with a property "title".
   // props is { title: "I love Vim a LOT!!" } javascript object
   // instead of 'props', use named destructuring in the params to get the value
+  // usage: 
+  // <Header title="Ian unifies user needs with computational thinking."/>
   return (
     <h1>
       {title}

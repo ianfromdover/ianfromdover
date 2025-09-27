@@ -1,4 +1,4 @@
-import { BlogPosts } from 'app/components/posts'
+import { Projects } from '@/app/components/projects'
 import Link from 'next/link'
 
 export const metadata = {
@@ -58,7 +58,7 @@ export default function Page() {
           </p>
         </li>
       </ul>
-      <BlogPosts />
+      <Projects />
     </section>
   )
 }

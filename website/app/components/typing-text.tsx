@@ -2,7 +2,7 @@
 import { useState } from "react";
 import styles from 'app/components/typing-text.module.css'
 
-export default function TypingText() {
+export default function TypingText({ children }) {
   const [animate, setAnimate] = useState(true);
 
   const handleRestart = () => {
@@ -10,12 +10,17 @@ export default function TypingText() {
     setTimeout(() => setAnimate(true), 10); // Small delay to re-add class
   };
 
+  const widthBasedOnCharCount = `${children.length}ch`;
+
   return (
     <>
-      <p className={animate ? styles.typingText : ''}>
-        Thanks for reading my prose, but I think code completion kinda fogs up my brain a little.
-      </p>
-      <button onClick={handleRestart}>Restart Animation</button>
+      <h1 
+        className={animate ? styles.typingText : ''} 
+        style={{ width: widthBasedOnCharCount }} 
+        onClick={handleRestart}
+      >
+        {children}
+      </h1>
     </>
   )
 }

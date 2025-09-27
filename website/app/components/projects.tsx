@@ -1,10 +1,11 @@
 import Link from 'next/link'
-import { formatDate, getBlogPosts } from 'app/blog/utils'
+import { formatDate, getBlogPosts as getProjects } from '@/app/work/utils'
 
-export function BlogPosts() {
-  let allBlogs = getBlogPosts()
+export function Projects() {
+  let allProjects = getProjects()
 
   /*
+  card component for each project
           <Link
             key={post.slug}
             className="flex flex-col space-y-1 mb-4"
@@ -22,7 +23,7 @@ export function BlogPosts() {
   */
   return (
     <div>
-      {allBlogs
+      {allProjects
         .sort((a, b) => {
           if (
             new Date(a.metadata.publishedAt) > new Date(b.metadata.publishedAt)
@@ -31,17 +32,17 @@ export function BlogPosts() {
           }
           return 1
         })
-        .map((post) => (
+        .map((project) => (
           <Link
-            key={post.slug}
-            href={`/blog/${post.slug}`}
+            key={project.slug}
+            href={`/work/${project.slug}`}
           >
             <div>
               <p>
-                {formatDate(post.metadata.publishedAt, false)}
+                {formatDate(project.metadata.publishedAt, false)}
               </p>
               <p>
-                {post.metadata.title}
+                {project.metadata.title}
               </p>
             </div>
           </Link>

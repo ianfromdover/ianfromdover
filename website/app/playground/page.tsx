@@ -17,6 +17,7 @@ export default function Page() {
     <div>
       <section>
         <h1>Playground</h1>
+        <p>A page where I can experiment with React components and animations.</p>
         <p>Things that will be added are:</p>
         <ul>
           <li>Typing text effect √</li>
@@ -27,7 +28,7 @@ export default function Page() {
         <h3>
           Typing text effect
         </h3>
-        <TypingText />
+        <TypingText>I'm testing this typing thing again that i'm going to use on the landing page. But i'm not sure how to decide p or h1 from the usage part</TypingText>
         <h3>
           My favourite foods are:
         </h3>

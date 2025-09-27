@@ -28,9 +28,9 @@ export default function Page() { // the export default says this is the main com
         <h1>
         Selected Works
         </h1>
-        <div>Segmented control: I'm looking for a: UX Designer / ARVR Developer</div>
+        <div>Segmented control: UX Design / UX Research / ARVR Development</div>
         <p>
-          make projects component, with cards (links that wrap divs)
+          projects card component is Projects.tsx line 8, simply uncomment and add css (links that wrap divs)
         </p>
         <ul>
           <li>header</li>

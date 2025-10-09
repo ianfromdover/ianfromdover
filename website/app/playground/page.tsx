@@ -2,6 +2,7 @@ import LikeButton from 'app/components/like-button' // client component for inte
 import AutoLayout from 'app/components/auto-layout'
 import DvdBox from 'app/components/dvd-box'
 import TypingText from 'app/components/typing-text'
+import MenuNavigation from '../components/menu-navigation'
 import Image from 'next/image'
 
 export const metadata = {
@@ -25,6 +26,10 @@ export default function Page() {
           <li>up-down arrow movement for selecting things in menus</li>
           <li>scaffold for OS game</li>
         </ul>
+        <h3>
+          Menu with up-down arrow key navigation
+        </h3>
+        <MenuNavigation />
         <h3>
           Typing text effect
         </h3>

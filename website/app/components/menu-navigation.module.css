@@ -1,0 +1,70 @@
+/* src/components/MenuNavigation.module.css */
+
+.menuNav {
+  display: flex;
+}
+
+.menuItemWrapper {
+  position: relative;
+  display: block;
+}
+
+.menuList {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 0;
+}
+
+.menuItem {
+  /* Basic styling */
+  position: relative;
+  padding: 8px 120px 8px 8px;
+  background-color: #121212;
+  cursor: pointer;
+  z-index: 1;
+  text-align: left;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Add focusable property for better accessibility */
+  outline: none; 
+}
+
+.rails {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 0; /* Above background, below text if needed */
+  padding: 8px 0px 8px 8px;
+  pointer-events: none; /* So it doesn't block clicks */
+  /* color: #121212; */
+  background-color: #121212;
+  cursor: pointer;
+  text-align: left;
+  transform: scaleX(1);
+  transform-origin: middle;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Add focusable property for better accessibility */
+  outline: none; 
+}
+
+/* The 'active' class provides the visual feedback when selected by arrow keys.
+This is the "video game" selection effect.
+*/
+.active {
+  color: black;
+  background-color: rgb(241, 241, 241);
+  transform: scaleX(1);
+  padding: 8px 120px 8px 8px;
+  box-shadow: 2px 2px 2px rgba(241, 241, 241, 0.4);
+}
+
+.indicator {
+  color: inherit;
+  background-color: inherit;
+}

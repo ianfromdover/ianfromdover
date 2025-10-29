@@ -4,11 +4,6 @@
   display: flex;
 }
 
-.menuItemWrapper {
-  position: relative;
-  display: block;
-}
-
 .menuList {
   position: relative;
   display: flex;
@@ -19,54 +14,98 @@
   margin: 0;
 }
 
-.menuItem {
-  /* Basic styling */
+/* wrapper: positioning context for all 4 layers */
+.menuItemWrapper {
   position: relative;
-  padding: 8px 120px 8px 8px;
-  background-color: #121212;
-  cursor: pointer;
-  z-index: 1;
-  text-align: left;
-  /* transform: scaleX(0); */
-  transform-origin: left;
-  transition: all 0.125s cubic-bezier(0.4, 0, 0.2, 1);
-  /* Add focusable property for better accessibility */
-  outline: none; 
+  display: block;
+  width: max-content;
+  /* ensure enough room for the layers */
 }
 
-.rails {
+/* Top-most: text + icon (interactive) */
+.textIcon {
+  position: relative;
+  z-index: 4;                    /* top layer */
+  background: transparent;
+  border: none;
+  color: #fff;
+  padding: 8px 120px 8px 8px;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+  transition: cubic-bezier(0.4,0,0.2,1), color 0.12s;
+}
+
+/* Overlay: animates horizontally under the text */
+.overlay {
   position: absolute;
   left: 0;
   top: 0;
   width: 100%;
-  opacity: 0%;
-  z-index: 0; /* Above background, below text if needed */
-  padding: 8px 0px 8px 8px;
-  pointer-events: none; /* So it doesn't block clicks */
-  /* color: #121212; */
-  background-color: #121212;
-  cursor: pointer;
-  text-align: left;
-  transform: scaleX(1);
-  transform-origin: middle;
-  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
-  /* Add focusable property for better accessibility */
-  outline: none; 
-}
-
-/* The 'active' class provides the visual feedback when selected by arrow keys.
-This is the "video game" selection effect.
-*/
-.active {
-  color: black;
+  height: 100%;
+  z-index: 3;
+  pointer-events: none;
   background-color: rgb(225, 225, 225);
-  /* transform: scaleX(1); */
-  transform: translateX(16px);
-  padding: 8px 120px 8px 8px;
-  box-shadow: 2px 2px 2px rgba(217, 217, 217, 0.4);
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 0.15s ease;
 }
 
-.indicator {
-  color: inherit;
-  background-color: inherit;
+/* Base: sits under overlay, adds drop shadow when active */
+.base {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+  background: rgba(18, 18, 18, 1);
+  transition: box-shadow 0.12s cubic-bezier(0.4,0,0.2,1), transform 0.12s;
+  transform-origin: left;
+  transform: translateZ(0);
+}
+
+/* Rails: bottom-most visual that expands vertically */
+.rails {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 40px;
+  z-index: 1;
+  pointer-events: none;
+  border-width: 1px 0px 1px 0px;
+  border-style: solid;
+  border-color: rgb(195, 195, 195);
+  transform-origin: center;
+  transform: translateY(-50%) scaleY(0);          /* collapsed */
+  /* transition: transform 0.32s cubic-bezier(0.4,0,0.2,1), opacity 0.12s; */
+  transition: transform 0.2s ease-out, opacity 0.12s;
+  opacity: 0.0;
+  box-shadow: none;
+}
+
+/* Active state applied to the relevant elements via the .active class on each layer */
+.textIcon.active,
+.menuItemWrapper .textIcon.active {
+  transform: scaleX(1);          /* expand horizontally from left */
+  color: #000;                   /* change text colour when active */
+}
+
+.overlay.active,
+.menuItemWrapper .overlay.active {
+  transform: scaleX(1);          /* overlay expands left->right */
+}
+
+.base.active,
+.menuItemWrapper .base.active {
+  box-shadow: 2px 2px 2px rgba(217, 217, 217, 0.4);
+  transform: scaleX(1);
+}
+
+.rails.active,
+.menuItemWrapper .rails.active {
+  transform: translateY(-50%) scaleY(1); /* keep centered vertically and expand */
+  opacity: 1;
 }

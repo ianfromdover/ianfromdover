@@ -8,7 +8,8 @@ const menuItems = ['work', 'about', 'contact', 'playground'];
 
 function MenuNavigation() {
   const [focusedIndex] = useArrowKeyNavigation(menuItems.length);
-  const itemRefs = useRef<Array<HTMLLIElement | null>>([]);
+  // store refs to the focusable buttons (not the <li>)
+  const itemRefs = useRef<Array<HTMLButtonElement | null>>([]);
 
   const handleSelect = (item) => {
     console.log(`Navigating to: ${item}`);
@@ -21,41 +22,38 @@ function MenuNavigation() {
     }
   }, [focusedIndex]);
 
-  /**
-   * to fix: 
-   * - enter and spacebar doesn't trigger click when using arrow key navigation
-   * - tab doesn't work to focus on the menu items, menu items are not actually focusable
-   */
-  /**
-   * One item is a div, which should compose of, in z-index order (top to bottom):
-   * 4. text and icon (fades colour when active)
-   * 3. overlay (scales horizontally when active)
-   * 2. base (adds drop shadow when active)
-   * 1. rails (fades in and scales vertically when active)
-   */
   return (
     <nav className={styles.menuNav} aria-label="Main Menu">
       <ul className={styles.menuList} role="menu">
-        {menuItems.map((item, index) => (
-          <div key={item} className={styles.menuItemWrapper} style={{ position: 'relative' }}>
-            <li
-              role="menuitem"
-              className={`${styles.menuItem} ${index === focusedIndex ? styles.active : ''}`}
-              onClick={() => handleSelect(item)}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter') {
-                  handleSelect(item);
-                }
-              }}
-              ref={el => itemRefs.current[index] = el}
-            >
-              {item.toUpperCase()}
+        {menuItems.map((item, index) => {
+          const isActive = index === focusedIndex;
+          return (
+            <li key={item} className={styles.menuItemWrapper} role="none">
+              {/* rails (bottom-most visual) */}
+              <div className={`${styles.rails} ${isActive ? styles.active : ''}`} aria-hidden="true" />
+              {/* base (drop-shadow layer) */}
+              <div className={`${styles.base} ${isActive ? styles.active : ''}`} aria-hidden="true" />
+              {/* overlay (animates horizontally underneath text) */}
+              <div className={`${styles.overlay} ${isActive ? styles.active : ''}`} aria-hidden="true" />
+              {/* top-most interactive text + icon */}
+              <button
+                ref={(el) => (itemRefs.current[index] = el)}
+                role="menuitem"
+                tabIndex={-1} // programmatic focus via arrow keys
+                className={`${styles.textIcon} ${isActive ? styles.active : ''}`}
+                onClick={() => handleSelect(item)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    handleSelect(item);
+                  }
+                }}
+              >
+                {item.toUpperCase()}
+              </button>
             </li>
-            <div className={styles.rails}>
-              {item.toUpperCase()}
-            </div>
-          </div>
-        ))}
+          );
+        })}
       </ul>
     </nav>
   );

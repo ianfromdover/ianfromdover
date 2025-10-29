@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import useArrowKeyNavigation from '@/app/use-arrow-key-navigation';
 import styles from './menu-navigation.module.css'; // Import CSS Module
 
@@ -8,6 +8,7 @@ const menuItems = ['work', 'about', 'contact', 'playground'];
 
 function MenuNavigation() {
   const [focusedIndex] = useArrowKeyNavigation(menuItems.length);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   // store refs to the focusable buttons (not the <li>)
   const itemRefs = useRef<Array<HTMLButtonElement | null>>([]);
 
@@ -26,9 +27,15 @@ function MenuNavigation() {
     <nav className={styles.menuNav} aria-label="Main Menu">
       <ul className={styles.menuList} role="menu">
         {menuItems.map((item, index) => {
-          const isActive = index === focusedIndex;
+          const isActive = index === focusedIndex || index === hoveredIndex;
           return (
-            <li key={item} className={styles.menuItemWrapper} role="none">
+            <li
+              key={item}
+              className={styles.menuItemWrapper}
+              role="none"
+              onMouseEnter={() => setHoveredIndex(index)}
+              onMouseLeave={() => setHoveredIndex(null)}
+            >
               {/* rails (bottom-most visual) */}
               <div className={`${styles.rails} ${isActive ? styles.active : ''}`} aria-hidden="true" />
               {/* base (drop-shadow layer) */}

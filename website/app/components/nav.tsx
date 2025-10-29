@@ -5,19 +5,19 @@ import styles from 'app/components/nav.module.css'
 
 const navItems = {
   '/': {
-    name: 'home',
+    name: 'HOME',
     id: 'h',
   },
-  '/blog': {
-    name: 'blog',
+  '/work': {
+    name: 'WORK',
     id: 'b',
   },
   '/about': {
-    name: 'about',
+    name: 'ABOUT',
     id: 'a',
   },
   '/playground': {
-    name: 'playground',
+    name: 'PLAYGROUND',
     id: 'p',
   },
 }

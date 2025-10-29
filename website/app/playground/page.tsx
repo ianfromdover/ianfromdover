@@ -1,6 +1,8 @@
 import LikeButton from 'app/components/like-button' // client component for interactivity
 import AutoLayout from 'app/components/auto-layout'
 import DvdBox from 'app/components/dvd-box'
+import TypingText from 'app/components/typing-text'
+import MenuNavigation from '../components/menu-navigation'
 import Image from 'next/image'
 
 export const metadata = {
@@ -16,13 +18,22 @@ export default function Page() {
     <div>
       <section>
         <h1>Playground</h1>
+        <p>A page where I can experiment with React components and animations.</p>
         <p>Things that will be added are:</p>
         <ul>
-          <li>Typing text effect</li>
+          <li>Typing text effect √</li>
           <li>Picture that is rendered using dither characters</li>
           <li>up-down arrow movement for selecting things in menus</li>
           <li>scaffold for OS game</li>
         </ul>
+        <h3>
+          Menu with up-down arrow key navigation
+        </h3>
+        <MenuNavigation />
+        <h3>
+          Typing text effect
+        </h3>
+        <TypingText>I'm testing this typing thing again that i'm going to use on the landing page. But i'm not sure how to decide p or h1 from the usage part</TypingText>
         <h3>
           My favourite foods are:
         </h3>

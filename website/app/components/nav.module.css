@@ -8,6 +8,15 @@
   gap: 8px;
 }
 
+.nav a {
+  text-decoration: none;
+
+}
+
+.nav :hover {
+  color: white;
+}
+
 .btnSelected {
   color: plum;
 }

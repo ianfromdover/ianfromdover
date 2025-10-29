@@ -6,9 +6,9 @@
 
 .menuList {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  list-style: none;
+  display: grid;                     /* make a single grid column */
+  grid-template-columns: max-content;/* column sized to the widest child */
+  grid-auto-rows: auto;
   gap: 0.5rem;
   padding: 0;
   margin: 0;
@@ -18,7 +18,8 @@
 .menuItemWrapper {
   position: relative;
   display: block;
-  width: max-content;
+  width: 100%;        /* fill the grid column so all items share the same width */
+  box-sizing: border-box;
   /* ensure enough room for the layers */
 }
 
@@ -29,11 +30,14 @@
   background: transparent;
   border: none;
   color: #fff;
-  padding: 8px 120px 8px 8px;
+  padding: 8px 80px 8px 8px;
   text-align: left;
   cursor: pointer;
   outline: none;
-  transition: cubic-bezier(0.4,0,0.2,1), color 0.12s;
+  transition: transform 0.12s cubic-bezier(0.4,0,0.2,1), color 0.12s;
+  display: block;
+  width: 100%;                   /* stretch to the grid column width */
+  box-sizing: border-box;
 }
 
 /* Overlay: animates horizontally under the text */
@@ -60,7 +64,7 @@
   height: 100%;
   z-index: 2;
   pointer-events: none;
-  background: rgba(18, 18, 18, 1);
+  background: rgb(30, 30, 30);
   transition: box-shadow 0.12s cubic-bezier(0.4,0,0.2,1), transform 0.12s;
   transform-origin: left;
   transform: translateZ(0);
@@ -79,9 +83,9 @@
   border-style: solid;
   border-color: rgb(195, 195, 195);
   transform-origin: center;
-  transform: translateY(-50%) scaleY(0);          /* collapsed */
+  transform: translateY(-50%) translateX(16px) scaleY(0);          /* collapsed */
   /* transition: transform 0.32s cubic-bezier(0.4,0,0.2,1), opacity 0.12s; */
-  transition: transform 0.2s ease-out, opacity 0.12s;
+  transition: transform 0.22s ease-out, opacity 0.12s;
   opacity: 0.0;
   box-shadow: none;
 }
@@ -89,23 +93,23 @@
 /* Active state applied to the relevant elements via the .active class on each layer */
 .textIcon.active,
 .menuItemWrapper .textIcon.active {
-  transform: scaleX(1);          /* expand horizontally from left */
+  transform: translateX(16px) scaleX(1);          /* expand horizontally from left */
   color: #000;                   /* change text colour when active */
 }
 
 .overlay.active,
 .menuItemWrapper .overlay.active {
-  transform: scaleX(1);          /* overlay expands left->right */
+  transform: translateX(16px) scaleX(1);          /* overlay expands left->right */
 }
 
 .base.active,
 .menuItemWrapper .base.active {
   box-shadow: 2px 2px 2px rgba(217, 217, 217, 0.4);
-  transform: scaleX(1);
+  transform: translateX(16px) scaleX(1);
 }
 
 .rails.active,
 .menuItemWrapper .rails.active {
-  transform: translateY(-50%) scaleY(1); /* keep centered vertically and expand */
+  transform: translateY(-50%) translateX(16px) scaleY(1); /* keep centered vertically and expand */
   opacity: 1;
 }

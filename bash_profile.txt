@@ -1,1 +1,4 @@
 [[ -s ~/.bashrc ]] && source ~/.bashrc
+# macOS reads .bash_profile and ignores .bashrc by default
+# this line forces iTerm and editors to load it
+

@@ -14,22 +14,18 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias lsa="ls -l -a"
 alias c="clear"
-alias e="exit"
 alias o="open"
 
 # COMMON DIRECTORIES
 alias dt="cd ~/Desktop"
 alias dl="cd ~/Downloads"
-alias dc="cd ~/Documents"
-alias ccc="ssh e0543721@stu.comp.nus.edu.sg" # for CS2106
+# alias ccc="ssh e0543721@stu.comp.nus.edu.sg" # for CS2106
 
 # GIT
 alias g="cd ~/Documents/gh"
 alias ig="/Users/base/Documents/gh/ianfromdover/utils/git-igitt"
 alias gg="cd ~/Documents/gh/23s2-cp-spa-team-05/"
 
-alias pu="git pull"
-alias ps="git push"
 alias gs="git status"
 alias gc="git checkout"
 alias gcm="git commit -m"
@@ -42,23 +38,24 @@ gam () { # Git add all + commit message
     git commit -am "$*"
     git push
 }
-alias gd="git diff"
-alias gb="git branch"
-alias gm="git checkout main" # or master when you're working on that
+# alias gd="git diff"
+# alias gb="git branch"
+# alias gm="git checkout main" # or master when you're working on that
 alias gl="git log --oneline --graph --decorate --all"
-alias ghb="open https://github.com" # change this to use the push address of git remote -v of curr repo, not sure how.
+# alias ghb="open https://github.com" # change this to use the push address of git remote -v of curr repo, not sure how.
 alias ps="git push origin $(git rev-parse --abbrev-ref HEAD)"
 alias pl="git pull origin $(git rev-parse --abbrev-ref HEAD)"
+
 alias gst="git stash"
 alias gstd="git stash drop"
 alias gstp="git stash pop"
 
 # Miryoku and KMonad
-alias kmonad="/Users/base/Documents/gh/kmonad/.stack-work/install/x86_64-osx/9f984d0d37b664e38914834423db2b495401b310152614c196b54f87b1af978b/8.10.7/bin/kmonad"
-izumiKeyboard () {
-    sudo kmonad /Users/base/Documents/gh/ianfromdover/keyboards/mac-izumi.kbd
-}
-alias iz="izumiKeyboard"
+# alias kmonad="/Users/base/Documents/gh/kmonad/.stack-work/install/x86_64-osx/9f984d0d37b664e38914834423db2b495401b310152614c196b54f87b1af978b/8.10.7/bin/kmonad"
+# izumiKeyboard () {
+    # sudo kmonad /Users/base/Documents/gh/ianfromdover/keyboards/mac-izumi.kbd
+# }
+# alias iz="izumiKeyboard"
 
 
 # APPS
@@ -66,12 +63,6 @@ alias t="open -a \"textedit\""
 alias p="python3"
 alias v="vim"
 alias nv="/usr/local/Cellar/neovim/0.8.3/bin/nvim"
-alias glc="~/opengl_compile.sh"
-alias glca="~/opengl_compile_all.sh"
-alias glc3="~/opengl_compile_lab3.sh"
-cpc () { # C++ compile, for CS3230
-    clang++ "$*" -o main -std=c++17 -O2
-}
 
 # FZF
 alias sd="cd ~ && cd \"\$(find * -type d | fzf --preview=\"tree -L 1 {}\" --bind=\"space:toggle-preview\" --preview-window=:hidden)\" && pwd && tree -L 2" # Set Dir

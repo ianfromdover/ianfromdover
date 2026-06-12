@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+source ~/.aliases
+source ~/.git-prompt # make sure it is symlinked
+[[ -s "${HOME}/.secrets" ]] && source "${HOME}/.secrets" # Loads personal API keys and credentials if the file exists
+
+#-------------#
+# bash prompt
+#-------------#
+
+export BASH_SILENCE_DEPRECATION_WARNING=1
+export CLICOLOR=1
+export LSCOLORS=ExFxBxDxCxegedabagacad
+
+reset_color='\[\e[0m\]' # default colour
+path_color='\[\033[32m\]' # green
+git_repo_color='\[\e[91m\]' # red
+
+export PS1="${git_repo_color}\$(__git_ps1 \"(%s)\")${path_color}\W${reset_color}> "
+# --- prompt tutorial ---
+# \W immediate path, \w full path
+# \u user
+# \h ip-192-168-187-123
+
+alias ls='ls -GFh' # -G colorises output, 
+                   # -h human readable size, 
+                   # -F adds / after a dir, 
+                           # * after an executable, 
+                           # @ after a symlink
+
+
+
+# give iTerm2 its features
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+
+# load NVM
+export NVM_DIR="$HOME/.nvm"
+

@@ -2,3 +2,6 @@
 # macOS reads .bash_profile and ignores .bashrc by default
 # this line forces iTerm and editors to load it
 
+
+# Hermes Agent — ensure ~/.local/bin is on PATH
+export PATH="$HOME/.local/bin:$PATH"

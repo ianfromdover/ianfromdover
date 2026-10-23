@@ -1,0 +1,104 @@
+#!/usr/bin/env bash
+# if user is on mac and doesn't have brew, ffmpeg or yt-dlp, install them
+
+playlists=$@
+list_num=$#
+first=$1
+
+# The following solution reads from a file if the script is called with a file name as the first parameter $1 and otherwise from standard input.
+# Referenced from: https://stackoverflow.com/questions/6980090/how-to-read-from-a-file-or-standard-input-in-bash
+# while IFS= read -r line
+# do
+#   echo "$line"
+# done < "${1:-/dev/stdin}"
+
+# Colours :D
+NC='\033[0m' # No Color
+BOLD='\033[1m'
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+
+function check_install {
+    echo "Package versions found:"
+    brew -v
+    if [[ $? -ne 0 ]]; then
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)";
+        brew install yt-dlp
+        brew install ffmpeg
+    else
+        ffmpeg -version || brew install ffmpeg
+        yt-dlp --version || brew install yt-dlp
+    fi
+}
+
+function is_website {
+    regex='(https?|ftp|file)://[-[:alnum:]\+&@#/%?=~_|!:,.;]*[-[:alnum:]\+&@#/%=~_|]'
+    if [[ $1 =~ $regex ]]; then 
+        exit 0
+    else
+        exit 1 # fail
+    fi
+}
+
+function downl_playlst {
+    # downloads the highest quality mp4 video without sound
+    yt-dlp --ignore-errors --format "bestvideo[ext=mp4]/bestvideo" --output "%(channel)s - %(title)s.%(ext)s" --yes-playlist "$1"
+    echo # newline
+
+    # alert success
+    if [[ $? -ne 0 ]]; then
+        echo -e "${RED}There was an error downloading${NC}"
+    else
+        echo -e "\U2705 ${GREEN}Successfully downloaded!${NC}"
+    fi
+}
+
+
+# welcome message
+echo -e "\U1F344 Welcome to                        v2.0
+██████╗ ██╗ ██████╗██╗  ██╗███████╗██████╗
+██╔══██╗██║██╔════╝██║ ██╔╝██╔════╝██╔══██╗
+██████╔╝██║██║     █████╔╝ █████╗  ██████╔╝
+██╔═══╝ ██║██║     ██╔═██╗ ██╔══╝  ██╔══██╗
+██║     ██║╚██████╗██║  ██╗███████╗██║  ██║
+╚═╝     ╚═╝ ╚═════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝ "
+echo "The YouTube silent MP4 playlist downloader."
+echo # newline
+
+# if dk how to use
+if [[ -z $first ]]; then
+    echo "Usage: ./picker <link to playlist1> <link to playlist2> ..."
+    echo -e "Ensure you used links to ${BOLD}Unlisted${NC} playlists."
+    exit 1
+fi
+
+# check_install
+echo -e "Your videos will be saved to:${BOLD}"
+for i in $(seq 1 $list_num); do
+    echo "$(pwd)/$i"
+done
+echo # newline
+
+echo "========================================================="
+echo -e "\U1F344 Starting download using ${BOLD}yt-dlp${NC}"
+echo "========================================================="
+
+counter=1
+for i in $playlists; do
+    subpath="$(pwd)/$counter"
+    mkdir $subpath
+    cd $subpath
+    ((counter++))
+    downl_playlst $i &
+    cd ../
+done
+
+echo -e "Opening save location..."
+open .
+
+# change emoji here:
+# https://unicode.org/emoji/charts/full-emoji-list.html
+
+# ascii text from
+# https://patorjk.com/software/taag/#p=display&h=0&v=0&f=ANSI%20Shadow&t=PICKER
+

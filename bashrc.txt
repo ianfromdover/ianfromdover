@@ -10,18 +10,20 @@ source ~/.git-prompt # make sure it is symlinked
 export BASH_SILENCE_DEPRECATION_WARNING=1
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
+# export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
+export PATH="/bin:/usr/local/bin:$PATH"
 
 reset_color='\[\e[0m\]' # default colour
 path_color='\[\033[32m\]' # green
 git_repo_color='\[\e[91m\]' # red
 
-export PS1="${git_repo_color}\$(__git_ps1 \"(%s)\")${path_color}\W${reset_color}> "
+# export PS1="${git_repo_color}\$(__git_ps1 \"(%s)\")${path_color}\W${reset_color}> "
 # --- prompt tutorial ---
 # \W immediate path, \w full path
 # \u user
 # \h ip-192-168-187-123
 
-alias ls='ls -GFh' # -G colorises output, 
+# alias ls='ls -GFh' # -G colorises output, 
                    # -h human readable size, 
                    # -F adds / after a dir, 
                            # * after an executable, 
@@ -30,8 +32,13 @@ alias ls='ls -GFh' # -G colorises output,
 
 
 # give iTerm2 its features
-test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+# test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
 # load NVM
 export NVM_DIR="$HOME/.nvm"
 
+# Hermes Agent — ensure ~/.local/bin is on PATH
+export PATH="$HOME/.local/bin:$PATH"
+
+# Starship terminal prompt
+eval "$(starship init bash)"
